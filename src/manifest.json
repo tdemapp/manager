@@ -31,6 +31,8 @@
   "web_accessible_resources": [
     "js/inject.js",
     "options/options.html",
+    "options/options.js",
+    "options/css/options.css",
     "options/ui/ui.html",
     "options/ui/ui.js"
   ],
