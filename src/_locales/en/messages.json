@@ -1,0 +1,21 @@
+{
+  "appDesc": {
+    "message": "Install, search and manage extensions for TweetDeck"
+  },
+  "appName": {
+    "message": "TweetDeck Extension Manager"
+  },
+
+  "dashboard": {
+    "message": "Dashboard"
+  },
+  "dashboardTitle": {
+    "message": "TDEM | Dashboard"
+  },
+  "dashboardSidebarExtensions": {
+    "message": "Extensions"
+  },
+  "dashboardSidebarAdd": {
+    "message": "Add"
+  }
+}

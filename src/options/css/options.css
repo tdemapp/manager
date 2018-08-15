@@ -1,0 +1,24 @@
+@import url('vuetify/dist/vuetify.min.css');
+@import url('./feather.css');
+
+html,
+body {
+  background-color: #fafcff;
+  font-family: 'Roboto', Tahoma, Geneva, Verdana, sans-serif;
+}
+.spacedLetters {
+  letter-spacing: .20em!important;
+}
+.upperCase {
+  text-transform: uppercase!important;
+}
+.defaultShadow {
+  box-shadow: 0 8px 15px rgba(125, 147, 178, 0.25)!important;
+}
+.extensionCard {
+  border-radius: 4px !important;
+  transition: all 0.3s;
+}
+.extensionCard:hover {
+	box-shadow: 0 20px 30px rgba(125, 147, 178, 0.15)!important;
+}

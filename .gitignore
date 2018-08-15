@@ -1,0 +1,29 @@
+# Logs 
+logs 
+*.log 
+npm-debug.log* 
+yarn-debug.log* 
+yarn-error.log* 
+ 
+# Built static assets/packaed extensions 
+build/
+.cache/ 
+dist/
+report.html
+*.crx 
+*.pem 
+ 
+# Dependency directories 
+node_modules/ 
+ 
+# Optional npm cache directory 
+.npm 
+ 
+# Yarn Integrity file 
+.yarn-integrity 
+ 
+# Secret files 
+secrets.*.js 
+ 
+# MacOS meta 
+.DS_Store 
