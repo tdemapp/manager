@@ -14,7 +14,7 @@ function inject() {
 		document.body.appendChild(script);
 		console.log('✨ TDEM Successfully Injected!');
 	} catch (e) {
-		console.log('⚠️ Error Injecting TweetDeck Extensions | ' + e);
+		console.log('⚠️ Error Injecting TDEM | ' + e);
 	}
 }
 

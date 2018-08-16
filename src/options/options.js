@@ -3,25 +3,35 @@ import Vuetify from 'vuetify';
 
 import Dashboard from './components/dashboard.vue';
 
-const featherIcons = {
-	package: 'feather-package',
-	link: 'feather-external-link',
-	trash: 'feather-trash-2',
-	search: 'feather-search',
-	info: 'feather-info',
-	twitter: 'feather-twitter',
-	github: 'feather-github',
-	settings: 'feather-settings',
-	x: 'feather-x',
-	add: 'feather-plus'
-};
+function initOptions() {
+	try {
+		initVue();
+	} catch (e) {
+		console.log('⚠️ Error Initializing Options | ' + e);
+	}
+}
 
-Vue.use(Vuetify, {
-	iconfont: 'feather',
-	icons: featherIcons
-});
+function initVue() {
+	Vue.use(Vuetify, {
+		iconfont: 'feather',
+		icons: {
+			package: 'feather-package',
+			link: 'feather-external-link',
+			trash: 'feather-trash-2',
+			search: 'feather-search',
+			info: 'feather-info',
+			twitter: 'feather-twitter',
+			github: 'feather-github',
+			settings: 'feather-settings',
+			x: 'feather-x',
+			add: 'feather-plus'
+		}
+	});
+	
+	new Vue({
+		el: '#app',
+		render: (h) => h(Dashboard)
+	});
+}
 
-new Vue({
-	el: '#app',
-	render: (h) => h(Dashboard)
-});
+initOptions();
