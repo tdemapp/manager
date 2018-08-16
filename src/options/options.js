@@ -3,6 +3,9 @@ import Vuetify from 'vuetify';
 
 import Dashboard from './components/dashboard.vue';
 
+/* 
+ * Initialize Options
+ */
 function initOptions() {
 	try {
 		initVue();
@@ -11,6 +14,9 @@ function initOptions() {
 	}
 }
 
+/* 
+ * Initialize Vue
+ */
 function initVue() {
 	Vue.use(Vuetify, {
 		iconfont: 'feather',

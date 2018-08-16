@@ -1,16 +1,19 @@
 import * as util from './util';
 import './TDE';
 
+/* 
+ * Injects style element at end of head to add custom TDEM icon
+ */
 function injectButtonIcon() {
-	// Dashboard button custom icon class
 	const dashboardButtonIcon = `
 		<style type='text/css'>.icon-tdem:before { content: '\\F046'; }</style>
 	`;
-
-	// Add custom class for tdem icon using hidden TD icon
 	$('head').append(dashboardButtonIcon);
 }
 
+/* 
+ * Innjects new button at top of sidebar footer items
+ */
 function injectButton() {
 	injectButtonIcon();
 
