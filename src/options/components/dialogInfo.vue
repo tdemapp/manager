@@ -25,11 +25,13 @@
 </template>
 
 <script>
+import * as util from '../../js/util';
+
 export default {
 	data() {
 		return {
       dialog: false,
-      dialogTitle: chrome.i18n.getMessage('dashboardDialogInfo')
+      dialogTitle: util.getMessage('dashboardDialogInfo')
 		};
 	}
 };

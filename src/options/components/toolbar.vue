@@ -1,8 +1,8 @@
 <template>
   <v-toolbar app fixed flat dark color='primary' class='pt-2 pb-1'>
     <v-toolbar-title class='white--text'>
-      <span class='headline'>TDEM </span>
-      <small class='caption' v-html='"v" + extensionVersion' />
+      <span class='headline' v-html='extensionName' />
+      <small class='caption' v-html='extensionVersion' />
     </v-toolbar-title>
 
     <v-spacer />
@@ -22,9 +22,9 @@
 </template>
 
 <script>
+import * as util from '../../js/util';
 import DialogInfo from './dialogInfo';
 import DialogSettings from './dialogSettings';
-import package from '../../../package.json';
 
 export default {
 	components: {
@@ -33,8 +33,9 @@ export default {
 	},
 	data() {
 		return {
-      extensionVersion: package.version,
-      searchBarText: chrome.i18n.getMessage('dashboardSearchBarText')
+      extensionName: util.getExtensionName(),
+      extensionVersion: `v${util.getExtensionVersion()}`,
+      searchBarText: util.getMessage('dashboardSearchBarText')
 		};
 	}
 };

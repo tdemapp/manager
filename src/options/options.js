@@ -7,7 +7,7 @@ function initOptions() {
 	try {
 		initVue();
 	} catch (e) {
-		console.log('⚠️ Error Initializing Options | ' + e);
+		throw new Error(`⚠️ Error Initializing Options | ${e}`);
 	}
 }
 

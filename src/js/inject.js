@@ -1,3 +1,4 @@
+import * as util from './util';
 import './TDE';
 
 function injectButtonIcon() {
@@ -29,7 +30,7 @@ function injectButton() {
 	// Open dashbord when button is clicked
 	$('.tdem-dashboard-btn').bind('click', (e) => {
 		e.preventDefault();
-		window.open('chrome-extension://__MSG_@@extension_id__/options/options.html');
+		window.open(util.getExtensionUrl('options/options.html'));
 	});
 }
 
