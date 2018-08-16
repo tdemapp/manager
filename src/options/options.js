@@ -12,7 +12,8 @@ const featherIcons = {
 	twitter: 'feather-twitter',
 	github: 'feather-github',
 	settings: 'feather-settings',
-	x: 'feather-x'
+	x: 'feather-x',
+	add: 'feather-plus'
 };
 
 Vue.use(Vuetify, {
