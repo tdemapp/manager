@@ -11,7 +11,7 @@
         <v-toolbar flat dark color='primary'>
           <v-icon v-html='$vuetify.icons.add' />
           <v-spacer />
-          <v-card-title class='headline'>Add</v-card-title>
+          <v-card-title class='headline' v-html='dialogTitle' />
           <v-spacer />
           <v-btn icon large @click='dialog = false'>
             <v-icon v-html='$vuetify.icons.x' />
@@ -30,7 +30,8 @@
 export default {
 	data() {
 		return {
-			dialog: false
+      dialog: false,
+      dialogTitle: chrome.i18n.getMessage('dashboardDialogAdd')
 		};
 	}
 };

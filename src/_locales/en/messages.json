@@ -6,16 +6,16 @@
     "message": "TweetDeck Extension Manager"
   },
 
-  "dashboard": {
-    "message": "Dashboard"
+  "dashboardSearchBarText": {
+    "message": "Search"
   },
-  "dashboardTitle": {
-    "message": "TDEM | Dashboard"
+  "dashboardDialogInfo": {
+    "message": "Info"
   },
-  "dashboardSidebarExtensions": {
-    "message": "Extensions"
+  "dashboardDialogSettings": {
+    "message": "Settings"
   },
-  "dashboardSidebarAdd": {
+  "dashboardDialogAdd": {
     "message": "Add"
   }
 }

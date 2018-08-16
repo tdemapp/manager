@@ -7,7 +7,7 @@
 
     <v-spacer />
 
-    <v-text-field solo-inverted class='mx-3' flat label='Search' :prepend-inner-icon='$vuetify.icons.search' />
+    <v-text-field solo-inverted class='mx-3' flat :label='searchBarText' :prepend-inner-icon='$vuetify.icons.search' />
 
     <v-spacer />
 
@@ -33,7 +33,8 @@ export default {
 	},
 	data() {
 		return {
-			extensionVersion: package.version
+      extensionVersion: package.version,
+      searchBarText: chrome.i18n.getMessage('dashboardSearchBarText')
 		};
 	}
 };
