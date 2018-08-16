@@ -24,7 +24,7 @@ import Toolbar from './toolbar.vue';
 
 export default {
 	components: {
-        DialogAddExtension,
+		DialogAddExtension,
 		ExtensionCard,
 		Toolbar
 	},

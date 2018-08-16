@@ -36,7 +36,7 @@
  <script>
 export default {
 	props: {
-		extensionData : {
+		extensionData: {
 			type: Object,
 			default: {
 				name: 'Extension Name',
