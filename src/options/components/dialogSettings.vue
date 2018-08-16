@@ -11,7 +11,7 @@
           <v-spacer />
           <v-card-title class='headline'>Settings</v-card-title>
           <v-spacer />
-          <v-btn icon @click='dialog = false'>
+          <v-btn icon large @click='dialog = false'>
             <v-icon v-html='$vuetify.icons.x' />
           </v-btn>
         </v-toolbar>
