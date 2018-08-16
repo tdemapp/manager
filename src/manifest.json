@@ -25,8 +25,8 @@
     "*://tweetdeck.twitter.com/*"
   ],
   "options_ui": {
-    "page": "options/ui/ui.html",
-    "chrome_style": false
+    "page": "options/options.html",
+    "open_in_tab": true
   },
   "web_accessible_resources": [
     "js/inject.js",
