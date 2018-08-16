@@ -21,13 +21,17 @@
     <v-card-text class='caption' v-html='extensionData.description' />
 
 		<v-card-actions>
-			<v-btn flat block large :color='isEnabled ? "primary": "grey"' target='_blank' :href='extensionData.website'>
-				<v-icon left v-html='$vuetify.icons.link' />
-				Source
+			<v-btn flat icon large :color='isEnabled ? "primary": "grey"' target='_blank' :href='extensionData.website'>
+				<v-icon v-html='$vuetify.icons.link' />
 			</v-btn>
-			<v-btn flat block large :color='isEnabled ? "red": "grey"'>
-				<v-icon left v-html='$vuetify.icons.trash' />
-				Remove
+			<v-btn flat icon large :color='isEnabled ? "primary": "grey"'>
+				<v-icon v-html='$vuetify.icons.refresh' />
+			</v-btn>
+
+			<v-spacer />
+
+			<v-btn flat icon large :color='isEnabled ? "red": "grey"'>
+				<v-icon v-html='$vuetify.icons.trash' />
 			</v-btn>
 		</v-card-actions>
   </v-card>

@@ -23,6 +23,7 @@ function initVue() {
 		icons: {
 			package: 'feather-package',
 			link: 'feather-external-link',
+			refresh: 'feather-refresh-cw',
 			trash: 'feather-trash-2',
 			search: 'feather-search',
 			info: 'feather-info',
@@ -30,7 +31,9 @@ function initVue() {
 			github: 'feather-github',
 			settings: 'feather-settings',
 			x: 'feather-x',
-			add: 'feather-plus'
+			add: 'feather-plus',
+			code: 'feather-code',
+			save: 'feather-save',
 		}
 	});
 	
