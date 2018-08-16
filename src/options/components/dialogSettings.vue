@@ -30,8 +30,8 @@ import * as util from '../../js/util';
 export default {
 	data() {
 		return {
-      dialog: false,
-      dialogTitle: util.getMessage('dashboardDialogSettings')
+			dialog: false,
+			dialogTitle: util.getMessage('dashboardDialogSettings')
 		};
 	}
 };

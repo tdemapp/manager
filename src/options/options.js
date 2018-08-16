@@ -33,10 +33,10 @@ function initVue() {
 			x: 'feather-x',
 			add: 'feather-plus',
 			code: 'feather-code',
-			save: 'feather-save',
+			save: 'feather-save'
 		}
 	});
-	
+
 	new Vue({
 		el: '#app',
 		render: (h) => h(Dashboard)

@@ -65,9 +65,9 @@ import * as util from '../../js/util';
 export default {
 	data() {
 		return {
-      dialog: false,
-      dialogTitle: util.getMessage('dashboardDialogAdd'),
-      tab: null
+			dialog: false,
+			dialogTitle: util.getMessage('dashboardDialogAdd'),
+			tab: null
 		};
 	}
 };

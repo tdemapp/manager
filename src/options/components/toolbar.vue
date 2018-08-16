@@ -33,9 +33,9 @@ export default {
 	},
 	data() {
 		return {
-      extensionName: util.getExtensionName(),
-      extensionVersion: `v${util.getExtensionVersion()}`,
-      searchBarText: util.getMessage('dashboardSearchBarText')
+			extensionName: util.getExtensionName(),
+			extensionVersion: `v${util.getExtensionVersion()}`,
+			searchBarText: util.getMessage('dashboardSearchBarText')
 		};
 	}
 };

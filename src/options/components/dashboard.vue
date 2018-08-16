@@ -23,7 +23,7 @@ import Toolbar from './toolbar.vue';
 
 export default {
 	components: {
-        CardExtension,
+		CardExtension,
 		DialogAddExtension,
 		Toolbar
 	}
