@@ -1,8 +1,8 @@
 <template>
   <section>
     <v-fab-transition>
-      <v-btn icon fab large fixed bottom right dark class='ma-4' color='primary' @click='dialog = true'>
-        <v-icon large v-html='$vuetify.icons.add' />
+      <v-btn icon fab fixed bottom right dark class='ma-4' color='primary' @click='dialog = true'>
+        <v-icon v-html='$vuetify.icons.add' />
       </v-btn>
     </v-fab-transition>
 
