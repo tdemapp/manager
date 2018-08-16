@@ -32,9 +32,7 @@
     "js/inject.js",
     "options/options.html",
     "options/options.js",
-    "options/css/options.css",
-    "options/ui/ui.html",
-    "options/ui/ui.js"
+    "options/css/options.css"
   ],
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }
