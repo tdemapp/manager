@@ -14,7 +14,7 @@
 
 ## Development
 
-```
+```shell
 $ git clone https://github.com/nurodev/tdem.git
 $ cd tdem/
 $ npm install # yarn
