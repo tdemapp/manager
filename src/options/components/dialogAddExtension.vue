@@ -22,10 +22,6 @@
               <v-icon class='mr-3' v-html='$vuetify.icons.link' />
               Link
             </v-tab>
-            <v-tab>
-              <v-icon class='mr-3' v-html='$vuetify.icons.code' />
-              Code
-            </v-tab>
           </v-tabs>
         </v-toolbar>
 
@@ -35,16 +31,6 @@
             <v-tab-item>
               <v-card flat>
                 <v-text-field box label='URL' placeholder='https://gist.github.com/' />
-                <v-btn flat block large color='primary'>
-                  <v-icon left v-html='$vuetify.icons.save' />
-                  Save
-                </v-btn>
-              </v-card>
-            </v-tab-item>
-
-            <v-tab-item>
-              <v-card flat>
-                <v-textarea auto-grow box label='Object' />
                 <v-btn flat block large color='primary'>
                   <v-icon left v-html='$vuetify.icons.save' />
                   Save
