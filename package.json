@@ -7,7 +7,7 @@
   "scripts": {
     "build": "rimraf .cache/ dist/ && parcel build src/manifest.json --no-source-maps --log-level 3",
     "dev": "rimraf .cache/ dist/ && parcel watch src/manifest.json --no-source-maps --log-level 3",
-    "pack": "npm run build && crx pack > ./dist",
+    "package": "npm run build && crx pack dist -o TDEM.crx",
     "lint": "prettier --config .prettierrc.json --write '**/*.{js,ts,vue}'"
   },
   "staticPath": {
