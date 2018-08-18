@@ -18,7 +18,7 @@ function injectButton() {
       <div class='nbfc padding-ts hide-condensed txt-size--16'>Extension Manager</div>
     </a>
 	`;
-	
+
 	// Inject custom icon style element in head tag
 	$('head').append(dashboardButtonIcon);
 

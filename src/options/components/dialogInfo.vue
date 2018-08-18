@@ -4,7 +4,7 @@
       <v-icon v-html='$vuetify.icons.info' />
     </v-btn>
 
-    <v-dialog v-model='dialog' max-width='640' >
+    <v-dialog v-model='dialog' max-width='512' >
       <v-card>
         <v-toolbar flat dark color='primary'>
           <v-icon v-html='$vuetify.icons.info' />

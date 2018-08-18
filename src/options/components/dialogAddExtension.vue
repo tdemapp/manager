@@ -39,16 +39,16 @@ export default {
 		return {
 			dialog: false,
 			dialogTitle: util.getMessage('dashboardDialogAdd'),
-      tab: null,
-      gistID: null
+			tab: null,
+			gistID: null
 		};
-  },
-  methods: {
-    addExtension (url) {
-      if(!util.addExtension(url)) {
-        this.dialog = false;
-      }
-    }
-  }
+	},
+	methods: {
+		addExtension(url) {
+			if (!util.addExtension(url)) {
+				this.dialog = false;
+			}
+		}
+	}
 };
 </script>
