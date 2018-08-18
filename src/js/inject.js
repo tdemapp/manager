@@ -1,5 +1,4 @@
 import * as util from './util';
-import './TDE';
 
 /* 
  * Injects style element at end of head to add custom TDEM icon
