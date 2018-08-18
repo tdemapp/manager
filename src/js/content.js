@@ -19,7 +19,7 @@ function inject() {
 	script.setAttribute('src', content);
 
 	try {
-		document.body.appendChild(script);
+		document.head.appendChild(script);
 		console.log('✨ TDEM Successfully Injected!');
 	} catch (e) {
 		throw new Error(`⚠️ Error Injecting TDEM | ${e}`);
