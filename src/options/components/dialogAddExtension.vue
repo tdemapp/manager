@@ -16,29 +16,15 @@
           <v-btn icon large @click='dialog = false'>
             <v-icon v-html='$vuetify.icons.x' />
           </v-btn>
-          <v-tabs grow slot='extension' v-model='tab' color='primary'>
-            <v-tabs-slider color='white' />
-            <v-tab>
-              <v-icon class='mr-3' v-html='$vuetify.icons.link' />
-              Link
-            </v-tab>
-          </v-tabs>
         </v-toolbar>
 
         <v-card-text>
-          <v-tabs-items v-model='tab'>
+          <v-text-field v-model='gistID' box label='Gist ID' placeholder='1e1209f905603e1b2b77997e500df40e' />
 
-            <v-tab-item>
-              <v-card flat>
-                <v-text-field box label='URL' placeholder='https://gist.github.com/' />
-                <v-btn flat block large color='primary'>
-                  <v-icon left v-html='$vuetify.icons.save' />
-                  Save
-                </v-btn>
-              </v-card>
-            </v-tab-item>
-
-          </v-tabs-items>
+          <v-btn flat block large color='primary' @click='addExtension(gistID)'>
+            <v-icon left v-html='$vuetify.icons.save' />
+            Save
+          </v-btn>
         </v-card-text>
       </v-card>
     </v-dialog>
@@ -53,8 +39,16 @@ export default {
 		return {
 			dialog: false,
 			dialogTitle: util.getMessage('dashboardDialogAdd'),
-			tab: null
+      tab: null,
+      gistID: null
 		};
-	}
+  },
+  methods: {
+    addExtension (url) {
+      if(!util.addExtension(url)) {
+        this.dialog = false;
+      }
+    }
+  }
 };
 </script>
