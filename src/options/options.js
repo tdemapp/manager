@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuetify from 'vuetify';
 
-import Dashboard from './components/dashboard.vue';
+import Options from './options.vue';
 
 /* 
  * Initialize Options
@@ -39,7 +39,7 @@ function initVue() {
 
 	new Vue({
 		el: '#app',
-		render: (h) => h(Dashboard)
+		render: (h) => h(Options)
 	});
 }
 

@@ -17,9 +17,9 @@
 </template>
 
 <script>
-import CardExtension from './cardExtension';
-import DialogAddExtension from './dialogAddExtension';
-import Toolbar from './toolbar.vue';
+import CardExtension from './components/cardExtension';
+import DialogAddExtension from './components/dialogAddExtension';
+import Toolbar from './components/toolbar.vue';
 
 export default {
 	components: {
@@ -30,4 +30,3 @@ export default {
 };
 </script>
 
-<style src='./options.css' />
