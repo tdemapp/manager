@@ -1,20 +1,13 @@
 import * as util from './util';
 
 /* 
- * Injects style element at end of head to add custom TDEM icon
- */
-function injectButtonIcon() {
-	const dashboardButtonIcon = `
-		<style type='text/css'>.icon-tdem:before { content: '\\F046'; }</style>
-	`;
-	$('head').append(dashboardButtonIcon);
-}
-
-/* 
  * Innjects new button at top of sidebar footer items
  */
 function injectButton() {
-	injectButtonIcon();
+	// Style element to add custom icon
+	const dashboardButtonIcon = `
+		<style type='text/css'>.icon-tdem:before { content: '\\F046'; }</style>
+	`;
 
 	// Button to inject to sidebar nav
 	const dashboardButton = `
@@ -25,6 +18,9 @@ function injectButton() {
       <div class='nbfc padding-ts hide-condensed txt-size--16'>Extension Manager</div>
     </a>
 	`;
+	
+	// Inject custom icon style element in head tag
+	$('head').append(dashboardButtonIcon);
 
 	// Inject button at top of sidebar nav footer items
 	$('nav.app-navigator').prepend(dashboardButton);
