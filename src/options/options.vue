@@ -30,7 +30,9 @@ export default {
 	},
 	data() {
 		return {
-			extensionsStorage: util.storage.get((storage) => { return storage.extensions })
+			extensionsStorage: util.storage.get((storage) => {
+				return storage.extensions;
+			})
 		};
 	},
 	created() {

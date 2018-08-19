@@ -55,22 +55,18 @@ function initializeStorage() {
 		description: 'This is myExtension!',
 		website: 'https://example.com/',
 		isEnabled: false,
-		dependencies: [
-			'myImportantExtension'
-		],
-		conflicts: [
-			'veryBadExtension'
-		],
+		dependencies: ['myImportantExtension'],
+		conflicts: ['veryBadExtension'],
 		create: () => {
-			console.log('myExtension created!')
+			console.log('myExtension created!');
 		},
 		destroy: () => {
-			console.log('myExtension destroyed!')
+			console.log('myExtension destroyed!');
 		}
 	};
 	const baseStorageTemplate = {
 		options: {},
-		extensions: [ extensionTemplate ]
+		extensions: [extensionTemplate]
 	};
 
 	util.storage.set(baseStorageTemplate);
