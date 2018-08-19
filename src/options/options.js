@@ -54,6 +54,7 @@ function initializeStorage() {
 		author: 'myExtensionAuthor',
 		description: 'This is myExtension!',
 		website: 'https://example.com/',
+		isEnabled: false,
 		dependencies: [
 			'myImportantExtension'
 		],
