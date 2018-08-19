@@ -1,5 +1,5 @@
 @import url('vuetify/dist/vuetify.min.css');
-@import url('./feather.css');
+@import url('./feather.min.css');
 
 html,
 body {
