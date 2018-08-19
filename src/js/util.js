@@ -35,3 +35,22 @@ export const addExtension = (id) => {
 			throw new Error(`⚠️ Error Adding Extension | ${e}`);
 		});
 };
+
+export const storage = {
+	get(done) {
+		chrome.storage.sync.get(null, (obj) => {
+			done(obj);
+		});
+	},
+	set(obj, cb) {
+		this.get((currentSettings) => {
+			chrome.storage.sync.set(Object.assign(currentSettings, obj), () => {
+				if (cb) {
+					return this.get(cb);
+				}
+
+				return false;
+			});
+		});
+	}
+};

@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuetify from 'vuetify';
 
+import * as util from '../js/util';
 import Options from './options.vue';
 
 /* 
@@ -9,6 +10,7 @@ import Options from './options.vue';
 function initOptions() {
 	try {
 		initVue();
+		initializeStorage();
 	} catch (e) {
 		throw new Error(`⚠️ Error Initializing Options | ${e}`);
 	}
@@ -41,6 +43,36 @@ function initVue() {
 		el: '#app',
 		render: (h) => h(Options)
 	});
+}
+
+/* 
+ * Initialize Chrome Storage
+ */
+function initializeStorage() {
+	const extensionTemplate = {
+		name: 'myExtension',
+		author: 'myExtensionAuthor',
+		description: 'This is myExtension!',
+		website: 'https://example.com/',
+		dependencies: [
+			'myImportantExtension'
+		],
+		conflicts: [
+			'veryBadExtension'
+		],
+		create: () => {
+			console.log('myExtension created!')
+		},
+		destroy: () => {
+			console.log('myExtension destroyed!')
+		}
+	};
+	const baseStorageTemplate = {
+		options: {},
+		extensions: [ extensionTemplate ]
+	};
+
+	util.storage.set(baseStorageTemplate);
 }
 
 initOptions();
