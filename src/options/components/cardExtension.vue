@@ -1,6 +1,6 @@
 <template>
   <v-card class='ma-2 extensionCard defaultShadow'>
-    <v-toolbar flat :class='isEnabled ? "primary pt-3 pb-3" : "white pt-3 pb-3"'>
+    <v-toolbar flat :class='isEnabled ? "extensionCardToolbar pt-3 pb-3" : "white pt-3 pb-3"'>
 			<v-icon large :dark='isEnabled' v-html='$vuetify.icons.package' />
 
 			<v-card-text :class='isEnabled ? "white--text subheading" : "grey--text subheading"'>
