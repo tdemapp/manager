@@ -1,24 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="1024px" height="1024px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
-    <title>icon-1024</title>
+    <title>icon1024</title>
     <desc>Created with Sketch.</desc>
     <defs>
         <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
             <stop stop-color="#40CAE5" offset="0%"></stop>
             <stop stop-color="#0A3FB2" offset="100%"></stop>
         </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#309AAF" offset="0%"></stop>
+            <stop stop-color="#042262" offset="100%"></stop>
+        </linearGradient>
     </defs>
     <g id="1024" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="icon">
-            <g id="Icon" transform="translate(46.269531, 38.000000)">
-                <path d="M8.10770451,218.645055 L463.15262,435.756209 L463.15262,950 L74.135528,772.683253 L15.6257006,732.297382 L8.10770451,636.563394 L0.621604064,331.980013 L8.10770451,218.645055 Z M929.967233,218.645055 L937.453334,331.980013 L929.967233,636.563394 L922.449237,732.297382 L863.93941,772.683253 L474.922318,950 L474.922318,435.756209 L929.967233,218.645055 Z M22.4843416,218.098844 L236.253394,97.5689583 L468.185697,0.0087931724 L679.444018,97.5689583 L913.887052,218.098844 L463.15262,433.545639 L22.4843416,218.098844 Z" id="Faces" fill="url(#linearGradient-1)" fill-rule="nonzero"></path>
-                <g id="Frame" transform="translate(2.011719, 2.000000)" stroke="#232C46" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M503.32853,9.19975049 L873.081536,185.323051 C904.49472,200.193582 924.366152,230.721298 924.384766,264.138228 L924.384766,683.751991 C924.366152,717.168921 904.49472,747.696637 873.081536,762.567168 L503.32853,938.690469 C477.290157,951.103177 446.634668,951.103177 420.596295,938.690469 L50.8432891,762.567168 C19.4601517,747.502856 -0.24231019,716.788924 0.00225074169,683.311683 L0.00225074169,264.138228 C0.0208643526,230.721298 19.8922966,200.193582 51.3054803,185.323051 L421.058486,9.19975049 C446.970436,-3.0665835 477.41658,-3.0665835 503.32853,9.19975049 Z" id="Shape" stroke-width="30"></path>
-                    <polyline id="Shape" stroke-width="20" points="14.190117 216.624434 461.178803 428.959276 908.167489 216.624434"></polyline>
-                    <path d="M463.205963,948 L463.205963,430.031674" id="Shape" stroke-width="20"></path>
-                    <path d="M231.096191,99.7330317 L694.302154,319.574661" id="Shape" stroke-width="20"></path>
-                </g>
+        <g id="Color">
+            <g id="Icon" transform="translate(75.439453, 29.000000)">
+                <polygon id="Face-Back" fill="url(#linearGradient-1)" fill-rule="nonzero" points="440.063477 0 880.126953 241.25 880.126953 723.75 440.063477 955 2.80926947e-13 723.75 0 241.25"></polygon>
+                <polygon id="Face-Left" fill="url(#linearGradient-1)" fill-rule="nonzero" points="0.000475794077 241.240402 440.225949 459.652329 440.070044 954.977938 0.000475794077 723.745346"></polygon>
+                <polygon id="Face-Right" fill="url(#linearGradient-2)" fill-rule="nonzero" transform="translate(659.673283, 597.868768) scale(-1, 1) translate(-659.673283, -597.868768) " points="439.560547 241 879.78602 459.411927 879.630115 954.737535 439.560547 723.504944"></polygon>
+                <polygon id="Tape-Side" fill="#263141" fill-rule="nonzero" points="619.617801 370.08197 616.122854 529.664162 714.839927 477.315703 718.177516 321.203003"></polygon>
+                <polygon id="Tape-Top" fill="#37465D" fill-rule="nonzero" points="718.190424 321.214294 262.67364 96.1950711 171.022723 147.489395 619.632883 370.079784"></polygon>
             </g>
         </g>
     </g>
