@@ -1,7 +1,7 @@
 <div align='center'>
 
   <a href='https://github.com/nurodev/tdem/releases'>
-    <img alt='TweetDeck Extension Manager' width='128px' src='./assets/icon-1024.png' />
+    <img alt='TweetDeck Extension Manager' width='256px' src='./assets/icon-1024.png' />
   </a>
 
   <h1> TDEM </h1>
