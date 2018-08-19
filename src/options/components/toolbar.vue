@@ -1,5 +1,5 @@
 <template>
-  <v-toolbar app fixed flat dark color='primary' class='pt-2 pb-1'>
+  <v-toolbar app fixed flat dark color='primary' class='pt-2 pb-1 toolbarGradient'>
     <v-toolbar-title class='white--text'>
       <span class='headline' v-html='extensionName' />
       <small class='caption' v-html='extensionVersion' />

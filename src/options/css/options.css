@@ -22,3 +22,6 @@ body {
 .extensionCard:hover {
 	box-shadow: 0 20px 30px rgba(125, 147, 178, 0.15)!important;
 }
+.toolbarGradient {
+  background: linear-gradient(90deg,rgba(41,182,246,.75) 0,rgba(31,30,161,.75))fixed;
+}
