@@ -17,17 +17,21 @@ function initInject() {
 function injectButton() {
 	// Style element to add custom icon
 	const dashboardButtonIcon = `
-		<style type='text/css'>.icon-tdem:before { content: '\\F400'; }</style>
+		<style type='text/css'>
+			.icon-tdem:before { 
+				content: '\\F400';
+			}
+		</style>
 	`;
 
 	// Button to inject to sidebar nav
 	const dashboardButton = `
-    <a class='tdem-dashboard-btn js-header-action link-clean cf app-nav-link padding-h--10 with-nav-border-t' data-title='TDEM Dashboard'>
-      <div class='obj-left margin-l--2'>
-        <i class='icon icon-tdem icon-medium'></i>
-      </div>
-      <div class='nbfc padding-ts hide-condensed txt-size--16'>Extension Manager</div>
-    </a>
+		<a class='tdem-dashboard-btn js-header-action link-clean cf app-nav-link padding-h--10 with-nav-border-t' data-title='TDEM Dashboard'>
+			<div class='obj-left margin-l--2'>
+				<i class='icon icon-tdem icon-medium'></i>
+			</div>
+			<div class='nbfc padding-ts hide-condensed txt-size--16'>Extension Manager</div>
+		</a>
 	`;
 
 	// Inject custom icon style element in head tag
