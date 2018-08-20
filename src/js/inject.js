@@ -7,7 +7,7 @@ function initInject() {
 	try {
 		injectButton();
 	} catch (e) {
-		throw new Error(`⚠️ Error Injecting Into TweetDeck | ${e}`);
+		throw new Error(`⚠️ Error Injecting TDEM Into TweetDeck | ${e}`);
 	}
 }
 
