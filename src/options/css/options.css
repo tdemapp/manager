@@ -24,5 +24,5 @@ body {
 }
 .extensionCardToolbar,
 .toolbarGradient {
-  background: linear-gradient(90deg,rgba(41,182,246,.75) 0,rgba(31,30,161,.75))fixed;
+  background: linear-gradient(90deg,rgb(41,182,246) 0,rgb(31,30,161))fixed;
 }
