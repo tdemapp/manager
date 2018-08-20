@@ -1,6 +1,17 @@
 import * as util from './util';
 
 /* 
+ * Initialize TDEM JS to inject into TweetDeck
+ */
+function initInject() {
+	try {
+		injectButton();
+	} catch (e) {
+		throw new Error(`⚠️ Error Injecting Into TweetDeck | ${e}`);
+	}
+}
+
+/* 
  * Injects new button at top of sidebar footer items
  */
 function injectButton() {
@@ -32,6 +43,4 @@ function injectButton() {
 	});
 }
 
-window.onload = () => {
-	injectButton();
-};
+initInject();

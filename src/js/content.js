@@ -5,7 +5,13 @@ import * as util from './util';
  */
 function initContent() {
 	console.log('🛠️ TDEM Initializing...');
-	inject();
+
+	try {
+		inject();
+		console.log('✨ TDEM Successfully Initialized!');
+	} catch (e) {
+		throw new Error(`⚠️ Error Initializing TDEM | ${e}`);
+	}
 }
 
 /* 
@@ -18,12 +24,7 @@ function inject() {
 	script.setAttribute('type', 'text/javascript');
 	script.setAttribute('src', content);
 
-	try {
-		document.head.appendChild(script);
-		console.log('✨ TDEM Successfully Injected!');
-	} catch (e) {
-		throw new Error(`⚠️ Error Injecting TDEM | ${e}`);
-	}
+	document.head.appendChild(script);
 }
 
 initContent();
