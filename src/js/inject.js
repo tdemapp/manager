@@ -1,12 +1,12 @@
 import * as util from './util';
 
 /* 
- * Innjects new button at top of sidebar footer items
+ * Injects new button at top of sidebar footer items
  */
 function injectButton() {
 	// Style element to add custom icon
 	const dashboardButtonIcon = `
-		<style type='text/css'>.icon-tdem:before { content: '\\F046'; }</style>
+		<style type='text/css'>.icon-tdem:before { content: '\\F400'; }</style>
 	`;
 
 	// Button to inject to sidebar nav
