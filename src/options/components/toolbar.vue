@@ -120,7 +120,8 @@ export default {
 		return {
 			extensionName: util.getExtensionName(),
 			extensionVersion: `v${util.getExtensionVersion()}`,
-			gistID: null,
+      gistID: null,
+      searchInput: null,
 			dialogAddExtension: false,
 			dialogSearch: false,
 			dialogSettings: false,
