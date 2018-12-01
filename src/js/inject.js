@@ -1,17 +1,6 @@
 import * as util from './util';
 
 /* 
- * Initialize TDEM JS to inject into TweetDeck
- */
-function initInject() {
-	try {
-		injectButton();
-	} catch (e) {
-		throw new Error(`⚠️ Error Injecting TDEM Into TweetDeck | ${e}`);
-	}
-}
-
-/* 
  * Injects new button at top of sidebar footer items
  */
 function injectButton() {
@@ -34,17 +23,21 @@ function injectButton() {
 		</a>
 	`;
 
-	// Inject custom icon style element in head tag
-	$('head').append(dashboardButtonIcon);
+	try {
+		// Inject custom icon style element in head tag
+		$('head').append(dashboardButtonIcon);
 
-	// Inject button at top of sidebar nav footer items
-	$('nav.app-navigator').prepend(dashboardButton);
+		// Inject button at top of sidebar nav footer items
+		$('nav.app-navigator').prepend(dashboardButton);
 
-	// Open dashbord when button is clicked
-	$('.tdem-dashboard-btn').bind('click', (e) => {
-		e.preventDefault();
-		window.open(util.getExtensionUrl('options/options.html'));
-	});
+		// Open dashbord when button is clicked
+		$('.tdem-dashboard-btn').bind('click', (e) => {
+			e.preventDefault();
+			window.open(util.getExtensionUrl('options/options.html'));
+		});
+	} catch (e) {
+		throw new Error(`⚠️ Error Injecting TDEM Into TweetDeck | ${e}`);
+	}
 }
 
-initInject();
+injectButton();

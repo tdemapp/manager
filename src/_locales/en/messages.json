@@ -1,21 +1,20 @@
 {
-  "appDesc": {
-    "message": "Install, search and manage extensions for TweetDeck"
-  },
   "appName": {
     "message": "TDEM"
   },
-
-  "dashboardSearchBarText": {
-    "message": "Search"
+  "appDesc": {
+    "message": "Install, search and manage extensions for TweetDeck"
   },
-  "dashboardDialogInfo": {
-    "message": "Info"
+  "dashboardDialogAdd": {
+    "message": "Add"
+  },
+  "dashboardDialogSearch": {
+    "message": "Search"
   },
   "dashboardDialogSettings": {
     "message": "Settings"
   },
-  "dashboardDialogAdd": {
-    "message": "Add"
+  "dashboardDialogInfo": {
+    "message": "Info"
   }
 }
