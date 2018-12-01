@@ -30,7 +30,7 @@ export default {
 		};
 	},
 	created() {
-		this.updateExtensions()
+		this.updateExtensions();
 	},
 	methods: {
 		updateExtensions() {

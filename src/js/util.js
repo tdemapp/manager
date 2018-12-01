@@ -33,8 +33,7 @@ export const addExtension = (id) => {
 		})
 		.catch((e) => {
 			throw new Error(`⚠️ Error Adding Extension | ${e}`);
-		}
-	);
+		});
 };
 
 export const storage = {

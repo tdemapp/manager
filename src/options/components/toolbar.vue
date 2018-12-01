@@ -120,15 +120,15 @@ export default {
 		return {
 			extensionName: util.getExtensionName(),
 			extensionVersion: `v${util.getExtensionVersion()}`,
-      gistID: null,
-      dialogAddExtension: false,
-      dialogSearch: false,
-      dialogSettings: false,
-      dialogInfo: false,
-      dialogTitleAddExtension: util.getMessage('dashboardDialogAdd'),
-      dialogTitleSearch: util.getMessage('dashboardDialogSearch'),
-      dialogTitleSettings: util.getMessage('dashboardDialogSettings'),
-      dialogTitleInfo: util.getMessage('dashboardDialogInfo')
+			gistID: null,
+			dialogAddExtension: false,
+			dialogSearch: false,
+			dialogSettings: false,
+			dialogInfo: false,
+			dialogTitleAddExtension: util.getMessage('dashboardDialogAdd'),
+			dialogTitleSearch: util.getMessage('dashboardDialogSearch'),
+			dialogTitleSettings: util.getMessage('dashboardDialogSettings'),
+			dialogTitleInfo: util.getMessage('dashboardDialogInfo')
 		};
 	}
 };
