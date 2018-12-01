@@ -2,6 +2,9 @@
   "appName": {
     "message": "TDEM"
   },
+  "appShortName": {
+    "message": "TweetDeck Extension Manager"
+  },
   "appDesc": {
     "message": "Install, search and manage extensions for TweetDeck"
   },

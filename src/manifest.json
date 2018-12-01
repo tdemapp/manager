@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "__MSG_appName__",
-  "short_name": "TDEM",
+  "short_name": "__MSG_appShortName__",
   "version": "1.1.1",
   "version_name": "1.1.1",
   "description": "__MSG_appDesc__",

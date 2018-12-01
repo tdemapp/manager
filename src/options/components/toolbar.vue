@@ -6,19 +6,19 @@
       <v-toolbar-items class='hidden-sm-and-down'>
         <v-btn flat @click='dialogAddExtension = true' class='pl-4 pr-4'>
           <v-icon left v-html='$vuetify.icons.add' />
-          <span>Add</span>
+          <span v-html='dialogTitleAddExtension' />
         </v-btn>
         <v-btn flat @click='dialogSearch = true' class='pl-4 pr-4'>
           <v-icon left v-html='$vuetify.icons.search' />
-          <span>Search</span>
+          <span v-html='dialogTitleSearch' />
         </v-btn>
         <v-btn flat @click='dialogSettings = true' class='pl-4 pr-4'>
           <v-icon left v-html='$vuetify.icons.settings' />
-          <span>Settings</span>
+          <span v-html='dialogTitleSettings' />
         </v-btn>
         <v-btn flat @click='dialogInfo = true' class='pl-4 pr-4'>
           <v-icon left v-html='$vuetify.icons.info' />
-          <span>Info</span>
+          <span v-html='dialogTitleInfo' />
         </v-btn>
       </v-toolbar-items>
 
