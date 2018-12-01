@@ -33,9 +33,7 @@ function initVue() {
 			github: 'feather-github',
 			settings: 'feather-settings',
 			x: 'feather-x',
-			add: 'feather-plus',
-			code: 'feather-code',
-			save: 'feather-save'
+			add: 'feather-plus'
 		}
 	});
 

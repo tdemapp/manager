@@ -19,10 +19,3 @@ body {
   border-radius: 4px !important;
   transition: all 0.3s;
 }
-.extensionCard:hover {
-	box-shadow: 0 20px 30px rgba(125, 147, 178, 0.15)!important;
-}
-.extensionCardToolbar,
-.toolbarGradient {
-  background: linear-gradient(90deg,rgb(41,182,246) 0,rgb(31,30,161))fixed;
-}
