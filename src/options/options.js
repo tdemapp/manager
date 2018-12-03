@@ -66,10 +66,10 @@ function initializeStorage() {
 	const baseStorageTemplate = {
 		options: {},
 		extensions: [
-			extensionTemplate, 
-			extensionTemplate, 
-			extensionTemplate, 
-			extensionTemplate, 
+			extensionTemplate,
+			extensionTemplate,
+			extensionTemplate,
+			extensionTemplate,
 			extensionTemplate
 		]
 	};
