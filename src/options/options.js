@@ -32,6 +32,7 @@ function initVue() {
 			info: 'feather-info',
 			twitter: 'feather-twitter',
 			github: 'feather-github',
+			donate: 'feather-dollar-sign',
 			settings: 'feather-settings',
 			x: 'feather-x',
 			add: 'feather-plus'

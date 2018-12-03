@@ -21,7 +21,7 @@
         <v-toolbar flat dark tabs color='grey darken-4' class='pr-0'>
             <v-icon v-html='$vuetify.icons.add' />
             <v-spacer />
-            <v-card-title class='headline' v-html='dialogTitleAddExtension' />
+            <v-card-title class='headline' v-html='getMessage("dashboardDialogTitleAdd")' />
             <v-spacer />
             <v-toolbar-items class='hidden-sm-and-down'>
               <v-btn flat @click='dialogAddExtension = false'>
@@ -46,7 +46,7 @@
         <v-toolbar flat dark color='grey darken-4'>
           <v-icon v-html='$vuetify.icons.settings' />
           <v-spacer />
-          <v-card-title class='headline' v-html='dialogTitleSettings' />
+          <v-card-title class='headline' v-html='getMessage("dashboardDialogTitleSettings")' />
           <v-spacer />
           <v-toolbar-items class='hidden-sm-and-down'>
             <v-btn flat @click='dialogSettings = false'>
@@ -66,7 +66,7 @@
         <v-toolbar flat dark color='grey darken-4'>
           <v-icon v-html='$vuetify.icons.info' />
           <v-spacer />
-          <v-card-title class='headline' v-html='dialogTitleInfo' />
+          <v-card-title class='headline' v-html='getMessage("dashboardDialogTitleInfo")' />
           <v-spacer />
           <v-toolbar-items class='hidden-sm-and-down'>
             <v-btn flat @click='dialogInfo = false'>
@@ -76,7 +76,32 @@
         </v-toolbar>
 
         <v-card-text>
-          Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.
+            <v-layout row wrap class='ma-2'>
+              <v-flex xs4>
+                <v-btn flat large target='_blank' href='https://twitter.com/nurodev'>
+                  <v-icon left v-html='$vuetify.icons.twitter' />
+                  <span>Twitter</span>
+                </v-btn>
+              </v-flex>
+              <v-flex xs4>
+                <v-btn flat large target='_blank' href='https://github.com/nurodev/tdem'>
+                  <v-icon left v-html='$vuetify.icons.github' />
+                  <span>GitHub</span>
+                </v-btn>
+              </v-flex>
+              <v-flex xs4>
+                <v-btn flat large target='_blank' href='https://paypal.me/meadowcottage'>
+                  <v-icon left v-html='$vuetify.icons.donate' />
+                  <span v-html='getMessage("dashboardDialogInfoDonate")' />
+                </v-btn>
+              </v-flex>
+            </v-layout>
+
+            <v-divider />
+
+            <v-layout justify-center align-center>
+              <h4 class='caption mt-3' v-html='getMessage("dashboardDialogInfoVersion") + ": " + extensionVersion' />
+            </v-layout>
         </v-card-text>
       </v-card>
     </v-dialog>
@@ -90,18 +115,18 @@ export default {
 	data() {
 		return {
 			extensionName: util.getExtensionName(),
-			extensionVersion: `v${util.getExtensionVersion()}`,
+      extensionVersion: util.getExtensionVersion(),
 			gistID: null,
 			searchInput: null,
 			dialogAddExtension: false,
-			dialogSearch: false,
 			dialogSettings: false,
 			dialogInfo: false,
-			dialogTitleAddExtension: util.getMessage('dashboardDialogAdd'),
-			dialogTitleSearch: util.getMessage('dashboardDialogSearch'),
-			dialogTitleSettings: util.getMessage('dashboardDialogSettings'),
-			dialogTitleInfo: util.getMessage('dashboardDialogInfo')
 		};
-	}
+  },
+  methods: {
+    getMessage(text) {
+      return util.getMessage(text);
+    }
+  }
 };
 </script>
