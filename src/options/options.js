@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Vuetify from 'vuetify';
 
 import * as util from '../js/util';
+import extensionTemplate from '../js/template';
 import Options from './options.vue';
 
 /* 
@@ -47,31 +48,9 @@ function initVue() {
  * Initialize Chrome Storage
  */
 function initializeStorage() {
-	const extensionTemplate = {
-		name: 'myExtension',
-		author: 'myExtensionAuthor',
-		description: 'This is myExtension!',
-		version: '1.1.1',
-		website: 'https://example.com/',
-		isEnabled: false,
-		dependencies: ['myImportantExtension'],
-		conflicts: ['veryBadExtension'],
-		create: () => {
-			console.log('myExtension created!');
-		},
-		destroy: () => {
-			console.log('myExtension destroyed!');
-		}
-	};
 	const baseStorageTemplate = {
-		options: {},
-		extensions: [
-			extensionTemplate,
-			extensionTemplate,
-			extensionTemplate,
-			extensionTemplate,
-			extensionTemplate
-		]
+		settings: {},
+		extensions: [extensionTemplate]
 	};
 
 	util.storage.set(baseStorageTemplate);
