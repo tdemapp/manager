@@ -18,26 +18,28 @@
 
     <v-dialog v-model='dialogAddExtension' max-width='640' >
         <v-card>
-        <v-toolbar flat dark tabs color='grey darken-4' class='pr-0'>
-            <v-icon v-html='$vuetify.icons.add' />
-            <v-spacer />
-            <v-card-title class='headline' v-html='getMessage("dashboardDialogTitleAdd")' />
-            <v-spacer />
-            <v-toolbar-items class='hidden-sm-and-down'>
-              <v-btn flat @click='dialogAddExtension = false'>
-                  <v-icon v-html='$vuetify.icons.x' />
+          <v-toolbar flat dark tabs color='grey darken-4' class='pr-0'>
+              <v-icon v-html='$vuetify.icons.add' />
+              <v-spacer />
+              <v-card-title class='headline' v-html='getMessage("dashboardDialogTitleAdd")' />
+              <v-spacer />
+              <v-toolbar-items class='hidden-sm-and-down'>
+                <v-btn flat @click='dialogAddExtension = false'>
+                    <v-icon v-html='$vuetify.icons.x' />
+                </v-btn>
+              </v-toolbar-items>
+          </v-toolbar>
+
+          <v-card-title>
+              <v-text-field v-model='gistID' color='grey darken-4' label='Gist ID' placeholder='1e1209f905603e1b2b77997e500df40e' />
+          </v-card-title>
+
+          <v-card-actions>
+              <v-btn flat block large color='grey darken-4' @click='addExtension(gistID)'>
+                <v-icon left v-html='$vuetify.icons.add' />
+                <span>Add</span>
               </v-btn>
-            </v-toolbar-items>
-        </v-toolbar>
-
-        <v-card-text>
-            <v-text-field v-model='gistID' label='Gist ID' placeholder='1e1209f905603e1b2b77997e500df40e' />
-
-            <v-btn flat block large color='grey darken-4' @click='addExtension(gistID)'>
-              <v-icon left v-html='$vuetify.icons.add' />
-              <span>Add</span>
-            </v-btn>
-        </v-card-text>
+          </v-card-actions>
         </v-card>
     </v-dialog>
 
