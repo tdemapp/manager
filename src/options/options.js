@@ -65,7 +65,13 @@ function initializeStorage() {
 	};
 	const baseStorageTemplate = {
 		options: {},
-		extensions: [extensionTemplate, extensionTemplate, extensionTemplate, extensionTemplate, extensionTemplate]
+		extensions: [
+			extensionTemplate, 
+			extensionTemplate, 
+			extensionTemplate, 
+			extensionTemplate, 
+			extensionTemplate
+		]
 	};
 
 	util.storage.set(baseStorageTemplate);
