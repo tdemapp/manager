@@ -3,7 +3,7 @@ export default {
 	author: 'myExtensionAuthor',
 	description: 'This is myExtension!',
 	version: '1.1.1',
-	website: 'https://example.com/',
+	website: 'https://gist.github.com/',
 	isEnabled: false,
 	dependencies: ['myImportantExtension'],
 	conflicts: ['veryBadExtension'],
