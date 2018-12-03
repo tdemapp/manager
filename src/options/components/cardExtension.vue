@@ -6,7 +6,7 @@
 			<v-card-text :class='isEnabled ? "white--text subheading" : "grey--text subheading"'>
 				<span v-html='name' />
 				<br />
-				<span class='caption' v-html='"Version: " + version' />
+				<span class='caption' v-html='getMessage("dashboardExtensionVersion") + ": " + version' />
 			</v-card-text>
 
       <v-spacer />
@@ -68,6 +68,9 @@ export default {
 		toggleExtension() {
 			let currentState = util.storage.get((storage) => storage.extensions.isEnabled);
 			util.storage.set(currentState);
+		},
+		getMessage(text) {
+			return util.getMessage(text);
 		}
 	}
 };

@@ -25,5 +25,8 @@
   },
   "dashboardDialogInfoVersion": {
     "message": "Version"
+  },
+  "dashboardExtensionVersion": {
+    "message": "version"
   }
 }
