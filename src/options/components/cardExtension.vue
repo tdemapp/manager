@@ -1,6 +1,6 @@
 <template>
   <v-card class='ma-2 extensionCard'>
-    <v-toolbar flat :class='isExtensionEnabled ? "blue darken-2 pt-3 pb-3" : "white pt-3 pb-3"'>
+    <v-toolbar flat :class='isExtensionEnabled ? "grey darken-4 pt-3 pb-3" : "white pt-3 pb-3"'>
 			<v-icon large :dark='isExtensionEnabled' v-html='$vuetify.icons.package' />
 
 			<v-card-text :class='isExtensionEnabled ? "white--text subheading" : "grey--text subheading"'>
@@ -21,10 +21,10 @@
     <v-card-text class='caption' v-html='description' />
 
 		<v-card-actions>
-			<v-btn flat icon large :color='isExtensionEnabled ? "primary": "grey"' target='_blank' :href='website'>
+			<v-btn flat icon large :color='isExtensionEnabled ? "grey--darken-4": "grey"' target='_blank' :href='website'>
 				<v-icon v-html='$vuetify.icons.link' />
 			</v-btn>
-			<v-btn flat icon large :color='isExtensionEnabled ? "primary": "grey"'>
+			<v-btn flat icon large :color='isExtensionEnabled ? "grey--darken-4": "grey"'>
 				<v-icon v-html='$vuetify.icons.refresh' />
 			</v-btn>
 

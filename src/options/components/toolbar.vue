@@ -1,33 +1,24 @@
 <template>
   <section>
-    <v-toolbar app fixed flat dark color='primary'>
-      <v-spacer />
+    <v-toolbar app fixed permanent flat dark class='transparent'>
+      <v-text-field light solo label='Search' class='mr-1 ml-2 mt-3 elevation-0' color='grey darken-4' :prepend-icon='$vuetify.icons.search' />
 
-      <v-toolbar-items class='hidden-sm-and-down'>
-        <v-btn flat @click='dialogAddExtension = true' class='pl-4 pr-4'>
-          <v-icon left v-html='$vuetify.icons.add' />
-          <span v-html='dialogTitleAddExtension' />
+      <div class='mr-4'>
+        <v-btn flat large @click='dialogAddExtension = true' light class='mt-3'>
+          <v-icon v-html='$vuetify.icons.add' />
         </v-btn>
-        <v-btn flat @click='dialogSearch = true' class='pl-4 pr-4'>
-          <v-icon left v-html='$vuetify.icons.search' />
-          <span v-html='dialogTitleSearch' />
+        <v-btn flat large @click='dialogSettings = true' light class='mt-3'>
+          <v-icon v-html='$vuetify.icons.settings' />
         </v-btn>
-        <v-btn flat @click='dialogSettings = true' class='pl-4 pr-4'>
-          <v-icon left v-html='$vuetify.icons.settings' />
-          <span v-html='dialogTitleSettings' />
+        <v-btn flat large @click='dialogInfo = true' light class='mt-3'>
+          <v-icon v-html='$vuetify.icons.info' />
         </v-btn>
-        <v-btn flat @click='dialogInfo = true' class='pl-4 pr-4'>
-          <v-icon left v-html='$vuetify.icons.info' />
-          <span v-html='dialogTitleInfo' />
-        </v-btn>
-      </v-toolbar-items>
-
-      <v-spacer />
+      </div>
     </v-toolbar>
 
     <v-dialog v-model='dialogAddExtension' max-width='640' >
         <v-card>
-        <v-toolbar flat dark tabs color='primary' class='pr-0'>
+        <v-toolbar flat dark tabs color='grey darken-4' class='pr-0'>
             <v-icon v-html='$vuetify.icons.add' />
             <v-spacer />
             <v-card-title class='headline' v-html='dialogTitleAddExtension' />
@@ -42,7 +33,7 @@
         <v-card-text>
             <v-text-field v-model='gistID' label='Gist ID' placeholder='1e1209f905603e1b2b77997e500df40e' />
 
-            <v-btn flat block large color='primary' @click='addExtension(gistID)'>
+            <v-btn flat block large color='grey darken-4' @click='addExtension(gistID)'>
               <v-icon left v-html='$vuetify.icons.add' />
               <span>Add</span>
             </v-btn>
@@ -50,29 +41,9 @@
         </v-card>
     </v-dialog>
 
-    <v-dialog v-model='dialogSearch' max-width='640' >
-        <v-card>
-        <v-toolbar flat dark color='primary'>
-          <v-icon v-html='$vuetify.icons.search' />
-          <v-spacer />
-          <v-card-title class='headline' v-html='dialogTitleSearch' />
-          <v-spacer />
-          <v-toolbar-items class='hidden-sm-and-down'>
-            <v-btn flat @click='dialogSearch = false'>
-              <v-icon v-html='$vuetify.icons.x' />
-            </v-btn>
-          </v-toolbar-items>
-        </v-toolbar>
-
-        <v-card-text>
-          <v-text-field v-model='searchInput' outline label='Extension Name' />
-        </v-card-text>
-      </v-card>
-    </v-dialog>
-
     <v-dialog v-model='dialogSettings' max-width='840' >
       <v-card>
-        <v-toolbar flat dark color='primary'>
+        <v-toolbar flat dark color='grey darken-4'>
           <v-icon v-html='$vuetify.icons.settings' />
           <v-spacer />
           <v-card-title class='headline' v-html='dialogTitleSettings' />
@@ -92,7 +63,7 @@
     
     <v-dialog v-model='dialogInfo' max-width='640' >
       <v-card>
-        <v-toolbar flat dark color='primary'>
+        <v-toolbar flat dark color='grey darken-4'>
           <v-icon v-html='$vuetify.icons.info' />
           <v-spacer />
           <v-card-title class='headline' v-html='dialogTitleInfo' />
