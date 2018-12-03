@@ -117,18 +117,19 @@ export default {
 	data() {
 		return {
 			extensionName: util.getExtensionName(),
-      extensionVersion: util.getExtensionVersion(),
+			extensionVersion: util.getExtensionVersion(),
 			gistID: null,
 			searchInput: null,
+			dialogSearch: false,
 			dialogAddExtension: false,
 			dialogSettings: false,
-			dialogInfo: false,
+			dialogInfo: false
 		};
-  },
-  methods: {
-    getMessage(text) {
-      return util.getMessage(text);
-    }
-  }
+	},
+	methods: {
+		getMessage(text) {
+			return util.getMessage(text);
+		}
+	}
 };
 </script>
