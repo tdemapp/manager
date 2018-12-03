@@ -14,7 +14,7 @@ export const getMessage = (msg) => {
 	const string = chrome.i18n.getMessage(msg);
 
 	if (string === '') {
-		throw new Error(`Error: No Message found for ${msg} in locales`);
+		throw new Error(`No Message found for "${msg}" in locales`);
 	}
 
 	return string;
