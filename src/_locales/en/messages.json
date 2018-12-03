@@ -23,8 +23,8 @@
   "dashboardDialogInfoDonate": {
     "message": "Donate"
   },
-  "dashboardDialogInfoVersion": {
-    "message": "Version"
+  "dashboardDialogInfoAppVersion": {
+    "message": "App Version"
   },
   "dashboardExtensionVersion": {
     "message": "version"

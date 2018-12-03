@@ -102,7 +102,7 @@
             <v-divider />
 
             <v-layout justify-center align-center>
-              <h4 class='caption mt-3' v-html='getMessage("dashboardDialogInfoVersion") + ": " + extensionVersion' />
+              <h4 class='caption mt-3' v-html='getMessage("dashboardDialogInfoAppVersion") + ": " + extensionVersion' />
             </v-layout>
         </v-card-text>
       </v-card>
