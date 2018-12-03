@@ -1,23 +1,29 @@
 {
   "appName": {
-    "message": "TDEM"
+    "message": "TweetDeck Extension Manager"
   },
   "appShortName": {
-    "message": "TweetDeck Extension Manager"
+    "message": "TDEM"
   },
   "appDesc": {
     "message": "Install, search and manage extensions for TweetDeck"
   },
-  "dashboardDialogAdd": {
+  "dashboardDialogTitleAdd": {
     "message": "Add"
   },
-  "dashboardDialogSearch": {
+  "dashboardDialogTitleSearch": {
     "message": "Search"
   },
-  "dashboardDialogSettings": {
+  "dashboardDialogTitleSettings": {
     "message": "Settings"
   },
-  "dashboardDialogInfo": {
+  "dashboardDialogTitleInfo": {
     "message": "Info"
+  },
+  "dashboardDialogInfoDonate": {
+    "message": "Donate"
+  },
+  "dashboardDialogInfoVersion": {
+    "message": "Version"
   }
 }
