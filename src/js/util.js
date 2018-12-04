@@ -48,10 +48,10 @@ export const storage = {
 		});
 	},
 	setLocal(obj, cb) {
-		this.get((currentSettings) => {
+		this.getLocal((currentSettings) => {
 			chrome.storage.local.set(Object.assign(currentSettings, obj), () => {
 				if (cb) {
-					return this.get(cb);
+					return this.getLocal(cb);
 				}
 
 				return false;
@@ -59,10 +59,10 @@ export const storage = {
 		});
 	},
 	setSync(obj, cb) {
-		this.get((currentSettings) => {
+		this.getSync((currentSettings) => {
 			chrome.storage.sync.set(Object.assign(currentSettings, obj), () => {
 				if (cb) {
-					return this.get(cb);
+					return this.getSync(cb);
 				}
 
 				return false;
