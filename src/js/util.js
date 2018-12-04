@@ -37,14 +37,30 @@ export const addExtension = (id) => {
 };
 
 export const storage = {
-	get(done) {
+	getLocal(done) {
 		chrome.storage.local.get(null, (obj) => {
 			done(obj);
 		});
 	},
-	set(obj, cb) {
+	getSync(done) {
+		chrome.storage.sync.get(null, (obj) => {
+			done(obj);
+		});
+	},
+	setLocal(obj, cb) {
 		this.get((currentSettings) => {
 			chrome.storage.local.set(Object.assign(currentSettings, obj), () => {
+				if (cb) {
+					return this.get(cb);
+				}
+
+				return false;
+			});
+		});
+	},
+	setSync(obj, cb) {
+		this.get((currentSettings) => {
+			chrome.storage.sync.set(Object.assign(currentSettings, obj), () => {
 				if (cb) {
 					return this.get(cb);
 				}

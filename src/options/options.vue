@@ -38,7 +38,7 @@ export default {
 	},
 	methods: {
 		updateExtensions() {
-			util.storage.get((storage) => {
+			util.storage.getLocal((storage) => {
 				this.extensionsStorage = storage.extensions;
 			});
 		}

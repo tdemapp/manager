@@ -49,12 +49,17 @@ function initVue() {
  * Initialize Chrome Storage
  */
 function initializeStorage() {
-	const baseStorageTemplate = {
-		settings: {},
-		extensions: [extensionTemplate]
+	const baseSettingsStorageTemplate = {
+		settings: {}
 	};
+	const baseExtensionStorageTemplate = {
+		extensions: [extensionTemplate]
+	}
 
-	util.storage.set(baseStorageTemplate);
+	// Setting can be synced as their total byte size for storage does not exceed max storage size (Chrome max sync storage size: 102,400 bytes)
+	// Extension storage is much larger than settings, as such they need to be storaed locally. (Chrome max local storage size: 5,242,880 bytes)
+	util.storage.setSync(baseSettingsStorageTemplate)
+	util.storage.setLocal(baseExtensionStorageTemplate);
 }
 
 initOptions();

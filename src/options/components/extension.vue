@@ -66,8 +66,8 @@ export default {
 	},
 	methods: {
 		toggleExtension() {
-			let currentState = util.storage.get((storage) => storage.extensions.isEnabled);
-			util.storage.set(currentState);
+			let currentState = util.storage.getLocal((storage) => storage.extensions.isEnabled);
+			util.storage.setLocal(currentState);
 		},
 		getMessage(text) {
 			return util.getMessage(text);
