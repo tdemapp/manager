@@ -16,8 +16,9 @@
 
 <script>
 import * as util from '~/js/util';
+import AddBtn from './components/addBtn';
 import Extension from './components/extension';
-import Toolbar from './components/toolbar.vue';
+import Toolbar from './components/toolbar';
 
 export default {
 	components: {
