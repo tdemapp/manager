@@ -13,10 +13,10 @@
 .v-text-field.v-text-field--solo:not(.v-text-field--solo-flat) .v-input__slot {
   border-radius: 6px !important;
   transition: all 0.3s;
-  box-shadow: 0 8px 15px rgba(33, 33, 33, 0.10)!important;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.12)!important;
 }
 .v-text-field.v-text-field--solo:not(.v-text-field--solo-flat) .v-input__slot:hover {
-  box-shadow: 0 16px 15px rgba(33, 33, 33, 0.10)!important;
+  box-shadow: 0 8px 15px rgba(33, 33, 33, 0.10)!important;
 }
 
 /* 
@@ -36,8 +36,8 @@ body {
 .extensionCard {
   border-radius: 6px !important;
   transition: all 0.3s;
-  box-shadow: 0 8px 15px rgba(33, 33, 33, 0.10)!important;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.12)!important;
 }
 .extensionCard:hover {
-  box-shadow: 0 16px 15px rgba(33, 33, 33, 0.10)!important;
+  box-shadow: 0 8px 15px rgba(33, 33, 33, 0.10)!important;
 }
