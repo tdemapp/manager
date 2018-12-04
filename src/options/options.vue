@@ -10,6 +10,8 @@
                     </v-flex>
                 </v-layout>
             </v-container>
+
+			<AddBtn />
 		</v-content>
     </v-app>
 </template>
@@ -22,6 +24,7 @@ import Toolbar from './components/toolbar';
 
 export default {
 	components: {
+		AddBtn,
 		Extension,
 		Toolbar
 	},

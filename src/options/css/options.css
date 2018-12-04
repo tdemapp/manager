@@ -18,6 +18,9 @@
 .v-text-field.v-text-field--solo:not(.v-text-field--solo-flat) .v-input__slot:hover {
   box-shadow: 0 8px 15px rgba(33, 33, 33, 0.10)!important;
 }
+.v-btn--floating {
+  border-radius: 100%!important;
+}
 
 /* 
  * Dashboard styles
