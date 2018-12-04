@@ -59,3 +59,7 @@
 .feather-plus:before {
     content: "\e8b1"
 }
+
+.feather-download:before {
+    content:"\e864"
+}

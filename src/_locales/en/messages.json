@@ -23,6 +23,9 @@
   "dashboardDialogInfoDonate": {
     "message": "Donate"
   },
+  "dashboardDialogInfoDownloadSettings": {
+    "message": "Download Settings"
+  },
   "dashboardDialogInfoAppVersion": {
     "message": "App Version"
   },

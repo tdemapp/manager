@@ -48,31 +48,35 @@
         </v-toolbar>
 
         <v-card-text>
-            <v-layout row wrap class='ma-2'>
-              <v-flex xs4>
-                <v-btn flat large target='_blank' href='https://twitter.com/nurodev'>
+            <v-layout row wrap>
+              <v-flex xs5 class='mb-2 ml-4 mr-4'>
+                <v-btn flat large block target='_blank' href='https://twitter.com/nurodev'>
                   <v-icon left v-html='$vuetify.icons.twitter' />
                   <span>Twitter</span>
                 </v-btn>
               </v-flex>
-              <v-flex xs4>
-                <v-btn flat large target='_blank' href='https://github.com/nurodev/tdem'>
+              <v-flex xs5 class='mb-2 ml-4 mr-4'>
+                <v-btn flat large block target='_blank' href='https://github.com/nurodev/tdem'>
                   <v-icon left v-html='$vuetify.icons.github' />
                   <span>GitHub</span>
-                </v-btn>
-              </v-flex>
-              <v-flex xs4>
-                <v-btn flat large target='_blank' href='https://paypal.me/meadowcottage'>
-                  <v-icon left v-html='$vuetify.icons.donate' />
-                  <span v-html='getMessage("dashboardDialogInfoDonate")' />
                 </v-btn>
               </v-flex>
             </v-layout>
 
             <v-divider />
 
-            <v-layout justify-center align-center>
-              <h4 class='caption mt-3' v-html='getMessage("dashboardDialogInfoAppVersion") + ": " + extensionVersion' />
+            <v-layout row wrap>
+              <v-flex xs5 class='mt-2 ml-4 mr-4'>
+                <v-btn flat large block disabled>
+                  <span v-html='getMessage("dashboardDialogInfoAppVersion") + ": " + extensionVersion' />
+                </v-btn>
+              </v-flex>
+              <v-flex xs5 class='mt-2 ml-4 mr-4'>
+                <v-btn flat large block>
+                  <v-icon left v-html='$vuetify.icons.download' />
+                  <span v-html='getMessage("dashboardDialogInfoDownloadSettings")' />
+                </v-btn>
+              </v-flex>
             </v-layout>
         </v-card-text>
       </v-card>
@@ -87,11 +91,13 @@ export default {
 	data() {
 		return {
 			extensionName: util.getExtensionName(),
-			extensionVersion: util.getExtensionVersion(),
+      extensionVersion: util.getExtensionVersion(),
+      infoTab: null,
 			searchInput: null,
 			dialogSearch: false,
 			dialogSettings: false,
-			dialogInfo: false
+      dialogInfo: false,
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
 		};
 	},
 	methods: {

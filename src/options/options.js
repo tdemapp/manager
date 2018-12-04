@@ -35,7 +35,8 @@ function initVue() {
 			donate: 'feather-dollar-sign',
 			settings: 'feather-settings',
 			x: 'feather-x',
-			add: 'feather-plus'
+			add: 'feather-plus',
+			download: 'feather-download'
 		}
 	});
 
