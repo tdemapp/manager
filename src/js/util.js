@@ -38,13 +38,13 @@ export const addExtension = (id) => {
 
 export const storage = {
 	get(done) {
-		chrome.storage.sync.get(null, (obj) => {
+		chrome.storage.local.get(null, (obj) => {
 			done(obj);
 		});
 	},
 	set(obj, cb) {
 		this.get((currentSettings) => {
-			chrome.storage.sync.set(Object.assign(currentSettings, obj), () => {
+			chrome.storage.local.set(Object.assign(currentSettings, obj), () => {
 				if (cb) {
 					return this.get(cb);
 				}
