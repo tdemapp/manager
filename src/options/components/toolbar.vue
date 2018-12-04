@@ -1,6 +1,6 @@
 <template>
   <section>
-    <v-toolbar app fixed permanent flat dark class='transparent'>
+    <v-toolbar flat dark class='transparent mt-3'>
       <v-text-field light solo label='Search' class='mr-1 ml-2 mt-3 elevation-0' color='grey darken-4' :prepend-icon='$vuetify.icons.search' />
 
       <div class='mr-4'>
