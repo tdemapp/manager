@@ -1,0 +1,61 @@
+@font-face {
+    font-family: feather;
+    src: url(chrome-extension://__MSG_@@extension_id__/fonts/feather.eot);
+    src: url(chrome-extension://__MSG_@@extension_id__/fonts/feather.eot#iefix) format('embedded-opentype'), url(chrome-extension://__MSG_@@extension_id__/fonts/feather.woff) format('woff'), url(chrome-extension://__MSG_@@extension_id__/fonts/feather.ttf) format('truetype'), url(chrome-extension://__MSG_@@extension_id__/fonts/feather.svg#feather) format('svg')
+}
+
+.feather {
+    font-family: feather!important;
+    font-size: 24px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.feather-package:before {
+    content: "\e8a1"
+}
+
+.feather-external-link:before {
+    content: "\e869"
+}
+
+.feather-refresh-cw:before {
+    content: "\e8ba"
+}
+
+.feather-trash-2:before {
+    content: "\e8da"
+}
+
+.feather-search:before {
+    content: "\e8bd"
+}
+
+.feather-info:before {
+    content: "\e87f"
+}
+
+.feather-twitter:before {
+    content: "\e8e0"
+}
+
+.feather-github:before {
+    content: "\e87b"
+}
+
+.feather-dollar-sign:before {
+    content: "\e917"
+}
+
+.feather-settings:before {
+    content: "\e8c3"
+}
+
+.feather-x:before {
+    content: "\e8f6"
+}
+
+.feather-plus:before {
+    content: "\e8b1"
+}
