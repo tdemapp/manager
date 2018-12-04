@@ -21,7 +21,7 @@
           <v-card-title class='headline' v-html='getMessage("dashboardDialogTitleSettings")' />
           <v-spacer />
           <v-toolbar-items class='hidden-sm-and-down'>
-            <v-btn flat @click='dialogSettings = false'>
+            <v-btn flat class='squareCorners' @click='dialogSettings = false'>
               <v-icon v-html='$vuetify.icons.x' />
             </v-btn>
           </v-toolbar-items>
@@ -41,7 +41,7 @@
           <v-card-title class='headline' v-html='getMessage("dashboardDialogTitleInfo")' />
           <v-spacer />
           <v-toolbar-items class='hidden-sm-and-down'>
-            <v-btn flat @click='dialogInfo = false'>
+            <v-btn flat class='squareCorners' @click='dialogInfo = false'>
               <v-icon v-html='$vuetify.icons.x' />
             </v-btn>
           </v-toolbar-items>

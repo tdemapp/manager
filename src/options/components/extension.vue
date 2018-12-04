@@ -1,5 +1,5 @@
 <template>
-  <v-card class='ma-2 extensionCard'>
+  <v-card class='ma-2 defaultCorners defaultShadow'>
     <v-toolbar flat :class='isEnabled ? "grey darken-4 pt-3 pb-3" : "white pt-3 pb-3"'>
 			<v-icon large :dark='isEnabled' v-html='$vuetify.icons.package' />
 
