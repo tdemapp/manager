@@ -5,8 +5,8 @@
   "author": "Ben Dixon <me@nuro.sh>(https://nuro.sh)",
   "license": "MIT",
   "scripts": {
-    "build": "rimraf cache/ dist/ && parcel build src/manifest.json --no-source-maps --no-cache --log-level 3",
-    "dev": "rimraf cache/ dist/ && parcel watch src/manifest.json --no-source-maps --no-cache --log-level 3",
+    "build": "rimraf .cache/ dist/ && parcel build src/manifest.json --no-source-maps --no-cache --log-level 3",
+    "dev": "rimraf .cache/ dist/ && parcel watch src/manifest.json --no-source-maps --no-cache --log-level 3",
     "package": "npm run build && crx pack dist -o TDEM.crx",
     "lint": "prettier --config .prettierrc.json --write '**/*.{js,ts,vue}'"
   },
