@@ -17,8 +17,14 @@
   "dashboardDialogTitleSettings": {
     "message": "Settings"
   },
+  "dashboardDialogSubTitleSettingsDisplay": {
+    "message": "Display"
+  },
   "dashboardDialogTitleInfo": {
     "message": "Info"
+  },
+  "dashboardDialogSubTitleInfoLinks": {
+    "message": "Links"
   },
   "dashboardDialogInfoChrome": {
     "message": "Chrome Store"
@@ -29,11 +35,14 @@
   "dashboardDialogInfoTwitterTDEM": {
     "message": "tdem_app"
   },
-  "dashboardDialogInfoDownloadSettings": {
-    "message": "Download Settings"
+  "dashboardDialogSubTitleInfoDebug": {
+    "message": "Debug"
   },
   "dashboardDialogInfoAppVersion": {
     "message": "App Version"
+  },
+  "dashboardDialogInfoDownloadSettings": {
+    "message": "Download Settings"
   },
   "dashboardExtensionVersion": {
     "message": "version"

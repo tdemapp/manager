@@ -28,7 +28,7 @@
 
         <v-card-text>
             <section>
-              <h1 class='headline spacedLetters upperCase ma-2'>Display</h1>
+              <h1 class='headline spacedLetters upperCase boldTitle ma-2 mb-3' v-html='getMessage("dashboardDialogSubTitleSettingsDisplay") + ":"' />
               <v-divider />
               <v-layout align-center justify-center row fill-height>
                 <v-flex xs4 class='mt-2 ml-4 mr-4'>
@@ -90,6 +90,7 @@
               </v-flex>
             </v-layout>
 
+            <h1 class='headline spacedLetters upperCase boldTitle ma-2' v-html='getMessage("dashboardDialogSubTitleInfoDebug") + ":"' />
             <v-divider />
 
             <v-layout row wrap>
