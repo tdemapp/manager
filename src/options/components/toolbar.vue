@@ -95,7 +95,7 @@
             <v-layout row wrap>
               <v-flex xs5 class='mt-2 ml-4 mr-4'>
                 <v-btn flat large block disabled>
-                  <span v-html='getMessage("dashboardDialogInfoAppVersion") + ": " + extensionVersion' />
+                  <span class='spacedLetters' v-html='getMessage("dashboardDialogInfoAppVersion") + ": " + extensionVersion' />
                 </v-btn>
               </v-flex>
               <v-flex xs5 class='mt-2 ml-4 mr-4'>

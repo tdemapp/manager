@@ -10,8 +10,7 @@
             <v-card>
             <v-toolbar flat dark tabs color='grey darken-4' class='pr-0'>
                 <v-icon v-html='$vuetify.icons.add' />
-                <v-spacer />
-                <v-card-title class='headline' v-html='getMessage("dashboardDialogTitleAdd")' />
+                <v-card-title class='headline spacedLetters upperCase' v-html='getMessage("dashboardDialogTitleAdd")' />
                 <v-spacer />
                 <v-toolbar-items class='hidden-sm-and-down'>
                     <v-btn flat class='squareCorners' @click='dialogAddExtension = false'>
@@ -28,7 +27,7 @@
                 <v-flex xs2>
                     <v-btn flat large color='grey darken-4' @click='addExtension(gistID)'>
                     <v-icon left v-html='$vuetify.icons.add' />
-                    <span>Add</span>
+                    <span class='spacedLetters'>Add</span>
                     </v-btn>
                 </v-flex>
                 </v-layout>
