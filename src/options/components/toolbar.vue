@@ -17,8 +17,7 @@
       <v-card>
         <v-toolbar flat dark color='grey darken-4'>
           <v-icon v-html='$vuetify.icons.settings' />
-          <v-spacer />
-          <v-card-title class='headline' v-html='getMessage("dashboardDialogTitleSettings")' />
+          <v-card-title class='headline spacedLetters upperCase ml-2' v-html='getMessage("dashboardDialogTitleSettings")' />
           <v-spacer />
           <v-toolbar-items class='hidden-sm-and-down'>
             <v-btn flat class='squareCorners' @click='dialogSettings = false'>
@@ -37,8 +36,7 @@
       <v-card>
         <v-toolbar flat dark color='grey darken-4'>
           <v-icon v-html='$vuetify.icons.info' />
-          <v-spacer />
-          <v-card-title class='headline' v-html='getMessage("dashboardDialogTitleInfo")' />
+          <v-card-title class='headline spacedLetters upperCase ml-2' v-html='getMessage("dashboardDialogTitleInfo")' />
           <v-spacer />
           <v-toolbar-items class='hidden-sm-and-down'>
             <v-btn flat class='squareCorners' @click='dialogInfo = false'>

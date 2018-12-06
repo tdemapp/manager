@@ -33,6 +33,12 @@ body {
   background-color: #fafcff;
   font-family: 'Roboto', Tahoma, Geneva, Verdana, sans-serif;
 }
+.spacedLetters {
+  letter-spacing: .20em!important;
+}
+.upperCase {
+  text-transform: uppercase!important;
+}
 .defaultCorners {
   border-radius: 6px !important;
 }
