@@ -96,13 +96,13 @@
             <h1 class='headline spacedLetters upperCase boldTitle ma-2' v-html='getMessage("dashboard_dialog_info_subtitle_debug") + ":"' />
             <v-divider />
 
-            <v-layout row wrap>
-              <v-flex xs5 class='mt-2 ml-4 mr-4'>
+            <v-layout row wrap class='mt-2'>
+              <v-flex xs5 class='ml-4 mr-4'>
                 <v-btn flat large block disabled>
                   <span class='spacedLetters' v-html='getMessage("dashboard_dialog_info_app_version") + ": " + extensionVersion' />
                 </v-btn>
               </v-flex>
-              <v-flex xs5 class='mt-2 ml-4 mr-4'>
+              <v-flex xs5 class='ml-4 mr-4'>
                 <v-btn flat large block>
                   <v-icon left v-html='$vuetify.icons.download' />
                   <span v-html='getMessage("dashboard_dialog_info_btn_download_settings")' />
