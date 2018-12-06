@@ -50,15 +50,27 @@
         <v-card-text>
             <v-layout row wrap>
               <v-flex xs5 class='mb-2 ml-4 mr-4'>
-                <v-btn flat large block target='_blank' href='https://twitter.com/nurodev'>
-                  <v-icon left v-html='$vuetify.icons.twitter' />
-                  <span>Twitter</span>
+                <v-btn flat large block target='_blank' href='https://chrome.google.com/webstore/detail/tdem/'>
+                  <v-icon left v-html='$vuetify.icons.chrome' />
+                  <span v-html='getMessage("dashboardDialogInfoChrome")' />
                 </v-btn>
               </v-flex>
               <v-flex xs5 class='mb-2 ml-4 mr-4'>
                 <v-btn flat large block target='_blank' href='https://github.com/nurodev/tdem'>
                   <v-icon left v-html='$vuetify.icons.github' />
                   <span>GitHub</span>
+                </v-btn>
+              </v-flex>
+              <v-flex xs5 class='mb-2 ml-4 mr-4'>
+                <v-btn flat large block target='_blank' href='https://twitter.com/nurodev'>
+                  <v-icon left v-html='$vuetify.icons.twitter' />
+                  <span v-html='"@" + getMessage("dashboardDialogInfoTwitterPersonal")' />
+                </v-btn>
+              </v-flex>
+              <v-flex xs5 class='mb-2 ml-4 mr-4'>
+                <v-btn flat large block target='_blank' href='https://twitter.com/tdem_app'>
+                  <v-icon left v-html='$vuetify.icons.twitter' />
+                  <span v-html='"@" + getMessage("dashboardDialogInfoTwitterTDEM")' />
                 </v-btn>
               </v-flex>
             </v-layout>

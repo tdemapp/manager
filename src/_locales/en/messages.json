@@ -20,8 +20,14 @@
   "dashboardDialogTitleInfo": {
     "message": "Info"
   },
-  "dashboardDialogInfoDonate": {
-    "message": "Donate"
+  "dashboardDialogInfoChrome": {
+    "message": "Chrome Store"
+  },
+  "dashboardDialogInfoTwitterPersonal": {
+    "message": "nurodev"
+  },
+  "dashboardDialogInfoTwitterTDEM": {
+    "message": "tdem_app"
   },
   "dashboardDialogInfoDownloadSettings": {
     "message": "Download Settings"

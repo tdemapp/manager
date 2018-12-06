@@ -36,7 +36,8 @@ function initVue() {
 			settings: 'feather-settings',
 			x: 'feather-x',
 			add: 'feather-plus',
-			download: 'feather-download'
+			download: 'feather-download',
+			chrome: 'feather-chrome',
 		}
 	});
 
