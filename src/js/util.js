@@ -1,3 +1,5 @@
+import { util } from 'node-forge';
+
 export const getExtensionUrl = (...args) => {
 	return chrome.extension.getURL(...args);
 };

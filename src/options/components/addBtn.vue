@@ -53,10 +53,10 @@ export default {
 			if (!util.addExtension(url)) {
 				this.dialog = false;
 			}
-        },
-        getMessage(text) {
-            return util.getMessage('dashboardDialogTitleAdd')
-        }
+		},
+		getMessage(text) {
+			return util.getMessage('dashboardDialogTitleAdd');
+		}
 	}
 };
 </script>
