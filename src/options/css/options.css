@@ -39,6 +39,9 @@ body {
 .upperCase {
   text-transform: uppercase!important;
 }
+.boldTitle {
+  font-weight: 900!important;
+}
 .defaultCorners {
   border-radius: 6px !important;
 }

@@ -63,7 +63,10 @@
         </v-toolbar>
 
         <v-card-text>
-            <v-layout row wrap>
+            <h1 class='headline spacedLetters upperCase boldTitle ma-2' v-html='getMessage("dashboardDialogSubTitleInfoLinks") + ":"' />
+            <v-divider />
+            
+            <v-layout row wrap class='mt-2'>
               <v-flex xs5 class='mb-2 ml-4 mr-4'>
                 <v-btn flat large block target='_blank' href='https://chrome.google.com/webstore/detail/tdem/'>
                   <v-icon left v-html='$vuetify.icons.chrome' />
