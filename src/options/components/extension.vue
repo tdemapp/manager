@@ -1,19 +1,23 @@
 <template>
   <v-card class='ma-2 defaultCorners defaultShadow'>
     <v-toolbar flat :class='isEnabled ? "grey darken-4 pt-3 pb-3" : "white pt-3 pb-3"'>
-			<v-icon large :dark='isEnabled' v-html='$vuetify.icons.package' />
-
-			<v-card-text :class='isEnabled ? "white--text subheading" : "grey--text subheading"'>
-				<span v-html='name' />
-				<br />
-				<span class='caption' v-html='getMessage("dashboardExtensionVersion") + ": " + version' />
-			</v-card-text>
-
-      <v-spacer />
-
-      <v-card-actions>
-        <v-switch class='mt-3' color='white' v-model='isEnabled' />
-      </v-card-actions>
+			<v-layout align-center justify-start row fill-height>
+				<v-flex xs1>
+					<v-icon large :dark='isEnabled' v-html='$vuetify.icons.package' />
+				</v-flex>
+				<v-flex xs9>
+					<v-card-text :class='isEnabled ? "white--text subheading" : "grey--text subheading"'>
+						<span v-html='name' />
+						<br />
+						<span class='caption' v-html='getMessage("dashboardExtensionVersion") + ": " + version' />
+					</v-card-text>
+				</v-flex>
+				<v-flex xs1>
+					<v-card-actions>
+						<v-switch class='mt-3' color='white' v-model='isEnabled' />
+					</v-card-actions>
+				</v-flex>
+			</v-layout>
     </v-toolbar>
 
 		<v-divider :class='isEnabled ? "transparent ml-3 mr-3" : "ml-3 mr-3"' />
