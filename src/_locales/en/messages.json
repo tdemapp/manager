@@ -1,50 +1,66 @@
 {
   "appName": {
-    "message": "TweetDeck Extension Manager"
+    "message": "TweetDeck Extension Manager",
+    "description": "The title of the extension, displayed in the web store"
   },
   "appShortName": {
-    "message": "TDEM"
+    "message": "TDEM",
+    "description": "The short title of the extension, displayed in extension list"
   },
   "appDesc": {
-    "message": "Install, search and manage extensions for TweetDeck"
+    "message": "Install, search and manage extensions for TweetDeck",
+    "description": "The description of the application, displayed in the web store"
   },
-  "dashboardDialogTitleAdd": {
-    "message": "Add"
+  "dashboard_dialog_add_title": {
+    "message": "Add",
+    "description": "The title for the add extension dialog"
   },
-  "dashboardDialogTitleSearch": {
-    "message": "Search"
+  "dashboard_dialog_add_btn": {
+    "message": "Add",
+    "description": "The text for the add button in the add dialog"
   },
-  "dashboardDialogTitleSettings": {
-    "message": "Settings"
+  "dashboard_dialog_settings_title": {
+    "message": "Settings",
+    "description": "The title for the settings dialog"
   },
-  "dashboardDialogSubTitleSettingsDisplay": {
-    "message": "Display"
+  "dashboard_dialog_settings_subtitle_display": {
+    "message": "Display",
+    "description": "The sub-title for the settings dialog display section"
   },
-  "dashboardDialogTitleInfo": {
-    "message": "Info"
+  "dashboard_dialog_info_title": {
+    "message": "Info",
+    "description": "The title for the info dialog"
   },
-  "dashboardDialogSubTitleInfoLinks": {
-    "message": "Links"
+  "dashboard_dialog_info_subtitle_links": {
+    "message": "Links",
+    "description": "The sub-title for the info dialog links section"
   },
-  "dashboardDialogInfoChrome": {
-    "message": "Chrome Store"
+  "dashboard_dialog_info_btn_chrome": {
+    "message": "Chrome Store",
+    "description": "The text for the chrome store button in the info dialog"
   },
-  "dashboardDialogInfoTwitterPersonal": {
-    "message": "nurodev"
+  "dashboard_dialog_info_btn_twitter_personal": {
+    "message": "nurodev",
+    "description": "The text for my personal twitter button in the info dialog"
   },
-  "dashboardDialogInfoTwitterTDEM": {
-    "message": "tdem_app"
+  "dashboard_dialog_info_btn_twitter_tdem": {
+    "message": "tdem_app",
+    "description": "The text for the tdem twitter button in the info dialog"
   },
-  "dashboardDialogSubTitleInfoDebug": {
-    "message": "Debug"
+  "dashboard_dialog_info_subtitle_debug": {
+    "message": "Debug",
+    "description": "The sub-title for the info dialog debug section"
   },
-  "dashboardDialogInfoAppVersion": {
-    "message": "App Version"
+  "dashboard_dialog_info_app_version": {
+    "message": "App Version",
+    "description": "The text prefix to show you the app version"
   },
-  "dashboardDialogInfoDownloadSettings": {
-    "message": "Download Settings"
+  "dashboard_dialog_info_btn_download_settings": {
+    "message": "Download Settings",
+    "description": "The text for the download settings button in the info dialog"
   },
-  "dashboardExtensionVersion": {
-    "message": "version"
+  "dashboard_extension_version": {
+    "message": "version",
+    "description": "The text prefix to show you the extension version"
   }
 }

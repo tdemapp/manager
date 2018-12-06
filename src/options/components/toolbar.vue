@@ -17,7 +17,7 @@
       <v-card>
         <v-toolbar flat dark color='grey darken-4'>
           <v-icon v-html='$vuetify.icons.settings' />
-          <v-card-title class='headline spacedLetters upperCase ml-2' v-html='getMessage("dashboardDialogTitleSettings")' />
+          <v-card-title class='headline spacedLetters upperCase ml-2' v-html='getMessage("dashboard_dialog_settings_title")' />
           <v-spacer />
           <v-toolbar-items class='hidden-sm-and-down'>
             <v-btn flat class='squareCorners' @click='dialogSettings = false'>
@@ -28,7 +28,7 @@
 
         <v-card-text>
             <section>
-              <h1 class='headline spacedLetters upperCase boldTitle ma-2 mb-3' v-html='getMessage("dashboardDialogSubTitleSettingsDisplay") + ":"' />
+              <h1 class='headline spacedLetters upperCase boldTitle ma-2 mb-3' v-html='getMessage("dashboard_dialog_settings_subtitle_display") + ":"' />
               <v-divider />
               <v-layout align-center justify-center row fill-height>
                 <v-flex xs4 class='mt-2 ml-4 mr-4'>
@@ -53,7 +53,7 @@
       <v-card>
         <v-toolbar flat dark color='grey darken-4'>
           <v-icon v-html='$vuetify.icons.info' />
-          <v-card-title class='headline spacedLetters upperCase ml-2' v-html='getMessage("dashboardDialogTitleInfo")' />
+          <v-card-title class='headline spacedLetters upperCase ml-2' v-html='getMessage("dashboard_dialog_info_title")' />
           <v-spacer />
           <v-toolbar-items class='hidden-sm-and-down'>
             <v-btn flat class='squareCorners' @click='dialogInfo = false'>
@@ -63,14 +63,14 @@
         </v-toolbar>
 
         <v-card-text>
-            <h1 class='headline spacedLetters upperCase boldTitle ma-2' v-html='getMessage("dashboardDialogSubTitleInfoLinks") + ":"' />
+            <h1 class='headline spacedLetters upperCase boldTitle ma-2' v-html='getMessage("dashboard_dialog_info_subtitle_links") + ":"' />
             <v-divider />
             
             <v-layout row wrap class='mt-2'>
               <v-flex xs5 class='mb-2 ml-4 mr-4'>
                 <v-btn flat large block target='_blank' href='https://chrome.google.com/webstore/detail/tdem/'>
                   <v-icon left v-html='$vuetify.icons.chrome' />
-                  <span v-html='getMessage("dashboardDialogInfoChrome")' />
+                  <span v-html='getMessage("dashboard_dialog_info_btn_chrome")' />
                 </v-btn>
               </v-flex>
               <v-flex xs5 class='mb-2 ml-4 mr-4'>
@@ -82,30 +82,30 @@
               <v-flex xs5 class='mb-2 ml-4 mr-4'>
                 <v-btn flat large block target='_blank' href='https://twitter.com/nurodev'>
                   <v-icon left v-html='$vuetify.icons.twitter' />
-                  <span v-html='"@" + getMessage("dashboardDialogInfoTwitterPersonal")' />
+                  <span v-html='"@" + getMessage("dashboard_dialog_info_btn_twitter_personal")' />
                 </v-btn>
               </v-flex>
               <v-flex xs5 class='mb-2 ml-4 mr-4'>
                 <v-btn flat large block target='_blank' href='https://twitter.com/tdem_app'>
                   <v-icon left v-html='$vuetify.icons.twitter' />
-                  <span v-html='"@" + getMessage("dashboardDialogInfoTwitterTDEM")' />
+                  <span v-html='"@" + getMessage("dashboard_dialog_info_btn_twitter_tdem")' />
                 </v-btn>
               </v-flex>
             </v-layout>
 
-            <h1 class='headline spacedLetters upperCase boldTitle ma-2' v-html='getMessage("dashboardDialogSubTitleInfoDebug") + ":"' />
+            <h1 class='headline spacedLetters upperCase boldTitle ma-2' v-html='getMessage("dashboard_dialog_info_subtitle_debug") + ":"' />
             <v-divider />
 
             <v-layout row wrap>
               <v-flex xs5 class='mt-2 ml-4 mr-4'>
                 <v-btn flat large block disabled>
-                  <span class='spacedLetters' v-html='getMessage("dashboardDialogInfoAppVersion") + ": " + extensionVersion' />
+                  <span class='spacedLetters' v-html='getMessage("dashboard_dialog_info_app_version") + ": " + extensionVersion' />
                 </v-btn>
               </v-flex>
               <v-flex xs5 class='mt-2 ml-4 mr-4'>
                 <v-btn flat large block>
                   <v-icon left v-html='$vuetify.icons.download' />
-                  <span v-html='getMessage("dashboardDialogInfoDownloadSettings")' />
+                  <span v-html='getMessage("dashboard_dialog_info_btn_download_settings")' />
                 </v-btn>
               </v-flex>
             </v-layout>
