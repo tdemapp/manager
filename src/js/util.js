@@ -22,6 +22,10 @@ export const getMessage = (msg) => {
 	return string;
 };
 
+export const getSettings = () => {
+	return util.storage.getSync((storage) => storage.settings);
+};
+
 export const addExtension = (id) => {
 	fetch('https://api.github.com/gists/' + id)
 		.then((res) => {
