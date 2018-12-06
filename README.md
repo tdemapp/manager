@@ -4,6 +4,8 @@
     <img alt='TweetDeck Extension Manager' width='256px' src='./assets/icon-1024.png' />
   </a>
 
+  ![Screenshot](https://github.com/NuroDev/TDEM/blob/master/assets/screenshot.png?raw=true)
+
   <h1> TDEM </h1>
   <p> Install, search and manage extensions for TweetDeck </p>
 
