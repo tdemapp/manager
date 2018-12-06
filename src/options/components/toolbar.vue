@@ -122,12 +122,12 @@ export default {
 	data() {
 		return {
 			extensionName: util.getExtensionName(),
-      extensionVersion: util.getExtensionVersion(),
-      infoTab: null,
+			extensionVersion: util.getExtensionVersion(),
+			infoTab: null,
 			searchInput: null,
 			dialogSearch: false,
 			dialogSettings: false,
-      dialogInfo: false,
+			dialogInfo: false
 		};
 	},
 	methods: {

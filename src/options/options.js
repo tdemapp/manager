@@ -37,7 +37,7 @@ function initVue() {
 			x: 'feather-x',
 			add: 'feather-plus',
 			download: 'feather-download',
-			chrome: 'feather-chrome',
+			chrome: 'feather-chrome'
 		}
 	});
 
