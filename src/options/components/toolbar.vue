@@ -13,7 +13,7 @@
       </div>
     </v-toolbar>
 
-    <v-dialog v-model='dialogSettings' max-width='840' >
+    <v-dialog v-model='dialogSettings' max-width='640' >
       <v-card>
         <v-toolbar flat dark color='grey darken-4'>
           <v-icon v-html='$vuetify.icons.settings' />
@@ -27,7 +27,24 @@
         </v-toolbar>
 
         <v-card-text>
-          Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.
+            <section>
+              <h1 class='headline spacedLetters upperCase ma-2'>Display</h1>
+              <v-divider />
+              <v-layout align-center justify-center row fill-height>
+                <v-flex xs4 class='mt-2 ml-4 mr-4'>
+                  <span class='body-2 spacedLetters upperCase'>Dark Theme</span>
+                </v-flex>
+                <v-flex xs2 class='mt-2 ml-4 mr-4'>
+                  <v-switch class='mt-3' color='grey darken-4' />
+                </v-flex>
+                <v-flex xs4 class='mt-2 ml-4 mr-4'>
+                  <span class='body-2 spacedLetters upperCase'>Dark Theme</span>
+                </v-flex>
+                <v-flex xs2 class='mt-2 ml-4 mr-4'>
+                  <v-switch class='mt-3' color='grey darken-4' />
+                </v-flex>
+              </v-layout>
+            </section>
         </v-card-text>
       </v-card>
     </v-dialog>
