@@ -9,7 +9,7 @@
 					<v-card-text :class='isEnabled ? "white--text subheading" : "grey--text subheading"'>
 						<span v-html='name' />
 						<br />
-						<span class='caption' v-html='getMessage("dashboard_dialog_info_btn_download_settings") + ": " + version' />
+						<span class='caption' v-html='getMessage("dashboard_extension_version") + ": " + version' />
 					</v-card-text>
 				</v-flex>
 				<v-flex xs1>
