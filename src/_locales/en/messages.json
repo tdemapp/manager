@@ -47,6 +47,18 @@
     "message": "tdem_app",
     "description": "The text for the tdem twitter button in the info dialog"
   },
+  "dashboard_dialog_info_subtitle_thanks": {
+    "message": "Thank You",
+    "description": "The sub-title for the info dialog special thanks section"
+  },
+  "dashboard_dialog_info_btn_contributors": {
+    "message": "Contributors",
+    "description": "The text for contributors button in the info dialog"
+  },
+  "dashboard_dialog_info_btn_dependencies": {
+    "message": "Dependencies",
+    "description": "The text for dependencies button in the info dialog"
+  },
   "dashboard_dialog_info_subtitle_debug": {
     "message": "Debug",
     "description": "The sub-title for the info dialog debug section"

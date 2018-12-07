@@ -67,3 +67,11 @@
 .feather-chrome:before {
     content:"\e84c"
 }
+
+.feather-grid:before {
+    content:"\e878"
+}
+
+.feather-users:before {
+    content:"\e8ea"
+}

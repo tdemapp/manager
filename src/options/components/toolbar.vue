@@ -93,6 +93,24 @@
               </v-flex>
             </v-layout>
 
+            <h1 class='headline spacedLetters upperCase boldTitle ma-2' v-html='getMessage("dashboard_dialog_info_subtitle_thanks") + " ❤️"' />
+            <v-divider />
+
+            <v-layout row wrap class='mt-2'>
+              <v-flex xs5 class='mb-2 ml-4 mr-4'>
+                <v-btn flat large block target='_blank' href='https://github.com/NuroDev/TDEM/graphs/contributors'>
+                  <v-icon left v-html='$vuetify.icons.users' />
+                  <span v-html='getMessage("dashboard_dialog_info_btn_contributors")' />
+                </v-btn>
+              </v-flex>
+              <v-flex xs5 class='mb-2 ml-4 mr-4'>
+                <v-btn flat large block target='_blank' href='https://github.com/NuroDev/TDEM/network/dependencies'>
+                  <v-icon left v-html='$vuetify.icons.grid' />
+                  <span v-html='getMessage("dashboard_dialog_info_btn_dependencies")' />
+                </v-btn>
+              </v-flex>
+            </v-layout>
+
             <h1 class='headline spacedLetters upperCase boldTitle ma-2' v-html='getMessage("dashboard_dialog_info_subtitle_debug") + ":"' />
             <v-divider />
 
