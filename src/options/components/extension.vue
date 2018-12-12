@@ -20,7 +20,7 @@
 			</v-layout>
     </v-toolbar>
 
-		<v-divider :class='isEnabled ? "transparent ml-3 mr-3" : "ml-3 mr-3"' />
+	<v-divider :class='isEnabled ? "transparent ml-3 mr-3" : "ml-3 mr-3"' />
 
     <v-card-text class='caption' v-html='description' />
 
