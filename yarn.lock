@@ -4463,6 +4463,13 @@ vue-hot-reload-api@^2.3.1:
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.1.tgz#b2d3d95402a811602380783ea4f566eb875569a2"
   integrity sha512-AA86yKZ5uOKz87/q1UpngEXhbRkaYg1b7HMMVRobNV1IVKqZe8oLIzo6iMocVwZXnYitlGwf2k4ZRLOZlS8oPQ==
 
+vue-shortkey@^3.1.6:
+  version "3.1.6"
+  resolved "https://registry.yarnpkg.com/vue-shortkey/-/vue-shortkey-3.1.6.tgz#a8632d4ddab9a07f77deae372cad3a66da85e493"
+  integrity sha512-Nh5cwN86rfNCKINVi16OzN/iVPLvhk1yvVZD8h8E34WlzDRtdm+dngUjfsedz30+Eebbr6c444TmLLIrKqzW9g==
+  dependencies:
+    vue "^2.1.0"
+
 vue-template-compiler@^2.5.17:
   version "2.5.17"
   resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.5.17.tgz#52a4a078c327deb937482a509ae85c06f346c3cb"
@@ -4473,6 +4480,11 @@ vue-template-compiler@^2.5.17:
 vue-template-es2015-compiler@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.6.0.tgz#dc42697133302ce3017524356a6c61b7b69b4a18"
+
+vue@^2.1.0:
+  version "2.5.21"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.21.tgz#3d33dcd03bb813912ce894a8303ab553699c4a85"
+  integrity sha512-Aejvyyfhn0zjVeLvXd70h4hrE4zZDx1wfZqia6ekkobLmUZ+vNFQer53B4fu0EjWBSiqApxPejzkO1Znt3joxQ==
 
 vue@^2.5.17:
   version "2.5.17"

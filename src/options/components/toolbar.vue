@@ -4,16 +4,16 @@
       <v-text-field light solo label='Search' class='mr-1 ml-2 mt-3 elevation-0' color='grey darken-4' :prepend-icon='$vuetify.icons.search' />
 
       <div class='mr-4'>
-        <v-btn flat large @click='dialogSettings = true' light class='mt-3'>
+        <v-btn flat large @click='dialogSettings = true' v-shortkey="[',']" @shortkey='dialogSettings = true' light class='mt-3'>
           <v-icon v-html='$vuetify.icons.settings' />
         </v-btn>
-        <v-btn flat large @click='dialogInfo = true' light class='mt-3'>
+        <v-btn flat large @click='dialogInfo = true' v-shortkey="['i']" @shortkey='dialogInfo = true' light class='mt-3'>
           <v-icon v-html='$vuetify.icons.info' />
         </v-btn>
       </div>
     </v-toolbar>
 
-    <v-dialog v-model='dialogSettings' max-width='640' >
+    <v-dialog v-model='dialogSettings' max-width='640'>
       <v-card>
         <v-toolbar flat dark color='grey darken-4'>
           <v-icon v-html='$vuetify.icons.settings' />
@@ -49,7 +49,7 @@
       </v-card>
     </v-dialog>
     
-    <v-dialog v-model='dialogInfo' max-width='640' >
+    <v-dialog v-model='dialogInfo' max-width='640'>
       <v-card>
         <v-toolbar flat dark color='grey darken-4'>
           <v-icon v-html='$vuetify.icons.info' />

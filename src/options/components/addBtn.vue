@@ -1,7 +1,7 @@
 <template>
     <section>
         <v-fab-transition>
-            <v-btn icon fab fixed bottom right dark class='ma-4 defaultShadow' color='grey darken-4' @click='dialogAddExtension = true'>
+            <v-btn icon fab fixed bottom right dark class='ma-4 defaultShadow' color='grey darken-4' @click='dialogAddExtension = true' v-shortkey="['a']" @shortkey='dialogAddExtension = true'>
                 <v-icon v-html='$vuetify.icons.add' />
             </v-btn>
         </v-fab-transition>

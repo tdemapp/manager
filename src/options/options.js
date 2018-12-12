@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuetify from 'vuetify';
+import VueShortKey from 'vue-shortkey';
 
 import * as util from '~/js/util';
 import extensionTemplate from '~/js/template';
@@ -42,6 +43,8 @@ function initVue() {
 			grid: 'feather-grid'
 		}
 	});
+
+	Vue.use(VueShortKey);
 
 	new Vue({
 		el: '#app',
