@@ -19,19 +19,16 @@
                 </v-toolbar-items>
             </v-toolbar>
 
-            <v-card-text>
-                <v-layout row wrap>
-                <v-flex xs9>
-                    <v-text-field v-model='gistID' color='grey darken-4' label='Gist ID' placeholder='1e1209f905603e1b2b77997e500df40e' />
-                </v-flex>
-                <v-flex xs2>
-                    <v-btn flat large color='grey darken-4' @click='addExtension(gistID)'>
+            <v-card-text class='pb-0'>
+                <v-text-field v-model='gistID' color='grey darken-4' class='mb-0' label='Gist ID' placeholder='1e1209f905603e1b2b77997e500df40e' />
+            </v-card-text>
+
+            <v-card-actions class='pt-0'>
+                <v-btn flat large block color='grey darken-4' @click='addExtension(gistID)'>
                     <v-icon left v-html='$vuetify.icons.add' />
                     <span class='spacedLetters' v-html='getMessage("dashboard_dialog_add_btn")' />
-                    </v-btn>
-                </v-flex>
-                </v-layout>
-            </v-card-text>
+                </v-btn>
+            </v-card-actions>
             </v-card>
         </v-dialog>
     </section>
