@@ -11,8 +11,7 @@
   [![Travis](https://img.shields.io/travis/NuroDev/TDEM/master.svg?style=for-the-badge)](https://travis-ci.org/NuroDev/TDEM) 
   [![Prettier](https://img.shields.io/badge/code--style-%20prettier-c596c7.svg?longCache=true&style=for-the-badge)](https://prettier.io/) 
   [![gitmoji](https://img.shields.io/badge/gitmoji-%20%F0%9F%98%9C%20%F0%9F%98%8D-FFDD67.svg?longCache=true&style=for-the-badge)](https://gitmoji.carloscuesta.me/) 
-  [![Personal Twitter](https://img.shields.io/badge/-@nurodev-03A9F4.svg?logo=twitter&logoColor=white&longCache=true&style=for-the-badge)](https://twitter.com/nurodev) 
-  [![TDEM Twitter](https://img.shields.io/badge/-@tdem_app-03A9F4.svg?logo=twitter&logoColor=white&longCache=true&style=for-the-badge)](https://twitter.com/tdem_app)
+  [![Personal Twitter](https://img.shields.io/badge/-@nurodev-03A9F4.svg?logo=twitter&logoColor=white&longCache=true&style=for-the-badge)](https://twitter.com/nurodev)
 
   <br />
 </div>
