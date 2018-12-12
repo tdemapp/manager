@@ -5,10 +5,12 @@
 
       <div class='mr-4'>
         <v-btn flat large @click='dialogSettings = true' v-shortkey="[',']" @shortkey='dialogSettings = true' light class='mt-3'>
-          <v-icon v-html='$vuetify.icons.settings' />
+          <v-icon left v-html='$vuetify.icons.settings' />
+          <span v-html='getMessage("dashboard_dialog_settings_title")' />
         </v-btn>
         <v-btn flat large @click='dialogInfo = true' v-shortkey="['i']" @shortkey='dialogInfo = true' light class='mt-3'>
-          <v-icon v-html='$vuetify.icons.info' />
+          <v-icon left v-html='$vuetify.icons.info' />
+          <span v-html='getMessage("dashboard_dialog_info_title")' />
         </v-btn>
       </div>
     </v-toolbar>
