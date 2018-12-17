@@ -1,41 +1,65 @@
 <template>
-    <section>
-        <v-fab-transition>
-            <v-btn icon fab fixed bottom right dark class='ma-4 defaultShadow' color='grey darken-4' @click='dialogAddExtension = true' v-shortkey="['a']" @shortkey='dialogAddExtension = true'>
-                <v-icon v-html='$vuetify.icons.add' />
-            </v-btn>
-        </v-fab-transition>
+	<section>
+		<v-fab-transition>
+			<v-btn
+				icon
+				fab
+				fixed
+				bottom
+				right
+				dark
+				class="ma-4 defaultShadow"
+				color="grey darken-4"
+				@click="dialogAddExtension = true"
+				v-shortkey="['a']"
+				@shortkey="dialogAddExtension = true"
+			>
+				<v-icon v-html="$vuetify.icons.add" />
+			</v-btn>
+		</v-fab-transition>
 
-        <v-dialog v-model='dialogAddExtension' max-width='640' >
-            <v-card>
-            <v-toolbar flat dark tabs color='grey darken-4' class='pr-0'>
-                <v-icon v-html='$vuetify.icons.add' />
-                <v-card-title class='headline spacedLetters upperCase' v-html='getLocale("dashboard_dialog_add_title")' />
-                <v-spacer />
-                <v-toolbar-items class='hidden-sm-and-down'>
-                    <v-btn flat class='squareCorners' @click='dialogAddExtension = false'>
-                        <v-icon v-html='$vuetify.icons.x' />
-                    </v-btn>
-                </v-toolbar-items>
-            </v-toolbar>
+		<v-dialog v-model="dialogAddExtension" max-width="640">
+			<v-card>
+				<v-toolbar flat dark tabs color="grey darken-4" class="pr-0">
+					<v-icon v-html="$vuetify.icons.add" />
+					<v-card-title
+						class="headline spacedLetters upperCase"
+						v-html="getLocale('dashboard_dialog_add_title')"
+					/>
+					<v-spacer />
+					<v-toolbar-items class="hidden-sm-and-down">
+						<v-btn flat class="squareCorners" @click="dialogAddExtension = false">
+							<v-icon v-html="$vuetify.icons.x" />
+						</v-btn>
+					</v-toolbar-items>
+				</v-toolbar>
 
-            <v-card-text class='pb-0'>
-                <v-text-field v-model='gistID' color='grey darken-4' class='mb-0' label='Gist ID' placeholder='1e1209f905603e1b2b77997e500df40e' />
-            </v-card-text>
+				<v-card-text class="pb-0">
+					<v-text-field
+						v-model="gistID"
+						color="grey darken-4"
+						class="mb-0"
+						label="Gist ID"
+						placeholder="1e1209f905603e1b2b77997e500df40e"
+					/>
+				</v-card-text>
 
-            <v-card-actions class='pt-0'>
-                <v-btn flat large block color='grey darken-4' @click='addExtension(gistID)'>
-                    <v-icon left v-html='$vuetify.icons.add' />
-                    <span class='spacedLetters' v-html='getLocale("dashboard_dialog_add_btn")' />
-                </v-btn>
-            </v-card-actions>
-            </v-card>
-        </v-dialog>
-    </section>
+				<v-card-actions class="pt-0">
+					<v-btn flat large block color="grey darken-4" @click="addExtension(gistID)">
+						<v-icon left v-html="$vuetify.icons.add" />
+						<span
+							class="spacedLetters"
+							v-html="getLocale('dashboard_dialog_add_btn')"
+						/>
+					</v-btn>
+				</v-card-actions>
+			</v-card>
+		</v-dialog>
+	</section>
 </template>
 
 <script>
-import * as util from '~/js/util';
+import * as util from '../../js/util';
 
 export default {
 	data() {

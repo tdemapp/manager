@@ -1,5 +1,3 @@
-import { util } from 'node-forge';
-
 export const getExtensionUrl = (...args) => {
 	return chrome.extension.getURL(...args);
 };
@@ -23,7 +21,7 @@ export const getLocale = (msg) => {
 };
 
 export const getSettings = () => {
-	return util.storage.getSync((storage) => storage.settings);
+	return storage.getSync((storage) => storage.settings);
 };
 
 export const addExtension = (id) => {

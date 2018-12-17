@@ -2,11 +2,15 @@ import Vue from 'vue';
 import Vuetify from 'vuetify';
 import VueShortKey from 'vue-shortkey';
 
-import * as util from '~/js/util';
-import extensionTemplate from '~/js/template';
+import * as util from '../js/util';
+import extensionTemplate from '../js/template';
 import Options from './options.vue';
 
-/* 
+import 'vuetify/dist/vuetify.min.css';
+import './css/options.css';
+import './css/feather.css';
+
+/*
  * Initialize Options
  */
 function initOptions() {
@@ -18,7 +22,7 @@ function initOptions() {
 	}
 }
 
-/* 
+/*
  * Initialize Vue
  */
 function initVue() {
@@ -52,7 +56,7 @@ function initVue() {
 	});
 }
 
-/* 
+/*
  * Initialize Chrome Storage
  */
 function initializeStorage() {
@@ -66,7 +70,7 @@ function initializeStorage() {
 	/*
 	 * Setting can be synced as their total byte size for storage does not exceed max storage size (Chrome max sync storage size: 102,400 bytes)
 	 * Extension storage is much larger than settings, as such they need to be storaed locally. (Chrome max local storage size: 5,242,880 bytes)
-	*/
+	 */
 	util.storage.setSync(baseSettingsStorageTemplate);
 	util.storage.setLocal(baseExtensionStorageTemplate);
 }

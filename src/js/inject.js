@@ -2,7 +2,7 @@ import $ from 'jquery';
 import domify from 'domify';
 import * as util from './util';
 
-/* 
+/*
  * Injects new button at top of sidebar footer items
  */
 function injectButton() {
