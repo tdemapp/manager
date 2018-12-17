@@ -34,11 +34,7 @@
     "js/inject.js",
     "options/options.html",
     "options/options.js",
-    "options/css/options.css",
-    "fonts/feather.eot",
-    "fonts/feather.svg",
-    "fonts/feather.ttf",
-    "fonts/feather.woff"
+    "options/css/options.css"
   ],
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }
