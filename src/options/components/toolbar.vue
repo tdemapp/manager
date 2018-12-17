@@ -95,7 +95,7 @@
               </v-flex> -->
             </v-layout>
 
-            <h1 class='headline spacedLetters upperCase boldTitle ma-2' v-html='getLocale("dashboard_dialog_info_subtitle_thanks") + " ❤️"' />
+            <h1 class='headline spacedLetters upperCase boldTitle ma-2' v-html='getLocale("dashboard_dialog_info_subtitle_thanks") + ":"' />
             <v-divider />
 
             <v-layout row wrap class='mt-2'>

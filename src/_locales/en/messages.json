@@ -48,7 +48,7 @@
     "description": "The text for the tdem twitter button in the info dialog"
   },
   "dashboard_dialog_info_subtitle_thanks": {
-    "message": "Thank You",
+    "message": "Support",
     "description": "The sub-title for the info dialog special thanks section"
   },
   "dashboard_dialog_info_btn_contributors": {
