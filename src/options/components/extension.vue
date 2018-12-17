@@ -9,7 +9,7 @@
 					<v-card-text :class='isEnabled ? "white--text subheading" : "grey--text subheading"'>
 						<span v-html='name' />
 						<br />
-						<span class='caption' v-html='getMessage("dashboard_extension_version") + ": " + version' />
+						<span class='caption' v-html='getLocale("dashboard_extension_version") + ": " + version' />
 					</v-card-text>
 				</v-flex>
 				<v-flex xs1>
@@ -73,8 +73,8 @@ export default {
 			let currentState = util.storage.getLocal((storage) => storage.extensions.isEnabled);
 			util.storage.setLocal(currentState);
 		},
-		getMessage(text) {
-			return util.getMessage(text);
+		getLocale(text) {
+			return util.getLocale(text);
 		}
 	}
 };

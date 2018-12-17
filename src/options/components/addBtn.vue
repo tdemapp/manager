@@ -10,7 +10,7 @@
             <v-card>
             <v-toolbar flat dark tabs color='grey darken-4' class='pr-0'>
                 <v-icon v-html='$vuetify.icons.add' />
-                <v-card-title class='headline spacedLetters upperCase' v-html='getMessage("dashboard_dialog_add_title")' />
+                <v-card-title class='headline spacedLetters upperCase' v-html='getLocale("dashboard_dialog_add_title")' />
                 <v-spacer />
                 <v-toolbar-items class='hidden-sm-and-down'>
                     <v-btn flat class='squareCorners' @click='dialogAddExtension = false'>
@@ -26,7 +26,7 @@
             <v-card-actions class='pt-0'>
                 <v-btn flat large block color='grey darken-4' @click='addExtension(gistID)'>
                     <v-icon left v-html='$vuetify.icons.add' />
-                    <span class='spacedLetters' v-html='getMessage("dashboard_dialog_add_btn")' />
+                    <span class='spacedLetters' v-html='getLocale("dashboard_dialog_add_btn")' />
                 </v-btn>
             </v-card-actions>
             </v-card>
@@ -50,8 +50,8 @@ export default {
 				this.dialog = false;
 			}
 		},
-		getMessage(text) {
-			return util.getMessage(text);
+		getLocale(text) {
+			return util.getLocale(text);
 		}
 	}
 };

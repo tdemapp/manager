@@ -12,7 +12,7 @@ export const getExtensionVersion = () => {
 	return chrome.runtime.getManifest().version;
 };
 
-export const getMessage = (msg) => {
+export const getLocale = (msg) => {
 	const string = chrome.i18n.getMessage(msg);
 
 	if (string === '') {
