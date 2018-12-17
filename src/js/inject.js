@@ -1,3 +1,4 @@
+import domify from 'domify';
 import * as util from './util';
 
 /* 
@@ -25,10 +26,10 @@ function injectButton() {
 
 	try {
 		// Inject custom icon style element in head tag
-		$('head').append(dashboardButtonIcon);
+		$('head').append(domify(dashboardButtonIcon));
 
 		// Inject button at top of sidebar nav footer items
-		$('nav.app-navigator').prepend(dashboardButton);
+		$('nav.app-navigator').prepend(domify(dashboardButton));
 
 		// Open dashbord when button is clicked
 		$('.tdem-dashboard-btn').bind('click', (e) => {
@@ -36,7 +37,7 @@ function injectButton() {
 			window.open(util.getExtensionUrl('options/options.html'));
 		});
 	} catch (e) {
-		throw new Error(`⚠️ Error Injecting TDEM Into TweetDeck | ${e}`);
+		throw new Error(`⚠️ Error Injecting TDEM | ${e}`);
 	}
 }
 
