@@ -9,6 +9,7 @@ yarn-error.log*
 build/
 .cache/ 
 dist/
+packages/
 report.html
 *.crx 
 *.pem 

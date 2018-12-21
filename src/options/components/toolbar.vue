@@ -221,7 +221,7 @@
 </template>
 
 <script>
-import * as util from '../../js/util';
+import * as util from '../../scripts/util';
 
 export default {
 	data() {

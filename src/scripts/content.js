@@ -18,7 +18,7 @@ function initContent() {
  * Appends new script element at end of body with src link to extension inject file
  */
 function inject() {
-	const srcUrl = util.getExtensionUrl('js/inject.js');
+	const srcUrl = util.getExtensionUrl('scripts/inject.js');
 	const script = document.createElement('script');
 
 	script.setAttribute('type', 'text/javascript');

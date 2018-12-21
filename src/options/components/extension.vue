@@ -53,8 +53,8 @@
 </template>
 
 <script>
-import * as util from '../../js/util';
-import extensionTemplate from '../../js/template';
+import * as util from '../../scripts/util';
+import extensionTemplate from '../../scripts/template';
 
 export default {
 	props: {
