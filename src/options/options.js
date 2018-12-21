@@ -7,7 +7,7 @@ import extensionTemplate from '../js/template';
 import Options from './options.vue';
 
 // Import CSS
-import 'vuetify/dist/vuetify.css';
+import 'vuetify/dist/vuetify.min.css';
 import './css/options.css';
 
 /*

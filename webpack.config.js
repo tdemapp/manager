@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const ejs = require('ejs');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WebpackShellPlugin = require('webpack-shell-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ChromeExtensionReloader = require('webpack-chrome-extension-reloader');
@@ -35,15 +34,7 @@ const config = {
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
-      },
-      {
-        test: /\.scss$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
-      },
-      {
-        test: /\.sass$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader?indentedSyntax'],
+        use: ['css-loader'],
       },
       {
         test: /\.(png|jpg|gif|svg|ico)$/,
@@ -56,9 +47,6 @@ const config = {
   },
   plugins: [
     new VueLoaderPlugin(),
-    new MiniCssExtractPlugin({
-      filename: '[name].css',
-    }),
     new CopyWebpackPlugin([
       { from: '_locales', to: '_locales' },
       { from: 'fonts', to: 'fonts' },
