@@ -80,7 +80,7 @@ const config = {
       },
     ]),
     new WebpackShellPlugin({
-      onBuildEnd: ['node scripts/remove-evals.js'],
+      onBuildEnd: ['node util/remove-evals.js'],
     }),
   ],
 };
