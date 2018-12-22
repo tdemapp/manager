@@ -59,7 +59,7 @@
 </template>
 
 <script>
-import * as util from '../../scripts/util';
+import * as util from '../../js/util';
 
 export default {
 	data() {

@@ -4,7 +4,13 @@ const { VueLoaderPlugin } = require('vue-loader');
 module.exports = {
   webpack: (config, { dev, vendor }) => {
     // Remove unused resolutions and add `.vue`
-    config.resolve.extensions = [ '.js', '.json', '.vue' ]
+    config.resolve.extensions = [ '.js', '.vue' ]
+
+    // Set entry points
+    config.entry = {
+      'js/content': './js/content.js',
+      'options/options': './options/options.js',
+    }
 
     // Add Vue loader to module rules
     config.module.rules.push({

@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import * as util from '../scripts/util';
+import * as util from '../js/util';
 import AddBtn from './components/addBtn.vue';
 import Extension from './components/extension.vue';
 import Toolbar from './components/toolbar.vue';

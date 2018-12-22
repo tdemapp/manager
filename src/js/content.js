@@ -1,6 +1,18 @@
-import $ from 'jquery';
-import domify from 'domify';
 import * as util from './util';
+
+/*
+ * Initialize TDEM
+ */
+function initContent() {
+	console.log('🛠️ TDEM Initializing...');
+
+	try {
+		injectButton();
+		console.log('✨ TDEM Successfully Initialized!');
+	} catch (e) {
+		throw new Error(`⚠️ Error Initializing TDEM | ${e}`);
+	}
+}
 
 /*
  * Injects new button at top of sidebar footer items
@@ -42,4 +54,4 @@ function injectButton() {
 	}
 }
 
-injectButton();
+initContent();
