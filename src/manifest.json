@@ -22,6 +22,7 @@
   ],
   "permissions": [
     "activeTab",
+    "unlimitedStorage",
     "storage",
     "*://tweetdeck.twitter.com/*"
   ],
