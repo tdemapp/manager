@@ -2,9 +2,8 @@
   "manifest_version": 2,
   "name": "__MSG_appShortName__",
   "short_name": "__MSG_appName__",
-  "version": "1.1.1",
-  "version_name": "1.1.1",
   "description": "__MSG_appDesc__",
+  "version": "1.1.1",
   "homepage_url": "https://github.com/nurodev/TDEM",
   "default_locale": "en",
   "icons": {

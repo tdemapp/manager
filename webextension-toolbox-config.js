@@ -3,27 +3,28 @@ const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = {
   webpack: (config, { dev, vendor }) => {
-    // Remove unused resolutions and add `.vue`
-    config.resolve.extensions = [ '.js', '.vue' ]
+    // Add Vue to file extensions
+    config.resolve.extensions = ['.js', '.json', '.vue'];
 
     // Set entry points
     config.entry = {
       'js/content': './js/content.js',
       'options/options': './options/options.js',
-    }
+    };
 
     // Add Vue loader to module rules
     config.module.rules.push({
         test: /\.vue$/,
-        loaders: 'vue-loader',
+        use: ['vue-loader'],
     });
 
-    // Add css loader to handle vuetify CSS
+    // Add CSS loader to module rules
     config.module.rules.push({
       test: /\.css$/,
       use: ['style-loader', 'css-loader'],
-    })
+    });
 
+    // Create new Vue Loader plugin instance
     config.plugins.push(new VueLoaderPlugin());
 
     return config

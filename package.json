@@ -14,6 +14,7 @@
     "lint": "prettier --config .prettierrc.json --write \"src/**/*.{js,vue}\""
   },
   "dependencies": {
+    "domify": "^1.4.0",
     "jquery": "^3.3.1",
     "vue": "^2.5.21",
     "vue-shortkey": "^3.1.6",
@@ -22,7 +23,6 @@
   "devDependencies": {
     "@babel/plugin-proposal-optional-chaining": "^7.2.0",
     "css-loader": "^2.0.2",
-    "domify": "^1.4.0",
     "prettier": "^1.15.3",
     "style-loader": "^0.23.1",
     "vue-loader": "^15.4.2",

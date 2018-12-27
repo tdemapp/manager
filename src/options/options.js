@@ -6,10 +6,7 @@ import * as util from '../js/util';
 import extensionTemplate from '../js/template';
 import Options from '../options/options.vue';
 
-// Import CSS
 import 'vuetify/dist/vuetify.css';
-import './feather.css';
-import './options.css';
 
 /*
  * Initialize Options
