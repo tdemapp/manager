@@ -105,11 +105,11 @@
 
 					<v-layout row wrap class="mt-2">
 						<!-- <v-flex xs5 class='mb-2 ml-4 mr-4'>
-                <v-btn flat large block target='_blank' href='https://chrome.google.com/webstore/detail/tdem/'>
-                  <v-icon left v-html='$vuetify.icons.chrome' />
-                  <span v-html='getLocale("dashboard_dialog_info_btn_chrome")' />
-                </v-btn>
-              </v-flex> -->
+							<v-btn flat large block target='_blank' href='https://chrome.google.com/webstore/detail/tdem/'>
+								<v-icon left v-html='$vuetify.icons.chrome' />
+								<span v-html='getLocale("dashboard_dialog_info_btn_chrome")' />
+							</v-btn>
+						</v-flex> -->
 						<v-flex xs5 class="mb-2 ml-4 mr-4">
 							<v-btn
 								flat
@@ -140,11 +140,11 @@
 							</v-btn>
 						</v-flex>
 						<!-- <v-flex xs5 class='mb-2 ml-4 mr-4'>
-                <v-btn flat large block target='_blank' href='https://twitter.com/tdem_app'>
-                  <v-icon left v-html='$vuetify.icons.twitter' />
-                  <span v-html='"@" + getLocale("dashboard_dialog_info_btn_twitter_tdem")' />
-                </v-btn>
-              </v-flex> -->
+							<v-btn flat large block target='_blank' href='https://twitter.com/tdem_app'>
+								<v-icon left v-html='$vuetify.icons.twitter' />
+								<span v-html='"@" + getLocale("dashboard_dialog_info_btn_twitter_tdem")' />
+							</v-btn>
+						</v-flex> -->
 					</v-layout>
 
 					<h1
