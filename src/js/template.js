@@ -12,5 +12,5 @@ export default {
 	},
 	destroy: () => {
 		console.log('myExtension destroyed!');
-	}
+	},
 };

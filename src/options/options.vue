@@ -31,11 +31,11 @@ export default {
 	components: {
 		AddBtn,
 		Extension,
-		Toolbar
+		Toolbar,
 	},
 	data() {
 		return {
-			extensionsStorage: this.updateExtensions()
+			extensionsStorage: this.updateExtensions(),
 		};
 	},
 	created() {
@@ -46,7 +46,7 @@ export default {
 			util.storage.getLocal((storage) => {
 				this.extensionsStorage = storage.extensions;
 			});
-		}
-	}
+		},
+	},
 };
 </script>

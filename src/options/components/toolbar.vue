@@ -232,13 +232,13 @@ export default {
 			searchInput: null,
 			dialogSearch: false,
 			dialogSettings: false,
-			dialogInfo: false
+			dialogInfo: false,
 		};
 	},
 	methods: {
 		getLocale(text) {
 			return util.getLocale(text);
-		}
-	}
+		},
+	},
 };
 </script>

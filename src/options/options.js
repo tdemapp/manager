@@ -42,15 +42,15 @@ function initVue() {
 			download: 'feather-download',
 			chrome: 'feather-chrome',
 			users: 'feather-users',
-			grid: 'feather-grid'
-		}
+			grid: 'feather-grid',
+		},
 	});
 
 	Vue.use(VueShortKey);
 
 	new Vue({
 		el: '#app',
-		render: (h) => h(Options)
+		render: (h) => h(Options),
 	});
 }
 
@@ -59,10 +59,10 @@ function initVue() {
  */
 function initializeStorage() {
 	const baseSettingsStorageTemplate = {
-		settings: {}
+		settings: {},
 	};
 	const baseExtensionStorageTemplate = {
-		extensions: [extensionTemplate]
+		extensions: [extensionTemplate],
 	};
 
 	/*

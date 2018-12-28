@@ -60,24 +60,24 @@ export default {
 	props: {
 		name: {
 			type: String,
-			default: extensionTemplate.name
+			default: extensionTemplate.name,
 		},
 		description: {
 			type: String,
-			default: extensionTemplate.description
+			default: extensionTemplate.description,
 		},
 		version: {
 			type: String,
-			default: extensionTemplate.version
+			default: extensionTemplate.version,
 		},
 		website: {
 			type: String,
-			default: extensionTemplate.website
+			default: extensionTemplate.website,
 		},
 		isEnabled: {
 			type: Boolean,
-			default: extensionTemplate.isEnabled
-		}
+			default: extensionTemplate.isEnabled,
+		},
 	},
 	methods: {
 		toggleExtension() {
@@ -86,7 +86,7 @@ export default {
 		},
 		getLocale(text) {
 			return util.getLocale(text);
-		}
-	}
+		},
+	},
 };
 </script>

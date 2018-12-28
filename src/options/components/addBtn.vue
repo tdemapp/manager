@@ -65,7 +65,7 @@ export default {
 	data() {
 		return {
 			dialogAddExtension: false,
-			gistID: null
+			gistID: null,
 		};
 	},
 	methods: {
@@ -76,7 +76,7 @@ export default {
 		},
 		getLocale(text) {
 			return util.getLocale(text);
-		}
-	}
+		},
+	},
 };
 </script>
