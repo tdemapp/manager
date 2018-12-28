@@ -1,57 +1,60 @@
-@import url("~vuetify/dist/vuetify.css");
-@import url("./feather.css");
+@import url('~vuetify/dist/vuetify.css');
+@import url('./feather.css');
 
 /* 
 * Vuetify overrides
 */
 .v-btn {
-    border-radius: 6px!important;
+	border-radius: 6px !important;
 }
 .v-toolbar__content {
-    padding-right: 0!important;
+	padding-right: 0 !important;
 }
 .v-input__prepend-outer {
-    margin-right: 20px!important;
+	margin-right: 20px !important;
 }
 .v-text-field.v-text-field--solo:not(.v-text-field--solo-flat) .v-input__slot {
-    border-radius: 6px !important;
-    transition: all 0.3s;
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.12)!important;
+	border-radius: 6px !important;
+	transition: all 0.3s;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12) !important;
 }
 .v-text-field.v-text-field--solo:not(.v-text-field--solo-flat) .v-input__slot:hover {
-    box-shadow: 0 8px 15px rgba(33, 33, 33, 0.10)!important;
+	box-shadow: 0 8px 15px rgba(33, 33, 33, 0.1) !important;
 }
 .v-btn--floating {
-    border-radius: 100%!important;
+	border-radius: 100% !important;
 }
 
 /* 
 * Dashboard styles
 */
 html,
-body {
-    background-color: #fafcff;
-    font-family: 'Roboto', Tahoma, Geneva, Verdana, sans-serif;
+body,
+.theme--light.application,
+.theme--dark.application {
+	background-color: #fafcff;
+	margin: 0;
+	font-family: 'Roboto', Tahoma, Geneva, Verdana, sans-serif;
 }
 .spacedLetters {
-    letter-spacing: .20em!important;
+	letter-spacing: 0.2em !important;
 }
 .upperCase {
-    text-transform: uppercase!important;
+	text-transform: uppercase !important;
 }
 .boldTitle {
-    font-weight: 900!important;
+	font-weight: 900 !important;
 }
 .defaultCorners {
-    border-radius: 6px !important;
+	border-radius: 6px !important;
 }
 .squareCorners {
-    border-radius: 0!important;
+	border-radius: 0 !important;
 }
 .defaultShadow {
-    transition: all 0.3s;
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.12)!important;
+	transition: all 0.3s;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12) !important;
 }
 .defaultShadow:hover {
-    box-shadow: 0 8px 15px rgba(33, 33, 33, 0.10)!important;
+	box-shadow: 0 8px 15px rgba(33, 33, 33, 0.1) !important;
 }
