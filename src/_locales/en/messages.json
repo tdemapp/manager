@@ -40,16 +40,12 @@
     "description": "The text for the chrome store button in the info dialog"
   },
   "dashboard_dialog_info_btn_twitter_personal": {
-    "message": "nurodev",
+    "message": "@nurodev",
     "description": "The text for my personal twitter button in the info dialog"
   },
   "dashboard_dialog_info_btn_twitter_tdem": {
     "message": "tdem_app",
     "description": "The text for the tdem twitter button in the info dialog"
-  },
-  "dashboard_dialog_info_subtitle_thanks": {
-    "message": "Support",
-    "description": "The sub-title for the info dialog special thanks section"
   },
   "dashboard_dialog_info_btn_contributors": {
     "message": "Contributors",
