@@ -66,7 +66,7 @@
 					<!-- Shortcuts section -->
 					<h1 class='headline spacedLetters upperCase boldTitle ma-2' v-html='getLocale("dashboard_dialog_info_subtitle_shortcuts") + ":"' />
 					<v-divider />
-					<v-layout row wrap class='mt-2'>
+					<v-layout row wrap class='mt-2 mb-3'>
 						<v-flex xs5 class='ml-4 mr-4' v-for='(item, i) in shortcuts' :key='i'>
 							<v-btn flat large block disabled>
 								<v-icon left v-html='"$vuetify.icons." + item.icon' />
@@ -79,7 +79,7 @@
 					<h1 class='headline spacedLetters upperCase boldTitle ma-2' v-html='getLocale("dashboard_dialog_info_subtitle_links") + ":"' />
 					<v-divider />
 					<v-layout row wrap class='mt-2'>
-						<v-flex xs3 class='mb-1 ml-4 mr-4' v-for='(item, i) in links' :key='i'>
+						<v-flex xs5 class='mb-1 ml-4 mr-4' v-for='(item, i) in links' :key='i'>
 							<v-btn flat large block target='_blank' :href='item.href' >
 								<v-icon left v-html='"$vuetify.icons." + item.icon' />
 								<span v-html='item.text'/>
