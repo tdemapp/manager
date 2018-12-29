@@ -3,7 +3,7 @@
 		<v-toolbar flat :class="isEnabled ? 'grey darken-4 pt-3 pb-3' : 'white pt-3 pb-3'">
 			<v-layout align-center justify-start row fill-height>
 				<v-flex xs1>
-					<v-icon large :dark="isEnabled" v-html="$vuetify.icons.package" />
+					<v-icon large :dark="isEnabled" v-html="$vuetify.icons.box" />
 				</v-flex>
 				<v-flex xs9>
 					<v-card-text

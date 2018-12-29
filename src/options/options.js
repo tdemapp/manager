@@ -27,22 +27,28 @@ function initVue() {
 	Vue.use(Vuetify, {
 		iconfont: 'feather',
 		icons: {
-			package: 'feather-package',
-			link: 'feather-external-link',
+			// Extension card icon
+			box: 'feather-box',
+			link: 'feather-link',
 			refresh: 'feather-refresh-cw',
 			trash: 'feather-trash-2',
+
+			// Toolbar icons
 			search: 'feather-search',
 			info: 'feather-info',
+			settings: 'feather-settings',
+
+			// Modal icons
 			twitter: 'feather-twitter',
 			github: 'feather-github',
-			donate: 'feather-dollar-sign',
-			settings: 'feather-settings',
-			x: 'feather-x',
-			add: 'feather-plus',
 			download: 'feather-download',
 			chrome: 'feather-chrome',
 			users: 'feather-users',
 			grid: 'feather-grid',
+
+			// Misc Icons
+			x: 'feather-x',
+			add: 'feather-plus',
 		},
 	});
 
