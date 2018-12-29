@@ -94,6 +94,18 @@
 				</v-toolbar>
 
 				<v-card-text>
+					<!-- Shortcuts section -->
+					<h1 class="headline spacedLetters upperCase boldTitle ma-2" v-html="getLocale('dashboard_dialog_info_subtitle_shortcuts') + ':'" />
+					<v-divider />
+					<v-layout row wrap class="mt-2">
+						<v-flex xs5 class="ml-4 mr-4" v-for='(item, i) in shortcuts' :key='i'>
+							<v-btn flat large block disabled>
+								<v-icon left v-html='"$vuetify.icons." + item.icon' />
+								<span v-html='item.text + ": " + item.bind'/>
+							</v-btn>
+						</v-flex>
+					</v-layout>
+
 					<!-- Links section -->
 					<h1 class="headline spacedLetters upperCase boldTitle ma-2" v-html="getLocale('dashboard_dialog_info_subtitle_links') + ':'" />
 					<v-divider />
@@ -143,6 +155,12 @@ export default {
 				settings: false,
 				info: false,
 			},
+			shortcuts: [
+				// { icon: 'search', text: util.getLocale('dashboard_dialog_search_title'), bind: 'S' },
+				{ icon: 'settings', text: util.getLocale('dashboard_dialog_settings_title'), bind: ',' },
+				{ icon: 'info', text: util.getLocale('dashboard_dialog_info_title'), bind: 'I' },
+				{ icon: 'add', text: util.getLocale('dashboard_dialog_add_title'), bind: 'A' },
+			],
 			links: [
 				{ icon: 'twitter', text: util.getLocale('dashboard_dialog_info_btn_twitter_personal'), href: 'https://twitter.com/nurodev'},
 				{ icon: 'twitter', text: util.getLocale('dashboard_dialog_info_btn_twitter_tdem'), href: 'https://twitter.com/tdemapp'},

@@ -31,6 +31,10 @@
     "message": "Info",
     "description": "The title for the info dialog"
   },
+  "dashboard_dialog_info_subtitle_shortcuts": {
+    "message": "Shortcuts",
+    "description": "The sub-title for the info dialog shortcuts section"
+  },
   "dashboard_dialog_info_subtitle_links": {
     "message": "Links",
     "description": "The sub-title for the info dialog links section"
