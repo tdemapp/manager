@@ -80,7 +80,7 @@
 					<v-divider />
 					<v-layout row wrap class='mt-2'>
 						<v-flex xs5 class='mb-1 ml-4 mr-4' v-for='(item, i) in links' :key='i'>
-							<v-btn flat large block target='_blank' :href='item.href' >
+							<v-btn flat large block target='_blank' :href='item.href' class='spacedLetters' >
 								<v-icon left v-html='"$vuetify.icons." + item.icon' />
 								<span v-html='item.text'/>
 							</v-btn>
@@ -134,9 +134,9 @@ export default {
 				{ icon: 'twitter', text: util.getLocale('dashboard_dialog_info_btn_twitter_personal'), href: 'https://twitter.com/nurodev'},
 				{ icon: 'twitter', text: util.getLocale('dashboard_dialog_info_btn_twitter_tdem'), href: 'https://twitter.com/tdemapp'},
 				{ icon: 'chrome', text: util.getLocale('dashboard_dialog_info_btn_chrome'), href: 'https://chrome.google.com/webstore/detail/tdem/'},
-				{ icon: 'github', text: 'GitHub', href: 'https://github.com/nurodev/tdem'},
+				{ icon: 'github', text: util.getLocale('dashboard_dialog_info_btn_github'), href: 'https://github.com/nurodev/tdem'},
 				{ icon: 'users', text: util.getLocale('dashboard_dialog_info_btn_contributors'), href: 'https://github.com/NuroDev/TDEM/graphs/contributors'},
-				{ icon: 'grid', text: util.getLocale('dashboard_dialog_info_btn_dependencies'), href: 'https://github.com/NuroDev/TDEM/graphs/dependencies'},
+				{ icon: 'grid', text: util.getLocale('dashboard_dialog_info_btn_dependencies'), href: 'https://github.com/NuroDev/TDEM/network/dependencies'},
 			]
 		};
 	},

@@ -26,7 +26,7 @@
 				<v-card-actions class='pt-0'>
 					<v-btn flat large block color='grey darken-4' @click='addExtension(gistID)'>
 						<v-icon left v-html='$vuetify.icons.add' />
-						<span class='spacedLetters' v-html='getLocale("dashboard_dialog_add_btn")' />
+						<span class='spacedLetters' v-html='getLocale("dashboard_dialog_add_title")' />
 					</v-btn>
 				</v-card-actions>
 			</v-card>
