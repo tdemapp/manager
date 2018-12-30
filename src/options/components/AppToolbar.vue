@@ -26,6 +26,7 @@
 
 <script>
 import DialogInfo from './DialogInfo.vue'
+import DialogSearch from './DialogSearch.vue'
 import DialogSettings from './DialogSettings.vue'
 import DialogStore from './DialogStore.vue'
 import * as util from '../../js/util';
@@ -33,6 +34,7 @@ import * as util from '../../js/util';
 export default {
 	components: {
 		DialogInfo,
+		DialogSearch,
 		DialogSettings,
 		DialogStore
 	},
