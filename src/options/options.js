@@ -48,7 +48,9 @@ function initVue() {
 
 			// Misc Icons
 			x: 'feather-x',
+			tick: 'feather-check',
 			add: 'feather-plus',
+			warning: 'feather-alert-triangle',
 		},
 	});
 
@@ -65,7 +67,9 @@ function initVue() {
  */
 function initializeStorage() {
 	const baseSettingsStorageTemplate = {
-		settings: {},
+		settings: {
+			acceptedTheDangers: false,
+		},
 	};
 	const baseExtensionStorageTemplate = {
 		extensions: [extensionTemplate, extensionTemplate, extensionTemplate, extensionTemplate, extensionTemplate],

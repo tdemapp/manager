@@ -15,7 +15,8 @@
 					</v-flex>
 				</v-layout>
 			</v-container>
-
+			
+			<UsageWarning />
 			<AddBtn />
 		</v-content>
 	</v-app>
@@ -25,12 +26,14 @@
 import * as util from '../js/util';
 import AddBtn from './components/addBtn.vue';
 import Extension from './components/extension.vue';
+import UsageWarning from './components/usageWarning.vue';
 import Toolbar from './components/toolbar.vue';
 
 export default {
 	components: {
 		AddBtn,
 		Extension,
+		UsageWarning,
 		Toolbar,
 	},
 	data() {

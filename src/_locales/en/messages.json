@@ -11,6 +11,18 @@
     "message": "Install, search and manage extensions for TweetDeck",
     "description": "The description of the application, displayed in the web store"
   },
+  "dashboard_dialog_install_warning_title": {
+    "message": "Warning",
+    "description": "The title for the installation warning dialog"
+  },
+  "dashboard_dialog_install_warning_text": {
+    "message": "Some text will go here warning people about the dangers of loading custom extensions and that they know that any negative actions caused by a malicious extension is not fault of TDEM, but instead the user.",
+    "description": "The text body for the installation warning dialog"
+  },
+  "dashboard_dialog_install_warning_agree": {
+    "message": "I understand, continue.",
+    "description": "The text for the agree toggle for the installation warning dialog"
+  },
   "dashboard_dialog_add_title": {
     "message": "Add",
     "description": "The title for the add extension dialog"
