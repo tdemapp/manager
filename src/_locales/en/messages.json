@@ -23,9 +23,13 @@
     "message": "I understand, continue.",
     "description": "The text for the agree toggle for the installation warning dialog"
   },
-  "dashboard_dialog_add_title": {
-    "message": "Add",
-    "description": "The title for the add extension dialog"
+  "dashboard_dialog_store_title": {
+    "message": "Store",
+    "description": "The title for the store dialog"
+  },
+  "dashboard_dialog_search_title": {
+    "message": "Search",
+    "description": "The title for the search extension dialog"
   },
   "dashboard_dialog_settings_title": {
     "message": "Settings",
