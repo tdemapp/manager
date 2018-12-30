@@ -16,7 +16,7 @@
   <br />
 </div>
 
-<img alt='Screenshot' src='./assets/screenshot.png' />
+<img alt='Screenshot' src='./screenshot.png' />
 
 ## Development:
 
