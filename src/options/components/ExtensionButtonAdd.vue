@@ -45,7 +45,14 @@
 				</v-card-text>
 
 				<v-card-actions class="pt-0">
-					<v-btn flat large block color="grey darken-4" @click="addExtension(gistID)">
+					<v-btn
+						flat
+						large
+						block
+						color="grey darken-4"
+						:disabled="gistID.length === 0"
+						@click="addExtension(gistID)"
+					>
 						<v-icon left v-html="$vuetify.icons.add" />
 						<span
 							class="spacedLetters"
@@ -65,7 +72,7 @@ export default {
 	data() {
 		return {
 			dialogAddExtension: false,
-			gistID: null,
+			gistID: "",
 		};
 	},
 	methods: {
