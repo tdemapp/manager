@@ -25,7 +25,7 @@
 					/>
 					<v-spacer />
 					<v-toolbar-items class="hidden-sm-and-down">
-						<v-btn flat class="squareCorners" @click="dialogs = false">
+						<v-btn flat class="squareCorners" @click="dialog = false">
 							<v-icon v-html="$vuetify.icons.x" />
 						</v-btn>
 					</v-toolbar-items>
