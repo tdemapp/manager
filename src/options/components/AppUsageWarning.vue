@@ -1,5 +1,5 @@
 <template>
-	<v-dialog v-model="dialogState" max-width="480" persistent>
+	<v-dialog app persistent v-model="dialogState" max-width="480">
 		<v-card>
 			<v-card-title class="pb-0 grey darken-4">
 				<v-spacer />
