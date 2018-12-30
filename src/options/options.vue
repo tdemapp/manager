@@ -1,35 +1,35 @@
 <template>
 	<v-app>
-		<Toolbar />
+		<AppToolbar />
 
 		<v-content>
 			<v-container fluid>
 				<v-layout row wrap>
 					<v-flex xs12 sm12 md6 lg3 xl3 v-for='(item, i) in extensionsStorage' :key='i'>
-						<Extension :name='item.name' :version='item.version' :description='item.description' :isEnabled='item.enabled' />
+						<ExtensionCard :name='item.name' :version='item.version' :description='item.description' :isEnabled='item.enabled' />
 					</v-flex>
 				</v-layout>
 			</v-container>
 			
-			<UsageWarning />
-			<AddBtn />
+			<AppUsageWarning />
+			<ExtensionButtonAdd />
 		</v-content>
 	</v-app>
 </template>
 
 <script>
 import * as util from '../js/util';
-import AddBtn from './components/addBtn.vue';
-import Extension from './components/extension.vue';
-import UsageWarning from './components/usageWarning.vue';
-import Toolbar from './components/toolbar.vue';
+import AppToolbar from './components/AppToolbar.vue';
+import AppUsageWarning from './components/AppUsageWarning.vue';
+import ExtensionButtonAdd from './components/ExtensionButtonAdd.vue';
+import ExtensionCard from './components/ExtensionCard.vue';
 
 export default {
 	components: {
-		AddBtn,
-		Extension,
-		UsageWarning,
-		Toolbar,
+		AppToolbar,
+		AppUsageWarning,
+		ExtensionButtonAdd,
+		ExtensionCard,
 	},
 	data() {
 		return {
