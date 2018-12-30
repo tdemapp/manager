@@ -72,13 +72,7 @@ function initializeStorage() {
 		},
 	};
 	const baseExtensionStorageTemplate = {
-		extensions: [
-			extensionTemplate,
-			extensionTemplate,
-			extensionTemplate,
-			extensionTemplate,
-			extensionTemplate,
-		],
+		extensions: [extensionTemplate],
 	};
 
 	/*
