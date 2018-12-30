@@ -1,6 +1,9 @@
 <template>
 	<section>
 		<v-toolbar flat dark class="transparent mt-3">
+			<!-- Store Dialog -->
+			<DialogStore />
+
 			<!-- Search Input -->
 			<v-text-field
 				light
@@ -24,12 +27,14 @@
 <script>
 import DialogInfo from './DialogInfo.vue'
 import DialogSettings from './DialogSettings.vue'
+import DialogStore from './DialogStore.vue'
 import * as util from '../../js/util';
 
 export default {
 	components: {
 		DialogInfo,
 		DialogSettings,
+		DialogStore
 	},
 	data() {
 		return {

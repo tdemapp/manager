@@ -34,6 +34,7 @@ function initVue() {
 			trash: 'feather-trash-2',
 
 			// Toolbar icons
+			store: 'feather-shopping-cart',
 			search: 'feather-search',
 			info: 'feather-info',
 			settings: 'feather-settings',
