@@ -20,19 +20,20 @@ export const getLocale = (msg) => {
 	return string;
 };
 
-export const getSettings = () => {
-	return storage.getSync((storage) => storage.settings);
-};
-
 export const addExtension = (id) => {
 	fetch('https://api.github.com/gists/' + id)
-		.then((res) => {
-			if (res.ok) {
-				return res.json();
+		.then((response) => {
+			if (response.ok) {
+				return response.json();
+			} else {
+				throw new Error(`⚠️ Error fetching gist`);
 			}
 		})
 		.then((data) => {
-			console.log(data.files['extension.js'].content);
+			util.storage.setLocal({
+				extensions: [eval(data.files['extension.js'].content)],
+			});
+
 			return true;
 		})
 		.catch((e) => {

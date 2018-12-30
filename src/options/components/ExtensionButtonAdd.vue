@@ -76,9 +76,9 @@ export default {
 		};
 	},
 	methods: {
-		addExtension(url) {
-			if (!util.addExtension(url)) {
-				this.dialog = false;
+		addExtension(id) {
+			if(util.addExtension(id)){
+				this.dialogAddExtension = false;
 			}
 		},
 		getLocale(text) {
