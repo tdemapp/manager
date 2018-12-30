@@ -49,22 +49,27 @@ export default {
 	props: {
 		name: {
 			type: String,
+			required: true,
 			default: extensionTemplate.name,
 		},
 		description: {
 			type: String,
+			required: true,
 			default: extensionTemplate.description,
 		},
 		version: {
 			type: String,
+			required: true,
 			default: extensionTemplate.version,
 		},
 		website: {
 			type: String,
+			required: false,
 			default: extensionTemplate.website,
 		},
 		isEnabled: {
 			type: Boolean,
+			required: true,
 			default: extensionTemplate.isEnabled,
 		},
 	},
