@@ -212,17 +212,17 @@ export default {
 				{
 					icon: 'github',
 					text: util.getLocale('dashboard_dialog_info_btn_github'),
-					href: 'https://github.com/nurodev/tdem',
+					href: 'https://github.com/tdemapp/tdem',
 				},
 				{
 					icon: 'users',
 					text: util.getLocale('dashboard_dialog_info_btn_contributors'),
-					href: 'https://github.com/NuroDev/TDEM/graphs/contributors',
+					href: 'https://github.com/tdemapp/TDEM/graphs/contributors',
 				},
 				{
 					icon: 'grid',
 					text: util.getLocale('dashboard_dialog_info_btn_dependencies'),
-					href: 'https://github.com/NuroDev/TDEM/network/dependencies',
+					href: 'https://github.com/tdemapp/TDEM/network/dependencies',
 				},
 			],
 		};
