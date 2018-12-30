@@ -115,7 +115,7 @@ export default {
             dialog: false,
             extensionVersion: util.getExtensionVersion(),
             shortcuts: [
-				{ icon: 'store', text: util.getLocale('dashboard_dialog_store_title'), bind: 'T' },
+				{ icon: 'store', text: util.getLocale('dashboard_dialog_store_title'), bind: 'A' },
 				{ icon: 'search', text: util.getLocale('dashboard_dialog_search_title'), bind: 'S' },
 				{ icon: 'settings', text: util.getLocale('dashboard_dialog_settings_title'), bind: ',' },
 				{ icon: 'info', text: util.getLocale('dashboard_dialog_info_title'), bind: 'I' },

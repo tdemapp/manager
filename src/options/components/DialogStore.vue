@@ -6,7 +6,7 @@
             large
             light
             @click="dialog = true"
-            v-shortkey="['t']"
+            v-shortkey="['a']"
             @shortkey="dialog = true"
             class="mt-3 ml-2"
         >
