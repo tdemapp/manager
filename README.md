@@ -7,8 +7,8 @@
   <h1> TDEM </h1>
   <p> Install, search and manage extensions for TweetDeck </p>
 
-  [![License](https://img.shields.io/badge/license-mit-blue.svg?longCache=true&style=for-the-badge)](https://github.com/tdemapp/TDEM/blob/webpack/LICENSE) 
-  [![Travis](https://img.shields.io/travis/tdemapp/TDEM/webpack.svg?style=for-the-badge)](https://travis-ci.org/tdemapp/TDEM) 
+  [![License](https://img.shields.io/badge/license-mit-blue.svg?longCache=true&style=for-the-badge)](https://github.com/tdemapp/tdem/blob/webpack/LICENSE) 
+  [![Travis](https://img.shields.io/travis/tdemapp/tdem/webpack.svg?style=for-the-badge)](https://travis-ci.org/tdemapp/tdem) 
   [![Prettier](https://img.shields.io/badge/code--style-%20prettier-c596c7.svg?longCache=true&style=for-the-badge)](https://prettier.io/) 
   [![gitmoji](https://img.shields.io/badge/gitmoji-%20%F0%9F%98%9C%20%F0%9F%98%8D-FFDD67.svg?longCache=true&style=for-the-badge)](https://gitmoji.carloscuesta.me/) 
   [![Personal Twitter](https://img.shields.io/badge/-@nurodev-03A9F4.svg?logo=twitter&logoColor=white&longCache=true&style=for-the-badge)](https://twitter.com/nurodev)
@@ -38,4 +38,4 @@ $ npm run dev:firefox # yarn dev:firefox
 
 ## License:
 
-MIT © [Ben Dixon](https://github.com/tdemapp/TDEM/blob/webpack/LICENSE)
+MIT © [Ben Dixon](https://github.com/tdemapp/tdem/blob/webpack/LICENSE)
