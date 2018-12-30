@@ -15,9 +15,6 @@
 					</v-flex>
 				</v-layout>
 			</v-container>
-
-			<AppUsageWarning />
-			<ExtensionButtonAdd />
 		</v-content>
 	</v-app>
 </template>
@@ -25,15 +22,11 @@
 <script>
 import * as util from '../js/util';
 import AppToolbar from './components/AppToolbar.vue';
-import AppUsageWarning from './components/AppUsageWarning.vue';
-import ExtensionButtonAdd from './components/ExtensionButtonAdd.vue';
 import ExtensionCard from './components/ExtensionCard.vue';
 
 export default {
 	components: {
 		AppToolbar,
-		AppUsageWarning,
-		ExtensionButtonAdd,
 		ExtensionCard,
 	},
 	data() {
