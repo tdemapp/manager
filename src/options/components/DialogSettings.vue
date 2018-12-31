@@ -1,21 +1,21 @@
 <template>
-    <section>
-        <!-- Toolbar Button -->
-        <v-btn
-            flat
-            large
-            light
-            @click="dialog = true"
-            v-shortkey="[',']"
-            @shortkey="dialog = true"
-            class="mt-3 mr-4"
-        >
-            <v-icon left v-html="$vuetify.icons.settings" />
-            <span v-html="getLocale('dashboard_dialog_settings_title')" />
-        </v-btn>
+	<section>
+		<!-- Toolbar Button -->
+		<v-btn
+			flat
+			large
+			light
+			@click="dialog = true"
+			v-shortkey="[',']"
+			@shortkey="dialog = true"
+			class="mt-3 mr-4"
+		>
+			<v-icon left v-html="$vuetify.icons.settings" />
+			<span v-html="getLocale('dashboard_dialog_settings_title')" />
+		</v-btn>
 
-        <!-- Dialog Content -->
-        <v-dialog v-model="dialog" max-width="740">
+		<!-- Dialog Content -->
+		<v-dialog v-model="dialog" max-width="740">
 			<v-card>
 				<v-toolbar flat dark tabs color="grey darken-4">
 					<v-spacer />
@@ -25,12 +25,7 @@
 						</v-btn>
 					</v-toolbar-items>
 
-					<v-tabs
-						slot="extension"
-						v-model="activeTab"
-						color="grey darken-4"
-						grow
-					>
+					<v-tabs slot="extension" v-model="activeTab" color="grey darken-4" grow>
 						<v-tabs-slider color="white" />
 
 						<v-tab>
@@ -50,7 +45,9 @@
 						<v-tab-item>
 							<h1
 								class="headline spacedLetters upperCase boldTitle ma-2 mb-3"
-								v-html="getLocale('dashboard_dialog_settings_subtitle_display') + ':'"
+								v-html="
+									getLocale('dashboard_dialog_settings_subtitle_display') + ':'
+								"
 							/>
 							<v-divider />
 							<v-layout align-center justify-center row fill-height>
@@ -78,7 +75,12 @@
 							/>
 							<v-divider />
 							<v-layout row wrap class="mt-2 mb-3">
-								<v-flex xs5 class="ml-4 mr-4" v-for="(item, i) in shortcuts" :key="i">
+								<v-flex
+									xs5
+									class="ml-4 mr-4"
+									v-for="(item, i) in shortcuts"
+									:key="i"
+								>
 									<v-btn flat large block disabled>
 										<v-icon left v-html="'$vuetify.icons.' + item.icon" />
 										<span v-html="item.text + ': ' + item.bind" />
@@ -93,7 +95,12 @@
 							/>
 							<v-divider />
 							<v-layout row wrap class="mt-2">
-								<v-flex xs5 class="mb-1 ml-4 mr-4" v-for="(item, i) in links" :key="i">
+								<v-flex
+									xs5
+									class="mb-1 ml-4 mr-4"
+									v-for="(item, i) in links"
+									:key="i"
+								>
 									<v-btn
 										flat
 										large
@@ -132,7 +139,9 @@
 										<v-icon left v-html="$vuetify.icons.download" />
 										<span
 											v-html="
-												getLocale('dashboard_dialog_info_btn_download_settings')
+												getLocale(
+													'dashboard_dialog_info_btn_download_settings',
+												)
 											"
 										/>
 									</v-btn>
@@ -143,23 +152,30 @@
 				</v-card-text>
 			</v-card>
 		</v-dialog>
-        
-    </section>
+	</section>
 </template>
 
 <script>
 import * as util from '../../js/util';
 
 export default {
-    data () {
-        return {
+	data() {
+		return {
 			dialog: false,
 			activeTab: null,
 			extensionVersion: util.getExtensionVersion(),
-            shortcuts: [
+			shortcuts: [
 				{ icon: 'store', text: util.getLocale('dashboard_dialog_store_title'), bind: 'A' },
-				{ icon: 'search', text: util.getLocale('dashboard_dialog_search_title'), bind: 'S' },
-				{ icon: 'settings', text: util.getLocale('dashboard_dialog_settings_title'), bind: ',' },
+				{
+					icon: 'search',
+					text: util.getLocale('dashboard_dialog_search_title'),
+					bind: 'S',
+				},
+				{
+					icon: 'settings',
+					text: util.getLocale('dashboard_dialog_settings_title'),
+					bind: ',',
+				},
 				{ icon: 'info', text: util.getLocale('dashboard_dialog_info_title'), bind: 'I' },
 			],
 			links: [
@@ -194,12 +210,12 @@ export default {
 					href: 'https://github.com/tdemapp/TDEM/network/dependencies',
 				},
 			],
-        }
-    },
-    methods: {
+		};
+	},
+	methods: {
 		getLocale(text) {
 			return util.getLocale(text);
 		},
 	},
-}
+};
 </script>
