@@ -14,18 +14,13 @@
 				:append-icon="$vuetify.icons.search"
 			/>
 
-			<!-- Settings Dialog -->
+			<!-- Settings/Info Dialog -->
 			<DialogSettings />
-
-			<!-- Into Dialog -->
-			<DialogInfo />
-			
 		</v-toolbar>
 	</section>
 </template>
 
 <script>
-import DialogInfo from './DialogInfo.vue'
 import DialogSearch from './DialogSearch.vue'
 import DialogSettings from './DialogSettings.vue'
 import DialogStore from './DialogStore.vue'
@@ -33,7 +28,6 @@ import * as util from '../../js/util';
 
 export default {
 	components: {
-		DialogInfo,
 		DialogSearch,
 		DialogSettings,
 		DialogStore
