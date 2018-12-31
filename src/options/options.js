@@ -37,7 +37,7 @@ function initVue() {
 			store: 'feather-shopping-cart',
 			search: 'feather-search',
 			info: 'feather-info',
-			settings: 'feather-settings',
+			settings: 'feather-sliders',
 
 			// Modal icons
 			twitter: 'feather-twitter',
