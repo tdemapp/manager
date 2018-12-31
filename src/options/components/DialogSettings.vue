@@ -11,7 +11,7 @@
 			class="mt-3 mr-4"
 		>
 			<v-icon left v-html="$vuetify.icons.settings" />
-			<span v-html="getLocale('dashboard_dialog_settings_title')" />
+			<span class="spacedLetters" v-html="getLocale('dashboard_dialog_settings_title')" />
 		</v-btn>
 
 		<!-- Dialog Content -->
