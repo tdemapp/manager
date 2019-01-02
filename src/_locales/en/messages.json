@@ -1,86 +1,65 @@
 {
   "appName": {
-    "message": "TweetDeck Extension Manager",
-    "description": "The title of the extension, displayed in the web store"
+    "message": "TweetDeck Extension Manager"
   },
   "appShortName": {
-    "message": "TDEM",
-    "description": "The short title of the extension, displayed in extension list"
+    "message": "TDEM"
   },
   "appDesc": {
-    "message": "Install, search and manage extensions for TweetDeck",
-    "description": "The description of the application, displayed in the web store"
+    "message": "Install, search and manage extensions for TweetDeck"
   },
   "dashboard_dialog_install_warning_title": {
-    "message": "Warning",
-    "description": "The title for the installation warning dialog"
+    "message": "Warning"
   },
   "dashboard_dialog_install_warning_text": {
-    "message": "Some text will go here warning people about the dangers of loading custom extensions and that they know that any negative actions caused by a malicious extension is not fault of TDEM, but instead the user.",
-    "description": "The text body for the installation warning dialog"
+    "message": "Some text will go here warning people about the dangers of loading custom extensions and that they know that any negative actions caused by a malicious extension is not fault of TDEM, but instead the user."
   },
   "dashboard_dialog_install_warning_agree": {
-    "message": "I understand, continue.",
-    "description": "The text for the agree toggle for the installation warning dialog"
+    "message": "I understand, continue."
   },
   "dashboard_dialog_store_title": {
-    "message": "Store",
-    "description": "The title for the store dialog"
+    "message": "Store"
   },
   "dashboard_dialog_search_title": {
-    "message": "Search",
-    "description": "The title for the search extension dialog"
+    "message": "Search"
   },
   "dashboard_dialog_settings_title": {
-    "message": "Settings",
-    "description": "The title for the settings dialog"
+    "message": "Settings"
   },
   "dashboard_dialog_settings_subtitle_display": {
-    "message": "Display",
-    "description": "The sub-title for the settings dialog display section"
+    "message": "Display"
   },
   "dashboard_dialog_info_title": {
-    "message": "Info",
-    "description": "The title for the info dialog"
+    "message": "Info"
   },
   "dashboard_dialog_info_subtitle_shortcuts": {
-    "message": "Shortcuts",
-    "description": "The sub-title for the info dialog shortcuts section"
+    "message": "Shortcuts"
   },
   "dashboard_dialog_info_subtitle_links": {
-    "message": "Links",
-    "description": "The sub-title for the info dialog links section"
+    "message": "Links"
   },
   "dashboard_dialog_info_btn_chrome": {
-    "message": "Chrome Store",
-    "description": "The text for the chrome store button in the info dialog"
+    "message": "Chrome Store"
   },
   "dashboard_dialog_info_btn_website": {
-    "message": "Website",
-    "description": "The text for the website button in the info dialog"
+    "message": "Website"
   },
   "dashboard_dialog_info_btn_contributors": {
-    "message": "Contributors",
-    "description": "The text for contributors button in the info dialog"
+    "message": "Contributors"
   },
   "dashboard_dialog_info_btn_dependencies": {
-    "message": "Dependencies",
-    "description": "The text for dependencies button in the info dialog"
+    "message": "Dependencies"
   },
   "dashboard_dialog_info_subtitle_debug": {
-    "message": "Debug",
-    "description": "The sub-title for the info dialog debug section"
+    "message": "Debug"
   },
   "dashboard_dialog_info_app_version": {
-    "message": "App Version",
-    "description": "The text prefix to show you the app version"
+    "message": "App Version"
   },
   "dashboard_dialog_info_btn_download_settings": {
-    "message": "Download Settings",
-    "description": "The text for the download settings button in the info dialog"
+    "message": "Download Settings"
   },
   "dashboard_extension_version": {
-    "message": "version",
-    "description": "The text prefix to show you the extension version"
+    "message": "version"
   }
 }
