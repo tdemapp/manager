@@ -41,6 +41,7 @@ function initVue() {
 
 			// Modal icons
 			twitter: 'feather-twitter',
+			website: 'feather-globe',
 			github: 'feather-github',
 			download: 'feather-download',
 			chrome: 'feather-chrome',

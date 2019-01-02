@@ -51,21 +51,13 @@
     "message": "Links",
     "description": "The sub-title for the info dialog links section"
   },
-  "dashboard_dialog_info_btn_twitter_personal": {
-    "message": "@nurodev",
-    "description": "The text for my personal twitter button in the info dialog"
-  },
-  "dashboard_dialog_info_btn_twitter_tdem": {
-    "message": "@tdemapp",
-    "description": "The text for the tdem twitter button in the info dialog"
-  },
   "dashboard_dialog_info_btn_chrome": {
     "message": "Chrome Store",
     "description": "The text for the chrome store button in the info dialog"
   },
-  "dashboard_dialog_info_btn_github": {
-    "message": "Source",
-    "description": "The text for the GitHub/source button in the info dialog"
+  "dashboard_dialog_info_btn_website": {
+    "message": "Website",
+    "description": "The text for the website button in the info dialog"
   },
   "dashboard_dialog_info_btn_contributors": {
     "message": "Contributors",

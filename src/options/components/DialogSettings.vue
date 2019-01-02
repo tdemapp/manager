@@ -181,13 +181,13 @@ export default {
 			links: [
 				{
 					icon: 'twitter',
-					text: util.getLocale('dashboard_dialog_info_btn_twitter_personal'),
+					text: 'Twitter',
 					href: 'https://twitter.com/nurodev',
 				},
 				{
-					icon: 'twitter',
-					text: util.getLocale('dashboard_dialog_info_btn_twitter_tdem'),
-					href: 'https://twitter.com/tdemapp',
+					icon: 'github',
+					text: 'GitHub',
+					href: 'https://github.com/tdemapp/tdem',
 				},
 				{
 					icon: 'chrome',
@@ -195,9 +195,9 @@ export default {
 					href: 'https://chrome.google.com/webstore/detail/tdem/',
 				},
 				{
-					icon: 'github',
-					text: util.getLocale('dashboard_dialog_info_btn_github'),
-					href: 'https://github.com/tdemapp/tdem',
+					icon: 'website',
+					text: util.getLocale('dashboard_dialog_info_btn_website'),
+					href: 'https://tdem.app',
 				},
 				{
 					icon: 'users',
