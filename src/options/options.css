@@ -24,6 +24,9 @@
 .v-btn--floating {
 	border-radius: 100% !important;
 }
+.v-toolbar__extension {
+	padding: 0!important;
+}
 
 /* 
 * Dashboard styles
