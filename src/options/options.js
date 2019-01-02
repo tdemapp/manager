@@ -50,7 +50,9 @@ function initVue() {
 
 			// Misc Icons
 			x: 'feather-x',
+			x_circle: 'feather-x-circle',
 			tick: 'feather-check',
+			tick_circle: 'feather-check-circle',
 			add: 'feather-plus',
 			warning: 'feather-alert-triangle',
 		},

@@ -2,6 +2,14 @@
 	<v-app>
 		<AppToolbar />
 
+		<!-- <AppNotification
+			:infinite="true"
+			text="A new version of TDEM has been installed"
+			icon="download"
+			bgColor="grey darken-4"
+			iconColor="white"
+		/> -->
+
 		<v-content>
 			<v-container fluid>
 				<v-layout row wrap>

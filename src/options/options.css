@@ -27,6 +27,11 @@
 .v-toolbar__extension {
 	padding: 0 !important;
 }
+@media only screen and (min-width: 600px) {
+	.v-snack__content .v-btn:first-of-type {
+		margin-left: 16px !important;
+	}
+}
 
 /* 
 * Dashboard styles
