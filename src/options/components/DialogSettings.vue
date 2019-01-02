@@ -140,7 +140,7 @@
 										<span
 											v-html="
 												getLocale(
-													'dashboard_dialog_info_btn_download_settings',
+													'dashboard_dialog_info_btn_download_settings'
 												)
 											"
 										/>
