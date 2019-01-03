@@ -156,27 +156,30 @@
 </template>
 
 <script>
-import * as util from '../../js/util';
+import { getExtensionVersion, getLocale, storage } from '../../js/util';
 
 export default {
 	data() {
 		return {
 			dialog: false,
 			activeTab: null,
-			extensionVersion: util.getExtensionVersion(),
+			extensionVersion: getExtensionVersion(),
 			shortcuts: [
-				{ icon: 'store', text: util.getLocale('dashboard_dialog_store_title'), bind: 'A' },
-				{
-					icon: 'search',
-					text: util.getLocale('dashboard_dialog_search_title'),
+				{ 
+					icon: 'store', 
+					text: getLocale('dashboard_dialog_store_title'),
+					bind: 'A',
+				},
+				{ 
+					icon: 'search', 
+					text: getLocale('dashboard_dialog_search_title'),
 					bind: 'S',
 				},
-				{
-					icon: 'settings',
-					text: util.getLocale('dashboard_dialog_settings_title'),
+				{ 
+					icon: 'settings', 
+					text: getLocale('dashboard_dialog_settings_title'),
 					bind: ',',
 				},
-				{ icon: 'info', text: util.getLocale('dashboard_dialog_info_title'), bind: 'I' },
 			],
 			links: [
 				{
@@ -191,22 +194,22 @@ export default {
 				},
 				{
 					icon: 'chrome',
-					text: util.getLocale('dashboard_dialog_info_btn_chrome'),
+					text: getLocale('dashboard_dialog_info_btn_chrome'),
 					href: 'https://chrome.google.com/webstore/detail/tdem/',
 				},
 				{
 					icon: 'website',
-					text: util.getLocale('dashboard_dialog_info_btn_website'),
+					text: getLocale('dashboard_dialog_info_btn_website'),
 					href: 'https://tdem.app',
 				},
 				{
 					icon: 'users',
-					text: util.getLocale('dashboard_dialog_info_btn_contributors'),
+					text: getLocale('dashboard_dialog_info_btn_contributors'),
 					href: 'https://github.com/tdemapp/TDEM/graphs/contributors',
 				},
 				{
 					icon: 'grid',
-					text: util.getLocale('dashboard_dialog_info_btn_dependencies'),
+					text: getLocale('dashboard_dialog_info_btn_dependencies'),
 					href: 'https://github.com/tdemapp/TDEM/network/dependencies',
 				},
 			],
@@ -214,7 +217,7 @@ export default {
 	},
 	methods: {
 		getLocale(text) {
-			return util.getLocale(text);
+			return getLocale(text);
 		},
 	},
 };
