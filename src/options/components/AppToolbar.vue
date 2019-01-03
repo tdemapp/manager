@@ -30,11 +30,6 @@ export default {
 		DialogSearch,
 		DialogSettings,
 		DialogStore,
-	},
-	data() {
-		return {
-			searchInput: null,
-		};
-	},
+	}
 };
 </script>

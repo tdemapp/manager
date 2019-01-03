@@ -72,10 +72,6 @@ export default {
 		},
 	},
 	methods: {
-		toggleExtension() {
-			let currentState = storage.get((storage) => storage.extensions.isEnabled);
-			storage.set(currentState);
-		},
 		getLocale(text) {
 			return getLocale(text);
 		},

@@ -54,6 +54,8 @@ export const removeExtension = (index) => {};
 
 export const reloadExtension = (index) => {};
 
+export const toggleExtension = (index) => {};
+
 /*
  * Storage global functions
  */
