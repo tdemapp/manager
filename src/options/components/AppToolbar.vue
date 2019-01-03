@@ -35,6 +35,6 @@ export default {
 		return {
 			searchInput: null,
 		};
-	}
+	},
 };
 </script>

@@ -165,18 +165,18 @@ export default {
 			activeTab: null,
 			extensionVersion: getExtensionVersion(),
 			shortcuts: [
-				{ 
-					icon: 'store', 
+				{
+					icon: 'store',
 					text: getLocale('dashboard_dialog_store_title'),
 					bind: 'A',
 				},
-				{ 
-					icon: 'search', 
+				{
+					icon: 'search',
 					text: getLocale('dashboard_dialog_search_title'),
 					bind: 'S',
 				},
-				{ 
-					icon: 'settings', 
+				{
+					icon: 'settings',
 					text: getLocale('dashboard_dialog_settings_title'),
 					bind: ',',
 				},

@@ -14,8 +14,8 @@ export const getExtensionVersion = () => {
 };
 
 /*
-* Get localization 
-*/
+ * Get localization
+ */
 export const getLocale = (msg) => {
 	const string = chrome.i18n.getMessage(msg);
 
@@ -27,8 +27,8 @@ export const getLocale = (msg) => {
 };
 
 /*
-* Extension global functions
-*/
+ * Extension global functions
+ */
 export const addExtension = (id) => {
 	fetch('https://api.github.com/gists/' + id)
 		.then((response) => {
@@ -49,6 +49,10 @@ export const addExtension = (id) => {
 			throw new Error(`⚠️ Error Adding Extension | ${e}`);
 		});
 };
+
+export const removeExtension = (index) => {};
+
+export const reloadExtension = (index) => {};
 
 /*
  * Storage global functions
