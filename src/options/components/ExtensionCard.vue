@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import * as util from '../../js/util';
+import { storage, getLocale } from '../../js/util';
 import extensionTemplate from '../../js/template';
 
 export default {
@@ -73,11 +73,11 @@ export default {
 	},
 	methods: {
 		toggleExtension() {
-			let currentState = util.storage.getLocal((storage) => storage.extensions.isEnabled);
-			util.storage.setLocal(currentState);
+			let currentState = storage.get((storage) => storage.extensions.isEnabled);
+			storage.set(currentState);
 		},
 		getLocale(text) {
-			return util.getLocale(text);
+			return getLocale(text);
 		},
 	},
 };

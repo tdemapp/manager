@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import domify from 'domify';
-import * as util from './util';
+import { getExtensionUrl } from './util';
 
 /*
  * Initialize TDEM
@@ -49,7 +49,7 @@ function injectButton() {
 		// Open dashbord when button is clicked
 		$('.tdem-dashboard-btn').bind('click', (e) => {
 			e.preventDefault();
-			window.open(util.getExtensionUrl('options/options.html'));
+			window.open(getExtensionUrl('options/options.html'));
 		});
 	} catch (e) {
 		throw new Error(`⚠️ Error Injecting TDEM | ${e}`);

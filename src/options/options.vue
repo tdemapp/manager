@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import * as util from '../js/util';
+import { storage } from '../js/util';
 import AppNotification from './components/AppNotification.vue';
 import AppToolbar from './components/AppToolbar.vue';
 import ExtensionCard from './components/ExtensionCard.vue';
@@ -44,7 +44,7 @@ export default {
 	},
 	methods: {
 		updateExtensions() {
-			util.storage.getLocal((storage) => {
+			storage.getLocal((storage) => {
 				this.extensionsStorage = storage.extensions;
 			});
 		},

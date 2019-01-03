@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import * as util from '../../js/util';
+import { getLocale } from '../../js/util';
 
 export default {
 	data() {
@@ -51,7 +51,7 @@ export default {
 	},
 	methods: {
 		getLocale(text) {
-			return util.getLocale(text);
+			return getLocale(text);
 		},
 	},
 };

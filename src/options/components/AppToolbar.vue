@@ -24,7 +24,6 @@
 import DialogSearch from './DialogSearch.vue';
 import DialogSettings from './DialogSettings.vue';
 import DialogStore from './DialogStore.vue';
-import * as util from '../../js/util';
 
 export default {
 	components: {
@@ -36,11 +35,6 @@ export default {
 		return {
 			searchInput: null,
 		};
-	},
-	methods: {
-		getLocale(text) {
-			return util.getLocale(text);
-		},
-	},
+	}
 };
 </script>
