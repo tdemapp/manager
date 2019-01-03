@@ -1,15 +1,21 @@
+// Get extension name
 export const getExtensionUrl = (...args) => {
 	return chrome.extension.getURL(...args);
 };
 
+// Get extension name
 export const getExtensionName = () => {
 	return chrome.runtime.getManifest().name;
 };
 
+// Get extension version
 export const getExtensionVersion = () => {
 	return chrome.runtime.getManifest().version;
 };
 
+/*
+* Get localization 
+*/
 export const getLocale = (msg) => {
 	const string = chrome.i18n.getMessage(msg);
 
@@ -20,6 +26,9 @@ export const getLocale = (msg) => {
 	return string;
 };
 
+/*
+* Extension global functions
+*/
 export const addExtension = (id) => {
 	fetch('https://api.github.com/gists/' + id)
 		.then((response) => {
@@ -30,7 +39,7 @@ export const addExtension = (id) => {
 			}
 		})
 		.then((data) => {
-			util.storage.setLocal({
+			storage.set({
 				extensions: [eval(data.files['extension.js'].content)],
 			});
 
@@ -41,6 +50,9 @@ export const addExtension = (id) => {
 		});
 };
 
+/*
+* Storage global functions
+*/
 export const storage = {
 	getLocal(done) {
 		chrome.storage.local.get(null, (obj) => {
