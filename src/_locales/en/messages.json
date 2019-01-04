@@ -29,34 +29,31 @@
   "dashboard_dialog_settings_subtitle_display": {
     "message": "Display"
   },
-  "dashboard_dialog_info_title": {
-    "message": "Info"
-  },
-  "dashboard_dialog_info_subtitle_shortcuts": {
+  "dashboard_dialog_settings_subtitle_shortcuts": {
     "message": "Shortcuts"
   },
-  "dashboard_dialog_info_subtitle_links": {
+  "dashboard_dialog_settings_subtitle_links": {
     "message": "Links"
   },
-  "dashboard_dialog_info_btn_chrome": {
+  "dashboard_dialog_settings_btn_chrome": {
     "message": "Chrome Store"
   },
-  "dashboard_dialog_info_btn_website": {
+  "dashboard_dialog_settings_btn_website": {
     "message": "Website"
   },
-  "dashboard_dialog_info_btn_contributors": {
+  "dashboard_dialog_settings_btn_contributors": {
     "message": "Contributors"
   },
-  "dashboard_dialog_info_btn_dependencies": {
+  "dashboard_dialog_settings_btn_dependencies": {
     "message": "Dependencies"
   },
-  "dashboard_dialog_info_subtitle_debug": {
+  "dashboard_dialog_settings_subtitle_debug": {
     "message": "Debug"
   },
-  "dashboard_dialog_info_app_version": {
+  "dashboard_dialog_settings_app_version": {
     "message": "App Version"
   },
-  "dashboard_dialog_info_btn_download_settings": {
+  "dashboard_dialog_settings_btn_download_settings": {
     "message": "Download Settings"
   },
   "dashboard_extension_version": {

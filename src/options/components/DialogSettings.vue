@@ -34,7 +34,7 @@
 						</v-tab>
 						<v-tab>
 							<v-icon class="mr-3" v-html="$vuetify.icons.info" />
-							<span v-html="getLocale('dashboard_dialog_info_title')" />
+							<span v-html="getLocale('dashboard_dialog_settings_title')" />
 						</v-tab>
 					</v-tabs>
 				</v-toolbar>
@@ -71,7 +71,7 @@
 							<!-- Shortcuts section -->
 							<h1
 								class="headline spacedLetters upperCase boldTitle ma-2"
-								v-html="getLocale('dashboard_dialog_info_subtitle_shortcuts') + ':'"
+								v-html="getLocale('dashboard_dialog_settings_subtitle_shortcuts') + ':'"
 							/>
 							<v-divider />
 							<v-layout row wrap class="mt-2 mb-3">
@@ -91,7 +91,7 @@
 							<!-- Links section -->
 							<h1
 								class="headline spacedLetters upperCase boldTitle ma-2"
-								v-html="getLocale('dashboard_dialog_info_subtitle_links') + ':'"
+								v-html="getLocale('dashboard_dialog_settings_subtitle_links') + ':'"
 							/>
 							<v-divider />
 							<v-layout row wrap class="mt-2">
@@ -118,7 +118,7 @@
 							<!-- Debug section -->
 							<h1
 								class="headline spacedLetters upperCase boldTitle ma-2"
-								v-html="getLocale('dashboard_dialog_info_subtitle_debug') + ':'"
+								v-html="getLocale('dashboard_dialog_settings_subtitle_debug') + ':'"
 							/>
 							<v-divider />
 							<v-layout row wrap class="mt-2">
@@ -127,7 +127,7 @@
 										<span
 											class="spacedLetters"
 											v-html="
-												getLocale('dashboard_dialog_info_app_version') +
+												getLocale('dashboard_dialog_settings_app_version') +
 													': ' +
 													extensionVersion
 											"
@@ -140,7 +140,7 @@
 										<span
 											v-html="
 												getLocale(
-													'dashboard_dialog_info_btn_download_settings'
+													'dashboard_dialog_settings_btn_download_settings'
 												)
 											"
 										/>
@@ -194,22 +194,22 @@ export default {
 				},
 				{
 					icon: 'chrome',
-					text: getLocale('dashboard_dialog_info_btn_chrome'),
+					text: getLocale('dashboard_dialog_settings_btn_chrome'),
 					href: 'https://chrome.google.com/webstore/detail/tdem/',
 				},
 				{
 					icon: 'website',
-					text: getLocale('dashboard_dialog_info_btn_website'),
+					text: getLocale('dashboard_dialog_settings_btn_website'),
 					href: 'https://tdem.app',
 				},
 				{
 					icon: 'users',
-					text: getLocale('dashboard_dialog_info_btn_contributors'),
+					text: getLocale('dashboard_dialog_settings_btn_contributors'),
 					href: 'https://github.com/tdemapp/TDEM/graphs/contributors',
 				},
 				{
 					icon: 'grid',
-					text: getLocale('dashboard_dialog_info_btn_dependencies'),
+					text: getLocale('dashboard_dialog_settings_btn_dependencies'),
 					href: 'https://github.com/tdemapp/TDEM/network/dependencies',
 				},
 			],
