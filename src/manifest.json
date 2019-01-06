@@ -3,7 +3,6 @@
   "name": "__MSG_appShortName__",
   "short_name": "__MSG_appName__",
   "description": "__MSG_appDesc__",
-  "version": "1.1.1",
   "homepage_url": "https://tdem.app",
   "default_locale": "en",
   "icons": {
