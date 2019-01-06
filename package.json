@@ -1,7 +1,7 @@
 {
   "name": "tdem",
   "version": "1.1.1",
-  "description": "Install, search and manage extensions for TweetDeck",
+  "description": "Install and manage extensions for TweetDeck",
   "author": "N U R O ™ <me@nuro.sh>",
   "license": "MIT",
   "scripts": {

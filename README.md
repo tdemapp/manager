@@ -5,7 +5,7 @@
   </a>
 
   <h1> TDEM </h1>
-  <p> Install, search and manage extensions for TweetDeck </p>
+  <p> Install and manage extensions for TweetDeck </p>
 
   [![License](https://img.shields.io/badge/license-mit-blue.svg?longCache=true&style=for-the-badge)](https://github.com/tdemapp/tdem/blob/webpack/LICENSE) 
   [![Travis](https://img.shields.io/travis/tdemapp/tdem/webpack.svg?style=for-the-badge)](https://travis-ci.org/tdemapp/tdem) 
@@ -34,6 +34,15 @@ $ npm run dev:chrome # yarn dev:chrome
 
 # Firefox
 $ npm run dev:firefox # yarn dev:firefox
+```
+
+> Building for production
+```shell
+# Chrome
+$ npm run build:chrome # yarn build:chrome
+
+# Firefox
+$ npm run build:firefox # yarn build:firefox
 ```
 
 ## License:
