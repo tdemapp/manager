@@ -33,7 +33,7 @@
 
 		<v-divider :class="extension.isEnabled ? 'transparent ml-3 mr-3' : 'ml-3 mr-3'" />
 
-		<v-card-text class="caption" v-html="extension.description" />
+		<v-card-text class="caption text-truncate" v-html="extension.description" />
 
 		<v-card-actions>
 			<v-btn
@@ -51,7 +51,7 @@
 			</v-btn>
 
 			<v-spacer />
-
+			
 			<v-btn flat icon large :color="extension.isEnabled ? 'red' : 'grey'">
 				<v-icon v-html="$vuetify.icons.trash" />
 			</v-btn>
