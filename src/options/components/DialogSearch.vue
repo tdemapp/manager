@@ -20,7 +20,7 @@
 				<v-toolbar flat dark color="grey darken-4">
 					<v-icon v-html="$vuetify.icons.search" />
 					<v-card-title
-						class="headline spacedLetters upperCase ml-2"
+						class="headline spacedLetters text-uppercase ml-2"
 						v-html="getLocale('dashboard_dialog_search_title')"
 					/>
 					<v-spacer />

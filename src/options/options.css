@@ -50,9 +50,6 @@ input {
 .spacedLetters {
 	letter-spacing: 0.2em !important;
 }
-.upperCase {
-	text-transform: uppercase !important;
-}
 .boldTitle {
 	font-weight: 900 !important;
 }

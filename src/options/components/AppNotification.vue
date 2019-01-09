@@ -8,7 +8,7 @@
 		:timeout="infinite ? 0 : '3500'"
 	>
 		<v-icon class="mr-3" :color="iconColor" v-html="'$vuetify.icons.' + icon" />
-		<span class="upperCase spacedLetters" v-html="text" />
+		<span class="text-uppercase spacedLetters" v-html="text" />
 		<v-btn flat icon :color="iconColor" @click="showSnackbar = false">
 			<v-icon v-html="$vuetify.icons.x" />
 		</v-btn>

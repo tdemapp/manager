@@ -44,7 +44,7 @@
 						<!-- Settings Tab -->
 						<v-tab-item>
 							<h1
-								class="headline spacedLetters upperCase boldTitle ma-2 mb-3"
+								class="headline spacedLetters text-uppercase boldTitle ma-2 mb-3"
 								v-html="
 									getLocale('dashboard_dialog_settings_subtitle_display') + ':'
 								"
@@ -52,13 +52,13 @@
 							<v-divider />
 							<v-layout align-center justify-center row fill-height>
 								<v-flex xs4 class="mt-2 ml-4 mr-4">
-									<span class="body-2 spacedLetters upperCase">Dark Theme</span>
+									<span class="body-2 spacedLetters text-uppercase">Dark Theme</span>
 								</v-flex>
 								<v-flex xs2 class="mt-2 ml-4 mr-4">
 									<v-switch class="mt-3" color="grey darken-4" />
 								</v-flex>
 								<v-flex xs4 class="mt-2 ml-4 mr-4">
-									<span class="body-2 spacedLetters upperCase">Dark Theme</span>
+									<span class="body-2 spacedLetters text-uppercase">Dark Theme</span>
 								</v-flex>
 								<v-flex xs2 class="mt-2 ml-4 mr-4">
 									<v-switch class="mt-3" color="grey darken-4" />
@@ -70,7 +70,7 @@
 						<v-tab-item>
 							<!-- Shortcuts section -->
 							<h1
-								class="headline spacedLetters upperCase boldTitle ma-2"
+								class="headline spacedLetters text-uppercase boldTitle ma-2"
 								v-html="getLocale('dashboard_dialog_settings_subtitle_shortcuts') + ':'"
 							/>
 							<v-divider />
@@ -90,7 +90,7 @@
 
 							<!-- Links section -->
 							<h1
-								class="headline spacedLetters upperCase boldTitle ma-2"
+								class="headline spacedLetters text-uppercase boldTitle ma-2"
 								v-html="getLocale('dashboard_dialog_settings_subtitle_links') + ':'"
 							/>
 							<v-divider />
@@ -117,7 +117,7 @@
 
 							<!-- Debug section -->
 							<h1
-								class="headline spacedLetters upperCase boldTitle ma-2"
+								class="headline spacedLetters text-uppercase boldTitle ma-2"
 								v-html="getLocale('dashboard_dialog_settings_subtitle_debug') + ':'"
 							/>
 							<v-divider />
