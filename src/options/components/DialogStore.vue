@@ -1,18 +1,19 @@
 <template>
 	<section>
-		<!-- Toolbar Button -->
-		<v-btn
-			flat
-			large
-			light
+		<!-- Sidebar Button -->
+		<v-list-tile
 			@click="dialog = true"
 			v-shortkey="['a']"
 			@shortkey="dialog = true"
-			class="mt-3 ml-2"
 		>
-			<v-icon left v-html="$vuetify.icons.store" />
-			<span class="spacedLetters" v-html="getLocale('dashboard_dialog_store_title')" />
-		</v-btn>
+			<v-list-tile-action>
+				<v-icon v-html="$vuetify.icons.store" />
+			</v-list-tile-action>
+
+			<v-list-tile-content>
+				<v-list-tile-title class="spacedLetters" v-html="getLocale('dashboard_dialog_store_title')" />
+			</v-list-tile-content>
+		</v-list-tile>
 
 		<!-- Dialog Content -->
 		<v-dialog v-model="dialog" max-width="940">

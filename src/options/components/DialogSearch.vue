@@ -1,18 +1,19 @@
 <template>
 	<section>
-		<!-- Toolbar Search Input Field -->
-		<v-text-field
-			light
-			solo
-			label="Search"
-			class="mr-2 ml-2 mt-3 elevation-0"
-			color="grey darken-4"
-			v-model="searchInput"
-			:append-icon="$vuetify.icons.search"
-			@click:append="dialog = true"
+		<!-- Sidebar Button -->
+		<v-list-tile
+			@click="dialog = true"
 			v-shortkey="['s']"
 			@shortkey="dialog = true"
-		/>
+		>
+			<v-list-tile-action>
+				<v-icon v-html="$vuetify.icons.search" />
+			</v-list-tile-action>
+
+			<v-list-tile-content>
+				<v-list-tile-title class="spacedLetters" v-html="getLocale('dashboard_dialog_search_title')" />
+			</v-list-tile-content>
+		</v-list-tile>
 
 		<!-- Dialog Content -->
 		<v-dialog v-model="dialog" max-width="640">

@@ -33,7 +33,8 @@ function initVue() {
 			refresh: 'feather-refresh-cw',
 			trash: 'feather-trash-2',
 
-			// Toolbar icons
+			// Sidebar icons
+			menu: 'feather-menu',
 			store: 'feather-shopping-cart',
 			search: 'feather-search',
 			info: 'feather-info',
