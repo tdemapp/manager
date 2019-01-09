@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import { getLocale } from '../../js/util';
+import { getLocale, storage } from '../../js/util';
 import DialogSearch from './DialogSearch.vue';
 import DialogSettings from './DialogSettings.vue';
 import DialogStore from './DialogStore.vue';
@@ -45,12 +45,20 @@ export default {
     data () {
         return {
             drawer: true,
-            isMini: true,
+            isMini: null,
         }
+    },
+    created() {
+        this.getIsMini();
     },
     methods: {
         getLocale (text) {
             return getLocale(text);
+        },
+        getIsMini() {
+            storage.get((storage) => {
+				this.isMini = storage.settings.isSidebarMini;
+			});
         }
     }
 }

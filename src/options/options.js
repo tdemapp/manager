@@ -75,6 +75,7 @@ function initializeStorage() {
 		extensions: [extensionTemplate],
 		settings: {
 			isDarkTheme: false,
+			isSidebarMini: false,
 			shortcuts: {
 				store: 'a',
 				search: 's',
