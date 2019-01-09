@@ -35,5 +35,8 @@ module.exports = {
 		config.plugins.push(new MiniCssExtractPlugin());
 
 		return config;
-	}
+	},
+	
+	// Override default copyIgnore array
+	copyIgnore: [ '**/*.js', '**/*.json', '**/*.css', '**/*.vue' ]
 };
