@@ -16,7 +16,7 @@
 		</v-list-tile>
 
 		<!-- Dialog Content -->
-		<v-dialog v-model="dialog" max-width="640">
+		<v-dialog v-model="dialog" max-width="940">
 			<v-card>
 				<v-toolbar flat dark color="grey darken-4">
 					<v-icon v-html="$vuetify.icons.search" />
