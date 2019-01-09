@@ -30,6 +30,6 @@ export default {
 		DialogSearch,
 		DialogSettings,
 		DialogStore,
-	}
+	},
 };
 </script>

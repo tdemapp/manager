@@ -51,7 +51,7 @@
 			</v-btn>
 
 			<v-spacer />
-			
+
 			<v-btn flat icon large :color="extension.isEnabled ? 'red' : 'grey'">
 				<v-icon v-html="$vuetify.icons.trash" />
 			</v-btn>

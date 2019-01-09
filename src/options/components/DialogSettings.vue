@@ -25,7 +25,7 @@
 						</v-btn>
 					</v-toolbar-items>
 
-					<v-tabs slot="extension" v-model="activeTab" color="grey darken-4" grow>
+					<v-tabs grow slot="extension" v-model="activeTab" color="grey darken-4">
 						<v-tabs-slider color="white" />
 
 						<v-tab>
@@ -52,13 +52,17 @@
 							<v-divider />
 							<v-layout align-center justify-center row fill-height>
 								<v-flex xs4 class="mt-2 ml-4 mr-4">
-									<span class="body-2 spacedLetters text-uppercase">Dark Theme</span>
+									<span class="body-2 spacedLetters text-uppercase"
+										>Dark Theme</span
+									>
 								</v-flex>
 								<v-flex xs2 class="mt-2 ml-4 mr-4">
 									<v-switch class="mt-3" color="grey darken-4" />
 								</v-flex>
 								<v-flex xs4 class="mt-2 ml-4 mr-4">
-									<span class="body-2 spacedLetters text-uppercase">Dark Theme</span>
+									<span class="body-2 spacedLetters text-uppercase"
+										>Dark Theme</span
+									>
 								</v-flex>
 								<v-flex xs2 class="mt-2 ml-4 mr-4">
 									<v-switch class="mt-3" color="grey darken-4" />
@@ -71,7 +75,9 @@
 							<!-- Shortcuts section -->
 							<h1
 								class="headline spacedLetters text-uppercase boldTitle ma-2"
-								v-html="getLocale('dashboard_dialog_settings_subtitle_shortcuts') + ':'"
+								v-html="
+									getLocale('dashboard_dialog_settings_subtitle_shortcuts') + ':'
+								"
 							/>
 							<v-divider />
 							<v-layout row wrap class="mt-2 mb-3">
@@ -162,7 +168,7 @@ export default {
 	data() {
 		return {
 			dialog: false,
-			activeTab: null,
+			activeTab: 0,
 			extensionVersion: getExtensionVersion(),
 			shortcuts: [
 				{
@@ -215,7 +221,7 @@ export default {
 			],
 		};
 	},
-	created () {
+	created() {
 		// Get shortcut key binds from settings
 		storage.get((storage) => {
 			this.shortcuts[0].bind = storage.settings.shortcuts.store;
