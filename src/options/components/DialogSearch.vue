@@ -2,6 +2,7 @@
 	<section>
 		<!-- Sidebar Button -->
 		<v-list-tile
+			ripple
 			@click="dialog = true"
 			v-shortkey="['s']"
 			@shortkey="dialog = true"

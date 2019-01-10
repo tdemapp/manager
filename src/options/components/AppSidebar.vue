@@ -12,6 +12,7 @@
 
         <v-list class="pt-0" three-line>
             <v-list-tile
+                ripple
                 @click="isMini = !isMini"
             >
                 <v-list-tile-action>
