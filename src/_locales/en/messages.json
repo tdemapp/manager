@@ -29,6 +29,9 @@
   "dashboard_dialog_settings_title": {
     "message": "Settings"
   },
+  "dashboard_dialog_info_title": {
+    "message": "Info"
+  },
   "dashboard_dialog_settings_subtitle_display": {
     "message": "Display"
   },

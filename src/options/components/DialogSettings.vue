@@ -35,7 +35,7 @@
 						</v-tab>
 						<v-tab>
 							<v-icon class="mr-3" v-html="$vuetify.icons.info" />
-							<span v-html="getLocale('dashboard_dialog_settings_title')" />
+							<span v-html="getLocale('dashboard_dialog_info_title')" />
 						</v-tab>
 					</v-tabs>
 				</v-toolbar>
