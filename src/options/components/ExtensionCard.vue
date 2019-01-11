@@ -40,12 +40,13 @@
 				flat
 				icon
 				large
-				:color="extension.isEnabled ? 'grey--darken-4' : 'grey'"
 				target="_blank"
 				:href="extension.website"
+				:color="extension.isEnabled ? 'grey--darken-4' : 'grey'"
 			>
 				<v-icon v-html="$vuetify.icons.link" />
 			</v-btn>
+
 			<v-btn flat icon large :color="extension.isEnabled ? 'grey--darken-4' : 'grey'">
 				<v-icon v-html="$vuetify.icons.refresh" />
 			</v-btn>

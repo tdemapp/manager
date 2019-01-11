@@ -1,18 +1,14 @@
 <template>
 	<section>
 		<!-- Sidebar Button -->
-		<v-list-tile
-			ripple
-			@click="dialog = true"
-			v-shortkey="[',']"
-			@shortkey="dialog = true"
-		>
-			<v-list-tile-action>
-				<v-icon v-html="$vuetify.icons.settings" />
-			</v-list-tile-action>
+		<v-list-tile ripple @click="dialog = true" v-shortkey="[',']" @shortkey="dialog = true">
+			<v-list-tile-action> <v-icon v-html="$vuetify.icons.settings" /> </v-list-tile-action>
 
 			<v-list-tile-content>
-				<v-list-tile-title class="spacedLetters" v-html="getLocale('dashboard_dialog_settings_title')" />
+				<v-list-tile-title
+					class="spacedLetters"
+					v-html="getLocale('dashboard_dialog_settings_title')"
+				/>
 			</v-list-tile-content>
 		</v-list-tile>
 
