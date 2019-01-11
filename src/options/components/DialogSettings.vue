@@ -223,8 +223,7 @@ export default {
 		// Get shortcut key binds from settings
 		storage.get((storage) => {
 			this.shortcuts[0].bind = storage.settings.shortcuts.store;
-			this.shortcuts[1].bind = storage.settings.shortcuts.search;
-			this.shortcuts[2].bind = storage.settings.shortcuts.settings;
+			this.shortcuts[1].bind = storage.settings.shortcuts.settings;
 		});
 	},
 	methods: {
