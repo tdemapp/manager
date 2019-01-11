@@ -1,10 +1,10 @@
 <template>
 	<v-snackbar
-		multi-line
-		right
 		top
-		v-model="showSnackbar"
+		right
+		multi-line
 		:color="bgColor"
+		v-model="showSnackbar"
 		:timeout="infinite ? 0 : '3500'"
 	>
 		<v-icon class="mr-3" :color="iconColor" v-html="'$vuetify.icons.' + icon" />

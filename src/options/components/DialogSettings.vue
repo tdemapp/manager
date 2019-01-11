@@ -180,11 +180,6 @@ export default {
 					bind: null,
 				},
 				{
-					icon: 'search',
-					text: getLocale('dashboard_dialog_search_title'),
-					bind: null,
-				},
-				{
 					icon: 'settings',
 					text: getLocale('dashboard_dialog_settings_title'),
 					bind: null,

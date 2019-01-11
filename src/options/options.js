@@ -36,8 +36,6 @@ function initVue() {
 			// Sidebar icons
 			menu: 'feather-menu',
 			store: 'feather-shopping-cart',
-			search: 'feather-search',
-			info: 'feather-info',
 			settings: 'feather-sliders',
 
 			// Modal icons
@@ -77,8 +75,7 @@ function initializeStorage() {
 			isDarkTheme: false,
 			isSidebarMini: false,
 			shortcuts: {
-				store: 'a',
-				search: 's',
+				store: 's',
 				settings: ',',
 			},
 		},

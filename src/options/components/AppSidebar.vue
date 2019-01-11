@@ -24,7 +24,6 @@
                 </v-list-tile-content>
             </v-list-tile>
 
-            <DialogSearch />
             <DialogStore />
             <DialogSettings />
         </v-list>
@@ -33,13 +32,11 @@
 
 <script>
 import { getLocale, storage } from '../../js/util';
-import DialogSearch from './DialogSearch.vue';
 import DialogSettings from './DialogSettings.vue';
 import DialogStore from './DialogStore.vue';
 
 export default {
 	components: {
-		DialogSearch,
 		DialogSettings,
 		DialogStore,
 	},
