@@ -36,6 +36,7 @@ function initVue() {
 			// Sidebar icons
 			menu: 'feather-menu',
 			store: 'feather-shopping-cart',
+			info: 'feather-info',
 			settings: 'feather-sliders',
 
 			// Modal icons
