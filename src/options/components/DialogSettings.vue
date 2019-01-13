@@ -1,7 +1,7 @@
 <template>
-	<section>
+	<section v-shortkey="[',']" @shortkey="dialog = true">
 		<!-- Sidebar Button -->
-		<v-list-tile ripple @click="dialog = true" v-shortkey="[',']" @shortkey="dialog = true">
+		<v-list-tile ripple @click="dialog = true">
 			<v-list-tile-action> <v-icon v-html="$vuetify.icons.settings" /> </v-list-tile-action>
 
 			<v-list-tile-content>
