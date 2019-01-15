@@ -31,7 +31,7 @@ function injectButton() {
 
 	// Button to inject to sidebar nav
 	const dashboardButton = `
-		<a class='tdem-dashboard-btn js-header-action link-clean cf app-nav-link padding-h--10 with-nav-border-t' data-title='TDEM Dashboard'>
+		<a class='tdem-dashboard-btn js-header-action link-clean cf app-nav-link padding-h--16 padding-v--2 txt-bold with-nav-border-t' data-title='TDEM Dashboard'>
 			<div class='obj-left margin-l--2'>
 				<i class='icon icon-tdem icon-medium'></i>
 			</div>
