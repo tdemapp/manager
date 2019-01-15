@@ -35,7 +35,7 @@ function injectButton() {
 			<div class='obj-left margin-l--2'>
 				<i class='icon icon-tdem icon-medium'></i>
 			</div>
-			<div class='nbfc padding-ts hide-condensed txt-size--16'>Extension Manager</div>
+			<div class='nbfc padding-ts hide-condensed txt-size--16'>TDEM</div>
 		</a>
 	`;
 
