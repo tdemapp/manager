@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import domify from 'domify';
-import { getExtensionUrl } from './util';
+import { getExtensionUrl, getLocale } from './util';
 
 /*
  * Initialize TDEM
@@ -31,11 +31,11 @@ function injectButton() {
 
 	// Button to inject to sidebar nav
 	const dashboardButton = `
-		<a class='tdem-dashboard-btn js-header-action link-clean cf app-nav-link padding-h--10 with-nav-border-t' data-title='TDEM Dashboard'>
+		<a class='tdem-dashboard-btn js-header-action link-clean cf app-nav-link padding-h--16 padding-v--2 txt-bold with-nav-border-t' data-title='${getLocale('appShortName')}'>
 			<div class='obj-left margin-l--2'>
 				<i class='icon icon-tdem icon-medium'></i>
 			</div>
-			<div class='nbfc padding-ts hide-condensed txt-size--16'>Extension Manager</div>
+			<div class='nbfc padding-ts hide-condensed txt-size--16'>${getLocale('appShortName')}</div>
 		</a>
 	`;
 

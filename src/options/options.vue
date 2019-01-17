@@ -1,6 +1,6 @@
 <template>
 	<v-app>
-		<AppToolbar />
+		<AppSidebar />
 
 		<!-- <AppNotification
 			:infinite="true"
@@ -25,13 +25,13 @@
 <script>
 import { storage } from '../js/util';
 import AppNotification from './components/AppNotification.vue';
-import AppToolbar from './components/AppToolbar.vue';
+import AppSidebar from './components/AppSidebar.vue';
 import ExtensionCard from './components/ExtensionCard.vue';
 
 export default {
 	components: {
 		AppNotification,
-		AppToolbar,
+		AppSidebar,
 		ExtensionCard,
 	},
 	data() {

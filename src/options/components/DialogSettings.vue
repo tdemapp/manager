@@ -1,18 +1,16 @@
 <template>
-	<section>
-		<!-- Toolbar Button -->
-		<v-btn
-			flat
-			large
-			light
-			@click="dialog = true"
-			v-shortkey="[',']"
-			@shortkey="dialog = true"
-			class="mt-3 mr-4"
-		>
-			<v-icon left v-html="$vuetify.icons.settings" />
-			<span class="spacedLetters" v-html="getLocale('dashboard_dialog_settings_title')" />
-		</v-btn>
+	<section v-shortkey="[',']" @shortkey="dialog = true">
+		<!-- Sidebar Button -->
+		<v-list-tile ripple @click="dialog = true">
+			<v-list-tile-action> <v-icon v-html="$vuetify.icons.settings" /> </v-list-tile-action>
+
+			<v-list-tile-content>
+				<v-list-tile-title
+					class="spacedLetters"
+					v-html="getLocale('dashboard_dialog_settings_title')"
+				/>
+			</v-list-tile-content>
+		</v-list-tile>
 
 		<!-- Dialog Content -->
 		<v-dialog v-model="dialog" max-width="740">
@@ -25,7 +23,7 @@
 						</v-btn>
 					</v-toolbar-items>
 
-					<v-tabs slot="extension" v-model="activeTab" color="grey darken-4" grow>
+					<v-tabs grow slot="extension" v-model="activeTab" color="grey darken-4">
 						<v-tabs-slider color="white" />
 
 						<v-tab>
@@ -34,7 +32,7 @@
 						</v-tab>
 						<v-tab>
 							<v-icon class="mr-3" v-html="$vuetify.icons.info" />
-							<span v-html="getLocale('dashboard_dialog_settings_title')" />
+							<span v-html="getLocale('dashboard_dialog_info_title')" />
 						</v-tab>
 					</v-tabs>
 				</v-toolbar>
@@ -43,35 +41,12 @@
 					<v-tabs-items v-model="activeTab">
 						<!-- Settings Tab -->
 						<v-tab-item>
+							<!-- Shortcuts settings -->
 							<h1
-								class="headline spacedLetters upperCase boldTitle ma-2 mb-3"
+								class="headline spacedLetters text-uppercase boldTitle ma-2"
 								v-html="
-									getLocale('dashboard_dialog_settings_subtitle_display') + ':'
+									getLocale('dashboard_dialog_settings_subtitle_shortcuts') + ':'
 								"
-							/>
-							<v-divider />
-							<v-layout align-center justify-center row fill-height>
-								<v-flex xs4 class="mt-2 ml-4 mr-4">
-									<span class="body-2 spacedLetters upperCase">Dark Theme</span>
-								</v-flex>
-								<v-flex xs2 class="mt-2 ml-4 mr-4">
-									<v-switch class="mt-3" color="grey darken-4" />
-								</v-flex>
-								<v-flex xs4 class="mt-2 ml-4 mr-4">
-									<span class="body-2 spacedLetters upperCase">Dark Theme</span>
-								</v-flex>
-								<v-flex xs2 class="mt-2 ml-4 mr-4">
-									<v-switch class="mt-3" color="grey darken-4" />
-								</v-flex>
-							</v-layout>
-						</v-tab-item>
-
-						<!-- Info Tab -->
-						<v-tab-item>
-							<!-- Shortcuts section -->
-							<h1
-								class="headline spacedLetters upperCase boldTitle ma-2"
-								v-html="getLocale('dashboard_dialog_settings_subtitle_shortcuts') + ':'"
 							/>
 							<v-divider />
 							<v-layout row wrap class="mt-2 mb-3">
@@ -88,9 +63,39 @@
 								</v-flex>
 							</v-layout>
 
-							<!-- Links section -->
+							<!-- Display settings -->
 							<h1
-								class="headline spacedLetters upperCase boldTitle ma-2"
+								class="headline spacedLetters text-uppercase boldTitle ma-2 mb-3"
+								v-html="
+									getLocale('dashboard_dialog_settings_subtitle_display') + ':'
+								"
+							/>
+							<v-divider />
+							<v-layout align-center justify-center row fill-height>
+								<v-flex xs4 class="mt-2 ml-4 mr-4">
+									<span class="body-2 spacedLetters text-uppercase"
+										>Dark Theme</span
+									>
+								</v-flex>
+								<v-flex xs2 class="mt-2 ml-4 mr-4">
+									<v-switch class="mt-3" color="grey darken-4" />
+								</v-flex>
+								<v-flex xs4 class="mt-2 ml-4 mr-4">
+									<span class="body-2 spacedLetters text-uppercase"
+										>Dark Theme</span
+									>
+								</v-flex>
+								<v-flex xs2 class="mt-2 ml-4 mr-4">
+									<v-switch class="mt-3" color="grey darken-4" />
+								</v-flex>
+							</v-layout>
+						</v-tab-item>
+
+						<!-- Info Tab -->
+						<v-tab-item>
+							<!-- Links info -->
+							<h1
+								class="headline spacedLetters text-uppercase boldTitle ma-2"
 								v-html="getLocale('dashboard_dialog_settings_subtitle_links') + ':'"
 							/>
 							<v-divider />
@@ -115,9 +120,9 @@
 								</v-flex>
 							</v-layout>
 
-							<!-- Debug section -->
+							<!-- Debug info -->
 							<h1
-								class="headline spacedLetters upperCase boldTitle ma-2"
+								class="headline spacedLetters text-uppercase boldTitle ma-2"
 								v-html="getLocale('dashboard_dialog_settings_subtitle_debug') + ':'"
 							/>
 							<v-divider />
@@ -162,17 +167,12 @@ export default {
 	data() {
 		return {
 			dialog: false,
-			activeTab: null,
+			activeTab: 0,
 			extensionVersion: getExtensionVersion(),
 			shortcuts: [
 				{
 					icon: 'store',
 					text: getLocale('dashboard_dialog_store_title'),
-					bind: null,
-				},
-				{
-					icon: 'search',
-					text: getLocale('dashboard_dialog_search_title'),
 					bind: null,
 				},
 				{
@@ -215,12 +215,11 @@ export default {
 			],
 		};
 	},
-	created () {
+	created() {
 		// Get shortcut key binds from settings
 		storage.get((storage) => {
 			this.shortcuts[0].bind = storage.settings.shortcuts.store;
-			this.shortcuts[1].bind = storage.settings.shortcuts.search;
-			this.shortcuts[2].bind = storage.settings.shortcuts.settings;
+			this.shortcuts[1].bind = storage.settings.shortcuts.settings;
 		});
 	},
 	methods: {

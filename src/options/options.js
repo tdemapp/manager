@@ -33,9 +33,9 @@ function initVue() {
 			refresh: 'feather-refresh-cw',
 			trash: 'feather-trash-2',
 
-			// Toolbar icons
+			// Sidebar icons
+			menu: 'feather-menu',
 			store: 'feather-shopping-cart',
-			search: 'feather-search',
 			info: 'feather-info',
 			settings: 'feather-sliders',
 
@@ -74,9 +74,9 @@ function initializeStorage() {
 		extensions: [extensionTemplate],
 		settings: {
 			isDarkTheme: false,
+			isSidebarMini: false,
 			shortcuts: {
-				store: 'a',
-				search: 's',
+				store: 's',
 				settings: ',',
 			},
 		},

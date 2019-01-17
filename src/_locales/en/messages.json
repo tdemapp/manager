@@ -8,6 +8,9 @@
   "appDesc": {
     "message": "Install and manage extensions for TweetDeck"
   },
+  "dashboard_menu": {
+    "message": "Menu"
+  },
   "dashboard_dialog_install_warning_title": {
     "message": "Warning"
   },
@@ -20,11 +23,11 @@
   "dashboard_dialog_store_title": {
     "message": "Store"
   },
-  "dashboard_dialog_search_title": {
-    "message": "Search"
-  },
   "dashboard_dialog_settings_title": {
     "message": "Settings"
+  },
+  "dashboard_dialog_info_title": {
+    "message": "Info"
   },
   "dashboard_dialog_settings_subtitle_display": {
     "message": "Display"
