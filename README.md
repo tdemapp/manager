@@ -30,19 +30,19 @@ $ npm install # yarn
 > Running development server
 ```shell
 # Chrome
-$ npm run dev:chrome # yarn dev:chrome
+$ npm run dev chrome # yarn dev chrome
 
 # Firefox
-$ npm run dev:firefox # yarn dev:firefox
+$ npm run dev firefox # yarn dev firefox
 ```
 
 > Building for production
 ```shell
 # Chrome
-$ npm run build:chrome # yarn build:chrome
+$ npm run build chrome # yarn build chrome
 
 # Firefox
-$ npm run build:firefox # yarn build:firefox
+$ npm run build firefox # yarn build firefox
 ```
 
 ## License:
