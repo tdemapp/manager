@@ -13,6 +13,11 @@ export const getExtensionVersion = () => {
 	return chrome.runtime.getManifest().version;
 };
 
+// Get is development environment
+export const getIsDev = () => {
+	return process.env.NODE_ENV === 'development' ? true : false;
+}
+
 /*
  * Get localization
  */

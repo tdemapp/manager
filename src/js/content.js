@@ -1,14 +1,14 @@
-import $ from 'jquery';
+import { getExtensionUrl, getIsDev } from './util';
 
 /*
  * Initialize TDEM
  */
 function initContent() {
-	console.log('🛠️ TDEM Initializing...');
+	getIsDev() ? console.log('🛠️ TDEM Initializing...') : null;
 
 	try {
 		inject();
-		console.log('✨ TDEM Successfully Initialized!');
+		getIsDev() ? console.log('✨ TDEM Successfully Initialized!') : null;
 	} catch (e) {
 		throw new Error(`⚠️ Error Initializing TDEM | ${e}`);
 	}
