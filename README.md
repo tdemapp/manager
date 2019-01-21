@@ -36,6 +36,9 @@ $ npm run dev chrome # yarn dev chrome
 
 # Firefox
 $ npm run dev firefox # yarn dev firefox
+
+# Opera
+$ npm run dev opera # yarn dev opera
 ```
 
 > Building for production
@@ -45,6 +48,9 @@ $ npm run build chrome # yarn build chrome
 
 # Firefox
 $ npm run build firefox # yarn build firefox
+
+# Opera
+$ npm run build opera # yarn build opera
 ```
 
 ## License:
