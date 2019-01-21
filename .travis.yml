@@ -10,5 +10,6 @@ cache:
 install:
   - npm install
 script:
-  - npm run build:chrome
-  - npm run build:firefox
+  - npm run build chrome
+  - npm run build firefox
+  - npm run build opera
