@@ -18,6 +18,16 @@
 
 <img alt='Screenshot' src='./screenshot.png' />
 
+<div align='center'>
+
+  ## Downloads:
+  
+  [![Chrome](https://img.shields.io/badge/-Chrome-03A9F4.svg?logo=Google-Chrome&logoColor=white&longCache=true&style=for-the-badge)](https://tdem.app)
+  [![Firefox](https://img.shields.io/badge/-Firefox-F57C00.svg?logo=Mozilla-Firefox&logoColor=white&longCache=true&style=for-the-badge)](https://tdem.app)
+  [![Opera](https://img.shields.io/badge/-Opera-f44336.svg?logo=Opera&logoColor=white&longCache=true&style=for-the-badge)](https://tdem.app)
+
+</div>
+
 ## Development:
 
 > Clone and install dependencies
