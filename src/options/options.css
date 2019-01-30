@@ -67,3 +67,7 @@ input {
 .defaultShadow:hover {
 	box-shadow: 0 8px 15px rgba(33, 33, 33, 0.1) !important;
 }
+
+.extensionCardBorderFix {
+	border: none!important;
+}

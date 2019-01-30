@@ -47,13 +47,13 @@
 				<v-icon v-html="$vuetify.icons.link" />
 			</v-btn>
 
-			<v-btn flat icon large :color="extension.isEnabled ? 'grey--darken-4' : 'grey'">
+			<v-btn flat icon large class="extensionCardBorderFix" :color="extension.isEnabled ? 'grey--darken-4' : 'grey'">
 				<v-icon v-html="$vuetify.icons.refresh" />
 			</v-btn>
 
 			<v-spacer />
 
-			<v-btn flat icon large :color="extension.isEnabled ? 'red' : 'grey'">
+			<v-btn flat icon large class="extensionCardBorderFix" :color="extension.isEnabled ? 'red' : 'grey'">
 				<v-icon v-html="$vuetify.icons.trash" />
 			</v-btn>
 		</v-card-actions>
