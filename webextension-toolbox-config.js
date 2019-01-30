@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
 	webpack: (config, { dev, vendor }) => {
@@ -11,7 +11,7 @@ module.exports = {
 		config.entry = {
 			'js/content': './js/content.js',
 			'js/inject': './js/inject.js',
-			'options/options': './options/options.js'
+			'options/options': './options/options.js',
 		};
 
 		// Add custom module rules
@@ -24,10 +24,10 @@ module.exports = {
 				test: /\.css$/,
 				use: [
 					{
-					  loader: MiniCssExtractPlugin.loader,
+						loader: MiniCssExtractPlugin.loader,
 					},
-					"css-loader"
-				  ]
+					'css-loader',
+				],
 			}
 		);
 
@@ -37,7 +37,7 @@ module.exports = {
 
 		return config;
 	},
-	
+
 	// Override default copyIgnore array
-	copyIgnore: [ '**/*.js', '**/*.json', '**/*.css', '**/*.vue' ]
+	copyIgnore: ['**/*.js', '**/*.json', '**/*.css', '**/*.vue'],
 };
