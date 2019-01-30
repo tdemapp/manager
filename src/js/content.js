@@ -1,14 +1,14 @@
-import { getExtensionUrl, getIsDev } from './util';
+import { getExtensionUrl, getIsDev as isDev } from './util';
 
 /*
  * Initialize TDEM
  */
 function initContent() {
-	getIsDev() ? console.log('🛠️ TDEM Initializing...') : null;
+	isDev() ? console.log('🛠️ TDEM Initializing...') : null;
 
 	try {
 		inject();
-		getIsDev() ? console.log('✨ TDEM Successfully Initialized!') : null;
+		isDev() ? console.log('✨ TDEM Successfully Initialized!') : null;
 	} catch (e) {
 		throw new Error(`⚠️ Error Initializing TDEM | ${e}`);
 	}
