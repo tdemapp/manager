@@ -41,13 +41,13 @@ export default {
 		};
 	},
 	created() {
-		this.getIsMini();
+		this.init();
 	},
 	methods: {
 		getLocale(text) {
 			return getLocale(text);
 		},
-		getIsMini() {
+		init() {
 			storage.get((storage) => {
 				this.isMini = storage.settings.isSidebarMini;
 			});

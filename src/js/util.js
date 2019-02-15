@@ -16,7 +16,7 @@ export const getExtensionVersion = () => {
 // Get is development environment
 export const getIsDev = () => {
 	return process.env.NODE_ENV === 'development' ? true : false;
-}
+};
 
 /*
  * Get localization

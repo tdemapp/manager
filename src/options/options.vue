@@ -36,14 +36,14 @@ export default {
 	},
 	data() {
 		return {
-			extensionsStorage: this.updateExtensions(),
+			extensionsStorage: this.init(),
 		};
 	},
 	created() {
-		this.updateExtensions();
+		this.init();
 	},
 	methods: {
-		updateExtensions() {
+		init() {
 			storage.get((storage) => {
 				this.extensionsStorage = storage.extensions;
 			});

@@ -23,7 +23,12 @@
 						</v-btn>
 					</v-toolbar-items>
 
-					<v-tabs grow slot="extension" v-model="activeTab" color="grey darken-4 activeColorFix">
+					<v-tabs
+						grow
+						slot="extension"
+						v-model="activeTab"
+						color="grey darken-4 activeColorFix"
+					>
 						<v-tabs-slider color="white" />
 
 						<v-tab>
