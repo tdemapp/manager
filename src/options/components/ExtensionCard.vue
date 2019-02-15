@@ -14,7 +14,7 @@
 							extension.isEnabled ? 'white--text subheading' : 'grey--text subheading'
 						"
 					>
-						<span v-html="extension.name" /> <br />
+						<span class="caption" v-html="extension.name" /> <br />
 						<span
 							class="caption"
 							v-html="
@@ -33,7 +33,7 @@
 
 		<v-divider :class="extension.isEnabled ? 'transparent ml-3 mr-3' : 'ml-3 mr-3'" />
 
-		<v-card-text class="caption text-truncate" v-html="extension.description" />
+		<v-card-text class="caption" v-html="extension.description" />
 
 		<v-card-actions>
 			<v-btn
