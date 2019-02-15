@@ -1,5 +1,5 @@
 <template>
-	<section v-shortkey="[',']" @shortkey="dialog = true">
+	<div v-shortkey="[',']" @shortkey="dialog = true">
 		<!-- Sidebar Button -->
 		<v-list-tile ripple @click="dialog = true">
 			<v-list-tile-action> <v-icon v-html="$vuetify.icons.settings" /> </v-list-tile-action>
@@ -23,7 +23,7 @@
 						</v-btn>
 					</v-toolbar-items>
 
-					<v-tabs grow slot="extension" v-model="activeTab" color="grey darken-4">
+					<v-tabs grow slot="extension" v-model="activeTab" color="grey darken-4 activeColorFix">
 						<v-tabs-slider color="white" />
 
 						<v-tab>
@@ -157,7 +157,7 @@
 				</v-card-text>
 			</v-card>
 		</v-dialog>
-	</section>
+	</div>
 </template>
 
 <script>

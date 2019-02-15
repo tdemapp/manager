@@ -1,5 +1,5 @@
 <template>
-	<section v-shortkey="['s']" @shortkey="dialog = true">
+	<div v-shortkey="['s']" @shortkey="dialog = true">
 		<!-- Sidebar Button -->
 		<v-list-tile ripple @click="dialog = true">
 			<v-list-tile-action> <v-icon v-html="$vuetify.icons.store" /> </v-list-tile-action>
@@ -34,7 +34,7 @@
 				</v-card-text>
 			</v-card>
 		</v-dialog>
-	</section>
+	</div>
 </template>
 
 <script>
