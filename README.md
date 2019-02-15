@@ -13,14 +13,15 @@
   [![gitmoji](https://img.shields.io/badge/gitmoji-%20%F0%9F%98%9C%20%F0%9F%98%8D-FFDD67.svg?longCache=true&style=for-the-badge)](https://gitmoji.carloscuesta.me/) 
   [![Personal Twitter](https://img.shields.io/badge/-@nurodev-03A9F4.svg?logo=twitter&logoColor=white&longCache=true&style=for-the-badge)](https://twitter.com/nurodev)
 
-  [![Chrome](https://img.shields.io/badge/-Chrome-03A9F4.svg?logo=Google-Chrome&logoColor=white&longCache=true&style=for-the-badge)](https://tdem.app)
-  [![Firefox](https://img.shields.io/badge/-Firefox-F57C00.svg?logo=Mozilla-Firefox&logoColor=white&longCache=true&style=for-the-badge)](https://tdem.app)
-  [![Opera](https://img.shields.io/badge/-Opera-f44336.svg?logo=Opera&logoColor=white&longCache=true&style=for-the-badge)](https://tdem.app)
+  [![Chrome](https://img.shields.io/badge/Chrome-Download-03A9F4.svg?logo=Google-Chrome&logoColor=white&longCache=true&style=for-the-badge)](https://tdem.app)
+  [![Firefox](https://img.shields.io/badge/Firefox-Download-F57C00.svg?logo=Mozilla-Firefox&logoColor=white&longCache=true&style=for-the-badge)](https://tdem.app)
+  [![Opera](https://img.shields.io/badge/Opera-Download-f44336.svg?logo=Opera&logoColor=white&longCache=true&style=for-the-badge)](https://tdem.app)
+
 </div>
 
 <img alt='Screenshot' src='./screenshot.png' />
 
-## Development:
+## 🛠 Development:
 
 > Clone and install dependencies
 ```shell
@@ -53,6 +54,6 @@ $ npm run build firefox # yarn build firefox
 $ npm run build opera # yarn build opera
 ```
 
-## License:
+## 📄 License:
 
 MIT © [Ben Dixon](https://github.com/tdemapp/manager/blob/webpack/LICENSE)
