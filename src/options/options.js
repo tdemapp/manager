@@ -4,6 +4,7 @@ import Vuetify from 'vuetify';
 import { storage } from '../js/util';
 import extensionTemplate from '../js/template';
 import Options from '../options/options.vue';
+import store from './store';
 
 import './options.css';
 
@@ -59,6 +60,7 @@ function initVue() {
 
 	new Vue({
 		el: '#app',
+		store,
 		render: (h) => h(Options),
 	});
 }

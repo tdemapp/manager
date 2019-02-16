@@ -1,5 +1,5 @@
 <template>
-	<v-app>
+	<v-app :dark="$store.state.settings.isDarkTheme">
 		<AppSidebar />
 
 		<!-- <AppNotification
@@ -13,7 +13,7 @@
 		<v-content>
 			<v-container fluid>
 				<v-layout row wrap>
-					<v-flex xs12 sm12 md6 lg3 xl3 v-for="(item, i) in extensionsStorage" :key="i">
+					<v-flex xs12 sm12 md6 lg3 xl3 v-for="(item, i) in $store.state.extensions" :key="i">
 						<ExtensionCard :extension="item" />
 					</v-flex>
 				</v-layout>
@@ -34,20 +34,8 @@ export default {
 		AppSidebar,
 		ExtensionCard,
 	},
-	data() {
-		return {
-			extensionsStorage: this.init(),
-		};
-	},
 	created() {
-		this.init();
-	},
-	methods: {
-		init() {
-			storage.get((storage) => {
-				this.extensionsStorage = storage.extensions;
-			});
-		},
-	},
+		this.$store.commit('getExtensionStorage');
+	}
 };
 </script>

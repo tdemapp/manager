@@ -7,10 +7,10 @@
 		width="256"
 		v-model="drawer"
 		class="grey darken-4"
-		:mini-variant="isMini"
+		:mini-variant="$store.state.settings.isSidebarMini"
 	>
 		<v-list class="pt-0" three-line>
-			<v-list-tile ripple @click="isMini = !isMini">
+			<v-list-tile ripple @click="$store.commit('toggleSidebar')">
 				<v-list-tile-action> <v-icon v-html="$vuetify.icons.menu" /> </v-list-tile-action>
 
 				<v-list-tile-content>
@@ -36,22 +36,13 @@ export default {
 	},
 	data() {
 		return {
-			drawer: true,
-			isMini: null,
+			drawer: true
 		};
-	},
-	created() {
-		this.init();
 	},
 	methods: {
 		getLocale(text) {
 			return getLocale(text);
-		},
-		init() {
-			storage.get((storage) => {
-				this.isMini = storage.settings.isSidebarMini;
-			});
-		},
+		}
 	},
 };
 </script>
