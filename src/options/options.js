@@ -36,25 +36,21 @@ function initVue() {
 			// Sidebar icons
 			menu: 'feather-menu',
 			store: 'feather-shopping-cart',
-			info: 'feather-info',
 			settings: 'feather-sliders',
 
 			// Modal icons
+			info: 'feather-info',
 			twitter: 'feather-twitter',
-			website: 'feather-globe',
 			github: 'feather-github',
-			download: 'feather-download',
 			chrome: 'feather-chrome',
+			website: 'feather-globe',
 			users: 'feather-users',
 			grid: 'feather-grid',
+			download: 'feather-download',
 
 			// Misc Icons
 			x: 'feather-x',
-			x_circle: 'feather-x-circle',
-			tick: 'feather-check',
-			tick_circle: 'feather-check-circle',
-			add: 'feather-plus',
-			warning: 'feather-alert-triangle',
+			tick: 'feather-check'
 		},
 	});
 
