@@ -1,5 +1,5 @@
 <template>
-	<div v-shortkey="['s']" @shortkey="dialog = true">
+	<div>
 		<!-- Sidebar Button -->
 		<v-list-tile ripple @click="dialog = true">
 			<v-list-tile-action> <v-icon v-html="$vuetify.icons.store" /> </v-list-tile-action>

@@ -1,5 +1,5 @@
 <template>
-	<div v-shortkey="[',']" @shortkey="dialog = true">
+	<div>
 		<!-- Sidebar Button -->
 		<v-list-tile ripple @click="dialog = true">
 			<v-list-tile-action> <v-icon v-html="$vuetify.icons.settings" /> </v-list-tile-action>
@@ -46,28 +46,6 @@
 					<v-tabs-items v-model="activeTab">
 						<!-- Settings Tab -->
 						<v-tab-item>
-							<!-- Shortcuts settings -->
-							<h1
-								class="headline spacedLetters text-uppercase boldTitle ma-2"
-								v-html="
-									getLocale('dashboard_dialog_settings_subtitle_shortcuts') + ':'
-								"
-							/>
-							<v-divider />
-							<v-layout row wrap class="mt-2 mb-3">
-								<v-flex
-									xs5
-									class="ml-4 mr-4"
-									v-for="(item, i) in shortcuts"
-									:key="i"
-								>
-									<v-btn flat large block disabled>
-										<v-icon left v-html="'$vuetify.icons.' + item.icon" />
-										<span v-html="item.text + ': ' + item.bind" />
-									</v-btn>
-								</v-flex>
-							</v-layout>
-
 							<!-- Display settings -->
 							<h1
 								class="headline spacedLetters text-uppercase boldTitle ma-2 mb-3"

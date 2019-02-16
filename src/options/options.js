@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import Vuetify from 'vuetify';
-import VueShortKey from 'vue-shortkey';
 
 import { storage } from '../js/util';
 import extensionTemplate from '../js/template';
@@ -57,8 +56,6 @@ function initVue() {
 			warning: 'feather-alert-triangle',
 		},
 	});
-
-	Vue.use(VueShortKey);
 
 	new Vue({
 		el: '#app',
