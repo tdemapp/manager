@@ -2,7 +2,6 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 
 import { storage } from '../js/util';
-import template from '../js/template';
 
 Vue.use(Vuex);
 
