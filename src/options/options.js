@@ -70,10 +70,6 @@ function initializeStorage() {
 		settings: {
 			isDarkTheme: false,
 			isSidebarMini: false,
-			shortcuts: {
-				store: 's',
-				settings: ',',
-			},
 		},
 	};
 

@@ -152,18 +152,6 @@ export default {
 			dialog: false,
 			activeTab: 0,
 			extensionVersion: getExtensionVersion(),
-			shortcuts: [
-				{
-					icon: 'store',
-					text: getLocale('dashboard_dialog_store_title'),
-					bind: null,
-				},
-				{
-					icon: 'settings',
-					text: getLocale('dashboard_dialog_settings_title'),
-					bind: null,
-				},
-			],
 			links: [
 				{
 					icon: 'twitter',
@@ -197,13 +185,6 @@ export default {
 				},
 			],
 		};
-	},
-	created() {
-		// Get shortcut key binds from settings
-		storage.get((storage) => {
-			this.shortcuts[0].bind = storage.settings.shortcuts.store;
-			this.shortcuts[1].bind = storage.settings.shortcuts.settings;
-		});
 	},
 	methods: {
 		getLocale(text) {
