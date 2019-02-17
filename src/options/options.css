@@ -42,8 +42,7 @@
 */
 html,
 body,
-.theme--light.application,
-.theme--dark.application {
+.theme--light.application {
 	background-color: #fafcff;
 	margin: 0;
 	font-family: 'Roboto', Tahoma, Geneva, Verdana, sans-serif;

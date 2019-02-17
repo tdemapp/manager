@@ -61,7 +61,7 @@
 									>
 								</v-flex>
 								<v-flex xs2 class="mt-2 ml-4 mr-4">
-									<v-switch class="mt-3" color="grey darken-4" />
+									<v-switch v-model="$store.state.settings.isDarkTheme" class="mt-3" color="grey darken-4" />
 								</v-flex>
 								<v-flex xs4 class="mt-2 ml-4 mr-4">
 									<span class="body-2 spacedLetters text-uppercase"

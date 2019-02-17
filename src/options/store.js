@@ -20,12 +20,16 @@ const mutations = {
   },
   toggleSidebar (state) {
       state.settings.isSidebarMini = !state.settings.isSidebarMini
+  },
+  toggleDarkTheme (state) {
+    state.settings.isDarkTheme = !state.settings.isDarkTheme
   }
 }
 
 const actions = {
     getExtensionStorage: ({ commit }) => commit('getExtensionStorage'),
     toggleSidebar: ({ commit }) => commit('toggleSidebar'),
+    toggleDarkTheme: ({ commit }) => commit('toggleDarkTheme'),
 }
 
 export default new Vuex.Store({

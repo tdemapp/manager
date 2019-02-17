@@ -2,7 +2,8 @@
 	<v-card class="ma-2 defaultCorners defaultShadow">
 		<v-toolbar
 			flat
-			:class="extension.isEnabled ? 'grey darken-4 pt-3 pb-3' : 'white pt-3 pb-3'"
+			:color="$store.state.settings.isDarkTheme ? 'grey darken-3' : 'white'"
+			:class="extension.isEnabled ? 'grey darken-4 py-3' : 'py-3'"
 		>
 			<v-layout align-center justify-start row fill-height>
 				<v-icon large :dark="extension.isEnabled" v-html="$vuetify.icons.box" />
