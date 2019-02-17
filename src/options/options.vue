@@ -13,7 +13,7 @@
 		<v-content>
 			<v-container fluid>
 				<v-layout row wrap>
-					<v-flex xs12 sm12 md6 lg3 xl3 v-for="(item, i) in $store.state.extensions" :key="i">
+					<v-flex xs12 sm12 md6 lg3 xl2 v-for="(item, i) in $store.state.extensions" :key="i">
 						<ExtensionCard :extension="item" />
 					</v-flex>
 				</v-layout>

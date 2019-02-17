@@ -5,29 +5,29 @@
 			:class="extension.isEnabled ? 'grey darken-4 pt-3 pb-3' : 'white pt-3 pb-3'"
 		>
 			<v-layout align-center justify-start row fill-height>
-				<v-flex xs1>
-					<v-icon large :dark="extension.isEnabled" v-html="$vuetify.icons.box" />
-				</v-flex>
-				<v-flex xs9>
-					<v-card-text
-						:class="
-							extension.isEnabled ? 'white--text subheading' : 'grey--text subheading'
+				<v-icon large :dark="extension.isEnabled" v-html="$vuetify.icons.box" />
+
+				<v-spacer />
+
+				<v-card-text
+					:class="
+						extension.isEnabled ? 'white--text subheading' : 'grey--text subheading'
+					"
+				>
+					<span class="caption" v-html="extension.name" /> <br />
+					<span
+						class="caption"
+						v-html="
+							getLocale('dashboard_extension_version') + ': ' + extension.version
 						"
-					>
-						<span class="caption" v-html="extension.name" /> <br />
-						<span
-							class="caption"
-							v-html="
-								getLocale('dashboard_extension_version') + ': ' + extension.version
-							"
-						/>
-					</v-card-text>
-				</v-flex>
-				<v-flex xs1>
-					<v-card-actions>
-						<v-switch class="mt-3" color="white" v-model="extension.isEnabled" />
-					</v-card-actions>
-				</v-flex>
+					/>
+				</v-card-text>
+
+				<v-spacer />
+
+				<v-card-actions>
+					<v-switch class="mt-3" color="white" v-model="extension.isEnabled" />
+				</v-card-actions>
 			</v-layout>
 		</v-toolbar>
 
