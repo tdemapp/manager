@@ -47,9 +47,6 @@ body,
 	margin: 0;
 	font-family: 'Roboto', Tahoma, Geneva, Verdana, sans-serif;
 }
-input {
-	border: none !important;
-}
 .spacedLetters {
 	letter-spacing: 0.2em !important;
 }
