@@ -47,6 +47,7 @@ function initVue() {
 			users: 'feather-users',
 			grid: 'feather-grid',
 			download: 'feather-download',
+			file: 'feather-file-text',
 
 			// Misc Icons
 			x: 'feather-x',

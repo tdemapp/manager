@@ -32,9 +32,6 @@
   "dashboard_dialog_settings_subtitle_display": {
     "message": "Display"
   },
-  "dashboard_dialog_settings_subtitle_shortcuts": {
-    "message": "Shortcuts"
-  },
   "dashboard_dialog_settings_subtitle_links": {
     "message": "Links"
   },
@@ -55,9 +52,6 @@
   },
   "dashboard_dialog_settings_app_version": {
     "message": "App Version"
-  },
-  "dashboard_dialog_settings_btn_download_settings": {
-    "message": "Download Settings"
   },
   "dashboard_extension_version": {
     "message": "version"

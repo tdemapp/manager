@@ -19,18 +19,24 @@
 			</v-list-tile>
 
 			<DialogStore />
-			<DialogSettings />
+			
+			<div style="position: fixed; bottom: 0; width: 256px;">
+				<DialogInfo />
+				<DialogSettings />
+			</div>
 		</v-list>
 	</v-navigation-drawer>
 </template>
 
 <script>
 import { getLocale, storage } from '../../js/util';
+import DialogInfo from './DialogInfo.vue';
 import DialogSettings from './DialogSettings.vue';
 import DialogStore from './DialogStore.vue';
 
 export default {
 	components: {
+		DialogInfo,
 		DialogSettings,
 		DialogStore,
 	},
