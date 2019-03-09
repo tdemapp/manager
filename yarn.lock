@@ -3871,6 +3871,10 @@ tar@^4:
     safe-buffer "^5.1.2"
     yallist "^3.0.2"
 
+tde@tdemapp/api#js:
+  version "1.1.1"
+  resolved "https://codeload.github.com/tdemapp/api/tar.gz/ff160859d62a2dcefdd917338741e482f4081408"
+
 terser-webpack-plugin@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/terser-webpack-plugin/-/terser-webpack-plugin-1.1.0.tgz#cf7c25a1eee25bf121f4a587bb9e004e3f80e528"
