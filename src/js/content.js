@@ -3,14 +3,15 @@ import { getExtensionUrl, getIsDev as isDev } from './util';
 /*
  * Initialize TDEM
  */
-function initContent() {
+function init() {
 	isDev() ? console.log('🛠️ TDEM Initializing...') : null;
 
 	try {
 		inject();
-		isDev() ? console.log('✨ TDEM Successfully Initialized!') : null;
 	} catch (e) {
 		throw new Error(`⚠️ Error Initializing TDEM | ${e}`);
+	} finally {
+		isDev() ? console.log('✨ TDEM Successfully Initialized!') : null;
 	}
 }
 
@@ -26,4 +27,4 @@ function inject() {
 	document.head.appendChild(script);
 }
 
-initContent();
+init();

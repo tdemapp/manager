@@ -1,8 +1,27 @@
 import $ from 'jquery';
 import domify from 'domify';
-import { getExtensionUrl } from './util';
+import { getExtensionUrl, storage, getIsDev as isDev } from './util';
+import tde from 'tde';
+import template from './template';
 
-/* 
+/*
+ * Injects API into TweetDeck
+ */
+function injectAPI() {
+	try {
+		storage.get((storage) => {
+			storage.extensions.forEach((extension) => {
+				tde.add(extension, extension.isEnabled, extension.isInit);
+			});
+		});
+
+		tde.init();
+	} catch (e) {
+		throw new Error(`⚠️ Error loading TDEM api | ${e}`);
+	}
+}
+
+/*
  * Injects new button at top of sidebar footer items
  */
 function injectButton() {
@@ -39,7 +58,10 @@ function injectButton() {
 		});
 	} catch (e) {
 		throw new Error(`⚠️ Error Injecting TDEM | ${e}`);
+	} finally {
+		isDev() ? console.log("✅ Successfully injected items") : null;
 	}
 }
 
+injectAPI();
 injectButton();

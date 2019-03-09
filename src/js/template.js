@@ -4,7 +4,8 @@ export default {
 	description: 'This is myExtension!',
 	version: '1.1.1',
 	website: 'https://gist.github.com/',
-	isEnabled: false,
+	isEnabled: true,
+	isInit: true,
 	dependencies: ['myImportantExtension'],
 	conflicts: ['veryBadExtension'],
 	create: () => {
