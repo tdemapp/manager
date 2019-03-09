@@ -32,36 +32,6 @@ export const getLocale = (msg) => {
 };
 
 /*
- * Extension global functions
- */
-export const addExtension = (id) => {
-	fetch('https://api.github.com/gists/' + id)
-		.then((response) => {
-			if (response.ok) {
-				return response.json();
-			} else {
-				throw new Error(`⚠️ Error fetching gist`);
-			}
-		})
-		.then((data) => {
-			storage.set({
-				extensions: [eval(data.files['extension.js'].content)],
-			});
-
-			return true;
-		})
-		.catch((e) => {
-			throw new Error(`⚠️ Error Adding Extension | ${e}`);
-		});
-};
-
-export const removeExtension = (index) => {};
-
-export const reloadExtension = (index) => {};
-
-export const toggleExtension = (index) => {};
-
-/*
  * Storage global functions
  */
 export const storage = {
