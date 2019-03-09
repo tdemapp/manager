@@ -1,4 +1,4 @@
-import $ from 'jquery';
+import $ from 'jquery/dist/jquery.min.js';
 import domify from 'domify';
 import { getExtensionUrl, storage, getIsDev as isDev } from './util';
 import tde from 'tde';
