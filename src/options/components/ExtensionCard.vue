@@ -6,7 +6,8 @@
 			:class="extension.isEnabled ? 'grey darken-4 py-3' : 'py-3'"
 		>
 			<v-layout align-center justify-start row fill-height>
-				<v-icon large :dark="extension.isEnabled" v-html="$vuetify.icons.box" />
+				<IconBox width="48px" height="48px" :class='extension.isEnabled ? "white--text" : "black--text"' />
+
 
 				<v-spacer />
 
@@ -45,7 +46,7 @@
 				:href="extension.website"
 				:color="extension.isEnabled ? 'grey--darken-4' : 'grey'"
 			>
-				<v-icon v-html="$vuetify.icons.link" />
+				<IconLink />
 			</v-btn>
 
 			<v-btn
@@ -54,7 +55,7 @@
 				large
 				:color="extension.isEnabled ? 'grey--darken-4' : 'grey'"
 			>
-				<v-icon v-html="$vuetify.icons.refresh" />
+				<IconRefresh />
 			</v-btn>
 
 			<v-spacer />
@@ -65,7 +66,7 @@
 				large
 				:color="extension.isEnabled ? 'red' : 'grey'"
 			>
-				<v-icon v-html="$vuetify.icons.trash" />
+				<IconTrash />
 			</v-btn>
 		</v-card-actions>
 	</v-card>
@@ -74,6 +75,10 @@
 <script>
 import { storage, getLocale } from '../../js/util';
 import extensionTemplate from '../../js/template';
+import IconBox from '../icons/box.svg';
+import IconLink from '../icons/link.svg';
+import IconRefresh from '../icons/refresh.svg';
+import IconTrash from '../icons/trash.svg';
 
 export default {
 	props: {
@@ -82,6 +87,12 @@ export default {
 			required: true,
 			default: extensionTemplate,
 		},
+	},
+	components: {
+		IconBox,
+		IconLink,
+		IconRefresh,
+		IconTrash,
 	},
 	methods: {
 		getLocale(text) {

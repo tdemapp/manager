@@ -2,7 +2,7 @@
 	<div>
 		<!-- Sidebar Button -->
 		<v-list-tile ripple @click="dialog = true">
-			<v-list-tile-action> <v-icon v-html="$vuetify.icons.settings" /> </v-list-tile-action>
+			<v-list-tile-action> <IconSettings /> </v-list-tile-action>
 
 			<v-list-tile-content>
 				<v-list-tile-title
@@ -16,7 +16,7 @@
 		<v-dialog v-model="dialog" max-width="740">
 			<v-card>
 				<v-toolbar flat dark tabs color="grey darken-4">
-					<v-icon v-html="$vuetify.icons.settings" />
+					<IconSettings />
 					<v-card-title
 						class="headline spacedLetters text-uppercase ml-2"
 						v-html="getLocale('dashboard_dialog_settings_title')"
@@ -24,7 +24,7 @@
 					<v-spacer />
 					<v-toolbar-items class="hidden-sm-and-down">
 						<v-btn flat class="squareCorners" @click="dialog = false">
-							<v-icon v-html="$vuetify.icons.x" />
+							<IconClose />
 						</v-btn>
 					</v-toolbar-items>
 				</v-toolbar>
@@ -65,8 +65,14 @@
 
 <script>
 import { getLocale, storage } from '../../js/util';
+import IconClose from '../icons/x.svg';
+import IconSettings from '../icons/settings.svg';
 
 export default {
+	components: {
+		IconClose,
+		IconSettings,
+	},
 	data() {
 		return {
 			dialog: false,

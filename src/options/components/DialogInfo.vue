@@ -2,7 +2,7 @@
 	<div>
 		<!-- Sidebar Button -->
 		<v-list-tile ripple @click="dialog = true">
-			<v-list-tile-action> <v-icon v-html="$vuetify.icons.info" /> </v-list-tile-action>
+			<v-list-tile-action> <IconInfo /> </v-list-tile-action>
 
 			<v-list-tile-content>
 				<v-list-tile-title
@@ -16,7 +16,7 @@
 		<v-dialog v-model="dialog" max-width="740">
 			<v-card>
 				<v-toolbar flat dark tabs color="grey darken-4">
-					<v-icon v-html="$vuetify.icons.info" />
+					<IconInfo />
 					<v-card-title
 						class="headline spacedLetters text-uppercase ml-2"
 						v-html="getLocale('dashboard_dialog_info_title')"
@@ -24,7 +24,7 @@
 					<v-spacer />
 					<v-toolbar-items class="hidden-sm-and-down">
 						<v-btn flat class="squareCorners" @click="dialog = false">
-							<v-icon v-html="$vuetify.icons.x" />
+							<IconClose />
 						</v-btn>
 					</v-toolbar-items>
 
@@ -37,11 +37,11 @@
 						<v-tabs-slider color="white" />
 
 						<v-tab>
-							<v-icon class="mr-3" v-html="$vuetify.icons.link" />
+							<IconLink class="mr-3" />
 							<span v-html="getLocale('dashboard_dialog_settings_subtitle_links')" />
 						</v-tab>
 						<v-tab>
-							<v-icon class="mr-3" v-html="$vuetify.icons.file" />
+							<IconFile class="mr-3" />
 							<span v-html="getLocale('dashboard_dialog_settings_subtitle_debug')" />
 						</v-tab>
 					</v-tabs>
@@ -52,22 +52,40 @@
 						<!-- Links Tab -->
 						<v-tab-item>
 							<v-layout row wrap class="mt-2">
-								<v-flex
-									xs5
-									class="mb-1 ml-4 mr-4"
-									v-for="(item, i) in links"
-									:key="i"
-								>
-									<v-btn
-										flat
-										large
-										block
-										target="_blank"
-										:href="item.href"
-										class="spacedLetters"
-									>
-										<v-icon left v-html="'$vuetify.icons.' + item.icon" />
-										<span v-html="item.text" />
+								<v-flex xs5 class="mb-1 ml-4 mr-4">
+									<v-btn flat large block target="_blank" href="https://twitter.com/nurodev" class="spacedLetters">
+										<IconTwitter class="mr-3" />
+										<span>Twitter</span>
+									</v-btn>
+								</v-flex>
+								<v-flex xs5 class="mb-1 ml-4 mr-4">
+									<v-btn flat large block target="_blank" href="https://github.com/tdemapp/tdem" class="spacedLetters">
+										<IconGithub class="mr-3" />
+										<span>GitHub</span>
+									</v-btn>
+								</v-flex>
+								<v-flex xs5 class="mb-1 ml-4 mr-4">
+									<v-btn flat large block target="_blank" href="https://chrome.google.com/webstore/detail/tdem/" class="spacedLetters">
+										<IconChrome class="mr-3" />
+										<span v-html="getLocale('dashboard_dialog_settings_btn_chrome')" />
+									</v-btn>
+								</v-flex>
+								<v-flex xs5 class="mb-1 ml-4 mr-4">
+									<v-btn flat large block target="_blank" href="https://tdem.app" class="spacedLetters">
+										<IconWebsite class="mr-3" />
+										<span v-html="getLocale('dashboard_dialog_settings_btn_website')" />
+									</v-btn>
+								</v-flex>
+								<v-flex xs5 class="mb-1 ml-4 mr-4">
+									<v-btn flat large block target="_blank" href="https://github.com/tdemapp/TDEM/graphs/contributors" class="spacedLetters">
+										<IconContributors class="mr-3" />
+										<span v-html="getLocale('dashboard_dialog_settings_btn_contributors')" />
+									</v-btn>
+								</v-flex>
+								<v-flex xs5 class="mb-1 ml-4 mr-4">
+									<v-btn flat large block target="_blank" href="https://github.com/tdemapp/TDEM/network/dependencies" class="spacedLetters">
+										<IconDependencies class="mr-3" />
+										<span v-html="getLocale('dashboard_dialog_settings_btn_dependencies')" />
 									</v-btn>
 								</v-flex>
 							</v-layout>
@@ -102,46 +120,36 @@
 
 <script>
 import { getExtensionVersion, getLocale, storage } from '../../js/util';
+import IconChrome from '../icons/chrome.svg';
+import IconClose from '../icons/x.svg';
+import IconContributors from '../icons/contributors.svg';
+import IconDependencies from '../icons/dependencies.svg';
+import IconFile from '../icons/file.svg';
+import IconGithub from '../icons/github.svg';
+import IconInfo from '../icons/info.svg';
+import IconLink from '../icons/link.svg';
+import IconTwitter from '../icons/twitter.svg';
+import IconWebsite from '../icons/website.svg';
 
 export default {
+	components: {
+		IconChrome,
+		IconClose,
+		IconContributors,
+		IconDependencies,
+		IconFile,
+		IconGithub,
+		IconInfo,
+		IconLink,
+		IconTwitter,
+		IconWebsite,
+	},
 	data() {
 		return {
 			dialog: false,
 			activeTab: 0,
 			extensionVersion: getExtensionVersion(),
 			settingsJSON: null,
-			links: [
-				{
-					icon: 'twitter',
-					text: 'Twitter',
-					href: 'https://twitter.com/nurodev',
-				},
-				{
-					icon: 'github',
-					text: 'GitHub',
-					href: 'https://github.com/tdemapp/tdem',
-				},
-				{
-					icon: 'chrome',
-					text: getLocale('dashboard_dialog_settings_btn_chrome'),
-					href: 'https://chrome.google.com/webstore/detail/tdem/',
-				},
-				{
-					icon: 'website',
-					text: getLocale('dashboard_dialog_settings_btn_website'),
-					href: 'https://tdem.app',
-				},
-				{
-					icon: 'users',
-					text: getLocale('dashboard_dialog_settings_btn_contributors'),
-					href: 'https://github.com/tdemapp/TDEM/graphs/contributors',
-				},
-				{
-					icon: 'grid',
-					text: getLocale('dashboard_dialog_settings_btn_dependencies'),
-					href: 'https://github.com/tdemapp/TDEM/network/dependencies',
-				},
-			],
 		};
 	},
 	created () {

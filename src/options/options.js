@@ -24,36 +24,7 @@ function initOptions() {
  * Initialize Vue
  */
 function initVue() {
-	Vue.use(Vuetify, {
-		iconfont: 'feather',
-		icons: {
-			// Extension card icon
-			box: 'feather-box',
-			link: 'feather-link',
-			refresh: 'feather-refresh-cw',
-			trash: 'feather-trash-2',
-
-			// Sidebar icons
-			menu: 'feather-menu',
-			store: 'feather-shopping-cart',
-			settings: 'feather-sliders',
-
-			// Modal icons
-			info: 'feather-info',
-			twitter: 'feather-twitter',
-			github: 'feather-github',
-			chrome: 'feather-chrome',
-			website: 'feather-globe',
-			users: 'feather-users',
-			grid: 'feather-grid',
-			download: 'feather-download',
-			file: 'feather-file-text',
-
-			// Misc Icons
-			x: 'feather-x',
-			tick: 'feather-check'
-		},
-	});
+	Vue.use(Vuetify);
 
 	new Vue({
 		el: '#app',

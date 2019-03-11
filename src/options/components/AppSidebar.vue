@@ -11,7 +11,7 @@
 	>
 		<v-list class="pt-0" three-line>
 			<v-list-tile ripple @click="$store.commit('toggleSidebar')">
-				<v-list-tile-action> <v-icon v-html="$vuetify.icons.menu" /> </v-list-tile-action>
+				<v-list-tile-action> <IconMenu /> </v-list-tile-action>
 
 				<v-list-tile-content>
 					<v-list-tile-title class="spacedLetters" v-html="getLocale('dashboard_menu')" />
@@ -33,12 +33,14 @@ import { getLocale, storage } from '../../js/util';
 import DialogInfo from './DialogInfo.vue';
 import DialogSettings from './DialogSettings.vue';
 import DialogStore from './DialogStore.vue';
+import IconMenu from '../icons/menu.svg';
 
 export default {
 	components: {
 		DialogInfo,
 		DialogSettings,
 		DialogStore,
+		IconMenu
 	},
 	data() {
 		return {

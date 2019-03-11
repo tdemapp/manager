@@ -7,16 +7,22 @@
 		v-model="showSnackbar"
 		:timeout="infinite ? 0 : '3500'"
 	>
-		<v-icon class="mr-3" :color="iconColor" v-html="'$vuetify.icons.' + icon" />
+		<!-- TODO: Port v-icon to SVG icon component -->
+		<!-- <v-icon class="mr-3" :color="iconColor" v-html="'$vuetify.icons.' + icon" /> -->
 		<span class="text-uppercase spacedLetters" v-html="text" />
 		<v-btn flat icon :color="iconColor" @click="showSnackbar = false">
-			<v-icon v-html="$vuetify.icons.x" />
+			<IconClose />
 		</v-btn>
 	</v-snackbar>
 </template>
 
 <script>
+import IconClose from '../icons/x.svg';
+
 export default {
+	components: {
+		IconClose
+	},
 	props: {
 		bgColor: {
 			type: String,
