@@ -10,9 +10,7 @@
 		<!-- TODO: Port v-icon to SVG icon component -->
 		<!-- <v-icon class="mr-3" :color="iconColor" v-html="'$vuetify.icons.' + icon" /> -->
 		<span class="text-uppercase spacedLetters" v-html="text" />
-		<v-btn flat icon :color="iconColor" @click="showSnackbar = false">
-			<IconClose />
-		</v-btn>
+		<v-btn flat icon :color="iconColor" @click="showSnackbar = false"> <IconClose /> </v-btn>
 	</v-snackbar>
 </template>
 
@@ -21,7 +19,7 @@ import IconClose from '../icons/x.svg';
 
 export default {
 	components: {
-		IconClose
+		IconClose,
 	},
 	props: {
 		bgColor: {

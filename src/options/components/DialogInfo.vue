@@ -53,39 +53,101 @@
 						<v-tab-item>
 							<v-layout row wrap class="mt-2">
 								<v-flex xs5 class="mb-1 ml-4 mr-4">
-									<v-btn flat large block target="_blank" href="https://twitter.com/nurodev" class="spacedLetters">
+									<v-btn
+										flat
+										large
+										block
+										target="_blank"
+										href="https://twitter.com/nurodev"
+										class="spacedLetters"
+									>
 										<IconTwitter class="mr-3" />
 										<span>Twitter</span>
 									</v-btn>
 								</v-flex>
 								<v-flex xs5 class="mb-1 ml-4 mr-4">
-									<v-btn flat large block target="_blank" href="https://github.com/tdemapp/tdem" class="spacedLetters">
+									<v-btn
+										flat
+										large
+										block
+										target="_blank"
+										href="https://github.com/tdemapp/tdem"
+										class="spacedLetters"
+									>
 										<IconGithub class="mr-3" />
 										<span>GitHub</span>
 									</v-btn>
 								</v-flex>
 								<v-flex xs5 class="mb-1 ml-4 mr-4">
-									<v-btn flat large block target="_blank" href="https://chrome.google.com/webstore/detail/tdem/" class="spacedLetters">
+									<v-btn
+										flat
+										large
+										block
+										target="_blank"
+										href="https://chrome.google.com/webstore/detail/tdem/"
+										class="spacedLetters"
+									>
 										<IconChrome class="mr-3" />
-										<span v-html="getLocale('dashboard_dialog_settings_btn_chrome')" />
+										<span
+											v-html="
+												getLocale('dashboard_dialog_settings_btn_chrome')
+											"
+										/>
 									</v-btn>
 								</v-flex>
 								<v-flex xs5 class="mb-1 ml-4 mr-4">
-									<v-btn flat large block target="_blank" href="https://tdem.app" class="spacedLetters">
+									<v-btn
+										flat
+										large
+										block
+										target="_blank"
+										href="https://tdem.app"
+										class="spacedLetters"
+									>
 										<IconWebsite class="mr-3" />
-										<span v-html="getLocale('dashboard_dialog_settings_btn_website')" />
+										<span
+											v-html="
+												getLocale('dashboard_dialog_settings_btn_website')
+											"
+										/>
 									</v-btn>
 								</v-flex>
 								<v-flex xs5 class="mb-1 ml-4 mr-4">
-									<v-btn flat large block target="_blank" href="https://github.com/tdemapp/TDEM/graphs/contributors" class="spacedLetters">
+									<v-btn
+										flat
+										large
+										block
+										target="_blank"
+										href="https://github.com/tdemapp/TDEM/graphs/contributors"
+										class="spacedLetters"
+									>
 										<IconContributors class="mr-3" />
-										<span v-html="getLocale('dashboard_dialog_settings_btn_contributors')" />
+										<span
+											v-html="
+												getLocale(
+													'dashboard_dialog_settings_btn_contributors'
+												)
+											"
+										/>
 									</v-btn>
 								</v-flex>
 								<v-flex xs5 class="mb-1 ml-4 mr-4">
-									<v-btn flat large block target="_blank" href="https://github.com/tdemapp/TDEM/network/dependencies" class="spacedLetters">
+									<v-btn
+										flat
+										large
+										block
+										target="_blank"
+										href="https://github.com/tdemapp/TDEM/network/dependencies"
+										class="spacedLetters"
+									>
 										<IconDependencies class="mr-3" />
-										<span v-html="getLocale('dashboard_dialog_settings_btn_dependencies')" />
+										<span
+											v-html="
+												getLocale(
+													'dashboard_dialog_settings_btn_dependencies'
+												)
+											"
+										/>
 									</v-btn>
 								</v-flex>
 							</v-layout>
@@ -152,7 +214,7 @@ export default {
 			settingsJSON: null,
 		};
 	},
-	created () {
+	created() {
 		this.$store.commit('getExtensionStorage');
 		this.settingsJSON = JSON.stringify(this.$store.state, null, 2);
 	},

@@ -32,11 +32,8 @@ module.exports = {
 			{
 				test: /\.svg$/,
 				issuer: /\.(vue|js|ts|svg)$/,
-				use: [
-					'vue-loader',
-					'svg-to-vue-component/loader'
-				]
-			},
+				use: ['vue-loader', 'svg-to-vue-component/loader'],
+			}
 		);
 
 		// Add custom plugins

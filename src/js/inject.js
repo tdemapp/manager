@@ -59,7 +59,7 @@ function injectButton() {
 	} catch (e) {
 		throw new Error(`⚠️ Error Injecting TDEM | ${e}`);
 	} finally {
-		isDev() ? console.log("✅ Successfully injected items") : null;
+		isDev() ? console.log('✅ Successfully injected items') : null;
 	}
 }
 

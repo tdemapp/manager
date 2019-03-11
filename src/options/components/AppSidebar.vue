@@ -19,7 +19,7 @@
 			</v-list-tile>
 
 			<DialogStore />
-			
+
 			<div style="position: fixed; bottom: 0; width: 256px;">
 				<DialogInfo />
 				<DialogSettings />
@@ -40,17 +40,17 @@ export default {
 		DialogInfo,
 		DialogSettings,
 		DialogStore,
-		IconMenu
+		IconMenu,
 	},
 	data() {
 		return {
-			drawer: true
+			drawer: true,
 		};
 	},
 	methods: {
 		getLocale(text) {
 			return getLocale(text);
-		}
+		},
 	},
 };
 </script>

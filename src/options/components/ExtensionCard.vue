@@ -6,8 +6,11 @@
 			:class="extension.isEnabled ? 'grey darken-4 py-3' : 'py-3'"
 		>
 			<v-layout align-center justify-start row fill-height>
-				<IconBox width="48px" height="48px" :class='extension.isEnabled ? "white--text" : "black--text"' />
-
+				<IconBox
+					width="48px"
+					height="48px"
+					:class="extension.isEnabled ? 'white--text' : 'black--text'"
+				/>
 
 				<v-spacer />
 
@@ -19,9 +22,7 @@
 					<span class="caption" v-html="extension.name" /> <br />
 					<span
 						class="caption"
-						v-html="
-							getLocale('dashboard_extension_version') + ': ' + extension.version
-						"
+						v-html="getLocale('dashboard_extension_version') + ': ' + extension.version"
 					/>
 				</v-card-text>
 
@@ -49,23 +50,13 @@
 				<IconLink />
 			</v-btn>
 
-			<v-btn
-				flat
-				icon
-				large
-				:color="extension.isEnabled ? 'grey--darken-4' : 'grey'"
-			>
+			<v-btn flat icon large :color="extension.isEnabled ? 'grey--darken-4' : 'grey'">
 				<IconRefresh />
 			</v-btn>
 
 			<v-spacer />
 
-			<v-btn
-				flat
-				icon
-				large
-				:color="extension.isEnabled ? 'red' : 'grey'"
-			>
+			<v-btn flat icon large :color="extension.isEnabled ? 'red' : 'grey'">
 				<IconTrash />
 			</v-btn>
 		</v-card-actions>
