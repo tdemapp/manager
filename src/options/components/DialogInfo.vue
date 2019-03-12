@@ -38,11 +38,11 @@
 
 						<v-tab>
 							<IconLink class="mr-3" />
-							<span v-html="getLocale('dashboard_dialog_settings_subtitle_links')" />
+							<span v-html="getLocale('dashboard_dialog_info_subtitle_links')" />
 						</v-tab>
 						<v-tab>
 							<IconFile class="mr-3" />
-							<span v-html="getLocale('dashboard_dialog_settings_subtitle_debug')" />
+							<span v-html="getLocale('dashboard_dialog_info_subtitle_debug')" />
 						</v-tab>
 					</v-tabs>
 				</v-toolbar>
@@ -90,7 +90,7 @@
 										<IconChrome class="mr-3" />
 										<span
 											v-html="
-												getLocale('dashboard_dialog_settings_btn_chrome')
+												getLocale('dashboard_dialog_info_btn_chrome')
 											"
 										/>
 									</v-btn>
@@ -107,7 +107,7 @@
 										<IconWebsite class="mr-3" />
 										<span
 											v-html="
-												getLocale('dashboard_dialog_settings_btn_website')
+												getLocale('dashboard_dialog_info_btn_website')
 											"
 										/>
 									</v-btn>
@@ -125,7 +125,7 @@
 										<span
 											v-html="
 												getLocale(
-													'dashboard_dialog_settings_btn_contributors'
+													'dashboard_dialog_info_btn_contributors'
 												)
 											"
 										/>
@@ -144,7 +144,7 @@
 										<span
 											v-html="
 												getLocale(
-													'dashboard_dialog_settings_btn_dependencies'
+													'dashboard_dialog_info_btn_dependencies'
 												)
 											"
 										/>
@@ -161,7 +161,7 @@
 										<span
 											class="spacedLetters"
 											v-html="
-												getLocale('dashboard_dialog_settings_app_version') +
+												getLocale('dashboard_dialog_info_app_version') +
 													': ' +
 													extensionVersion
 											"
