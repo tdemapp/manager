@@ -181,7 +181,7 @@
 </template>
 
 <script>
-import { getExtensionVersion, getLocale, storage } from '../../js/util';
+import { getExtensionVersion, getLocale, storage } from '../../scripts/util';
 import IconChrome from '../icons/chrome.svg';
 import IconClose from '../icons/x.svg';
 import IconContributors from '../icons/contributors.svg';

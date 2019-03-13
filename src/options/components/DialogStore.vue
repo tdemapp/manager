@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import { getLocale } from '../../js/util';
+import { getLocale } from '../../scripts/util';
 import IconClose from '../icons/x.svg';
 import IconStore from '../icons/store.svg';
 

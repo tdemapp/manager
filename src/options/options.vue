@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import { storage } from '../js/util';
+import { storage } from '../scripts/util';
 import AppNotification from './components/AppNotification.vue';
 import AppSidebar from './components/AppSidebar.vue';
 import ExtensionCard from './components/ExtensionCard.vue';

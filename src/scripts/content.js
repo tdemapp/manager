@@ -22,7 +22,7 @@ function inject() {
 	const script = document.createElement('script');
 
 	script.setAttribute('type', 'text/javascript');
-	script.setAttribute('src', getExtensionUrl('js/inject.js'));
+	script.setAttribute('src', getExtensionUrl('scripts/inject.js'));
 
 	document.head.appendChild(script);
 }

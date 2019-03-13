@@ -64,8 +64,8 @@
 </template>
 
 <script>
-import { storage, getLocale } from '../../js/util';
-import extensionTemplate from '../../js/template';
+import { storage, getLocale } from '../../scripts/util';
+import extensionTemplate from '../../scripts/template';
 import IconBox from '../icons/box.svg';
 import IconLink from '../icons/link.svg';
 import IconRefresh from '../icons/refresh.svg';

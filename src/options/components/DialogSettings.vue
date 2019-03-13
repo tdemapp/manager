@@ -62,7 +62,7 @@
 </template>
 
 <script>
-import { getLocale, storage } from '../../js/util';
+import { getLocale, storage } from '../../scripts/util';
 import IconClose from '../icons/x.svg';
 import IconSettings from '../icons/settings.svg';
 

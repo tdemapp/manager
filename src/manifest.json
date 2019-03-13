@@ -14,7 +14,7 @@
   "content_scripts": [
     {
       "matches": ["*://tweetdeck.twitter.com/*"],
-      "js": ["js/content.js", "js/inject.js"],
+      "js": ["scripts/content.js", "scripts/inject.js"],
       "run_at": "document_end"
     }
   ],
@@ -30,7 +30,7 @@
     "chrome_style": false
   },
   "web_accessible_resources": [
-    "js/inject.js"
+    "scripts/inject.js"
   ],
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }

@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { getLocale, storage } from '../../js/util';
+import { getLocale, storage } from '../../scripts/util';
 import DialogInfo from './DialogInfo.vue';
 import DialogSettings from './DialogSettings.vue';
 import DialogStore from './DialogStore.vue';
