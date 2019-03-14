@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import Vuetify from 'vuetify';
 
-import { storage } from '../js/util';
-import extensionTemplate from '../js/template';
+import { storage } from '../scripts/util';
+import extensionTemplate from '../scripts/template';
 import Options from '../options/options.vue';
 import store from './store';
 

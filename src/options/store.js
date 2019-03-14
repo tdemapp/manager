@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import { storage } from '../js/util';
+import { storage } from '../scripts/util';
 
 Vue.use(Vuex);
 

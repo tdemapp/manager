@@ -15,6 +15,8 @@ function injectAPI() {
 			});
 		});
 
+		tde.add(template);
+		tde.enable('myExtension', true);
 		tde.init();
 	} catch (e) {
 		throw new Error(`⚠️ Error loading TDEM api | ${e}`);
