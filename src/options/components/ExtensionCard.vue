@@ -9,7 +9,7 @@
 				<IconBox
 					width="48px"
 					height="48px"
-					:class="extension.isEnabled ? 'white--text' : 'black--text'"
+					:class="extension.isEnabled ? 'white--text' : 'grey--text'"
 				/>
 
 				<v-spacer />
