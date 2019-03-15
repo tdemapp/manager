@@ -1,11 +1,42 @@
 import Vue from 'vue';
-import Vuetify from 'vuetify';
+import Vuetify, {
+	VApp,
+	VBtn,
+	VCard,
+	VCardActions,
+	VCardTitle,
+	VCardText,
+	VContent,
+	VContainer,
+	VDialog,
+	VDivider,
+	VFlex,
+	VLayout,
+	VList,
+	VListTile,
+	VListTileAction,
+	VListTileContent,
+	VListTileTitle,
+	VNavigationDrawer,
+	VSnackbar,
+	VSpacer,
+	VSwitch,
+	VTab,
+	VTabs,
+	VTabItem,
+	VTabsItems,
+	VTabsSlider,
+	VToolbar,
+	VToolbarItems,
+} from 'vuetify/lib';
+import { Ripple } from 'vuetify/lib/directives';
 
 import { storage } from '../scripts/util';
 import extensionTemplate from '../scripts/template';
 import Options from '../options/options.vue';
 import store from './store';
 
+import 'vuetify/src/stylus/app.styl';
 import './options.css';
 
 /*
@@ -24,7 +55,41 @@ function initOptions() {
  * Initialize Vue
  */
 function initVue() {
-	Vue.use(Vuetify);
+	Vue.use(Vuetify, {
+		components: {
+			VApp,
+			VBtn,
+			VCard,
+			VCardActions,
+			VCardTitle,
+			VCardText,
+			VContent,
+			VContainer,
+			VDialog,
+			VDivider,
+			VFlex,
+			VLayout,
+			VList,
+			VListTile,
+			VListTileAction,
+			VListTileContent,
+			VListTileTitle,
+			VNavigationDrawer,
+			VSnackbar,
+			VSpacer,
+			VSwitch,
+			VTab,
+			VTabs,
+			VTabItem,
+			VTabsItems,
+			VTabsSlider,
+			VToolbar,
+			VToolbarItems,
+		},
+		directives: {
+			Ripple
+		}
+	});
 
 	new Vue({
 		el: '#app',
