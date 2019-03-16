@@ -87,8 +87,8 @@ function initVue() {
 			VToolbarItems,
 		},
 		directives: {
-			Ripple
-		}
+			Ripple,
+		},
 	});
 
 	new Vue({

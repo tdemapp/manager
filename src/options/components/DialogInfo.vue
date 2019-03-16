@@ -90,9 +90,7 @@
 										<IconContributors class="mr-3" />
 										<span
 											v-html="
-												getLocale(
-													'dashboard_dialog_info_btn_contributors'
-												)
+												getLocale('dashboard_dialog_info_btn_contributors')
 											"
 										/>
 									</v-btn>
@@ -109,9 +107,7 @@
 										<IconDependencies class="mr-3" />
 										<span
 											v-html="
-												getLocale(
-													'dashboard_dialog_info_btn_dependencies'
-												)
+												getLocale('dashboard_dialog_info_btn_dependencies')
 											"
 										/>
 									</v-btn>
@@ -139,7 +135,9 @@
 										<IconDownload class="mr-3" />
 										<span
 											class="spacedLetters"
-											v-html="getLocale('dashboard_dialog_info_download_settings')"
+											v-html="
+												getLocale('dashboard_dialog_info_download_settings')
+											"
 										/>
 									</v-btn>
 								</v-flex>
