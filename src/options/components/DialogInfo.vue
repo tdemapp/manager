@@ -38,11 +38,11 @@
 
 						<v-tab>
 							<IconLink class="mr-3" />
-							<span v-html="getLocale('dashboard_dialog_settings_subtitle_links')" />
+							<span v-html="getLocale('dashboard_dialog_info_subtitle_links')" />
 						</v-tab>
 						<v-tab>
 							<IconFile class="mr-3" />
-							<span v-html="getLocale('dashboard_dialog_settings_subtitle_debug')" />
+							<span v-html="getLocale('dashboard_dialog_info_subtitle_debug')" />
 						</v-tab>
 					</v-tabs>
 				</v-toolbar>
@@ -51,8 +51,8 @@
 					<v-tabs-items v-model="activeTab">
 						<!-- Links Tab -->
 						<v-tab-item>
-							<v-layout row wrap class="mt-2">
-								<v-flex xs5 class="mb-1 ml-4 mr-4">
+							<v-layout row wrap class="my-2">
+								<v-flex xs6>
 									<v-btn
 										flat
 										large
@@ -65,7 +65,7 @@
 										<span>Twitter</span>
 									</v-btn>
 								</v-flex>
-								<v-flex xs5 class="mb-1 ml-4 mr-4">
+								<v-flex xs6>
 									<v-btn
 										flat
 										large
@@ -78,41 +78,7 @@
 										<span>GitHub</span>
 									</v-btn>
 								</v-flex>
-								<v-flex xs5 class="mb-1 ml-4 mr-4">
-									<v-btn
-										flat
-										large
-										block
-										target="_blank"
-										href="https://chrome.google.com/webstore/detail/tdem/"
-										class="spacedLetters"
-									>
-										<IconChrome class="mr-3" />
-										<span
-											v-html="
-												getLocale('dashboard_dialog_settings_btn_chrome')
-											"
-										/>
-									</v-btn>
-								</v-flex>
-								<v-flex xs5 class="mb-1 ml-4 mr-4">
-									<v-btn
-										flat
-										large
-										block
-										target="_blank"
-										href="https://tdem.app"
-										class="spacedLetters"
-									>
-										<IconWebsite class="mr-3" />
-										<span
-											v-html="
-												getLocale('dashboard_dialog_settings_btn_website')
-											"
-										/>
-									</v-btn>
-								</v-flex>
-								<v-flex xs5 class="mb-1 ml-4 mr-4">
+								<v-flex xs6>
 									<v-btn
 										flat
 										large
@@ -125,13 +91,13 @@
 										<span
 											v-html="
 												getLocale(
-													'dashboard_dialog_settings_btn_contributors'
+													'dashboard_dialog_info_btn_contributors'
 												)
 											"
 										/>
 									</v-btn>
 								</v-flex>
-								<v-flex xs5 class="mb-1 ml-4 mr-4">
+								<v-flex xs6>
 									<v-btn
 										flat
 										large
@@ -144,7 +110,7 @@
 										<span
 											v-html="
 												getLocale(
-													'dashboard_dialog_settings_btn_dependencies'
+													'dashboard_dialog_info_btn_dependencies'
 												)
 											"
 										/>
@@ -156,20 +122,26 @@
 						<!-- Debug Info Tab -->
 						<v-tab-item>
 							<v-layout row wrap class="mt-2">
-								<v-flex xs12 class="ml-4 mr-4">
+								<v-flex xs5 class="ml-4 mr-4">
 									<v-btn flat large block disabled>
 										<span
 											class="spacedLetters"
 											v-html="
-												getLocale('dashboard_dialog_settings_app_version') +
+												getLocale('dashboard_dialog_info_app_version') +
 													': ' +
 													extensionVersion
 											"
 										/>
 									</v-btn>
 								</v-flex>
-								<v-flex xs12 class="ml-4 mr-4">
-									<code class="pa-2 caption" v-html="settingsJSON" />
+								<v-flex xs5 class="ml-4 mr-4">
+									<v-btn flat large block>
+										<IconDownload class="mr-3" />
+										<span
+											class="spacedLetters"
+											v-html="getLocale('dashboard_dialog_info_download_settings')"
+										/>
+									</v-btn>
 								</v-flex>
 							</v-layout>
 						</v-tab-item>
@@ -186,6 +158,7 @@ import IconChrome from '../icons/chrome.svg';
 import IconClose from '../icons/x.svg';
 import IconContributors from '../icons/contributors.svg';
 import IconDependencies from '../icons/dependencies.svg';
+import IconDownload from '../icons/download.svg';
 import IconFile from '../icons/file.svg';
 import IconGithub from '../icons/github.svg';
 import IconInfo from '../icons/info.svg';
@@ -199,6 +172,7 @@ export default {
 		IconClose,
 		IconContributors,
 		IconDependencies,
+		IconDownload,
 		IconFile,
 		IconGithub,
 		IconInfo,
