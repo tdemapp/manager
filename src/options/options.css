@@ -35,6 +35,9 @@
 .v-dialog {
 	border-radius: 0 !important;
 }
+.v-ripple__animation {
+	border-radius: 0px !important;
+}
 
 /* 
 * Dashboard styles

@@ -51,8 +51,8 @@
 					<v-tabs-items v-model="activeTab">
 						<!-- Links Tab -->
 						<v-tab-item>
-							<v-layout row wrap class="mt-2">
-								<v-flex xs5 class="mb-1 ml-4 mr-4">
+							<v-layout row wrap class="my-2">
+								<v-flex xs6>
 									<v-btn
 										flat
 										large
@@ -65,7 +65,7 @@
 										<span>Twitter</span>
 									</v-btn>
 								</v-flex>
-								<v-flex xs5 class="mb-1 ml-4 mr-4">
+								<v-flex xs6>
 									<v-btn
 										flat
 										large
@@ -78,7 +78,7 @@
 										<span>GitHub</span>
 									</v-btn>
 								</v-flex>
-								<v-flex xs5 class="mb-1 ml-4 mr-4">
+								<v-flex xs6>
 									<v-btn
 										flat
 										large
@@ -131,7 +131,7 @@
 										/>
 									</v-btn>
 								</v-flex>
-								<v-flex xs5 class="mb-1 ml-4 mr-4">
+								<v-flex xs6>
 									<v-btn
 										flat
 										large

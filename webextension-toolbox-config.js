@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin');
 
 module.exports = {
 	webpack: (config, { dev, vendor }) => {
@@ -30,6 +31,10 @@ module.exports = {
 				],
 			},
 			{
+				test: /\.styl$/,
+				use: ['style-loader', 'css-loader', 'stylus-loader'],
+			},
+			{
 				test: /\.svg$/,
 				issuer: /\.(vue|js|ts|svg)$/,
 				use: ['vue-loader', 'svg-to-vue-component/loader'],
@@ -39,6 +44,7 @@ module.exports = {
 		// Add custom plugins
 		config.plugins.push(new VueLoaderPlugin());
 		config.plugins.push(new MiniCssExtractPlugin());
+		config.plugins.push(new VuetifyLoaderPlugin());
 
 		return config;
 	},
