@@ -6,7 +6,7 @@
 		permanent
 		width="256"
 		v-model="drawer"
-		class="grey darken-4"
+		:class="$store.state.settings.isDarkTheme ? 'secondary' : 'primary'"
 		:mini-variant="$store.state.settings.isSidebarMini"
 	>
 		<v-list class="pt-0" three-line>

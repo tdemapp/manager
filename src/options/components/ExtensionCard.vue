@@ -2,14 +2,13 @@
 	<v-card class="ma-2 defaultCorners defaultShadow">
 		<v-toolbar
 			flat
-			:color="$store.state.settings.isDarkTheme ? 'grey darken-3' : 'white'"
-			:class="extension.isEnabled ? 'grey darken-4 py-3' : 'py-3'"
+			:class="getToolbarColor()"
 		>
 			<v-layout align-center justify-start row fill-height>
 				<IconBox
 					width="48px"
 					height="48px"
-					:class="extension.isEnabled ? 'white--text' : 'black--text'"
+					:class="extension.isEnabled ? 'white--text' : 'grey--text'"
 				/>
 
 				<v-spacer />
@@ -36,7 +35,7 @@
 
 		<v-divider :class="extension.isEnabled ? 'transparent ml-3 mr-3' : 'ml-3 mr-3'" />
 
-		<v-card-text class="caption" v-html="extension.description" />
+		<v-card-text v-html="extension.description" :class="extension.isEnabled ? 'grey--text--darken-4 caption' : 'grey--text caption'" />
 
 		<v-card-actions>
 			<v-btn
@@ -89,6 +88,13 @@ export default {
 		getLocale(text) {
 			return getLocale(text);
 		},
-	},
+		getToolbarColor() {
+			if (this.$store.state.settings.isDarkTheme) {
+				return this.extension.isEnabled ? 'secondary py-3' : 'grey darken-3 py-3'
+			} else {
+				return this.extension.isEnabled ? 'primary py-3' : 'white py-3'
+			}
+		}
+	}
 };
 </script>

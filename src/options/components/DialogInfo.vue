@@ -156,7 +156,7 @@
 						<!-- Debug Info Tab -->
 						<v-tab-item>
 							<v-layout row wrap class="mt-2">
-								<v-flex xs12 class="ml-4 mr-4">
+								<v-flex xs6>
 									<v-btn flat large block disabled>
 										<span
 											class="spacedLetters"
@@ -168,8 +168,14 @@
 										/>
 									</v-btn>
 								</v-flex>
-								<v-flex xs12 class="ml-4 mr-4">
-									<code class="pa-2 caption" v-html="settingsJSON" />
+								<v-flex xs6>
+									<v-btn flat large block href="{`data:text/json;charset=utf-8,${encodeURIComponent(JSON.stringify(this.props.objectToDownload))}`}" download="settings.json">
+										<IconDownload class="mr-3" />
+										<span
+											class="spacedLetters"
+											v-html="getLocale('dashboard_dialog_info_download_settings')"
+										/>
+									</v-btn>
 								</v-flex>
 							</v-layout>
 						</v-tab-item>
@@ -186,6 +192,7 @@ import IconChrome from '../icons/chrome.svg';
 import IconClose from '../icons/x.svg';
 import IconContributors from '../icons/contributors.svg';
 import IconDependencies from '../icons/dependencies.svg';
+import IconDownload from '../icons/download.svg';
 import IconFile from '../icons/file.svg';
 import IconGithub from '../icons/github.svg';
 import IconInfo from '../icons/info.svg';
@@ -199,6 +206,7 @@ export default {
 		IconClose,
 		IconContributors,
 		IconDependencies,
+		IconDownload,
 		IconFile,
 		IconGithub,
 		IconInfo,

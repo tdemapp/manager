@@ -24,7 +24,12 @@ function initOptions() {
  * Initialize Vue
  */
 function initVue() {
-	Vue.use(Vuetify);
+	Vue.use(Vuetify, {
+		theme: {
+			primary: '#212121',
+			secondary: '#131313'
+		}
+	});
 
 	new Vue({
 		el: '#app',

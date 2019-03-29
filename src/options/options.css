@@ -41,10 +41,20 @@
 */
 html,
 body,
-.theme--light.application {
-	background-color: #fafcff;
+.theme--light.application,
+.theme--dark.application {
 	margin: 0;
 	font-family: 'Roboto', Tahoma, Geneva, Verdana, sans-serif;
+}
+.theme--light.application {
+	background: #202020 !important;
+	background: radial-gradient(circle at top, #ffffff 0%, #d8d8d8 100%) !important;
+	background: -webkit-radial-gradient(circle at top, #ffffff 0%, #d8d8d8 100%) !important;
+}
+.theme--dark.application {
+	background: #202020 !important;
+	background: radial-gradient(circle at top, #343434 0%, #000000 100%) !important;
+	background: -webkit-radial-gradient(circle at top, #343434 0%, #000000 100%) !important;
 }
 .spacedLetters {
 	letter-spacing: 0.2em !important;
