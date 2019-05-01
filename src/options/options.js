@@ -53,7 +53,7 @@ function initVue() {
 	Vue.use(Vuetify, {
 		theme: {
 			primary: '#212121',
-			secondary: '#131313',
+			secondary: '#1b1b1b',
 		},
 		components: {
 			VApp,

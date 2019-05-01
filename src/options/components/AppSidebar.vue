@@ -6,8 +6,8 @@
 		permanent
 		width="256"
 		v-model="drawer"
-		class="primary"
 		:mini-variant="$store.state.settings.isSidebarMini"
+		:class="$store.state.settings.isDarkTheme ? 'secondary' : 'primary'"
 	>
 		<v-list class="pt-0" three-line>
 			<!-- Sidebar toggle -->
@@ -96,21 +96,21 @@
 							<v-switch
 								v-model="$store.state.settings.isDarkTheme"
 								class="mt- body-2 spacedLetters text-uppercase"
-								color="primary"
+								color="white"
 								label="Dark Theme"
 							/>
 						</v-flex>
 						<v-flex xs4>
 							<v-switch
 								class="mt- body-2 spacedLetters text-uppercase"
-								color="primary"
+								color="white"
 								label="Dark Theme"
 							/>
 						</v-flex>
 						<v-flex xs4>
 							<v-switch
 								class="mt- body-2 spacedLetters text-uppercase"
-								color="primary"
+								color="white"
 								label="Dark Theme"
 							/>
 						</v-flex>
@@ -127,21 +127,21 @@
 						<v-flex xs4>
 							<v-switch
 								class="mt- body-2 spacedLetters text-uppercase"
-								color="primary"
+								color="white"
 								label="Dark Theme"
 							/>
 						</v-flex>
 						<v-flex xs4>
 							<v-switch
 								class="mt- body-2 spacedLetters text-uppercase"
-								color="primary"
+								color="white"
 								label="Dark Theme"
 							/>
 						</v-flex>
 						<v-flex xs4>
 							<v-switch
 								class="mt- body-2 spacedLetters text-uppercase"
-								color="primary"
+								color="white"
 								label="Dark Theme"
 							/>
 						</v-flex>
