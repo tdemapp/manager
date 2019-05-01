@@ -42,6 +42,7 @@
 				flat
 				icon
 				large
+				rel="noopener"
 				target="_blank"
 				:href="extension.website"
 				:color="extension.isEnabled ? 'grey--darken-4' : 'grey'"

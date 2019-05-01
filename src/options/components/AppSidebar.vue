@@ -43,6 +43,7 @@
 							large
 							block
 							target="_blank"
+							rel="noopener"
 							:href="item.href"
 							class="spacedLetters"
 						>
