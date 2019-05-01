@@ -3,10 +3,6 @@
 /* 
 * Vuetify overrides
 */
-.v-btn,
-.v-btn--icon:before {
-	border-radius: 0 !important;
-}
 .v-toolbar__content {
 	padding-right: 0 !important;
 }
@@ -32,11 +28,8 @@
 		margin-left: 16px !important;
 	}
 }
-.v-dialog {
-	border-radius: 0 !important;
-}
-.v-ripple__animation {
-	border-radius: 0px !important;
+.headline {
+	letter-spacing: 0.2em !important;
 }
 
 /* 
@@ -60,13 +53,13 @@ body,
 	background: -webkit-radial-gradient(circle at top, #343434 0%, #000000 100%) !important;
 }
 .spacedLetters {
-	letter-spacing: 0.2em !important;
+	letter-spacing: 0.3em !important;
+}
+.dialogTitle {
+	font-size: 24px !important;
 }
 .boldTitle {
 	font-weight: 900 !important;
-}
-.defaultCorners {
-	border-radius: 0 !important;
 }
 .defaultShadow {
 	transition: all 0.3s;

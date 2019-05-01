@@ -1,9 +1,6 @@
 <template>
-	<v-card class="ma-2 defaultCorners defaultShadow">
-		<v-toolbar
-			flat
-			:class="getToolbarColor()"
-		>
+	<v-card class="ma-2 defaultShadow">
+		<v-toolbar flat :class="getToolbarColor()">
 			<v-layout align-center justify-start row fill-height>
 				<IconBox
 					width="48px"
@@ -19,10 +16,7 @@
 					"
 				>
 					<span class="caption" v-html="extension.name" /> <br />
-					<span
-						class="caption"
-						v-html="getLocale('dashboard_extension_version') + ': ' + extension.version"
-					/>
+					<span class="caption" v-html="'v' + extension.version" />
 				</v-card-text>
 
 				<v-spacer />
@@ -35,7 +29,10 @@
 
 		<v-divider :class="extension.isEnabled ? 'transparent ml-3 mr-3' : 'ml-3 mr-3'" />
 
-		<v-card-text v-html="extension.description" :class="extension.isEnabled ? 'grey--text--darken-4 caption' : 'grey--text caption'" />
+		<v-card-text
+			v-html="extension.description"
+			:class="extension.isEnabled ? 'grey--text--darken-4 caption' : 'grey--text caption'"
+		/>
 
 		<v-card-actions>
 			<v-btn
@@ -90,11 +87,11 @@ export default {
 		},
 		getToolbarColor() {
 			if (this.$store.state.settings.isDarkTheme) {
-				return this.extension.isEnabled ? 'secondary py-3' : 'grey darken-3 py-3'
+				return this.extension.isEnabled ? 'secondary py-3' : 'grey darken-3 py-3';
 			} else {
-				return this.extension.isEnabled ? 'primary py-3' : 'white py-3'
+				return this.extension.isEnabled ? 'primary py-3' : 'white py-3';
 			}
-		}
-	}
+		},
+	},
 };
 </script>
