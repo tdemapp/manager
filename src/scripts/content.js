@@ -1,30 +1,82 @@
-import { getExtensionUrl, getIsDev as isDev } from './util';
+import domify from 'domify';
+import tde from 'tde';
+
+import { getExtensionUrl, storage, getIsDev } from './util';
+import template from './template';
+
+const isDev = getIsDev();
+
+const dashboardButtonIcon = `
+	<style type='text/css'>
+		.icon-tdem:before { 
+			content: '\\F400';
+		}
+	</style>
+`;
+
+const dashboardButton = `
+	<a class='tdem-dashboard-btn js-header-action link-clean cf app-nav-link padding-h--16 padding-v--2 with-nav-border-t' data-title='TDEM Dashboard'>
+		<div class='obj-left margin-l--2'>
+			<i class='icon icon-tdem icon-medium'></i>
+		</div>
+		<div class='nbfc padding-ts hide-condensed txt-size--14 txt-bold app-nav-link-text'>TDEM</div>
+	</a>
+`;
 
 /*
  * Initialize TDEM
  */
 function init() {
-	isDev() ? console.log('🛠️ TDEM Initializing...') : null;
+	if (isDev) { console.log('🛠️ TDEM Initializing...'); }
 
 	try {
-		inject();
-	} catch (e) {
-		throw new Error(`⚠️ Error Initializing TDEM | ${e}`);
+		injectButtons();
+		injectAPI();
+	} catch (err) {
+		console.error(`⚠️ Error Initializing TDEM | ${err}`);
 	} finally {
-		isDev() ? console.log('✨ TDEM Successfully Initialized!') : null;
+		if (isDev) { console.log('✨ TDEM Successfully Initialized!'); }
 	}
 }
 
-/*
- * Injects script element into TweetDeck
- */
-function inject() {
-	const script = document.createElement('script');
+const injectButtons = () => {
+	try {
+		// Inject dashboard button icon
+		document.head.appendChild(domify(dashboardButtonIcon));
 
-	script.setAttribute('type', 'text/javascript');
-	script.setAttribute('src', getExtensionUrl('scripts/inject.js'));
+		// Inject dashboard button
+		document.querySelector('.app-navigator').insertAdjacentHTML('afterbegin', dashboardButton);
 
-	document.head.appendChild(script);
+		// Inject URL to open dashboard
+		document.querySelector('.tdem-dashboard-btn').addEventListener('click', (e) => {
+			e.preventDefault();
+			console.log(getExtensionUrl('options/options.html'));
+			window.open(getExtensionUrl('options/options.html'));
+		});
+	} catch (err) {
+		throw new Error(`⚠️ Error injecting buttons | ${err}`);
+	} finally {
+		if (isDev) { console.log('✅ Successfully injected buttons'); }
+	}
 }
+
+// Inject API script
+const injectAPI = () => {
+	try {
+		storage.get((storage) => {
+			storage.extensions.forEach((extension) => {
+				tde.add(extension, extension.isEnabled, extension.isInit);
+			});
+		});
+
+		tde.add(template);
+		tde.enable('myExtension', true);
+		tde.init();
+	} catch (err) {
+		throw new Error(`⚠️ Error loading API | ${err}`);
+	} finally {
+		if (isDev) { console.log('✅ Successfully loaded API'); }
+	}
+};
 
 init();

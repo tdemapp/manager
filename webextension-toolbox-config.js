@@ -11,7 +11,6 @@ module.exports = {
 		// Set custom entry points
 		config.entry = {
 			'scripts/content': './scripts/content.js',
-			'scripts/inject': './scripts/inject.js',
 			'options/options': './options/options.js',
 		};
 
