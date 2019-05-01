@@ -11,32 +11,17 @@
   "dashboard_menu": {
     "message": "Menu"
   },
-  "dashboard_dialog_install_warning_title": {
-    "message": "Warning"
-  },
-  "dashboard_dialog_install_warning_text": {
-    "message": "Some text will go here warning people about the dangers of loading custom extensions and that they know that any negative actions caused by a malicious extension is not fault of TDEM, but instead the user."
-  },
-  "dashboard_dialog_install_warning_agree": {
-    "message": "I understand, continue."
-  },
   "dashboard_dialog_store_title": {
     "message": "Store"
   },
   "dashboard_dialog_settings_title": {
     "message": "Settings"
   },
-  "dashboard_dialog_info_title": {
-    "message": "Info"
-  },
   "dashboard_dialog_settings_subtitle_display": {
     "message": "Display"
   },
-  "dashboard_dialog_info_subtitle_links": {
-    "message": "Links"
-  },
-  "dashboard_dialog_info_btn_chrome": {
-    "message": "Chrome Store"
+  "dashboard_dialog_info_title": {
+    "message": "Info"
   },
   "dashboard_dialog_info_btn_website": {
     "message": "Website"
@@ -47,16 +32,7 @@
   "dashboard_dialog_info_btn_dependencies": {
     "message": "Dependencies"
   },
-  "dashboard_dialog_info_subtitle_debug": {
-    "message": "Debug"
-  },
-  "dashboard_dialog_info_app_version": {
-    "message": "App Version"
-  },
   "dashboard_dialog_info_download_settings": {
     "message": "Download Settings"
-  },
-  "dashboard_extension_version": {
-    "message": "version"
   }
 }

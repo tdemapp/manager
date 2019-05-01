@@ -21,11 +21,6 @@ import Vuetify, {
 	VSnackbar,
 	VSpacer,
 	VSwitch,
-	VTab,
-	VTabs,
-	VTabItem,
-	VTabsItems,
-	VTabsSlider,
 	VToolbar,
 	VToolbarItems,
 } from 'vuetify/lib';
@@ -58,7 +53,7 @@ function initVue() {
 	Vue.use(Vuetify, {
 		theme: {
 			primary: '#212121',
-			secondary: '#131313'
+			secondary: '#131313',
 		},
 		components: {
 			VApp,
@@ -82,11 +77,6 @@ function initVue() {
 			VSnackbar,
 			VSpacer,
 			VSwitch,
-			VTab,
-			VTabs,
-			VTabItem,
-			VTabsItems,
-			VTabsSlider,
 			VToolbar,
 			VToolbarItems,
 		},
