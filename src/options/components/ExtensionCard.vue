@@ -1,5 +1,8 @@
 <template>
-	<v-card class="ma-2 defaultShadow" :color="$store.state.settings.isDarkTheme ? 'secondary': 'white'">
+	<v-card
+		class="ma-2 defaultShadow"
+		:color="$store.state.settings.isDarkTheme ? 'secondary' : 'white'"
+	>
 		<v-toolbar flat :class="getToolbarColor()">
 			<v-layout align-center justify-start row fill-height>
 				<IconBox

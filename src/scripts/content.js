@@ -27,7 +27,9 @@ const dashboardButton = `
  * Initialize TDEM
  */
 function init() {
-	if (isDev) { console.log('🛠️ TDEM Initializing...'); }
+	if (isDev) {
+		console.log('🛠️ TDEM Initializing...');
+	}
 
 	try {
 		injectButtons();
@@ -35,7 +37,9 @@ function init() {
 	} catch (err) {
 		console.error(`⚠️ Error Initializing TDEM | ${err}`);
 	} finally {
-		if (isDev) { console.log('✨ TDEM Successfully Initialized!'); }
+		if (isDev) {
+			console.log('✨ TDEM Successfully Initialized!');
+		}
 	}
 }
 
@@ -56,9 +60,11 @@ const injectButtons = () => {
 	} catch (err) {
 		throw new Error(`⚠️ Error injecting buttons | ${err}`);
 	} finally {
-		if (isDev) { console.log('✅ Successfully injected buttons'); }
+		if (isDev) {
+			console.log('✅ Successfully injected buttons');
+		}
 	}
-}
+};
 
 // Inject API script
 const injectAPI = () => {
@@ -75,7 +81,9 @@ const injectAPI = () => {
 	} catch (err) {
 		throw new Error(`⚠️ Error loading API | ${err}`);
 	} finally {
-		if (isDev) { console.log('✅ Successfully loaded API'); }
+		if (isDev) {
+			console.log('✅ Successfully loaded API');
+		}
 	}
 };
 

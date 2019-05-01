@@ -11,8 +11,13 @@
 
 		<!-- Dialog Content -->
 		<v-dialog v-model="dialog" :max-width="width">
-			<v-card :color="$store.state.settings.isDarkTheme ? 'secondary': 'white'">
-				<v-toolbar flat dark tabs :color="$store.state.settings.isDarkTheme ? 'black': 'grey darken-4'">
+			<v-card :color="$store.state.settings.isDarkTheme ? 'secondary' : 'white'">
+				<v-toolbar
+					flat
+					dark
+					tabs
+					:color="$store.state.settings.isDarkTheme ? 'black' : 'grey darken-4'"
+				>
 					<slot name="icon" />
 
 					<v-card-title
