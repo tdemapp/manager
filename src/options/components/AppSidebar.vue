@@ -47,7 +47,7 @@
 							:href="item.href"
 							class="spacedLetters"
 						>
-							<IconTwitter class="mr-3" />
+							<IconLink class="mr-3" />
 							<span v-html="item.text" />
 						</v-btn>
 					</v-flex>
@@ -164,6 +164,7 @@ import IconDependencies from '../icons/dependencies.svg';
 import IconDownload from '../icons/download.svg';
 import IconGithub from '../icons/github.svg';
 import IconInfo from '../icons/info.svg';
+import IconLink from '../icons/link.svg';
 import IconMenu from '../icons/menu.svg';
 import IconSettings from '../icons/settings.svg';
 import IconStore from '../icons/store.svg';
@@ -179,6 +180,7 @@ export default {
 		IconDownload,
 		IconGithub,
 		IconInfo,
+		IconLink,
 		IconMenu,
 		IconSettings,
 		IconStore,
