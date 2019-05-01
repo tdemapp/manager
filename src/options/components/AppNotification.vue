@@ -7,8 +7,7 @@
 		v-model="showSnackbar"
 		:timeout="infinite ? 0 : '3500'"
 	>
-		<!-- TODO: Port v-icon to SVG icon component -->
-		<!-- <v-icon class="mr-3" :color="iconColor" v-html="'$vuetify.icons.' + icon" /> -->
+		<IconDownload class="mr-4" />
 		<span class="text-uppercase spacedLetters" v-html="text" />
 		<v-btn flat icon :color="iconColor" @click="showSnackbar = false"> <IconClose /> </v-btn>
 	</v-snackbar>
@@ -16,10 +15,12 @@
 
 <script>
 import IconClose from '../icons/x.svg';
+import IconDownload from '../icons/download.svg';
 
 export default {
 	components: {
 		IconClose,
+		IconDownload,
 	},
 	props: {
 		bgColor: {
