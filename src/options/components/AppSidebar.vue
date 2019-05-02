@@ -27,7 +27,7 @@
 				<IconStore slot="icon" />
 
 				<template slot="content">
-					<v-list subheader :dark="$store.state.settings.isDarkTheme">
+					<v-list subheader :dark="$store.state.settings.isDarkTheme" :style="$store.state.settings.isDarkTheme ? 'background-color: #1b1b1b !important;' : null">
 						<v-list-tile v-for="(item, i) in items" :key="i">
 							<v-list-tile-content>
 								<v-list-tile-title
