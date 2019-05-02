@@ -15,7 +15,6 @@
 				<v-toolbar
 					flat
 					dark
-					tabs
 					:color="$store.state.settings.isDarkTheme ? 'black' : 'grey darken-4'"
 				>
 					<slot name="icon" />

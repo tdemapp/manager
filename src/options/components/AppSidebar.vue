@@ -26,9 +26,32 @@
 			<AppDialog :name="getLocale('dashboard_dialog_store_title')">
 				<IconStore slot="icon" />
 
-				<v-layout align-center justify-center row wrap slot="content">
-					<span class="spacedLetters text-uppercase">Coming soon...</span>
-				</v-layout>
+				<template slot="content">
+					<v-list subheader :dark="$store.state.settings.isDarkTheme">
+						<v-list-tile v-for="(item, i) in items" :key="i">
+							<v-list-tile-content>
+								<v-list-tile-title
+									class="caption spacedLetters"
+									v-html="item.title"
+								/>
+							</v-list-tile-content>
+
+							<v-list-tile-action>
+								<v-btn flat large icon :href="item.href"> <IconLink /> </v-btn>
+							</v-list-tile-action>
+							<v-list-tile-action>
+								<v-btn
+									flat
+									large
+									icon
+									@click="downloadExtension(item.extensionName)"
+								>
+									<IconDownload />
+								</v-btn>
+							</v-list-tile-action>
+						</v-list-tile>
+					</v-list>
+				</template>
 			</AppDialog>
 
 			<!-- Info Dialog -->
@@ -84,7 +107,7 @@
 			<AppDialog :name="getLocale('dashboard_dialog_settings_title')" :width="740">
 				<IconSettings slot="icon" />
 
-				<div slot="content">
+				<template slot="content">
 					<h1
 						class="dialogTitle spacedLetters text-uppercase boldTitle ma-2 mb-3"
 						v-html="getLocale('dashboard_dialog_settings_subtitle_display') + ':'"
@@ -147,7 +170,7 @@
 							/>
 						</v-flex>
 					</v-layout>
-				</div>
+				</template>
 			</AppDialog>
 		</v-list>
 	</v-navigation-drawer>
@@ -206,6 +229,20 @@ export default {
 					icon: `<IconDependencies />`,
 					href: 'https://github.com/tdemapp/TDEM/network/dependencies',
 				},
+			],
+			items: [
+				{
+					active: true,
+					title: 'Jason Oner',
+					avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg',
+				},
+				{
+					active: true,
+					title: 'Ranee Carlson',
+					avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg',
+				},
+				{ title: 'Cindy Baker', avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg' },
+				{ title: 'Ali Connors', avatar: 'https://cdn.vuetifyjs.com/images/lists/4.jpg' },
 			],
 		};
 	},

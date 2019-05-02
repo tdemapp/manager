@@ -3,6 +3,19 @@
 /* 
 * Vuetify overrides
 */
+html,
+body,
+.theme--light.application,
+.theme--dark.application {
+	margin: 0;
+	font-family: 'Roboto', Tahoma, Geneva, Verdana, sans-serif;
+}
+.theme--light.application {
+	background: #f1f1f1 !important;
+}
+.theme--dark.application {
+	background: #202020 !important;
+}
 .v-toolbar__content {
 	padding-right: 0 !important;
 }
@@ -28,25 +41,15 @@
 		margin-left: 16px !important;
 	}
 }
-.headline {
-	letter-spacing: 0.2em !important;
+.theme--dark.v-list {
+	background-color: #1b1b1b !important;
 }
 
 /* 
 * Dashboard styles
 */
-html,
-body,
-.theme--light.application,
-.theme--dark.application {
-	margin: 0;
-	font-family: 'Roboto', Tahoma, Geneva, Verdana, sans-serif;
-}
-.theme--light.application {
-	background: #f1f1f1 !important;
-}
-.theme--dark.application {
-	background: #202020 !important;
+.headline {
+	letter-spacing: 0.2em !important;
 }
 .spacedLetters {
 	letter-spacing: 0.3em !important;
