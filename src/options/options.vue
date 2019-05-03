@@ -1,8 +1,8 @@
 <template>
 	<v-app :dark="$store.state.settings.isDarkTheme">
-		<AppSidebar />
+		<Sidebar />
 
-		<!-- <AppNotification
+		<!-- <Notification
 			:infinite="true"
 			text="A new version of TDEM has been installed"
 			icon="download"
@@ -31,15 +31,14 @@
 </template>
 
 <script>
-import { storage } from '../scripts/util';
-import AppNotification from './components/AppNotification.vue';
-import AppSidebar from './components/AppSidebar.vue';
+import Notification from './components/App/Notification.vue';
+import Sidebar from './components/App/Sidebar.vue';
 import ExtensionCard from './components/ExtensionCard.vue';
 
 export default {
 	components: {
-		AppNotification,
-		AppSidebar,
+		Notification,
+		Sidebar,
 		ExtensionCard,
 	},
 	created() {

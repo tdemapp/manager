@@ -10,12 +10,12 @@
 		</v-list-tile>
 
 		<!-- Dialog Content -->
-		<v-dialog v-model="dialog" :max-width="width">
-			<v-card :color="$store.state.settings.isDarkTheme ? 'secondary' : 'white'">
+		<v-dialog v-model="dialog" :max-width="width" :scrollable="scrollable">
+			<v-card :color="isDarkTheme ? 'secondary' : 'white'">
 				<v-toolbar
 					flat
 					dark
-					:color="$store.state.settings.isDarkTheme ? 'black' : 'grey darken-4'"
+					:color="isDarkTheme ? 'black' : 'grey darken-4'"
 				>
 					<slot name="icon" />
 
@@ -31,14 +31,14 @@
 					</v-toolbar-items>
 				</v-toolbar>
 
-				<v-card-text> <slot name="content" /> </v-card-text>
+				<v-card-text :style="height ? `height: ${height};` : null"> <slot name="content" /> </v-card-text>
 			</v-card>
 		</v-dialog>
 	</section>
 </template>
 
 <script>
-import IconClose from '../icons/x.svg';
+import IconClose from '../../icons/x.svg';
 
 export default {
 	components: {
@@ -55,10 +55,20 @@ export default {
 			default: 440,
 			required: false,
 		},
+		height: {
+			type: String,
+			required: false,
+		},
+		scrollable: {
+			type: Boolean,
+			default: false,
+			required: false,
+		}
 	},
 	data() {
 		return {
 			dialog: null,
+			isDarkTheme: this.$store.state.settings.isDarkTheme,
 		};
 	},
 };

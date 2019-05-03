@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import IconClose from '../icons/x.svg';
-import IconDownload from '../icons/download.svg';
+import IconClose from '../../icons/x.svg';
+import IconDownload from '../../icons/download.svg';
 
 export default {
 	components: {
