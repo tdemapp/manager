@@ -99,8 +99,11 @@ function initializeStorage() {
 	const defaultStorage = {
 		extensions: [extensionTemplate],
 		settings: {
-			isDarkTheme: false,
-			isSidebarMini: false,
+			display: {
+				cardHover: true,
+				darkTheme: true,
+			},
+			isSidebarMini: true,
 		},
 	};
 

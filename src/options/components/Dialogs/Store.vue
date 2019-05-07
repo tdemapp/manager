@@ -3,7 +3,7 @@
         <IconStore slot="icon" />
 
         <template slot="content">
-            <v-list subheader :dark="display.isDarkTheme" :style="display.isDarkTheme ? 'background-color: #1b1b1b !important;' : null">
+            <v-list subheader :dark="$store.state.settings.display.darkTheme" :style="$store.state.settings.display.darkTheme ? 'background-color: #1b1b1b !important;' : null">
                 <template v-for="(item, tile, i) in storeExtensions">
                     <v-list-tile :key="tile">
                         <v-list-tile-content>
@@ -53,9 +53,6 @@ export default {
     },
     data () {
         return {
-            display: {
-				isDarkTheme: this.$store.state.settings.isDarkTheme,
-            },
             storeExtensions: [
                 { title: 'Emoji Picker', href: 'https://tdem.app' },
                 { title: 'Gif Picker', href: 'https://tdem.app' },

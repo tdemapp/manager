@@ -1,7 +1,7 @@
 <template>
 	<v-card
 		class="ma-2 defaultShadow"
-		:color="isDarkTheme ? 'secondary' : 'white'"
+		:color="$store.state.settings.display.darkTheme ? 'secondary' : 'white'"
 	>
 		<v-toolbar flat :class="getToolbarColor()">
 			<v-layout align-center justify-start row fill-height>
@@ -85,17 +85,12 @@ export default {
 		IconRefresh,
 		IconTrash,
 	},
-	data () {
-		return {
-			isDarkTheme: this.$store.state.settings.isDarkTheme,
-		}
-	},
 	methods: {
 		getLocale(text) {
 			return getLocale(text);
 		},
 		getToolbarColor() {
-			if (this.isDarkTheme) {
+			if (this.$store.state.settings.display.darkTheme) {
 				return this.extension.isEnabled ? 'black py-3' : 'secondary py-3';
 			} else {
 				return this.extension.isEnabled ? 'primary py-3' : 'white py-3';

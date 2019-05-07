@@ -11,11 +11,11 @@
 
 		<!-- Dialog Content -->
 		<v-dialog v-model="dialog" :max-width="width" :scrollable="scrollable">
-			<v-card :color="isDarkTheme ? 'secondary' : 'white'">
+			<v-card :color="$store.state.settings.display.darkTheme ? 'secondary' : 'white'">
 				<v-toolbar
 					flat
 					dark
-					:color="isDarkTheme ? 'black' : 'grey darken-4'"
+					:color="$store.state.settings.display.darkTheme ? 'black' : 'grey darken-4'"
 				>
 					<slot name="icon" />
 
@@ -68,7 +68,6 @@ export default {
 	data() {
 		return {
 			dialog: null,
-			isDarkTheme: this.$store.state.settings.isDarkTheme,
 		};
 	},
 };

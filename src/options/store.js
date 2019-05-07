@@ -12,15 +12,15 @@ const state = {
 
 const mutations = {
 	getExtensionStorage(state) {
-		storage.get((storage) => {
-			(state.extensions = storage.extensions), (state.settings = storage.settings);
+		storage.get((data) => {
+			(state.extensions = data.extensions), (state.settings = data.settings);
 		});
 	},
 	toggleSidebar(state) {
 		state.settings.isSidebarMini = !state.settings.isSidebarMini;
 	},
 	toggleDarkTheme(state) {
-		state.settings.isDarkTheme = !state.settings.isDarkTheme;
+		state.settings.display.darkTheme = !state.settings.display.darkTheme;
 	},
 };
 

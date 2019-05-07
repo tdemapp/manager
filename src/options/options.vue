@@ -1,5 +1,5 @@
 <template>
-	<v-app :dark="$store.state.settings.isDarkTheme">
+	<v-app :dark="$store.state.settings.display.darkTheme">
 		<Sidebar />
 
 		<!-- <Notification

@@ -7,7 +7,7 @@
 		width="256"
 		v-model="sidebar"
 		:mini-variant="$store.state.settings.isSidebarMini"
-		:class="$store.state.settings.isDarkTheme ? 'secondary' : 'primary'"
+		:class="$store.state.settings.display.darkTheme ? 'secondary' : 'primary'"
 	>
 		<v-list class="pt-0" three-line>
 			<!-- Sidebar toggle -->
