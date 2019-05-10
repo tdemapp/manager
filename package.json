@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "domify": "^1.4.0",
-    "jquery": "^3.4.1",
     "tde": "tdemapp/api#js",
     "v-animate-css": "^0.0.3",
     "vue": "^2.5.21",
