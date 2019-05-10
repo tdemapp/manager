@@ -6,7 +6,7 @@
 		permanent
 		width="256"
 		v-model="sidebar"
-		:mini-variant="$store.state.settings.isSidebarMini"
+		:mini-variant="$store.state.settings.display.sidebarMini"
 		:class="$store.state.settings.display.darkTheme ? 'secondary' : 'primary'"
 	>
 		<v-list class="pt-0" three-line>

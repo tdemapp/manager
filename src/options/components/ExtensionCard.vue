@@ -2,7 +2,7 @@
 	<v-card
 		:class="
 			`ma-2 defaultShadow ${
-				$store.state.settings.display.transitions ? 'extensionCardHover' : null
+				$store.state.settings.display.animations ? 'extensionCardHover' : null
 			}`
 		"
 		:color="$store.state.settings.display.darkTheme ? 'secondary' : 'white'"

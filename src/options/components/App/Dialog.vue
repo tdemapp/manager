@@ -31,7 +31,9 @@
 					</v-toolbar-items>
 				</v-toolbar>
 
-				<v-card-text :style="height ? `height: ${height};` : null"> <slot name="content" /> </v-card-text>
+				<v-card-text :style="height ? `height: ${height};` : null">
+					<slot name="content" />
+				</v-card-text>
 			</v-card>
 		</v-dialog>
 	</section>
@@ -63,7 +65,7 @@ export default {
 			type: Boolean,
 			default: false,
 			required: false,
-		}
+		},
 	},
 	data() {
 		return {

@@ -103,10 +103,10 @@ function initializeStorage() {
 		extensions: [extensionTemplate],
 		settings: {
 			display: {
-				cardHover: true,
+				animations: true,
 				darkTheme: true,
+				sidebarMini: true,
 			},
-			isSidebarMini: true,
 		},
 	};
 
