@@ -1,7 +1,6 @@
 <template>
 	<v-app :dark="$store.state.settings.display.darkTheme">
-		<Sidebar v-if="$store.state.settings.display.transitions" v-animate-css="'slideInLeft'" />
-		<Sidebar v-else />
+		<Sidebar v-animate-css="$store.state.settings.display.transitions ? 'slideInLeft' : null"/>
 
 		<!-- <Notification
 			:infinite="true"
@@ -23,12 +22,7 @@
 						v-for="(extensions, i) in $store.state.extensions"
 						:key="i"
 					>
-						<ExtensionCard
-							v-if="$store.state.settings.display.transitions"
-							v-animate-css="'fadeInUp'"
-							:extension="extensions"
-						/>
-						<ExtensionCard v-else v-animate-css="'fadeInUp'" :extension="extensions" />
+						<ExtensionCard v-animate-css="$store.state.settings.display.transitions ? 'fadeInUp' : null" :extension="extensions" />
 					</v-flex>
 				</v-layout>
 			</v-container>
