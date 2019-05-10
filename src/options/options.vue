@@ -1,6 +1,6 @@
 <template>
 	<v-app :dark="$store.state.settings.display.darkTheme">
-		<Sidebar v-animate-css="$store.state.settings.display.animations ? 'slideInLeft' : null"/>
+		<Sidebar v-animate-css="$store.state.settings.display.animations ? 'slideInLeft' : null" />
 
 		<!-- <Notification
 			:infinite="true"
@@ -22,7 +22,12 @@
 						v-for="(extensions, i) in $store.state.extensions"
 						:key="i"
 					>
-						<ExtensionCard v-animate-css="$store.state.settings.display.animations ? 'fadeInUp' : null" :extension="extensions" />
+						<ExtensionCard
+							v-animate-css="
+								$store.state.settings.display.animations ? 'fadeInUp' : null
+							"
+							:extension="extensions"
+						/>
 					</v-flex>
 				</v-layout>
 			</v-container>

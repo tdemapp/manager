@@ -100,11 +100,19 @@ function initVue() {
  */
 function initializeStorage() {
 	const defaultStorage = {
-		extensions: [extensionTemplate],
+		extensions: [
+			extensionTemplate,
+			extensionTemplate,
+			extensionTemplate,
+			extensionTemplate,
+			extensionTemplate,
+			extensionTemplate,
+			extensionTemplate,
+		],
 		settings: {
 			display: {
 				animations: true,
-				darkTheme: true,
+				darkTheme: false,
 				sidebarMini: true,
 			},
 		},
