@@ -1,6 +1,7 @@
 <template>
 	<v-app :dark="$store.state.settings.display.darkTheme">
-		<Sidebar />
+		<Sidebar v-if="$store.state.settings.display.transitions" v-animate-css="'slideInLeft'" />
+		<Sidebar v-else />
 
 		<!-- <Notification
 			:infinite="true"
@@ -8,21 +9,26 @@
 			icon="download"
 			bgColor="grey darken-4"
 			iconColor="white"
-		/> -->
+    />-->
 
 		<v-content>
 			<v-container fluid>
-				<v-layout row wrap>
+				<v-layout align-start justify-start row wrap fill-height>
 					<v-flex
 						xs12
 						sm12
 						md6
 						lg3
 						xl3
-						v-for="(item, i) in $store.state.extensions"
+						v-for="(extensions, i) in $store.state.extensions"
 						:key="i"
 					>
-						<ExtensionCard :extension="item" />
+						<ExtensionCard
+							v-if="$store.state.settings.display.transitions"
+							v-animate-css="'fadeInUp'"
+							:extension="extensions"
+						/>
+						<ExtensionCard v-else v-animate-css="'fadeInUp'" :extension="extensions" />
 					</v-flex>
 				</v-layout>
 			</v-container>

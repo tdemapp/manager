@@ -1,6 +1,10 @@
 <template>
 	<v-card
-		class="ma-2 defaultShadow"
+		:class="
+			`ma-2 defaultShadow ${
+				$store.state.settings.display.transitions ? 'extensionCardHover' : null
+			}`
+		"
 		:color="$store.state.settings.display.darkTheme ? 'secondary' : 'white'"
 	>
 		<v-toolbar flat :class="getToolbarColor()">

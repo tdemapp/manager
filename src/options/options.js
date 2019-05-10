@@ -25,6 +25,7 @@ import Vuetify, {
 	VToolbarItems,
 } from 'vuetify/lib';
 import { Ripple } from 'vuetify/lib/directives';
+import VAnimateCss from 'v-animate-css';
 
 import { storage } from '../scripts/util';
 import extensionTemplate from '../scripts/template';
@@ -84,6 +85,8 @@ function initVue() {
 			Ripple,
 		},
 	});
+
+	Vue.use(VAnimateCss);
 
 	new Vue({
 		el: '#app',
