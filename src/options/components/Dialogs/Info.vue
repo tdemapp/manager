@@ -63,8 +63,7 @@
 					flat
 					large
 					block
-					href="`{data:text/json;charset=utf-8,${encodeURIComponent(JSON.stringify(this.props.objectToDownload))}}`"
-					download="settings.json"
+					@click="downloadSettings"
 				>
 					<IconDownload class="mr-3" />
 					<span
@@ -83,6 +82,8 @@
 </template>
 
 <script>
+import * as download from 'downloadjs';
+
 import { getExtensionVersion, getLocale, storage } from '../../../scripts/util';
 
 import Dialog from '../App/Dialog.vue';
@@ -122,21 +123,8 @@ export default {
 		},
 		downloadSettings() {
 			storage.get((data) => {
-				var blob = new Blob([JSON.stringify(data.settings, null, 2)], {
-					type: 'application/json',
-				});
-				var url = URL.createObjectURL(blob);
-
-				chrome.downloads.download({
-					url: url,
-					filename: 'settings.json',
-					saveAs: false,
-				});
-
-				return (
-					'data:text/json;charset=utf-8,' +
-					encodeURIComponent(JSON.stringify(data.settings))
-				);
+				const settingsStr = JSON.stringify(data.settings, null, 2);
+				download(settingsStr, 'settings.json', 'application/json');
 			});
 		},
 	},
