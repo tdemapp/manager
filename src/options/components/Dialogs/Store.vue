@@ -8,7 +8,7 @@
 				:dark="$store.state.settings.display.darkTheme"
 				:style="
 					$store.state.settings.display.darkTheme
-						? 'background-color: #1b1b1b !important;'
+						? 'background-color: #262626 !important;'
 						: null
 				"
 			>

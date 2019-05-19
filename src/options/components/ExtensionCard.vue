@@ -5,7 +5,7 @@
 				$store.state.settings.display.animations ? 'extensionCardHover' : null
 			}`
 		"
-		:color="$store.state.settings.display.darkTheme ? 'secondary' : 'white'"
+		:color="$store.state.settings.display.darkTheme ? 'accent' : 'white'"
 	>
 		<v-toolbar flat :class="getToolbarColor()">
 			<v-layout align-center justify-start row fill-height>
@@ -95,7 +95,7 @@ export default {
 		},
 		getToolbarColor() {
 			if (this.$store.state.settings.display.darkTheme) {
-				return this.extension.isEnabled ? 'black py-3' : 'secondary py-3';
+				return this.extension.isEnabled ? 'secondary py-3' : 'accent py-3';
 			} else {
 				return this.extension.isEnabled ? 'primary py-3' : 'white py-3';
 			}

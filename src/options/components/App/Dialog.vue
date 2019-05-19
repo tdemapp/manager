@@ -10,12 +10,12 @@
 		</v-list-tile>
 
 		<!-- Dialog Content -->
-		<v-dialog v-model="dialog" :max-width="width" :scrollable="scrollable">
-			<v-card :color="$store.state.settings.display.darkTheme ? 'secondary' : 'white'">
+		<v-dialog v-model="dialog" :max-width="width" :scrollable="scrollable" :transition="$store.state.settings.display.animations ? 'dialog-transition' : null">
+			<v-card :color="$store.state.settings.display.darkTheme ? 'accent' : 'white'">
 				<v-toolbar
 					flat
 					dark
-					:color="$store.state.settings.display.darkTheme ? 'black' : 'grey darken-4'"
+					:color="$store.state.settings.display.darkTheme ? 'secondary' : 'accent'"
 				>
 					<slot name="icon" />
 

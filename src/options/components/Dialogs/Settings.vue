@@ -10,7 +10,7 @@
 
 			<v-divider />
 
-			<v-layout align-center justify-center row wrap class="ml-4">
+			<v-layout align-left justify-left row wrap class="ml-4">
 				<v-flex xs4>
 					<v-switch
 						v-model="$store.state.settings.display.animations"
@@ -25,13 +25,6 @@
 						class="body-2 spacedLetters text-uppercase"
 						:color="$store.state.settings.display.darkTheme ? 'white' : 'secondary'"
 						label="Dark Theme"
-					/>
-				</v-flex>
-				<v-flex xs4>
-					<v-switch
-						class="body-2 spacedLetters text-uppercase"
-						:color="$store.state.settings.display.darkTheme ? 'white' : 'secondary'"
-						label="Other"
 					/>
 				</v-flex>
 			</v-layout>
