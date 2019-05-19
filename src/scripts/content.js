@@ -4,7 +4,8 @@ import tde from 'tde';
 import { getExtensionUrl, storage, getIsDev } from './util';
 
 // Hacky way of injecting the button, but it works for now
-const injectSelector = 'body > div.application.js-app.is-condensed > header > div > nav > div > div.js-dropdown-content > ul > li:nth-child(2)';
+const injectSelector =
+	'body > div.application.js-app.is-condensed > header > div > nav > div > div.js-dropdown-content > ul > li:nth-child(2)';
 
 const dashboardButton = `
 	<li class="drp-h-divider"></li>
@@ -32,7 +33,9 @@ function init() {
 const injectButtons = () => {
 	try {
 		// Inject dashboard button
-		document.querySelector(injectSelector).insertAdjacentHTML('afterend', domify(dashboardButton));
+		document
+			.querySelector(injectSelector)
+			.insertAdjacentHTML('afterend', domify(dashboardButton));
 
 		// Inject URL to open dashboard
 		document.querySelector('.tdem-dashboard-btn').addEventListener('click', (e) => {

@@ -59,12 +59,7 @@
 			<v-flex xs12>
 				<v-divider class="my-3" />
 
-				<v-btn
-					flat
-					large
-					block
-					@click="downloadSettings"
-				>
+				<v-btn flat large block @click="downloadSettings">
 					<IconDownload class="mr-3" />
 					<span
 						class="spacedLetters"
