@@ -18,9 +18,7 @@
 				<v-spacer />
 
 				<v-card-text
-					:class="
-						extension.isEnabled ? 'white--text subheading' : 'grey--text subheading'
-					"
+					:class="`subheading ${extension.isEnabled ? 'white--text' : 'grey--text'}`"
 				>
 					<span class="caption" v-html="extension.name" /> <br />
 					<span class="caption" v-html="'v' + extension.version" />
@@ -38,7 +36,11 @@
 
 		<v-card-text
 			v-html="extension.description"
-			:class="extension.isEnabled ? 'grey--text--darken-4 caption' : 'grey--text caption'"
+			:class="
+				`caption text-truncate ${
+					extension.isEnabled ? 'grey--text--darken-4' : 'grey--text'
+				}`
+			"
 		/>
 
 		<v-card-actions>
