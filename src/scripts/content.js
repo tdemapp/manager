@@ -4,52 +4,37 @@ import tde from 'tde';
 import { getExtensionUrl, storage, getIsDev } from './util';
 import template from './template';
 
-const isDev = getIsDev();
 
-const dashboardButtonIcon = `
-	<style type='text/css'>
-		.icon-tdem:before { 
-			content: '\\F400';
-		}
-	</style>
-`;
+// Hacky way of injecting the button, but it works for now
+const injectSelector = 'body > div.application.js-app.is-condensed > header > div > nav > div > div.js-dropdown-content > ul > li:nth-child(2)';
 
 const dashboardButton = `
-	<a class='tdem-dashboard-btn js-header-action link-clean cf app-nav-link padding-h--16 padding-v--2 with-nav-border-t' data-title='TDEM Dashboard'>
-		<div class='obj-left margin-l--2'>
-			<i class='icon icon-tdem icon-medium'></i>
-		</div>
-		<div class='nbfc padding-ts hide-condensed txt-size--14 txt-bold app-nav-link-text'>TDEM</div>
-	</a>
+	<li class="drp-h-divider"></li>
+	<li class="is-selectable">
+		<a href="https://twitter.com/i/tweetdeck_release_notes" rel="url noopener noreferrer" class="tdem-dashboard-btn dropdown-menu-url-item" target="_blank">TDEM</a>
+	</li>
 `;
 
 /*
  * Initialize TDEM
  */
 function init() {
-	if (isDev) {
+	if (getIsDev()) {
 		console.log('🛠️ TDEM Initializing...');
 	}
 
 	try {
-		injectButtons();
 		injectAPI();
+		injectButtons();
 	} catch (err) {
 		console.error(`⚠️ Error Initializing TDEM | ${err}`);
-	} finally {
-		if (isDev) {
-			console.log('✨ TDEM Successfully Initialized!');
-		}
 	}
 }
 
 const injectButtons = () => {
 	try {
-		// Inject dashboard button icon
-		document.head.appendChild(domify(dashboardButtonIcon));
-
 		// Inject dashboard button
-		document.querySelector('.app-navigator').insertAdjacentHTML('afterbegin', dashboardButton);
+		document.querySelector(injectSelector).insertAdjacentHTML('afterend', domify(dashboardButton));
 
 		// Inject URL to open dashboard
 		document.querySelector('.tdem-dashboard-btn').addEventListener('click', (e) => {
@@ -59,10 +44,6 @@ const injectButtons = () => {
 		});
 	} catch (err) {
 		throw new Error(`⚠️ Error injecting buttons | ${err}`);
-	} finally {
-		if (isDev) {
-			console.log('✅ Successfully injected buttons');
-		}
 	}
 };
 
@@ -80,10 +61,6 @@ const injectAPI = () => {
 		tde.init();
 	} catch (err) {
 		throw new Error(`⚠️ Error loading API | ${err}`);
-	} finally {
-		if (isDev) {
-			console.log('✅ Successfully loaded API');
-		}
 	}
 };
 
