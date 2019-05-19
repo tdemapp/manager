@@ -2,8 +2,6 @@ import domify from 'domify';
 import tde from 'tde';
 
 import { getExtensionUrl, storage, getIsDev } from './util';
-import template from './template';
-
 
 // Hacky way of injecting the button, but it works for now
 const injectSelector = 'body > div.application.js-app.is-condensed > header > div > nav > div > div.js-dropdown-content > ul > li:nth-child(2)';
@@ -25,7 +23,7 @@ function init() {
 
 	try {
 		injectAPI();
-		injectButtons();
+		// injectButtons();
 	} catch (err) {
 		console.error(`⚠️ Error Initializing TDEM | ${err}`);
 	}
@@ -53,12 +51,11 @@ const injectAPI = () => {
 		storage.get((storage) => {
 			storage.extensions.forEach((extension) => {
 				tde.add(extension, extension.isEnabled, extension.isInit);
+				tde.enable(extension.name, true);
 			});
+			
+			tde.init();
 		});
-
-		tde.add(template);
-		tde.enable('myExtension', true);
-		tde.init();
 	} catch (err) {
 		throw new Error(`⚠️ Error loading API | ${err}`);
 	}
