@@ -4272,7 +4272,7 @@ tar@^4:
 
 tde@tdemapp/api#js:
   version "1.1.1"
-  resolved "https://codeload.github.com/tdemapp/api/tar.gz/2572a530aeb83e2258caa3dc49240d78bccf8fba"
+  resolved "https://codeload.github.com/tdemapp/api/tar.gz/4a65eab5330e878c9f200ff4d19069ffadd021a3"
 
 terser-webpack-plugin@^1.1.0:
   version "1.1.0"
