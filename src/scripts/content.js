@@ -1,7 +1,7 @@
 import domify from 'domify';
 import tde from 'tde';
 
-import { getExtensionUrl, storage, getIsDev } from './util';
+import { getExtensionUrl, storage, devLog } from './util';
 
 // Hacky way of injecting the button, but it works for now
 const injectSelector =
@@ -18,9 +18,7 @@ const dashboardButton = `
  * Initialize TDEM
  */
 function init() {
-	if (getIsDev()) {
-		console.log('🛠️ TDEM Initializing...');
-	}
+	devLog('🛠️ TDEM Initializing...');
 
 	try {
 		injectAPI();
@@ -40,7 +38,7 @@ const injectButtons = () => {
 		// Inject URL to open dashboard
 		document.querySelector('.tdem-dashboard-btn').addEventListener('click', (e) => {
 			e.preventDefault();
-			console.log(getExtensionUrl('options/options.html'));
+			devLog(getExtensionUrl('options/options.html'));
 			window.open(getExtensionUrl('options/options.html'));
 		});
 	} catch (err) {

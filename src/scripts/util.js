@@ -18,6 +18,13 @@ export const getIsDev = () => {
 	return process.env.NODE_ENV === 'development' ? true : false;
 };
 
+// Simple logging function that only logs when in dev mode
+export const devLog = (data) => {
+	if (getIsDev()) {
+		return console.log('[DEV] ', data);
+	}
+}
+
 /*
  * Get localization
  */
