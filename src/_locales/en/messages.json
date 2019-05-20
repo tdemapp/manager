@@ -20,6 +20,9 @@
   "dashboard_dialog_settings_subtitle_display": {
     "message": "Display"
   },
+  "dashboard_dialog_settings_subtitle_advanced": {
+    "message": "Advanced"
+  },
   "dashboard_dialog_info_title": {
     "message": "Info"
   },

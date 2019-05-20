@@ -108,6 +108,11 @@ function initializeStorage() {
 				darkTheme: false,
 				sidebarMini: true,
 			},
+			advanced: {
+				debugMode: false,
+				thirdParty: false,
+				other: false,
+			},
 		},
 	};
 
