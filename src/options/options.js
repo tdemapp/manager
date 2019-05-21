@@ -74,6 +74,8 @@ function initVue() {
 
 	Vue.use(VAnimateCss);
 
+	Vue.config.productionTip = false;
+
 	new Vue({
 		el: '#app',
 		render: (h) => h(Options),
