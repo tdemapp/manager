@@ -21,7 +21,7 @@ export const getIsDev = () => {
 // Simple logging function that only logs when in dev mode
 export const devLog = (data) => {
 	if (getIsDev()) {
-		return console.log('[DEV] ', data);
+		return console.log('[DEV]', data);
 	}
 }
 

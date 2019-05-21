@@ -4,14 +4,10 @@ export default {
 	description: 'This is myExtension!',
 	version: '1.1.1',
 	website: 'https://gist.github.com/',
-	isEnabled: true,
-	isInit: true,
+	enabled: true,
+	init: true,
 	dependencies: ['myImportantExtension'],
 	conflicts: ['veryBadExtension'],
-	create: () => {
-		console.log('myExtension created!');
-	},
-	destroy: () => {
-		console.log('myExtension destroyed!');
-	},
+	create: 'function () { console.log("myExtension created!"); }',
+	destroy:'function () { console.log("myExtension destroyed!"); }',
 };

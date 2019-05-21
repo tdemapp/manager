@@ -12,13 +12,13 @@
 				<IconBox
 					width="48px"
 					height="48px"
-					:class="extension.isEnabled ? 'white--text' : 'grey--text'"
+					:class="extension.enabled ? 'white--text' : 'grey--text'"
 				/>
 
 				<v-spacer />
 
 				<v-card-text
-					:class="`subheading ${extension.isEnabled ? 'white--text' : 'grey--text'}`"
+					:class="`subheading ${extension.enabled ? 'white--text' : 'grey--text'}`"
 				>
 					<span class="caption" v-html="extension.name" /> <br />
 					<span class="caption" v-html="'v' + extension.version" />
@@ -27,18 +27,18 @@
 				<v-spacer />
 
 				<v-card-actions>
-					<v-switch class="mt-3" color="white" v-model="extension.isEnabled" />
+					<v-switch class="mt-3" color="white" v-model="extension.enabled" />
 				</v-card-actions>
 			</v-layout>
 		</v-toolbar>
 
-		<v-divider :class="extension.isEnabled ? 'transparent ml-3 mr-3' : 'ml-3 mr-3'" />
+		<v-divider :class="extension.enabled ? 'transparent ml-3 mr-3' : 'ml-3 mr-3'" />
 
 		<v-card-text
 			v-html="extension.description"
 			:class="
 				`caption text-truncate ${
-					extension.isEnabled ? 'grey--text--darken-4' : 'grey--text'
+					extension.enabled ? 'grey--text--darken-4' : 'grey--text'
 				}`
 			"
 		/>
@@ -51,18 +51,18 @@
 				rel="noopener"
 				target="_blank"
 				:href="extension.website"
-				:color="extension.isEnabled ? 'grey--darken-4' : 'grey'"
+				:color="extension.enabled ? 'grey--darken-4' : 'grey'"
 			>
 				<IconLink />
 			</v-btn>
 
-			<v-btn flat icon large :color="extension.isEnabled ? 'grey--darken-4' : 'grey'">
+			<v-btn flat icon large :color="extension.enabled ? 'grey--darken-4' : 'grey'">
 				<IconRefresh />
 			</v-btn>
 
 			<v-spacer />
 
-			<v-btn flat icon large :color="extension.isEnabled ? 'red' : 'grey'">
+			<v-btn flat icon large :color="extension.enabled ? 'red' : 'grey'">
 				<IconTrash />
 			</v-btn>
 		</v-card-actions>
@@ -97,9 +97,9 @@ export default {
 		},
 		getToolbarColor() {
 			if (this.$store.state.settings.display.darkTheme) {
-				return this.extension.isEnabled ? 'secondary py-3' : 'accent py-3';
+				return this.extension.enabled ? 'secondary py-3' : 'accent py-3';
 			} else {
-				return this.extension.isEnabled ? 'primary py-3' : 'white py-3';
+				return this.extension.enabled ? 'primary py-3' : 'white py-3';
 			}
 		},
 	},

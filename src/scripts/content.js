@@ -49,13 +49,12 @@ const injectButtons = () => {
 // Inject API script
 const injectAPI = () => {
 	try {
+		devLog("🏗 Loading extensions...");
 		storage.get((storage) => {
 			storage.extensions.forEach((extension) => {
-				tde.add(extension, extension.isEnabled, extension.isInit);
-				tde.enable(extension.name, true);
+				devLog(extension);
+				tde.add(extension, extension.enabled, extension.init);
 			});
-			
-			tde.init();
 		});
 	} catch (err) {
 		throw new Error(`⚠️ Error loading API | ${err}`);
