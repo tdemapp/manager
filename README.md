@@ -23,14 +23,14 @@
 
 ## 🛠 Development:
 
-> Clone and install dependencies
+Clone and install dependencies
 ```shell
 $ git clone https://github.com/tdemapp/manager.git tdem
 $ cd tdem/
 $ npm install # yarn
 ```
 
-> Running development server
+Running development server
 ```shell
 # Chrome
 $ npm run dev chrome # yarn dev chrome
@@ -42,7 +42,7 @@ $ npm run dev firefox # yarn dev firefox
 $ npm run dev opera # yarn dev opera
 ```
 
-> Building for production
+Building for production
 ```shell
 # Chrome
 $ npm run build chrome # yarn build chrome
