@@ -23,7 +23,7 @@ export const devLog = (data) => {
 	if (getIsDev()) {
 		return console.log('[DEV]', data);
 	}
-}
+};
 
 /*
  * Get localization
@@ -38,12 +38,28 @@ export const getLocale = (msg) => {
 	return string;
 };
 
+const defaultStorage = {
+	extensions: [],
+	settings: {
+		display: {
+			animations: true,
+			darkTheme: false,
+			sidebarMini: true,
+		},
+		advanced: {
+			debugMode: false,
+			thirdParty: false,
+			other: false,
+		},
+	},
+};
+
 /*
  * Storage global functions
  */
 export const storage = {
 	get(done) {
-		chrome.storage.local.get(null, (obj) => {
+		chrome.storage.local.get(defaultStorage, (obj) => {
 			done(obj);
 		});
 	},
@@ -57,5 +73,16 @@ export const storage = {
 				return false;
 			});
 		});
+	},
+	subscribe(cb, executeRightAway) {
+		const fn = () => {
+			this.get(cb);
+		};
+
+		if (executeRightAway) {
+			fn();
+		}
+
+		chrome.storage.onChanged.addListener(fn);
 	},
 };

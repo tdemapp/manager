@@ -49,7 +49,7 @@ const injectButtons = () => {
 // Inject API script
 const injectAPI = () => {
 	try {
-		devLog("🏗 Loading extensions...");
+		devLog('🏗 Loading extensions...');
 		storage.get((storage) => {
 			storage.extensions.forEach((extension) => {
 				devLog(extension);

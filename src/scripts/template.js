@@ -9,5 +9,5 @@ export default {
 	dependencies: ['myImportantExtension'],
 	conflicts: ['veryBadExtension'],
 	create: 'function () { console.log("myExtension created!"); }',
-	destroy:'function () { console.log("myExtension destroyed!"); }',
+	destroy: 'function () { console.log("myExtension destroyed!"); }',
 };

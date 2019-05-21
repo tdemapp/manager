@@ -1,13 +1,13 @@
 <template>
-	<Dialog :name="getLocale('dashboard_dialog_store_title')" :scrollable="true">
+	<Dialog :name="getLocale('dashboard_dialog_store_title')" :scrollable="true" :storage="storage">
 		<IconStore slot="icon" />
 
 		<template slot="content">
 			<v-list
 				subheader
-				:dark="$store.state.settings.display.darkTheme"
+				:dark="storage.settings.display.darkTheme"
 				:style="
-					$store.state.settings.display.darkTheme
+					storage.settings.display.darkTheme
 						? 'background-color: #262626 !important;'
 						: null
 				"
@@ -48,6 +48,12 @@ import IconStore from '../../icons/store.svg';
 import IconLink from '../../icons/link.svg';
 
 export default {
+	props: {
+		storage: {
+			type: Object,
+			required: true,
+		},
+	},
 	components: {
 		Dialog,
 		IconDownload,

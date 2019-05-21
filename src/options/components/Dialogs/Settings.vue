@@ -1,5 +1,5 @@
 <template>
-	<Dialog :name="getLocale('dashboard_dialog_settings_title')" :width="740">
+	<Dialog :name="getLocale('dashboard_dialog_settings_title')" :width="740" :storage="storage">
 		<IconSettings slot="icon" />
 
 		<template slot="content">
@@ -13,17 +13,17 @@
 			<v-layout align-left justify-left row wrap class="ml-4">
 				<v-flex xs4>
 					<v-switch
-						v-model="$store.state.settings.display.animations"
+						v-model="storage.settings.display.animations"
 						class="body-2 spacedLetters text-uppercase"
-						:color="$store.state.settings.display.darkTheme ? 'white' : 'secondary'"
+						:color="storage.settings.display.darkTheme ? 'white' : 'secondary'"
 						label="Animations"
 					/>
 				</v-flex>
 				<v-flex xs4>
 					<v-switch
-						v-model="$store.state.settings.display.darkTheme"
+						v-model="storage.settings.display.darkTheme"
 						class="body-2 spacedLetters text-uppercase"
-						:color="$store.state.settings.display.darkTheme ? 'white' : 'secondary'"
+						:color="storage.settings.display.darkTheme ? 'white' : 'secondary'"
 						label="Dark Theme"
 					/>
 				</v-flex>
@@ -39,25 +39,25 @@
 			<v-layout align-left justify-left row wrap class="ml-4">
 				<v-flex xs4>
 					<v-switch
-						v-model="$store.state.settings.advanced.debugMode"
+						v-model="storage.settings.advanced.debugMode"
 						class="body-2 spacedLetters text-uppercase"
-						:color="$store.state.settings.display.darkTheme ? 'white' : 'secondary'"
+						:color="storage.settings.display.darkTheme ? 'white' : 'secondary'"
 						label="Debug Mode"
 					/>
 				</v-flex>
 				<v-flex xs4>
 					<v-switch
-						v-model="$store.state.settings.advanced.thirdParty"
+						v-model="storage.settings.advanced.thirdParty"
 						class="body-2 spacedLetters text-uppercase"
-						:color="$store.state.settings.display.darkTheme ? 'white' : 'secondary'"
+						:color="storage.settings.display.darkTheme ? 'white' : 'secondary'"
 						label="3rd Party"
 					/>
 				</v-flex>
 				<v-flex xs4>
 					<v-switch
-						v-model="$store.state.settings.advanced.other"
+						v-model="storage.settings.advanced.other"
 						class="body-2 spacedLetters text-uppercase"
-						:color="$store.state.settings.display.darkTheme ? 'white' : 'secondary'"
+						:color="storage.settings.display.darkTheme ? 'white' : 'secondary'"
 						label="Other"
 					/>
 				</v-flex>
@@ -73,6 +73,12 @@ import Dialog from '../App/Dialog.vue';
 import IconSettings from '../../icons/settings.svg';
 
 export default {
+	props: {
+		storage: {
+			type: Object,
+			required: true,
+		},
+	},
 	components: {
 		Dialog,
 		IconSettings,

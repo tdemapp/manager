@@ -6,12 +6,12 @@
 		permanent
 		width="256"
 		v-model="sidebar"
-		:mini-variant="$store.state.settings.display.sidebarMini"
-		:class="$store.state.settings.display.darkTheme ? 'secondary' : 'primary'"
+		:mini-variant="isMini"
+		:class="storage.settings.display.darkTheme ? 'secondary' : 'primary'"
 	>
 		<v-list class="pt-0" three-line>
 			<!-- Sidebar toggle -->
-			<v-list-tile ripple @click="$store.commit('toggleSidebar')">
+			<v-list-tile ripple @click="toggleSidebar">
 				<v-list-tile-action> <IconMenu /> </v-list-tile-action>
 
 				<v-list-tile-content>
@@ -23,9 +23,9 @@
 			</v-list-tile>
 
 			<!-- Dialogs -->
-			<Store />
-			<Info />
-			<Settings />
+			<Store :storage="storage" />
+			<Info :storage="storage" />
+			<Settings :storage="storage" />
 		</v-list>
 	</v-navigation-drawer>
 </template>
@@ -40,6 +40,12 @@ import Store from '../Dialogs/Store.vue';
 import IconMenu from '../../icons/menu.svg';
 
 export default {
+	props: {
+		storage: {
+			type: Object,
+			required: true,
+		},
+	},
 	components: {
 		IconMenu,
 		Info,
@@ -49,14 +55,27 @@ export default {
 	data() {
 		return {
 			sidebar: true,
+			isMini: false,
 		};
 	},
 	created() {
-		this.$store.commit('getExtensionStorage');
+		this.isMini = this.storage.settings.display.sidebarMini;
 	},
 	methods: {
 		getLocale(text) {
 			return getLocale(text);
+		},
+		toggleSidebar() {
+			let currentSetting = this.isMini;
+			this.isMini = !this.isMini;
+
+			storage.set({
+				settings: {
+					display: {
+						sidebarMini: !currentSetting,
+					},
+				},
+			});
 		},
 	},
 };

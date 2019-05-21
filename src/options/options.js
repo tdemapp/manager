@@ -27,25 +27,10 @@ import Vuetify, {
 import { Ripple } from 'vuetify/lib/directives';
 import VAnimateCss from 'v-animate-css';
 
-import { storage } from '../scripts/util';
-import extensionTemplate from '../scripts/template';
 import Options from '../options/options.vue';
-import store from './store';
 
 import 'vuetify/src/stylus/app.styl';
 import './options.css';
-
-/*
- * Initialize Options
- */
-function initOptions() {
-	try {
-		initVue();
-		initializeStorage();
-	} catch (e) {
-		throw new Error(`⚠️ Error Initializing Options | ${e}`);
-	}
-}
 
 /*
  * Initialize Vue
@@ -91,36 +76,12 @@ function initVue() {
 
 	new Vue({
 		el: '#app',
-		store,
 		render: (h) => h(Options),
 	});
 }
 
-/*
- * Initialize Chrome Storage
- */
-function initializeStorage() {
-	const defaultStorage = {
-		extensions: [extensionTemplate],
-		settings: {
-			display: {
-				animations: true,
-				darkTheme: false,
-				sidebarMini: true,
-			},
-			advanced: {
-				debugMode: false,
-				thirdParty: false,
-				other: false,
-			},
-		},
-	};
-
-	/*
-	 * Setting can be synced as their total byte size for storage does not exceed max storage size (Chrome max sync storage size: 102,400 bytes)
-	 * Extension storage is much larger than settings, as such they need to be storaed locally. (Chrome max local storage size: 5,242,880 bytes)
-	 */
-	storage.set(defaultStorage);
+try {
+	initVue();
+} catch (e) {
+	throw new Error(`⚠️ Error Initializing Options | ${e}`);
 }
-
-initOptions();

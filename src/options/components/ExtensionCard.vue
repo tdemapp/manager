@@ -2,10 +2,10 @@
 	<v-card
 		:class="
 			`ma-2 defaultShadow ${
-				$store.state.settings.display.animations ? 'extensionCardHover' : null
+				storage.settings.display.animations ? 'extensionCardHover' : null
 			}`
 		"
-		:color="$store.state.settings.display.darkTheme ? 'accent' : 'white'"
+		:color="storage.settings.display.darkTheme ? 'accent' : 'white'"
 	>
 		<v-toolbar flat :class="getToolbarColor()">
 			<v-layout align-center justify-start row fill-height>
@@ -84,6 +84,10 @@ export default {
 			required: true,
 			default: extensionTemplate,
 		},
+		storage: {
+			type: Object,
+			required: true,
+		},
 	},
 	components: {
 		IconBox,
@@ -96,7 +100,7 @@ export default {
 			return getLocale(text);
 		},
 		getToolbarColor() {
-			if (this.$store.state.settings.display.darkTheme) {
+			if (this.storage.settings.display.darkTheme) {
 				return this.extension.enabled ? 'secondary py-3' : 'accent py-3';
 			} else {
 				return this.extension.enabled ? 'primary py-3' : 'white py-3';

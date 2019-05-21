@@ -14,13 +14,13 @@
 			v-model="dialog"
 			:max-width="width"
 			:scrollable="scrollable"
-			:transition="$store.state.settings.display.animations ? 'dialog-transition' : null"
+			:transition="storage.settings.display.animations ? 'dialog-transition' : null"
 		>
-			<v-card :color="$store.state.settings.display.darkTheme ? 'accent' : 'white'">
+			<v-card :color="storage.settings.display.darkTheme ? 'accent' : 'white'">
 				<v-toolbar
 					flat
 					dark
-					:color="$store.state.settings.display.darkTheme ? 'secondary' : 'accent'"
+					:color="storage.settings.display.darkTheme ? 'secondary' : 'accent'"
 				>
 					<slot name="icon" />
 
@@ -70,6 +70,10 @@ export default {
 			type: Boolean,
 			default: false,
 			required: false,
+		},
+		storage: {
+			type: Object,
+			required: true,
 		},
 	},
 	data() {

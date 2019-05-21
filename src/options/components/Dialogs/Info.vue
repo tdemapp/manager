@@ -1,5 +1,5 @@
 <template>
-	<Dialog :name="getLocale('dashboard_dialog_info_title')" :width="440">
+	<Dialog :name="getLocale('dashboard_dialog_info_title')" :width="440" :storage="storage">
 		<IconInfo slot="icon" />
 
 		<v-layout row wrap slot="content">
@@ -93,6 +93,12 @@ import IconLink from '../../icons/link.svg';
 import IconWebsite from '../../icons/website.svg';
 
 export default {
+	props: {
+		storage: {
+			type: Object,
+			required: true,
+		},
+	},
 	components: {
 		Dialog,
 		IconClose,
@@ -110,7 +116,7 @@ export default {
 		};
 	},
 	created() {
-		this.settingsJSON = JSON.stringify(this.$store.state, null, 2);
+		this.settingsJSON = JSON.stringify(this.storage, null, 2);
 	},
 	methods: {
 		getLocale(text) {

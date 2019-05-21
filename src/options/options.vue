@@ -1,6 +1,9 @@
 <template>
-	<v-app :dark="$store.state.settings.display.darkTheme">
-		<Sidebar v-animate-css="$store.state.settings.display.animations ? 'slideInLeft' : null" />
+	<v-app :dark="storage.settings.display.darkTheme">
+		<Sidebar
+			:storage="storage"
+			v-animate-css="storage.settings.display.animations ? 'slideInLeft' : null"
+		/>
 
 		<!-- <Notification
 			:infinite="true"
@@ -19,14 +22,13 @@
 						md6
 						lg3
 						xl3
-						v-for="(extensions, i) in $store.state.extensions"
+						v-for="(extension, i) in storage.extensions"
 						:key="i"
 					>
 						<ExtensionCard
-							v-animate-css="
-								$store.state.settings.display.animations ? 'fadeInUp' : null
-							"
-							:extension="extensions"
+							v-animate-css="storage.settings.display.animations ? 'fadeInUp' : null"
+							:extension="extension"
+							:storage="storage"
 						/>
 					</v-flex>
 				</v-layout>
@@ -36,6 +38,8 @@
 </template>
 
 <script>
+import { devLog, storage } from '../scripts/util';
+import extensionTemplate from '../scripts/template';
 import Notification from './components/App/Notification.vue';
 import Sidebar from './components/App/Sidebar.vue';
 import ExtensionCard from './components/ExtensionCard.vue';
@@ -46,8 +50,24 @@ export default {
 		Sidebar,
 		ExtensionCard,
 	},
+	data() {
+		return {
+			storage: {},
+		};
+	},
 	created() {
-		this.$store.commit('getExtensionStorage');
+		storage.subscribe((storage) => {
+			this.storage = storage;
+		}, true);
+
+		storage.set({
+			extensions: [extensionTemplate]
+		})
+
+		devLog('🔨 Debug Mode Enabled');
+		storage.get((data) => {
+			devLog(data)
+		});
 	},
 };
 </script>

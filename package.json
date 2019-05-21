@@ -15,8 +15,7 @@
     "tde": "tdemapp/api#js",
     "v-animate-css": "^0.0.3",
     "vue": "^2.5.21",
-    "vuetify": "^1.3.15",
-    "vuex": "^3.1.0"
+    "vuetify": "^1.3.15"
   },
   "devDependencies": {
     "@babel/plugin-proposal-optional-chaining": "^7.2.0",
