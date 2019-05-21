@@ -4,12 +4,12 @@ node_js:
   - v10
   - v9
   - v8
-cache:
+cache: yarn
   directories:
     -node_modules
 install:
-  - npm install
+  - yarn
 script:
-  - npm run build chrome
-  - npm run build firefox
-  - npm run build opera
+  - yarn build chrome
+  - yarn build firefox
+  - yarn build opera
