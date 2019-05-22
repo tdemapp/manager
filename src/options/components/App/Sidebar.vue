@@ -7,7 +7,7 @@
 		width="256"
 		v-model="sidebar"
 		:mini-variant="isMini"
-		:class="storage.settings.display.darkTheme ? 'secondary' : 'primary'"
+		:class="storage.isDarkTheme ? 'secondary' : 'primary'"
 	>
 		<v-list class="pt-0" three-line>
 			<!-- Sidebar toggle -->
@@ -59,7 +59,7 @@ export default {
 		};
 	},
 	created() {
-		this.isMini = this.storage.settings.display.sidebarMini;
+		this.isMini = this.storage.isSidebarMini;
 	},
 	methods: {
 		getLocale(text) {
@@ -70,11 +70,7 @@ export default {
 			this.isMini = !this.isMini;
 
 			storage.set({
-				settings: {
-					display: {
-						sidebarMini: !currentSetting,
-					},
-				},
+				isSidebarMini: !this.isMini,
 			});
 		},
 	},

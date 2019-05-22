@@ -1,11 +1,7 @@
 <template>
 	<v-card
-		:class="
-			`ma-2 defaultShadow ${
-				storage.settings.display.animations ? 'extensionCardHover' : null
-			}`
-		"
-		:color="storage.settings.display.darkTheme ? 'accent' : 'white'"
+		:class="`ma-2 defaultShadow ${storage.doAnimations ? 'extensionCardHover' : null}`"
+		:color="storage.isDarkTheme ? 'accent' : 'white'"
 	>
 		<v-toolbar flat :class="getToolbarColor()">
 			<v-layout align-center justify-start row fill-height>
@@ -68,7 +64,7 @@
 </template>
 
 <script>
-import { storage, getLocale } from '../../scripts/util';
+import { getLocale } from '../../scripts/util';
 import extensionTemplate from '../../scripts/template';
 import IconBox from '../icons/box.svg';
 import IconLink from '../icons/link.svg';
@@ -98,7 +94,7 @@ export default {
 			return getLocale(text);
 		},
 		getToolbarColor() {
-			if (this.storage.settings.display.darkTheme) {
+			if (this.storage.isDarkTheme) {
 				return this.extension.enabled ? 'secondary py-3' : 'accent py-3';
 			} else {
 				return this.extension.enabled ? 'primary py-3' : 'white py-3';

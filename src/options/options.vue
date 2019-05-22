@@ -1,9 +1,6 @@
 <template>
-	<v-app :dark="storage.settings.display.darkTheme">
-		<Sidebar
-			:storage="storage"
-			v-animate-css="storage.settings.display.animations ? 'slideInLeft' : null"
-		/>
+	<v-app :dark="storage.isDarkTheme">
+		<Sidebar v-animate-css="storage.doAnimations ? 'slideInLeft' : null" :storage="storage" />
 
 		<!-- <Notification
 			:infinite="true"
@@ -26,7 +23,7 @@
 						:key="i"
 					>
 						<ExtensionCard
-							v-animate-css="storage.settings.display.animations ? 'fadeInUp' : null"
+							v-animate-css="storage.doAnimations ? 'fadeInUp' : null"
 							:extension="extension"
 							:storage="storage"
 						/>
@@ -38,7 +35,7 @@
 </template>
 
 <script>
-import { devLog, storage } from '../scripts/util';
+import { devLog, storage, defaultStorage } from '../scripts/util';
 import extensionTemplate from '../scripts/template';
 import Notification from './components/App/Notification.vue';
 import Sidebar from './components/App/Sidebar.vue';
@@ -52,7 +49,7 @@ export default {
 	},
 	data() {
 		return {
-			storage: {},
+			storage: defaultStorage,
 		};
 	},
 	created() {

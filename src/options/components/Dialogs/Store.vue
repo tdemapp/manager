@@ -5,12 +5,8 @@
 		<template slot="content">
 			<v-list
 				subheader
-				:dark="storage.settings.display.darkTheme"
-				:style="
-					storage.settings.display.darkTheme
-						? 'background-color: #262626 !important;'
-						: null
-				"
+				:dark="storage.isDarkTheme"
+				:style="storage.isDarkTheme ? 'background-color: #262626 !important;' : null"
 			>
 				<template v-for="(item, tile, i) in storeExtensions">
 					<v-list-tile :key="tile">

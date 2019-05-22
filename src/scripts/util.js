@@ -45,20 +45,12 @@ export const getLocale = (msg) => {
 	return string;
 };
 
-const defaultStorage = {
+export const defaultStorage = {
+	debugMode: false,
+	doAnimations: true,
 	extensions: [],
-	settings: {
-		display: {
-			animations: true,
-			darkTheme: false,
-			sidebarMini: true,
-		},
-		advanced: {
-			debugMode: false,
-			thirdParty: false,
-			other: false,
-		},
-	},
+	isDarkTheme: false,
+	isSidebarMini: false,
 };
 
 /*
@@ -82,14 +74,8 @@ export const storage = {
 		});
 	},
 	subscribe(cb, executeRightAway) {
-		const fn = () => {
-			this.get(cb);
-		};
-
-		if (executeRightAway) {
-			fn();
-		}
-
+		const fn = () => this.get(cb);
+		if (executeRightAway) fn();
 		chrome.storage.onChanged.addListener(fn);
 	},
 };

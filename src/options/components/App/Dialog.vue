@@ -10,18 +10,9 @@
 		</v-list-tile>
 
 		<!-- Dialog Content -->
-		<v-dialog
-			v-model="dialog"
-			:max-width="width"
-			:scrollable="scrollable"
-			:transition="storage.settings.display.animations ? 'dialog-transition' : null"
-		>
-			<v-card :color="storage.settings.display.darkTheme ? 'accent' : 'white'">
-				<v-toolbar
-					flat
-					dark
-					:color="storage.settings.display.darkTheme ? 'secondary' : 'accent'"
-				>
+		<v-dialog v-model="dialog" :max-width="width" :scrollable="scrollable">
+			<v-card :color="storage.isDarkTheme ? 'accent' : 'white'">
+				<v-toolbar flat dark :color="storage.isDarkTheme ? 'secondary' : 'accent'">
 					<slot name="icon" />
 
 					<v-card-title
