@@ -53,18 +53,20 @@ export default {
 		};
 	},
 	created() {
-		storage.subscribe((storage) => {
-			this.storage = storage;
+		storage.subscribe((data) => {
+			this.storage = data;
+
+			if (this.storage.extensions.length === 0) {
+				let newSettings = data;
+				newSettings.extensions.push(extensionTemplate)
+				storage.set(newSettings, () => {
+					devLog('✨ Added template extension');
+				});
+			}
+
+			devLog('🔨 Debug Mode Enabled');
+			devLog(this.storage);
 		}, true);
-
-		storage.set({
-			extensions: [extensionTemplate],
-		});
-
-		devLog('🔨 Debug Mode Enabled');
-		storage.get((data) => {
-			devLog(data);
-		});
 	},
 };
 </script>
