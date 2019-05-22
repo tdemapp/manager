@@ -9,7 +9,7 @@
 						v-model="storage.doAnimations"
 						class="body-2 spacedLetters text-uppercase"
 						:color="storage.isDarkTheme ? 'white' : 'secondary'"
-						label="Animations"
+						:label="getLocale('dashboard_dialog_settings_animations')"
 					/>
 				</v-flex>
 				<v-flex xs4>
@@ -17,7 +17,7 @@
 						v-model="storage.isDarkTheme"
 						class="body-2 spacedLetters text-uppercase"
 						:color="storage.isDarkTheme ? 'white' : 'secondary'"
-						label="Dark Theme"
+						:label="getLocale('dashboard_dialog_settings_dark_theme')"
 					/>
 				</v-flex>
 				<v-flex xs4>
@@ -25,7 +25,7 @@
 						v-model="storage.debugMode"
 						class="body-2 spacedLetters text-uppercase"
 						:color="storage.isDarkTheme ? 'white' : 'secondary'"
-						label="Debug Mode"
+						:label="getLocale('dashboard_dialog_settings_debug_mode')"
 					/>
 				</v-flex>
 			</v-layout>

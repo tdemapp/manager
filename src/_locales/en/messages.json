@@ -17,11 +17,14 @@
   "dashboard_dialog_settings_title": {
     "message": "Settings"
   },
-  "dashboard_dialog_settings_subtitle_display": {
-    "message": "Display"
+  "dashboard_dialog_settings_animations": {
+    "message": "Animations"
   },
-  "dashboard_dialog_settings_subtitle_advanced": {
-    "message": "Advanced"
+  "dashboard_dialog_settings_dark_theme": {
+    "message": "Dark Theme"
+  },
+  "dashboard_dialog_settings_debug_mode": {
+    "message": "Debug Mode"
   },
   "dashboard_dialog_info_title": {
     "message": "Info"
