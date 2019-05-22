@@ -4218,9 +4218,9 @@ tar@^4:
     safe-buffer "^5.1.2"
     yallist "^3.0.2"
 
-tde@tdemapp/api#js:
+"tde@git://github.com/tdemapp/api#js":
   version "1.1.1"
-  resolved "https://codeload.github.com/tdemapp/api/tar.gz/a8c0a998949af1435c4a23b9a33e41fa88ee51aa"
+  resolved "git://github.com/tdemapp/api#a8c0a998949af1435c4a23b9a33e41fa88ee51aa"
 
 terser-webpack-plugin@^1.1.0:
   version "1.2.4"
