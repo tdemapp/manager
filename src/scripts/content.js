@@ -52,7 +52,6 @@ const injectAPI = () => {
 		devLog('🏗 Loading extensions...');
 		storage.get((storage) => {
 			storage.extensions.forEach((extension) => {
-				devLog(extension);
 				tde.add(extension, extension.enabled, extension.init);
 			});
 		});

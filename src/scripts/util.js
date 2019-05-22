@@ -15,7 +15,14 @@ export const getExtensionVersion = () => {
 
 // Get is development environment
 export const getIsDev = () => {
-	return process.env.NODE_ENV === 'development' ? true : false;
+	if (
+		process.env.NODE_ENV === 'development' ||
+		this.storage.get((storage) => storage.settings.advanced.debugMode) === true
+	) {
+		return true;
+	} else {
+		return false;
+	}
 };
 
 // Simple logging function that only logs when in dev mode

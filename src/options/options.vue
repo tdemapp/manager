@@ -62,11 +62,11 @@ export default {
 
 		storage.set({
 			extensions: [extensionTemplate]
-		})
+		});
 
 		devLog('🔨 Debug Mode Enabled');
 		storage.get((data) => {
-			devLog(data)
+			devLog(data);
 		});
 	},
 };

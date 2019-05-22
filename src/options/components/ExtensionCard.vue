@@ -37,9 +37,7 @@
 		<v-card-text
 			v-html="extension.description"
 			:class="
-				`caption text-truncate ${
-					extension.enabled ? 'grey--text--darken-4' : 'grey--text'
-				}`
+				`caption text-truncate ${extension.enabled ? 'grey--text--darken-4' : 'grey--text'}`
 			"
 		/>
 
