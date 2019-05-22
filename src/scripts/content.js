@@ -46,7 +46,7 @@ const injectButtons = () => {
 	}
 };
 
-// Inject API script
+// Inject TDE API
 const injectAPI = () => {
 	try {
 		devLog('🏗 Loading extensions...');

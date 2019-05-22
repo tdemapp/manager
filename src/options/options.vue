@@ -61,7 +61,7 @@ export default {
 		}, true);
 
 		storage.set({
-			extensions: [extensionTemplate]
+			extensions: [extensionTemplate],
 		});
 
 		devLog('🔨 Debug Mode Enabled');

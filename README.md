@@ -19,7 +19,7 @@
 
 </div>
 
-<img alt='Screenshot' src='./screenshot.png' />
+<img alt='Screenshot' src='https://github.com/tdemapp/assets/blob/master/screenshot.png?raw=true' />
 
 ## 🛠 Development:
 
