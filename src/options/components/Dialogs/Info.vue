@@ -124,8 +124,9 @@ export default {
 		},
 		downloadSettings() {
 			storage.get((data) => {
-				const settingsStr = JSON.stringify(data.settings, null, 2);
-				download(settingsStr, 'settings.json', 'application/json');
+				const settings = data;
+				delete settings.extensions;
+				download(JSON.stringify(settings, null, 2), 'settings.json', 'application/json');
 			});
 		},
 	},
