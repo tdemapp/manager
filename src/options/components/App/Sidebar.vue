@@ -23,7 +23,7 @@
 			</v-list-tile>
 
 			<!-- Dialogs -->
-			<Store :storage="storage" />
+			<Download :storage="storage" />
 			<Info :storage="storage" />
 			<Settings :storage="storage" />
 		</v-list>
@@ -33,9 +33,9 @@
 <script>
 import { getLocale, storage } from '../../../scripts/util';
 
+import Download from '../Dialogs/Download.vue';
 import Info from '../Dialogs/Info.vue';
 import Settings from '../Dialogs/Settings.vue';
-import Store from '../Dialogs/Store.vue';
 
 import IconMenu from '../../icons/menu.svg';
 
@@ -48,9 +48,9 @@ export default {
 	},
 	components: {
 		IconMenu,
+		Download,
 		Info,
 		Settings,
-		Store,
 	},
 	data() {
 		return {

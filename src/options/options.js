@@ -21,6 +21,7 @@ import Vuetify, {
 	VSnackbar,
 	VSpacer,
 	VSwitch,
+	VTextField,
 	VToolbar,
 	VToolbarItems,
 } from 'vuetify/lib';
@@ -64,6 +65,7 @@ function initVue() {
 			VSnackbar,
 			VSpacer,
 			VSwitch,
+			VTextField,
 			VToolbar,
 			VToolbarItems,
 		},

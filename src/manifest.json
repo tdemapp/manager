@@ -22,7 +22,9 @@
     "activeTab",
     "unlimitedStorage",
     "storage",
-    "*://tweetdeck.twitter.com/*"
+    "*://tweetdeck.twitter.com/*",
+    "*://github.com/*",
+    "*://api.github.com/*"
   ],
   "options_ui": {
     "page": "options/options.html",
