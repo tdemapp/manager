@@ -45,6 +45,9 @@ export const getLocale = (msg) => {
 	return string;
 };
 
+/*
+ * Default storage object
+ */
 export const defaultStorage = {
 	debugMode: false,
 	doAnimations: true,

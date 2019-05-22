@@ -62,9 +62,7 @@ export default {
 		this.isMini = this.storage.isSidebarMini;
 	},
 	methods: {
-		getLocale(text) {
-			return getLocale(text);
-		},
+		getLocale: getLocale,
 		toggleSidebar() {
 			let currentSetting = this.isMini;
 			this.isMini = !this.isMini;
