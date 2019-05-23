@@ -58,7 +58,7 @@ export default {
 
 			if (this.storage.extensions.length === 0) {
 				let newSettings = data;
-				newSettings.extensions.push(extensionTemplate)
+				newSettings.extensions.push(extensionTemplate);
 				storage.set(newSettings, () => {
 					devLog('✨ Added template extension');
 				});

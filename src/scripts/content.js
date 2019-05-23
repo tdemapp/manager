@@ -51,9 +51,9 @@ const injectAPI = () => {
 	try {
 		devLog('🏗 Loading extensions...');
 		storage.get((storage) => {
-			storage.extensions.forEach((extension) => {
-				tde.add(extension, extension.enabled, extension.init);
-			});
+			for (let i = 0; i < storage.extensions.length; i++) {
+				tde.add(storage.extensions[i], storage.extensions[i].enabled, storage.extensions[i].init);
+			}
 		});
 	} catch (err) {
 		throw new Error(`⚠️ Error loading API | ${err}`);
