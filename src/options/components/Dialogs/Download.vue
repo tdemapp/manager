@@ -12,11 +12,10 @@
 				<!-- Download Settings -->
 				<v-flex xs12>
 					<v-text-field
-						autofocus
 						:color="storage.isDarkTheme ? 'white' : 'primary'"
 						:rules="[validateUrl]"
 						v-model="inputText"
-						label="extension.json"
+						label="URL"
 					/>
 
 					<v-btn
