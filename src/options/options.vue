@@ -2,14 +2,6 @@
 	<v-app :dark="storage.isDarkTheme">
 		<Sidebar v-animate-css="storage.doAnimations ? 'slideInLeft' : null" :storage="storage" />
 
-		<!-- <Notification
-			:infinite="true"
-			text="A new version of TDEM has been installed"
-			icon="download"
-			bgColor="grey darken-4"
-			iconColor="white"
-    />-->
-
 		<v-content>
 			<v-container fluid>
 				<v-layout align-start justify-start row wrap fill-height>
@@ -36,13 +28,11 @@
 
 <script>
 import { defaultStorage, extension, devLog, storage } from '../scripts/util';
-import Notification from './components/App/Notification.vue';
 import Sidebar from './components/App/Sidebar.vue';
 import ExtensionCard from './components/ExtensionCard.vue';
 
 export default {
 	components: {
-		Notification,
 		Sidebar,
 		ExtensionCard,
 	},
@@ -52,6 +42,8 @@ export default {
 		};
 	},
 	created() {
+		this.$toast('Welcome to TDEM.');
+
 		storage.subscribe((data) => {
 			this.storage = data;
 
