@@ -1,3 +1,5 @@
+import * as yup from 'yup';
+
 // Get extension name
 export const getExtensionUrl = (...args) => {
 	return chrome.extension.getURL(...args);
@@ -32,9 +34,7 @@ export const devLog = (data) => {
 	}
 };
 
-/*
- * Get localization
- */
+// Get localization
 export const getLocale = (msg) => {
 	const string = chrome.i18n.getMessage(msg);
 
@@ -45,9 +45,7 @@ export const getLocale = (msg) => {
 	return string;
 };
 
-/*
- * Default storage object
- */
+// Default storage object
 export const defaultStorage = {
 	debugMode: false,
 	doAnimations: true,
@@ -55,10 +53,44 @@ export const defaultStorage = {
 	isDarkTheme: false,
 	isSidebarMini: false,
 };
+// Extension data handlers
+export const extension = {
+	schema: yup.object().shape({
+		name: yup.string().required(),
+		author: yup.string().required(),
+		description: yup.string().required(),
+		version: yup.string().required(),
+		website: yup.string().url().required(),
+		enabled: yup.boolean().required(),
+		init: yup.boolean().required(),
+		dependencies: yup.array().of(yup.string()).required(),
+		conflicts: yup.array().of(yup.string()).required(),
+		create: yup.string().required(),
+		destroy: yup.string().required(),
+	}),
+	template: {
+		name: 'myExtension',
+		author: 'myExtensionAuthor',
+		description: 'This is myExtension!',
+		version: '1.1.1',
+		website: 'https://gist.github.com/',
+		enabled: true,
+		init: true,
+		dependencies: ['myImportantExtension'],
+		conflicts: ['veryBadExtension'],
+		create: 'function () { console.log("myExtension created!"); }',
+		destroy: 'function () { console.log("myExtension destroyed!"); }',
+	},
+	validate (obj, cb) {
+		this.schema.isValid(obj).then((valid) => {
+			cb(valid);
+		}).catch((err) => {
+			console.error('Error validating extension: ', err);
+		});
+	},
+};
 
-/*
- * Storage global functions
- */
+// Storage global functionss
 export const storage = {
 	get(done) {
 		chrome.storage.local.get(defaultStorage, (obj) => {

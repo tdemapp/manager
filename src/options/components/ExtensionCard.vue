@@ -64,8 +64,7 @@
 </template>
 
 <script>
-import { getLocale } from '../../scripts/util';
-import extensionTemplate from '../../scripts/template';
+import { extension, getLocale } from '../../scripts/util';
 import IconBox from '../icons/box.svg';
 import IconLink from '../icons/link.svg';
 import IconRefresh from '../icons/refresh.svg';
@@ -76,7 +75,7 @@ export default {
 		extension: {
 			type: Object,
 			required: true,
-			default: extensionTemplate,
+			default: extension.template,
 		},
 		storage: {
 			type: Object,

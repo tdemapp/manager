@@ -35,8 +35,7 @@
 </template>
 
 <script>
-import { devLog, storage, defaultStorage } from '../scripts/util';
-import extensionTemplate from '../scripts/template';
+import { defaultStorage, extension, devLog, storage } from '../scripts/util';
 import Notification from './components/App/Notification.vue';
 import Sidebar from './components/App/Sidebar.vue';
 import ExtensionCard from './components/ExtensionCard.vue';
@@ -58,7 +57,7 @@ export default {
 
 			if (this.storage.extensions.length === 0) {
 				let newSettings = data;
-				newSettings.extensions.push(extensionTemplate);
+				newSettings.extensions.push(extension.template);
 				storage.set(newSettings, () => {
 					devLog('✨ Added template extension');
 				});
