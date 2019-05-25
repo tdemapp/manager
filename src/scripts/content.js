@@ -52,7 +52,11 @@ const injectAPI = () => {
 		devLog('🏗 Loading extensions...');
 		storage.get((storage) => {
 			for (let i = 0; i < storage.extensions.length; i++) {
-				tde.add(storage.extensions[i], storage.extensions[i].enabled, storage.extensions[i].init);
+				tde.add(
+					storage.extensions[i],
+					storage.extensions[i].enabled,
+					storage.extensions[i].init
+				);
 			}
 		});
 	} catch (err) {

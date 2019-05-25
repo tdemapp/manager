@@ -6,7 +6,7 @@
 		permanent
 		width="256"
 		v-model="sidebar"
-		:mini-variant="isMini"
+		:mini-variant="storage.isSidebarMini"
 		:class="storage.isDarkTheme ? 'secondary' : 'primary'"
 	>
 		<v-list class="pt-0" three-line>
@@ -55,21 +55,14 @@ export default {
 	data() {
 		return {
 			sidebar: true,
-			isMini: false,
 		};
-	},
-	created() {
-		this.isMini = this.storage.isSidebarMini;
 	},
 	methods: {
 		getLocale: getLocale,
 		toggleSidebar() {
-			let currentSetting = this.isMini;
-			this.isMini = !this.isMini;
-
-			storage.set({
-				isSidebarMini: !this.isMini,
-			});
+			let newStorage = this.storage;
+			newStorage.isSidebarMini = !this.storage.isSidebarMini;
+			storage.set(newStorage);
 		},
 	},
 };

@@ -58,9 +58,7 @@ export default {
 			if (this.storage.extensions.length === 0) {
 				let newSettings = data;
 				newSettings.extensions.push(extension.template);
-				storage.set(newSettings, () => {
-					devLog('✨ Added template extension');
-				});
+				storage.set(newSettings);
 			}
 
 			devLog('🔨 Debug Mode Enabled');

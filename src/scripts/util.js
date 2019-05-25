@@ -60,11 +60,20 @@ export const extension = {
 		author: yup.string().required(),
 		description: yup.string().required(),
 		version: yup.string().required(),
-		website: yup.string().url().required(),
+		website: yup
+			.string()
+			.url()
+			.required(),
 		enabled: yup.boolean().required(),
 		init: yup.boolean().required(),
-		dependencies: yup.array().of(yup.string()).required(),
-		conflicts: yup.array().of(yup.string()).required(),
+		dependencies: yup
+			.array()
+			.of(yup.string())
+			.required(),
+		conflicts: yup
+			.array()
+			.of(yup.string())
+			.required(),
 		create: yup.string().required(),
 		destroy: yup.string().required(),
 	}),
@@ -81,12 +90,15 @@ export const extension = {
 		create: 'function () { console.log("myExtension created!"); }',
 		destroy: 'function () { console.log("myExtension destroyed!"); }',
 	},
-	validate (obj, cb) {
-		this.schema.isValid(obj).then((valid) => {
-			cb(valid);
-		}).catch((err) => {
-			console.error('Error validating extension: ', err);
-		});
+	validate(obj, cb) {
+		this.schema
+			.isValid(obj)
+			.then((valid) => {
+				cb(valid);
+			})
+			.catch((err) => {
+				console.error('Error validating extension: ', err);
+			});
 	},
 };
 
