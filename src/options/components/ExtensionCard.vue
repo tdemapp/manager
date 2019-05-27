@@ -89,7 +89,7 @@ export default {
 		IconTrash,
 	},
 	methods: {
-		getLocale: getLocale,
+		getLocale,
 		getToolbarColor() {
 			if (this.storage.isDarkTheme) {
 				return this.extension.enabled ? 'secondary py-3' : 'accent py-3';

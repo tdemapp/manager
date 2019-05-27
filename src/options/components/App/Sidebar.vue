@@ -58,11 +58,11 @@ export default {
 		};
 	},
 	methods: {
-		getLocale: getLocale,
+		getLocale,
 		toggleSidebar() {
-			let newStorage = this.storage;
-			newStorage.isSidebarMini = !this.storage.isSidebarMini;
-			storage.set(newStorage);
+			storage.set({
+				isSidebarMini: !this.storage.isSidebarMini,
+			});
 		},
 	},
 };

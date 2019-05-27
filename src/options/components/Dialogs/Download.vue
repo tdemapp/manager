@@ -65,7 +65,7 @@ export default {
 		};
 	},
 	methods: {
-		getLocale: getLocale,
+		getLocale,
 		download(url) {
 			this.isDownloadingExtension = true;
 			fetch(url)

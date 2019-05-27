@@ -119,7 +119,7 @@ export default {
 		this.settingsJSON = JSON.stringify(this.storage, null, 2);
 	},
 	methods: {
-		getLocale: getLocale,
+		getLocale,
 		downloadSettings() {
 			storage.get((data) => {
 				const settings = data;

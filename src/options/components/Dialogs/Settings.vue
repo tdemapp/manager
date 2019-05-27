@@ -51,7 +51,7 @@ export default {
 		IconSettings,
 	},
 	methods: {
-		getLocale: getLocale,
+		getLocale,
 	},
 };
 </script>
