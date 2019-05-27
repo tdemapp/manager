@@ -27,7 +27,7 @@ import Vuetify, {
 } from 'vuetify/lib';
 import { Ripple } from 'vuetify/lib/directives';
 import VAnimateCss from 'v-animate-css';
-import VuetifyToast from 'vuetify-toast-snackbar';
+import Snackbar from './plugins/snackbar';
 
 import Options from '../options/options.vue';
 
@@ -74,19 +74,8 @@ function initVue() {
 			Ripple,
 		},
 	});
-
 	Vue.use(VAnimateCss);
-
-	Vue.use(VuetifyToast, {
-		x: 'right',
-		y: 'top',
-		color: 'primary',
-		icon: '',
-		classes: [
-			'text-uppercase',
-			'text-uppercase spacedLetters'
-		],
-	});
+	Vue.use(Snackbar);
 
 	Vue.config.productionTip = false;
 

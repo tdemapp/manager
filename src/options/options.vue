@@ -42,7 +42,7 @@ export default {
 		};
 	},
 	created() {
-		this.$toast('Welcome to TDEM.');
+		this.$snackbar('Hello World');
 
 		storage.subscribe((data) => {
 			this.storage = data;
