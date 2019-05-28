@@ -56,7 +56,7 @@
 
 			<v-spacer />
 
-			<v-btn flat icon large :color="extension.enabled ? 'red' : 'grey'">
+			<v-btn flat icon large @click="removeExtension(extension.name)" :color="extension.enabled ? 'red' : 'grey'">
 				<IconTrash />
 			</v-btn>
 		</v-card-actions>
@@ -64,7 +64,8 @@
 </template>
 
 <script>
-import { extension, getLocale } from '../../scripts/util';
+import tde from 'tde';
+import { devLog, extension, getLocale, storage } from '../../scripts/util';
 import IconBox from '../icons/box.svg';
 import IconLink from '../icons/link.svg';
 import IconRefresh from '../icons/refresh.svg';
@@ -97,6 +98,20 @@ export default {
 				return this.extension.enabled ? 'primary py-3' : 'white py-3';
 			}
 		},
+		removeExtension(extensionName) {
+			devLog('Removing: ' + extensionName);
+			try {
+				tde.remove(extensionName);
+				let newSettings = this.storage;
+				newSettings.extensions.splice(
+					newSettings.extensions.map((e) => e.name).indexOf(extensionName),
+					1
+				);
+				storage.set(newSettings);
+			} catch (err) {
+				throw new Error('Error removing extension | ' + err);
+			}
+		}
 	},
 };
 </script>
