@@ -42,8 +42,6 @@ export default {
 		};
 	},
 	created() {
-		this.$snackbar('Hello World');
-
 		storage.subscribe((data) => {
 			this.storage = data;
 

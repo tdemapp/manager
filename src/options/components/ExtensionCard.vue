@@ -50,13 +50,25 @@
 				<IconLink />
 			</v-btn>
 
-			<v-btn flat icon large :color="extension.enabled ? 'grey--darken-4' : 'grey'">
+			<v-btn
+				flat
+				icon
+				large
+				@click="reloadExtension(extension.name)"
+				:color="extension.enabled ? 'grey--darken-4' : 'grey'"
+			>
 				<IconRefresh />
 			</v-btn>
 
 			<v-spacer />
 
-			<v-btn flat icon large @click="removeExtension(extension.name)" :color="extension.enabled ? 'red' : 'grey'">
+			<v-btn
+				flat
+				icon
+				large
+				@click="removeExtension(extension.name)"
+				:color="extension.enabled ? 'red' : 'grey'"
+			>
 				<IconTrash />
 			</v-btn>
 		</v-card-actions>
@@ -111,7 +123,7 @@ export default {
 			} catch (err) {
 				throw new Error('Error removing extension | ' + err);
 			}
-		}
+		},
 	},
 };
 </script>
