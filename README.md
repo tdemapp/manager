@@ -27,31 +27,31 @@ Clone and install dependencies
 ```shell
 $ git clone https://github.com/tdemapp/manager.git tdem
 $ cd tdem/
-$ npm install # yarn
+$ npm install
 ```
 
 Running development server
 ```shell
 # Chrome
-$ npm run dev chrome # yarn dev chrome
+$ npm run dev chrome
 
 # Firefox
-$ npm run dev firefox # yarn dev firefox
+$ npm run dev firefox
 
 # Opera
-$ npm run dev opera # yarn dev opera
+$ npm run dev opera
 ```
 
 Building for production
 ```shell
 # Chrome
-$ npm run build chrome # yarn build chrome
+$ npm run build chrome
 
 # Firefox
-$ npm run build firefox # yarn build firefox
+$ npm run build firefox
 
 # Opera
-$ npm run build opera # yarn build opera
+$ npm run build opera
 ```
 
 ## 📄 License:
