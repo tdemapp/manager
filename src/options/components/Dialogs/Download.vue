@@ -55,7 +55,6 @@ export default {
 	},
 	data() {
 		return {
-			dialog: null,
 			isDownloadingExtension: false,
 			inputText: '',
 			validateUrl: (value) => {
@@ -68,15 +67,16 @@ export default {
 		getLocale,
 		download(url) {
 			this.isDownloadingExtension = true;
+			devLog('Downloading: ' + url)
 			fetch(url)
 				.then((res) => {
 					return res.json();
 				})
 				.then((json) => {
 					devLog(json);
-					storage.set({}, (data) => {
-						data.extensions.push(json);
-					});
+					let currentStorage = this.storage;
+					currentStorage.extensions.push(json);
+					storage.set(currentStorage);
 				})
 				.catch((err) => {
 					console.error(err);
