@@ -5,7 +5,9 @@
 			<v-list-tile-action> <slot name="icon" /> </v-list-tile-action>
 
 			<v-list-tile-content>
-				<v-list-tile-title class="spacedLetters text-uppercase" v-html="name" />
+				<v-list-tile-title class="spacedLetters text-uppercase">
+					{{ name }}
+				</v-list-tile-title>
 			</v-list-tile-content>
 		</v-list-tile>
 
@@ -15,10 +17,9 @@
 				<v-toolbar flat dark :color="storage.isDarkTheme ? 'secondary' : 'accent'">
 					<slot name="icon" />
 
-					<v-card-title
-						class="dialogTitle spacedLetters text-uppercase font-weight-thin ml-2"
-						v-html="name"
-					/>
+					<v-card-title class="dialogTitle spacedLetters text-uppercase font-weight-thin ml-2">
+						{{name}}
+					</v-card-title>
 					<v-spacer />
 					<v-toolbar-items class="hidden-sm-and-down">
 						<v-btn flat class="squareCorners" @click="dialog = false">

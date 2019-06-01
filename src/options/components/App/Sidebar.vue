@@ -15,10 +15,9 @@
 				<v-list-tile-action> <IconMenu /> </v-list-tile-action>
 
 				<v-list-tile-content>
-					<v-list-tile-title
-						class="spacedLetters text-uppercase"
-						v-html="getLocale('dashboard_menu')"
-					/>
+					<v-list-tile-title class="spacedLetters text-uppercase">
+						{{ getLocale('dashboard_menu') }}
+					</v-list-tile-title>
 				</v-list-tile-content>
 			</v-list-tile>
 
