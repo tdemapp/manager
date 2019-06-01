@@ -61,15 +61,13 @@
 
 				<v-btn flat large block @click="downloadSettings">
 					<IconDownload class="mr-3" />
-					<span class="spacedLetters">
-						{{ getLocale('dashboard_dialog_info_download_settings') }}
-					</span>
+					<span class="spacedLetters" v-text="getLocale('dashboard_dialog_info_download_settings')" />
 				</v-btn>
 			</v-flex>
 
 			<!-- App version -->
 			<v-flex xs12>
-				<v-btn flat large block disabled> <span>v{{extensionVersion}}</span> </v-btn>
+				<v-btn flat large block disabled> <span v-text="`v${extensionVersion}`" /> </v-btn>
 			</v-flex>
 		</v-layout>
 	</Dialog>

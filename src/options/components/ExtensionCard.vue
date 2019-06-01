@@ -16,8 +16,8 @@
 				<v-card-text
 					:class="`subheading ${extension.enabled ? 'white--text' : 'grey--text'}`"
 				>
-					<span class="caption"> {{ extension.name }} </span> <br />
-					<span class="caption"> v{{extension.version}} </span>
+					<span class="caption" v-text="extension.name" /> <br />
+					<span class="caption" v-text="`v${extension.version}`" />
 				</v-card-text>
 
 				<v-spacer />
@@ -30,9 +30,7 @@
 
 		<v-divider :class="extension.enabled ? 'transparent ml-3 mr-3' : 'ml-3 mr-3'" />
 
-		<v-card-text :class="`caption text-truncate ${extension.enabled ? 'grey--text--darken-4' : 'grey--text'}`">
-			{{ extension.description }}
-		</v-card-text>
+		<v-card-text :class="`caption text-truncate ${extension.enabled ? 'grey--text--darken-4' : 'grey--text'}`" v-text="extension.description" />
 
 		<v-card-actions>
 			<v-btn

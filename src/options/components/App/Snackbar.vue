@@ -5,9 +5,7 @@
 		<IconSuccess v-else-if="icon === 'success'" :class="`mr-4 ${color.icon}--text`" />
 		<IconInfo v-else :class="`mr-4 ${color.icon}--text`" />
 
-		<span :class="`text-uppercase spacedLetters ${color.text}--text`">
-			{{ text }}
-		</span>
+		<span :class="`text-uppercase spacedLetters ${color.text}--text`" v-text="text" />
 
 		<v-btn flat large :color="color.icon" @click="active = false">
 			<IconClose />
