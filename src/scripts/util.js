@@ -3,17 +3,17 @@ import * as yup from 'yup';
 
 // Get extension name
 export const getExtensionUrl = (...args) => {
-	return chrome.extension.getURL(...args);
+	return browser.extension.getURL(...args);
 };
 
 // Get extension name
 export const getExtensionName = () => {
-	return chrome.runtime.getManifest().name;
+	return browser.runtime.getManifest().name;
 };
 
 // Get extension version
 export const getExtensionVersion = () => {
-	return chrome.runtime.getManifest().version;
+	return browser.runtime.getManifest().version;
 };
 
 // Get is development environment
@@ -37,7 +37,7 @@ export const devLog = (data) => {
 
 // Get localization
 export const getLocale = (msg) => {
-	const string = chrome.i18n.getMessage(msg);
+	const string = browser.i18n.getMessage(msg);
 
 	if (string === '') {
 		throw new Error(`No Message found for "${msg}" in locales`);
@@ -142,13 +142,13 @@ export const extension = {
 // Storage global functionss
 export const storage = {
 	get(done) {
-		chrome.storage.local.get(defaultStorage, (obj) => {
+		browser.storage.local.get(defaultStorage, (obj) => {
 			done(obj);
 		});
 	},
 	set(obj, cb) {
 		this.get((currentStorage) => {
-			chrome.storage.local.set(Object.assign(currentStorage, obj), () => {
+			browser.storage.local.set(Object.assign(currentStorage, obj), () => {
 				if (cb) {
 					return this.get(cb);
 				}
@@ -160,7 +160,7 @@ export const storage = {
 	subscribe(cb, executeRightAway) {
 		const fn = () => this.get(cb);
 		if (executeRightAway) fn();
-		chrome.storage.onChanged.addListener(fn);
+		browser.storage.onChanged.addListener(fn);
 	},
 	toggleSetting(name) {
 		this.get((currentStorage) => {
