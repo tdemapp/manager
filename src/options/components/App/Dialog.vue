@@ -15,7 +15,10 @@
 				<v-toolbar flat dark :color="storage.isDarkTheme ? 'secondary' : 'accent'">
 					<slot name="icon" />
 
-					<v-card-title class="dialogTitle spacedLetters text-uppercase font-weight-thin ml-2" v-text="name" />
+					<v-card-title
+						class="dialogTitle spacedLetters text-uppercase font-weight-thin ml-2"
+						v-text="name"
+					/>
 					<v-spacer />
 					<v-toolbar-items class="hidden-sm-and-down">
 						<v-btn flat class="squareCorners" @click="dialog = false">

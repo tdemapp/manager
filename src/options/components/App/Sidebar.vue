@@ -11,11 +11,14 @@
 	>
 		<v-list class="pt-0" three-line>
 			<!-- Sidebar toggle -->
-			<v-list-tile ripple @click="toggleSidebar">
+			<v-list-tile ripple @click="toggleSetting('isSidebarMini')">
 				<v-list-tile-action> <IconMenu /> </v-list-tile-action>
 
 				<v-list-tile-content>
-					<v-list-tile-title class="spacedLetters text-uppercase" v-text="getLocale('dashboard_menu')" />
+					<v-list-tile-title
+						class="spacedLetters text-uppercase"
+						v-text="getLocale('dashboard_menu')"
+					/>
 				</v-list-tile-content>
 			</v-list-tile>
 
@@ -56,11 +59,7 @@ export default {
 	},
 	methods: {
 		getLocale,
-		toggleSidebar() {
-			storage.set({
-				isSidebarMini: !this.storage.isSidebarMini,
-			});
-		},
+		toggleSetting: (name) => storage.toggleSetting(name),
 	},
 };
 </script>

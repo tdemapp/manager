@@ -26,7 +26,10 @@
 						@click="download(inputText)"
 					>
 						<IconDownload class="mr-3" />
-						<span class="spacedLetters" v-text="getLocale('dashboard_dialog_download_title')" />
+						<span
+							class="spacedLetters"
+							v-text="getLocale('dashboard_dialog_download_title')"
+						/>
 					</v-btn>
 				</v-flex>
 			</v-layout>

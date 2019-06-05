@@ -1,3 +1,4 @@
+import tde from 'tde';
 import * as yup from 'yup';
 
 // Get extension name
@@ -53,6 +54,7 @@ export const defaultStorage = {
 	isDarkTheme: false,
 	isSidebarMini: false,
 };
+
 // Extension data handlers
 export const extension = {
 	schema: yup.object().shape({
@@ -100,6 +102,41 @@ export const extension = {
 				console.error('Error validating extension: ', err);
 			});
 	},
+	toggle(extensionName) {
+		storage.get((currentStorage) => {
+			let newStorage = currentStorage;
+			newStorage.extensions.filter((ext) => {
+				if (ext.name === extensionName) {
+					ext.enabled = !ext.enabled;
+				}
+			});
+			storage.set(newStorage);
+		});
+	},
+	remove(extensionName) {
+		devLog('Removing: ' + extensionName);
+		try {
+			tde.remove(extensionName);
+			let newSettings = this.storage;
+			newSettings.extensions.splice(
+				newSettings.extensions.map((e) => e.name).indexOf(extensionName),
+				1
+			);
+			storage.set(newSettings);
+		} catch (err) {
+			throw new Error('Error removing extension | ' + err);
+		}
+	},
+	reload(extensionName) {
+		devLog('Reloading: ' + extensionName);
+		try {
+			const temp = tde.getExtension(extensionName);
+			tde.remove(extensionName);
+			tde.add(temp, true, true);
+		} catch (err) {
+			throw new Error('Error removing extension | ' + err);
+		}
+	},
 };
 
 // Storage global functionss
@@ -110,8 +147,8 @@ export const storage = {
 		});
 	},
 	set(obj, cb) {
-		this.get((currentSettings) => {
-			chrome.storage.local.set(Object.assign(currentSettings, obj), () => {
+		this.get((currentStorage) => {
+			chrome.storage.local.set(Object.assign(currentStorage, obj), () => {
 				if (cb) {
 					return this.get(cb);
 				}
@@ -124,5 +161,12 @@ export const storage = {
 		const fn = () => this.get(cb);
 		if (executeRightAway) fn();
 		chrome.storage.onChanged.addListener(fn);
+	},
+	toggleSetting(name) {
+		this.get((currentStorage) => {
+			let newStorage = currentStorage;
+			newStorage[name] = !currentStorage[name];
+			this.set(newStorage);
+		});
 	},
 };

@@ -61,7 +61,10 @@
 
 				<v-btn flat large block @click="downloadSettings">
 					<IconDownload class="mr-3" />
-					<span class="spacedLetters" v-text="getLocale('dashboard_dialog_info_download_settings')" />
+					<span
+						class="spacedLetters"
+						v-text="getLocale('dashboard_dialog_info_download_settings')"
+					/>
 				</v-btn>
 			</v-flex>
 

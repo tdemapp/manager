@@ -7,6 +7,7 @@
 				<v-flex xs4>
 					<v-switch
 						v-model="storage.doAnimations"
+						@click="toggleSetting('doAnimations')"
 						class="body-2 spacedLetters text-uppercase"
 						:color="storage.isDarkTheme ? 'white' : 'secondary'"
 						:label="getLocale('dashboard_dialog_settings_animations')"
@@ -15,6 +16,7 @@
 				<v-flex xs4>
 					<v-switch
 						v-model="storage.isDarkTheme"
+						@click="toggleSetting('isDarkTheme')"
 						class="body-2 spacedLetters text-uppercase"
 						:color="storage.isDarkTheme ? 'white' : 'secondary'"
 						:label="getLocale('dashboard_dialog_settings_dark_theme')"
@@ -23,6 +25,7 @@
 				<v-flex xs4>
 					<v-switch
 						v-model="storage.debugMode"
+						@click="toggleSetting('debugMode')"
 						class="body-2 spacedLetters text-uppercase"
 						:color="storage.isDarkTheme ? 'white' : 'secondary'"
 						:label="getLocale('dashboard_dialog_settings_debug_mode')"
@@ -34,7 +37,7 @@
 </template>
 
 <script>
-import { getExtensionVersion, getLocale } from '../../../scripts/util';
+import { getExtensionVersion, getLocale, storage } from '../../../scripts/util';
 
 import Dialog from '../App/Dialog.vue';
 import IconSettings from '../../icons/settings.svg';
@@ -52,6 +55,7 @@ export default {
 	},
 	methods: {
 		getLocale,
+		toggleSetting: (name) => storage.toggleSetting(name),
 	},
 };
 </script>

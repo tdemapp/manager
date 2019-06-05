@@ -23,19 +23,29 @@
 				<v-spacer />
 
 				<v-card-actions>
-					<v-switch class="mt-3" color="white" v-model="extension.enabled" />
+					<v-switch
+						class="mt-3"
+						color="white"
+						@click="toggleExtension(extension.name)"
+						v-model="extension.enabled"
+					/>
 				</v-card-actions>
 			</v-layout>
 		</v-toolbar>
 
 		<v-divider :class="extension.enabled ? 'transparent ml-3 mr-3' : 'ml-3 mr-3'" />
 
-		<v-card-text :class="`caption text-truncate ${extension.enabled ? 'grey--text--darken-4' : 'grey--text'}`" v-text="extension.description" />
+		<v-card-text
+			:class="
+				`caption text-truncate ${extension.enabled ? 'grey--text--darken-4' : 'grey--text'}`
+			"
+			v-text="extension.description"
+		/>
 
 		<v-card-actions>
 			<v-btn
 				flat
-				icon
+				block
 				large
 				rel="noopener"
 				target="_blank"
@@ -47,7 +57,7 @@
 
 			<v-btn
 				flat
-				icon
+				block
 				large
 				@click="reloadExtension(extension.name)"
 				:color="extension.enabled ? 'grey--darken-4' : 'grey'"
@@ -55,11 +65,9 @@
 				<IconRefresh />
 			</v-btn>
 
-			<v-spacer />
-
 			<v-btn
 				flat
-				icon
+				block
 				large
 				@click="removeExtension(extension.name)"
 				:color="extension.enabled ? 'red' : 'grey'"
@@ -71,7 +79,6 @@
 </template>
 
 <script>
-import tde from 'tde';
 import { devLog, extension, getLocale, storage } from '../../scripts/util';
 import IconBox from '../icons/box.svg';
 import IconLink from '../icons/link.svg';
@@ -105,20 +112,9 @@ export default {
 				return this.extension.enabled ? 'primary py-3' : 'white py-3';
 			}
 		},
-		removeExtension(extensionName) {
-			devLog('Removing: ' + extensionName);
-			try {
-				tde.remove(extensionName);
-				let newSettings = this.storage;
-				newSettings.extensions.splice(
-					newSettings.extensions.map((e) => e.name).indexOf(extensionName),
-					1
-				);
-				storage.set(newSettings);
-			} catch (err) {
-				throw new Error('Error removing extension | ' + err);
-			}
-		},
+		reloadExtension: (extensionName) => extension.reload(extensionName),
+		removeExtension: extension.remove,
+		toggleExtension: (extensionName) => extension.toggle(extensionName),
 	},
 };
 </script>
