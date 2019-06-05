@@ -42,6 +42,7 @@ export default {
 		};
 	},
 	created() {
+		devLog('🔨 Debug Mode Enabled');
 		storage.subscribe((data) => {
 			this.storage = data;
 
@@ -51,7 +52,6 @@ export default {
 				storage.set(newSettings);
 			}
 
-			devLog('🔨 Debug Mode Enabled');
 			devLog(this.storage);
 		}, true);
 	},
