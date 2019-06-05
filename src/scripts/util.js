@@ -20,7 +20,7 @@ export const getExtensionVersion = () => {
 export const getIsDev = () => {
 	if (
 		process.env.NODE_ENV === 'development' ||
-		this.storage.get((storage) => storage.settings.advanced.debugMode) === true
+		storage.get((storage) => storage.settings.advanced.debugMode) === true
 	) {
 		return true;
 	} else {
