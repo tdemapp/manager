@@ -13,7 +13,6 @@
 				<v-flex xs12>
 					<v-text-field
 						:color="storage.isDarkTheme ? 'white' : 'primary'"
-						:rules="[validateUrl]"
 						v-model="inputText"
 						label="URL"
 					/>
@@ -38,7 +37,7 @@
 </template>
 
 <script>
-import { devLog, getLocale, storage } from '../../../scripts/util';
+import { devLog, getLocale, storage, extension } from '../../../scripts/util';
 import Dialog from '../App/Dialog.vue';
 import IconDownload from '../../icons/download.svg';
 
@@ -57,30 +56,37 @@ export default {
 		return {
 			isDownloadingExtension: false,
 			inputText: '',
-			validateUrl: (value) => {
-				const pattern = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi;
-				return pattern.test(value) || 'Invalid URL.';
-			},
 		};
 	},
 	methods: {
 		getLocale,
 		download(url) {
 			this.isDownloadingExtension = true;
-			devLog('Downloading: ' + url)
-			fetch(url)
-				.then((res) => {
-					return res.json();
-				})
-				.then((json) => {
-					devLog(json);
-					let currentStorage = this.storage;
-					currentStorage.extensions.push(json);
-					storage.set(currentStorage);
-				})
-				.catch((err) => {
-					console.error(err);
-				});
+
+			const isUrl = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi;
+			if (this.inputText.match(isUrl)) {
+				fetch(url)
+					.then((res) => res.json())
+					.then((json) => {
+						devLog(json);
+						extension.validate(json, (valid) => {
+							let currentStorage = this.storage;
+							currentStorage.extensions.push(json);
+							storage.set(currentStorage);
+							this.$snackbar('Extension Installed', 'success');
+							this.inputText = '';
+						});
+					})
+					.catch((err) => {
+						this.$snackbar('Error downloading extension', 'error', {
+							background: 'red',
+						});
+						throw new Error(err);
+					});
+			} else {
+				this.$snackbar('Invalid URL', 'error', { background: 'red' });
+			}
+
 			this.isDownloadingExtension = false;
 		},
 	},
