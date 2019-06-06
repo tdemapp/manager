@@ -171,7 +171,7 @@ export const storage = {
 		// If storage is empty, set it to the default storage
 		this.get((currentStorage) => {
 			if (Object.keys(currentStorage).length === 0) {
-				this.set(defaultStorage);
+				this.set(this.template);
 			}
 		});
 
