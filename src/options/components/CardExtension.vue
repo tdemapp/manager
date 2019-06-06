@@ -122,7 +122,6 @@ export default {
 		},
 		async toggleExtension(extensionName) {
 			extension.toggle(extensionName);
-			this.$snackbar(`Toggled: ${extensionName}`, 'success');
 		},
 	},
 };
