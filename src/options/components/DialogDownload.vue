@@ -65,7 +65,7 @@ export default {
 
 			if (this.inputText.match(isUrl)) {
 				this.isDownloadingExtension = true;
-				const download = await extension.downloadUrl(url);
+				const download = await extension.download(url);
 
 				if (!download) {
 					this.$snackbar('Error downloading extension', 'error', {

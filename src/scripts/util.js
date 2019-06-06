@@ -113,7 +113,7 @@ export const extension = {
 			throw new Error('Error removing extension | ' + err);
 		}
 	},
-	downloadUrl(url) {
+	download(url) {
 		return new Promise(async (resolve, reject) => {
 			const response = await fetch(url);
 			const json = await response.json();
