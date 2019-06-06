@@ -72,9 +72,11 @@ export default {
 						extension.validate(json, (valid) => {
 							this.storage.extensions.push(json);
 							storage.set(this.storage);
-							this.$snackbar('Extension Installed', 'success');
-							this.inputText = '';
 						});
+					})
+					.then(() => {
+						this.$snackbar('Extension Installed', 'success');
+						this.inputText = '';
 					})
 					.catch((err) => {
 						this.$snackbar('Error downloading extension', 'error', {
