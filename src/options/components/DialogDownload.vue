@@ -60,35 +60,37 @@ export default {
 	},
 	methods: {
 		getLocale: (text) => getLocale(text),
-		download(url) {
-			this.isDownloadingExtension = true;
-
+		async download(url) {
 			const isUrl = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi;
-			if (this.inputText.match(isUrl)) {
-				fetch(url)
-					.then((res) => res.json())
-					.then((json) => {
-						devLog(json);
-						extension.validate(json, (valid) => {
-							this.storage.extensions.push(json);
-							storage.set(this.storage);
-						});
-					})
-					.then(() => {
-						this.$snackbar('Extension Installed', 'success');
-						this.inputText = '';
-					})
-					.catch((err) => {
-						this.$snackbar('Error downloading extension', 'error', {
-							background: 'red',
-						});
-						throw new Error(err);
-					});
-			} else {
-				this.$snackbar('Invalid URL', 'error', { background: 'red' });
-			}
 
-			this.isDownloadingExtension = false;
+			if (this.inputText.match(isUrl)) {
+				this.isDownloadingExtension = true;
+				const download = await extension.downloadUrl(url);
+
+				if (!download) {
+					this.$snackbar('Error downloading extension', 'error', {
+						background: 'red',
+					});
+					console.error(download);
+				}
+
+				storage.get((data) => {
+					let newExtensions = data;
+					newExtensions.extensions.push(download);
+					storage.set(newExtensions, (err) => {
+						if (!err) {
+							this.$snackbar('Error saving extension', 'error', {
+								background: 'red',
+							});
+							console.error(download);
+						}
+					});
+				});
+
+				this.$snackbar('Extension Installed', 'success');
+				this.inputText = '';
+				this.isDownloadingExtension = false;
+			}
 		},
 	},
 };
