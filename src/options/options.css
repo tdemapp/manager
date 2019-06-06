@@ -69,3 +69,7 @@ body,
 	box-shadow: 0 8px 15px rgba(33, 33, 33, 0.1) !important;
 	transform: translateY(-2px);
 }
+
+.snackbar:hover {
+	cursor: pointer;
+}
