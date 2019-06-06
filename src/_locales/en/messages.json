@@ -11,6 +11,9 @@
   "dashboard_menu": {
     "message": "Menu"
   },
+  "dashboard_dialog_store_title": {
+    "message": "Store"
+  },
   "dashboard_dialog_download_title": {
     "message": "Download"
   },

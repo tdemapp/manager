@@ -124,6 +124,16 @@ export const extension = {
 			resolve(json);
 		});
 	},
+	getRegistry() {
+		return new Promise(async (resolve, reject) => {
+			const response = await fetch('https://registry.tdem.app');
+			const json = await response.json();
+
+			if (!json.success) reject(json.message);
+
+			resolve(json.message);
+		});
+	},
 };
 
 // Storage global functionss
