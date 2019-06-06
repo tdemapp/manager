@@ -1,4 +1,4 @@
-import Snackbar from '../components/App/Snackbar';
+import Snackbar from '../components/AppSnackbar';
 
 export default {
 	install(Vue, opts) {

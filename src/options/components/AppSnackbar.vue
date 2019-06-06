@@ -14,11 +14,11 @@
 </template>
 
 <script>
-import IconClose from '../../icons/x.svg';
-import IconDownload from '../../icons/download.svg';
-import IconError from '../../icons/error.svg';
-import IconInfo from '../../icons/info.svg';
-import IconSuccess from '../../icons/success.svg';
+import IconClose from '../icons/x.svg';
+import IconDownload from '../icons/download.svg';
+import IconError from '../icons/error.svg';
+import IconInfo from '../icons/info.svg';
+import IconSuccess from '../icons/success.svg';
 
 export default {
 	components: {

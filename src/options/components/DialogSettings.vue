@@ -37,10 +37,10 @@
 </template>
 
 <script>
-import { getExtensionVersion, getLocale, storage } from '../../../scripts/util';
+import { getExtensionVersion, getLocale, storage } from '../../scripts/util';
 
-import Dialog from '../App/Dialog.vue';
-import IconSettings from '../../icons/settings.svg';
+import Dialog from './AppDialog.vue';
+import IconSettings from '../icons/settings.svg';
 
 export default {
 	props: {

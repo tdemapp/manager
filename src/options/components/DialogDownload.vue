@@ -37,9 +37,9 @@
 </template>
 
 <script>
-import { devLog, getLocale, storage, extension } from '../../../scripts/util';
-import Dialog from '../App/Dialog.vue';
-import IconDownload from '../../icons/download.svg';
+import { devLog, getLocale, storage, extension } from '../../scripts/util';
+import Dialog from './AppDialog.vue';
+import IconDownload from '../icons/download.svg';
 
 export default {
 	props: {

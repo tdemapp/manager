@@ -1,6 +1,6 @@
 <template>
 	<v-app :dark="storage.isDarkTheme">
-		<Sidebar v-animate-css="storage.doAnimations ? 'slideInLeft' : null" :storage="storage" />
+		<AppSidebar v-animate-css="storage.doAnimations ? 'slideInLeft' : null" :storage="storage" />
 
 		<v-content>
 			<v-container fluid>
@@ -14,7 +14,7 @@
 						v-for="(extension, i) in storage.extensions"
 						:key="i"
 					>
-						<ExtensionCard
+						<CardExtension
 							v-animate-css="storage.doAnimations ? 'fadeInUp' : null"
 							:extension="extension"
 							:storage="storage"
@@ -28,13 +28,13 @@
 
 <script>
 import { defaultStorage, extension, devLog, storage } from '../scripts/util';
-import Sidebar from './components/App/Sidebar.vue';
-import ExtensionCard from './components/ExtensionCard.vue';
+import AppSidebar from './components/AppSidebar.vue';
+import CardExtension from './components/CardExtension.vue';
 
 export default {
 	components: {
-		Sidebar,
-		ExtensionCard,
+		AppSidebar,
+		CardExtension,
 	},
 	data() {
 		return {

@@ -79,18 +79,18 @@
 <script>
 import * as download from 'downloadjs';
 
-import { getExtensionVersion, getLocale, storage } from '../../../scripts/util';
+import { getExtensionVersion, getLocale, storage } from '../../scripts/util';
 
-import Dialog from '../App/Dialog.vue';
+import Dialog from './AppDialog.vue';
 
-import IconClose from '../../icons/x.svg';
-import IconContributors from '../../icons/contributors.svg';
-import IconDependencies from '../../icons/dependencies.svg';
-import IconDownload from '../../icons/download.svg';
-import IconGitHub from '../../icons/github.svg';
-import IconInfo from '../../icons/info.svg';
-import IconLink from '../../icons/link.svg';
-import IconWebsite from '../../icons/website.svg';
+import IconClose from '../icons/x.svg';
+import IconContributors from '../icons/contributors.svg';
+import IconDependencies from '../icons/dependencies.svg';
+import IconDownload from '../icons/download.svg';
+import IconGitHub from '../icons/github.svg';
+import IconInfo from '../icons/info.svg';
+import IconLink from '../icons/link.svg';
+import IconWebsite from '../icons/website.svg';
 
 export default {
 	props: {

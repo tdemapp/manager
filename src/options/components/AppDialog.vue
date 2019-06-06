@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import IconClose from '../../icons/x.svg';
+import IconClose from '../icons/x.svg';
 
 export default {
 	components: {

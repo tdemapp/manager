@@ -31,13 +31,13 @@
 </template>
 
 <script>
-import { getLocale, storage } from '../../../scripts/util';
+import { getLocale, storage } from '../../scripts/util';
 
-import Download from '../Dialogs/Download.vue';
-import Info from '../Dialogs/Info.vue';
-import Settings from '../Dialogs/Settings.vue';
+import Download from './DialogDownload.vue';
+import Info from './DialogInfo.vue';
+import Settings from './DialogSettings.vue';
 
-import IconMenu from '../../icons/menu.svg';
+import IconMenu from '../icons/menu.svg';
 
 export default {
 	props: {
