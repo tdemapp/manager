@@ -16,23 +16,13 @@ export const getExtensionVersion = () => {
 	return browser.runtime.getManifest().version;
 };
 
-// Get is development environment
-export const getIsDev = () => {
-	if (
-		process.env.NODE_ENV === 'development' ||
-		storage.get((storage) => storage.settings.advanced.debugMode) === true
-	) {
-		return true;
-	} else {
-		return false;
-	}
-};
-
 // Simple logging function that only logs when in dev mode
 export const devLog = (data) => {
-	if (getIsDev()) {
-		return console.log('[DEV]', data);
-	}
+	storage.get((storage) => {
+		if (storage.debugMode) {
+			console.log('[DEV]', data);
+		}
+	});
 };
 
 // Get localization
@@ -116,13 +106,15 @@ export const extension = {
 	remove(extensionName) {
 		devLog('Removing: ' + extensionName);
 		try {
-			tde.remove(extensionName);
-			let newSettings = this.storage;
-			newSettings.extensions.splice(
-				newSettings.extensions.map((e) => e.name).indexOf(extensionName),
-				1
-			);
-			storage.set(newSettings);
+			storage.get((currentStorage) => {
+				tde.remove(extensionName);
+				let newSettings = currentStorage;
+				newSettings.extensions.splice(
+					newSettings.extensions.map((e) => e.name).indexOf(extensionName),
+					1
+				);
+				storage.set(newSettings);
+			})
 		} catch (err) {
 			throw new Error('Error removing extension | ' + err);
 		}
