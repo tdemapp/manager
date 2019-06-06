@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import { defaultStorage, extension, devLog, storage } from '../scripts/util';
+import { extension, devLog, storage } from '../scripts/util';
 import AppSidebar from './components/AppSidebar.vue';
 import CardExtension from './components/CardExtension.vue';
 
@@ -38,7 +38,7 @@ export default {
 	},
 	data() {
 		return {
-			storage: defaultStorage,
+			storage: storage.template,
 		};
 	},
 	created() {

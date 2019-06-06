@@ -49,14 +49,8 @@ export const extension = {
 			.required(),
 		enabled: yup.boolean().required(),
 		init: yup.boolean().required(),
-		dependencies: yup
-			.array()
-			.of(yup.string())
-			.required(),
-		conflicts: yup
-			.array()
-			.of(yup.string())
-			.required(),
+		dependencies: yup.array().of(yup.string()),
+		conflicts: yup.array().of(yup.string()),
 		create: yup.string().required(),
 		destroy: yup.string().required(),
 	}),
