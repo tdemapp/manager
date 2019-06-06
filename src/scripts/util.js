@@ -114,7 +114,7 @@ export const extension = {
 					1
 				);
 				storage.set(newSettings);
-			})
+			});
 		} catch (err) {
 			throw new Error('Error removing extension | ' + err);
 		}
@@ -150,7 +150,7 @@ export const storage = {
 	subscribe(cb, executeRightAway) {
 		// If storage is empty, set it to the default storage
 		this.get((currentStorage) => {
-			if (Object.keys(currentStorage).length === 0 ) {
+			if (Object.keys(currentStorage).length === 0) {
 				this.set(defaultStorage);
 			}
 		});

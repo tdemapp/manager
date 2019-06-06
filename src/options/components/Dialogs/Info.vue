@@ -120,11 +120,12 @@ export default {
 	},
 	methods: {
 		getLocale: (text) => getLocale(text),
-		downloadSettings: () => storage.get((data) => {
-			const settings = data;
-			delete settings.extensions;
-			download(JSON.stringify(settings, null, 2), 'settings.json', 'application/json');
-		}),
+		downloadSettings: () =>
+			storage.get((data) => {
+				const settings = data;
+				delete settings.extensions;
+				download(JSON.stringify(settings, null, 2), 'settings.json', 'application/json');
+			}),
 	},
 };
 </script>
