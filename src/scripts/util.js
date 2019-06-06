@@ -67,15 +67,14 @@ export const extension = {
 		create: 'function () { console.log("myExtension created!"); }',
 		destroy: 'function () { console.log("myExtension destroyed!"); }',
 	},
-	validate(obj, cb) {
-		this.schema
-			.isValid(obj)
-			.then((valid) => {
-				cb(valid);
-			})
-			.catch((err) => {
-				console.error('Error validating extension: ', err);
-			});
+	validate(obj) {
+		return new Promise(async (resolve, reject) => {
+			const isValid = await this.schema.validate(obj);
+
+			if (!isValid) reject(isValid);
+
+			resolve(obj);
+		});
 	},
 	toggle(extensionName) {
 		storage.get((currentStorage) => {

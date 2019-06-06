@@ -1,6 +1,9 @@
 <template>
 	<v-app :dark="storage.isDarkTheme">
-		<AppSidebar v-animate-css="storage.doAnimations ? 'slideInLeft' : null" :storage="storage" />
+		<AppSidebar
+			v-animate-css="storage.doAnimations ? 'slideInLeft' : null"
+			:storage="storage"
+		/>
 
 		<v-content>
 			<v-container fluid>
