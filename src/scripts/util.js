@@ -148,6 +148,13 @@ export const storage = {
 		});
 	},
 	subscribe(cb, executeRightAway) {
+		// If storage is empty, set it to the default storage
+		this.get((currentStorage) => {
+			if (Object.keys(currentStorage).length === 0 ) {
+				this.set(defaultStorage);
+			}
+		});
+
 		const fn = () => this.get(cb);
 		if (executeRightAway) fn();
 		browser.storage.onChanged.addListener(fn);
