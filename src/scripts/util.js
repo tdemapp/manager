@@ -131,7 +131,15 @@ export const extension = {
 
 			if (!json.success) reject(json.message);
 
-			resolve(json.message);
+			for (let i = 0; i < json.message.length; i++) {
+				let result = [];
+				result.push({
+					name: json.message[i].name.split('.').slice(0, -1).join('.'),
+					url: json.message[i].download_url
+				})
+				
+				resolve(result)
+			}
 		});
 	},
 };

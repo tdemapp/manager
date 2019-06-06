@@ -57,17 +57,7 @@ export default {
 		};
 	},
 	async created() {
-		this.registry = await extension.getRegistry();
-
-		for (let i = 0; i < this.registry.length; i++) {
-			this.extensions.push({
-				name: this.registry[i].name
-					.split('.')
-					.slice(0, -1)
-					.join('.'),
-				url: this.registry[i].download_url,
-			});
-		}
+		this.extensions = await extension.getRegistry();
 	},
 	methods: {
 		getLocale: (text) => getLocale(text),
