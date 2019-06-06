@@ -20,7 +20,7 @@ export const getExtensionVersion = () => {
 export const devLog = (data) => {
 	storage.get((storage) => {
 		if (storage.debugMode) {
-			console.log('[DEV]', data);
+			console.log('[DEBUG]', data);
 		}
 	});
 };
