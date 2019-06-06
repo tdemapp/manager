@@ -133,18 +133,16 @@ export const extension = {
 
 // Storage global functionss
 export const storage = {
-	get(done) {
-		browser.storage.local.get(defaultStorage, (obj) => {
-			done(obj);
+	get(cb) {
+		browser.storage.local.get().then((obj, err) => {
+			if (err) throw new Error(err);
+			cb(obj);
 		});
 	},
 	set(obj, cb) {
 		this.get((currentStorage) => {
-			browser.storage.local.set(Object.assign(currentStorage, obj), () => {
-				if (cb) {
-					return this.get(cb);
-				}
-
+			browser.storage.local.set(Object.assign(currentStorage, obj)).then(() => {
+				if (cb) return this.get(cb);
 				return false;
 			});
 		});
