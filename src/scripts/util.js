@@ -36,16 +36,7 @@ export const getLocale = (msg) => {
 	return string;
 };
 
-// Default storage object
-export const defaultStorage = {
-	debugMode: false,
-	doAnimations: true,
-	extensions: [],
-	isDarkTheme: false,
-	isSidebarMini: false,
-};
-
-// Extension data handlers
+// Extension handling
 export const extension = {
 	schema: yup.object().shape({
 		name: yup.string().required(),
@@ -133,6 +124,13 @@ export const extension = {
 
 // Storage global functionss
 export const storage = {
+	template: {
+		debugMode: false,
+		doAnimations: true,
+		extensions: [],
+		isDarkTheme: false,
+		isSidebarMini: false,
+	},
 	get(cb) {
 		browser.storage.local.get().then((obj, err) => {
 			if (err) throw new Error(err);
