@@ -10,9 +10,9 @@
 				<v-layout align-start justify-start row wrap fill-height>
 					<v-flex
 						xs12
-						sm12
-						md6
-						lg3
+						sm6
+						md4
+						lg4
 						xl3
 						v-for="(extension, i) in storage.extensions"
 						:key="i"

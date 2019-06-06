@@ -45,7 +45,7 @@
 		<v-card-actions>
 			<v-btn
 				flat
-				block
+				icon
 				large
 				rel="noopener"
 				target="_blank"
@@ -57,7 +57,7 @@
 
 			<v-btn
 				flat
-				block
+				icon
 				large
 				@click="reloadExtension(extension.name)"
 				:color="extension.enabled ? 'grey--darken-4' : 'grey'"
@@ -67,13 +67,14 @@
 
 			<v-btn
 				flat
-				block
+				icon
 				large
 				@click="removeExtension(extension.name)"
 				:color="extension.enabled ? 'red' : 'grey'"
 			>
 				<IconTrash />
 			</v-btn>
+			<v-spacer />
 		</v-card-actions>
 	</v-card>
 </template>
