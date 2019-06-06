@@ -43,17 +43,12 @@ export default {
 	},
 	created() {
 		devLog('🔨 Debug Mode Enabled');
+
 		storage.subscribe((data) => {
 			this.storage = data;
-
-			if (this.storage.extensions.length === 0) {
-				let newSettings = data;
-				newSettings.extensions.push(extension.template);
-				storage.set(newSettings);
-			}
-
-			devLog(this.storage);
 		}, true);
+
+		devLog(this.storage);
 	},
 };
 </script>
