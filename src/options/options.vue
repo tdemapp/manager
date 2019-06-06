@@ -46,9 +46,8 @@ export default {
 
 		storage.subscribe((data) => {
 			this.storage = data;
+			devLog(data);
 		}, true);
-
-		devLog(this.storage);
 	},
 };
 </script>
