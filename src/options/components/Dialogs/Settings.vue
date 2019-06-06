@@ -54,7 +54,7 @@ export default {
 		IconSettings,
 	},
 	methods: {
-		getLocale,
+		getLocale: (text) => getLocale(text),
 		toggleSetting: (name) => storage.toggleSetting(name),
 	},
 };

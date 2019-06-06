@@ -119,14 +119,12 @@ export default {
 		this.settingsJSON = JSON.stringify(this.storage, null, 2);
 	},
 	methods: {
-		getLocale,
-		downloadSettings() {
-			storage.get((data) => {
-				const settings = data;
-				delete settings.extensions;
-				download(JSON.stringify(settings, null, 2), 'settings.json', 'application/json');
-			});
-		},
+		getLocale: (text) => getLocale(text),
+		downloadSettings: () => storage.get((data) => {
+			const settings = data;
+			delete settings.extensions;
+			download(JSON.stringify(settings, null, 2), 'settings.json', 'application/json');
+		}),
 	},
 };
 </script>

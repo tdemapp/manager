@@ -104,7 +104,7 @@ export default {
 		IconTrash,
 	},
 	methods: {
-		getLocale,
+		getLocale: (text) => getLocale(text),
 		getToolbarColor() {
 			if (this.storage.isDarkTheme) {
 				return this.extension.enabled ? 'secondary py-3' : 'accent py-3';
@@ -112,9 +112,18 @@ export default {
 				return this.extension.enabled ? 'primary py-3' : 'white py-3';
 			}
 		},
-		reloadExtension: (extensionName) => extension.reload(extensionName),
-		removeExtension: extension.remove,
-		toggleExtension: (extensionName) => extension.toggle(extensionName),
+		async reloadExtension (extensionName) {
+			await extension.reload(extensionName);
+			this.$snackbar(`Reloaded: ${extensionName}`, 'success');
+		},
+		async removeExtension (extensionName) {
+			await extension.remove(extensionName);
+			this.$snackbar(`Removed: ${extensionName}`, 'success');
+		},
+		async toggleExtension (extensionName) {
+			extension.toggle(extensionName);
+			this.$snackbar(`Toggled: ${extensionName}`, 'success');
+		},
 	},
 };
 </script>

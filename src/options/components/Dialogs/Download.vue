@@ -59,8 +59,8 @@ export default {
 		};
 	},
 	methods: {
-		getLocale,
-		download(url) {
+		getLocale: (text) => getLocale(text),
+		download (url) {
 			this.isDownloadingExtension = true;
 
 			const isUrl = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi;
@@ -70,9 +70,8 @@ export default {
 					.then((json) => {
 						devLog(json);
 						extension.validate(json, (valid) => {
-							let currentStorage = this.storage;
-							currentStorage.extensions.push(json);
-							storage.set(currentStorage);
+							this.storage.extensions.push(json);
+							storage.set(this.storage);
 							this.$snackbar('Extension Installed', 'success');
 							this.inputText = '';
 						});

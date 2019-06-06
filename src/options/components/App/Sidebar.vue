@@ -58,7 +58,7 @@ export default {
 		};
 	},
 	methods: {
-		getLocale,
+		getLocale: (text) => getLocale(text),
 		toggleSetting: (name) => storage.toggleSetting(name),
 	},
 };
