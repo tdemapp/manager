@@ -22,7 +22,7 @@
 						large
 						block
 						:loading="isDownloadingExtension"
-						@click="download(inputText)"
+						@click="install(inputText)"
 					>
 						<IconDownload class="mr-3" />
 						<span
@@ -60,36 +60,31 @@ export default {
 	},
 	methods: {
 		getLocale: (text) => getLocale(text),
-		async download(url) {
+		async install(url) {
 			const isUrl = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi;
 
 			if (this.inputText.match(isUrl)) {
 				this.isDownloadingExtension = true;
-				const download = await extension.download(url);
-
-				if (!download) {
+				const json = await extension.download(url);
+				if (!json) {
 					this.$snackbar('Error downloading extension', 'error', {
 						background: 'red',
 					});
-					console.error(download);
+					console.error(install.message);
 				}
 
-				storage.get((data) => {
-					let newExtensions = data;
-					newExtensions.extensions.push(download);
-					storage.set(newExtensions, (err) => {
-						if (!err) {
-							this.$snackbar('Error saving extension', 'error', {
-								background: 'red',
-							});
-							console.error(download);
-						}
+				const install = await extension.install(json);
+				if(!install.success) {
+					this.$snackbar(install.message, 'error', {
+						background: 'red',
 					});
-				});
-
-				this.$snackbar('Extension Installed', 'success');
-				this.inputText = '';
-				this.isDownloadingExtension = false;
+					this.isDownloadingExtension = false;
+					console.error(install.message);
+				} else {
+					this.$snackbar(install.message, 'success');
+					this.inputText = '';
+					this.isDownloadingExtension = false;
+				}
 			}
 		},
 	},
