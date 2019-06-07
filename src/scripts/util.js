@@ -124,6 +124,34 @@ export const extension = {
 			resolve(json);
 		});
 	},
+	install (obj) {
+		return new Promise(async (resolve, reject) => {
+			await storage.get(async (currentStorage) => {
+				const filteredExtensions = currentStorage.extensions.filter((el => el.name === obj.name));
+
+				if(filteredExtensions.length > 0) {
+					resolve({
+						success: false,
+						message: 'Extension Already Exists',
+					});
+				} else {
+					let newStorage = currentStorage;
+					newStorage.extensions.push(obj);
+					await storage.set(newStorage, (err) => {
+						if(err) reject({
+							success: false,
+							message: err
+						});
+					});
+
+					resolve({
+						success: true,
+						message: 'Extension Installed'
+					});
+				}
+			});
+		});
+	},
 	getRegistry() {
 		return new Promise(async (resolve, reject) => {
 			const response = await fetch('https://registry.tdem.app');
