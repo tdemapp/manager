@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import { devLog, getLocale, storage, extension } from '../../scripts/util';
+import { extension, getLocale, log, storage } from '../../scripts/util';
 import Dialog from './AppDialog.vue';
 import IconBox from '../icons/box.svg';
 import IconDownload from '../icons/download.svg';
@@ -93,7 +93,7 @@ export default {
 				this.$snackbar(json.message, 'error', {
 					background: 'red',
 				});
-				console.error(json.message);
+				log.error(json.message);
 			}
 
 			const install = await extension.install(json.message);
@@ -102,7 +102,7 @@ export default {
 					background: 'red',
 				});
 				this.isDownloadingExtension = false;
-				console.error(install.message);
+				log.error(install.message);
 			} else {
 				this.$snackbar(install.message, 'success');
 				this.isDownloadingExtension = false;

@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import { extension, devLog, storage } from '../scripts/util';
+import { extension, log, storage } from '../scripts/util';
 import AppSidebar from './components/AppSidebar.vue';
 import CardExtension from './components/CardExtension.vue';
 
@@ -45,11 +45,11 @@ export default {
 		};
 	},
 	created() {
-		devLog('🔨 Debug Mode Enabled');
+		log.info('🔨 Debug Mode Enabled');
 
 		storage.subscribe((data) => {
 			this.storage = data;
-			devLog(data);
+			log.info(data);
 		}, true);
 	},
 };

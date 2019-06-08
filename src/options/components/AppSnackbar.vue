@@ -50,13 +50,13 @@ export default {
 			required: true,
 		},
 	},
-	data () {
+	data() {
 		return {
 			active: false,
-		}
+		};
 	},
 	mounted() {
-		this.$nextTick(() => this.active = true);
+		this.$nextTick(() => (this.active = true));
 	},
 	watch: {
 		active(isActive, wasActive) {

@@ -80,7 +80,7 @@
 </template>
 
 <script>
-import { devLog, extension, getLocale, storage } from '../../scripts/util';
+import { extension, getLocale, storage } from '../../scripts/util';
 import IconBox from '../icons/box.svg';
 import IconLink from '../icons/link.svg';
 import IconRefresh from '../icons/refresh.svg';

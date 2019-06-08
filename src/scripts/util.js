@@ -16,17 +16,40 @@ export const getExtensionVersion = () => {
 	return browser.runtime.getManifest().version;
 };
 
-// Simple logging function that only logs when in dev mode
-export const devLog = (data) => {
-	storage.get((storage) => {
-		if (storage.debugMode) {
-			console.log(
-				'%cDEBUG',
-				'background: #424242; color: #fff; padding: 5px; margin: 5px; border-radius: 2px',
-				data
-			);
-		}
-	});
+// Text formatting for simple logging system
+const logFormatting = (color) => `
+	background: ${color};
+	color: #fff;
+	padding: 5px;
+	margin: 5px;
+	border-radius: 2px;
+	font-size: 12px;
+	font-weight: bold;
+`;
+
+// Simple logging function
+export const log = {
+	info(...text) {
+		storage.get((data) => {
+			if (data.debugMode) {
+				console.log('%cINFO', logFormatting('#03A9F4'), ...text);
+			}
+		});
+	},
+	warning(...text) {
+		storage.get((data) => {
+			if (data.debugMode) {
+				console.log('%cWARNING', logFormatting('#FFC107'), ...text);
+			}
+		});
+	},
+	error(...text) {
+		storage.get((data) => {
+			if (data.debugMode) {
+				console.log('%cERROR', logFormatting('#f44336'), ...text);
+			}
+		});
+	},
 };
 
 // Get localization
@@ -99,10 +122,9 @@ export const extension = {
 		});
 	},
 	remove(extensionName) {
-		devLog('Removing: ' + extensionName);
+		log.info('Removing: ' + extensionName);
 		try {
 			storage.get((currentStorage) => {
-				tde.remove(extensionName);
 				let newSettings = currentStorage;
 				newSettings.extensions.splice(
 					newSettings.extensions.map((e) => e.name).indexOf(extensionName),
@@ -111,20 +133,21 @@ export const extension = {
 				storage.set(newSettings);
 			});
 		} catch (err) {
-			throw new Error('Error removing extension | ' + err);
+			log.error('Error removing extension ', err);
 		}
 	},
 	reload(extensionName) {
-		devLog('Reloading: ' + extensionName);
+		log.info('Reloading: ' + extensionName);
 		try {
 			const temp = tde.getExtension(extensionName);
 			tde.remove(extensionName);
 			tde.add(temp, true, true);
 		} catch (err) {
-			throw new Error('Error removing extension | ' + err);
+			log.error('Error reloading extension ', err);
 		}
 	},
 	download(url) {
+		log.info('Downloading: ' + url);
 		return new Promise(async (resolve, reject) => {
 			const response = await fetch(url);
 			const json = await response.json();
@@ -143,6 +166,7 @@ export const extension = {
 		});
 	},
 	install(obj) {
+		log.info('Installing: ', obj);
 		return new Promise(async (resolve, reject) => {
 			await storage.get(async (currentStorage) => {
 				const filteredExtensions = currentStorage.extensions.filter(
@@ -152,7 +176,7 @@ export const extension = {
 				if (filteredExtensions.length > 0) {
 					resolve({
 						success: false,
-						message: 'Extension Already Exists',
+						message: 'Extension Already Installed',
 					});
 				} else {
 					let newStorage = currentStorage;
@@ -174,6 +198,7 @@ export const extension = {
 		});
 	},
 	getRegistry() {
+		log.info('Fetching from registry');
 		return new Promise(async (resolve, reject) => {
 			const response = await fetch('https://registry.tdem.app');
 			const json = await response.json();
