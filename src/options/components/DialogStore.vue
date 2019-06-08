@@ -11,12 +11,13 @@
 			<v-layout row wrap>
 				<v-flex xs4 v-for="(item, i) in extensions" :key="i">
 					<v-layout row wrap justify-start align-start>
-						<v-toolbar flat dark :color="storage.isDarkTheme ? 'secondary' : 'primary'" class="ma-2 pa-2 extensionCardHover defaultShadow">
-							<IconBox
-								width="32px"
-								height="32px"
-								class="white--text"
-							/>
+						<v-toolbar
+							flat
+							dark
+							:color="storage.isDarkTheme ? 'secondary' : 'primary'"
+							class="ma-2 pa-2 extensionCardHover defaultShadow"
+						>
+							<IconBox width="32px" height="32px" class="white--text" />
 
 							<v-card-title primary-title class="white--text" v-text="item.name" />
 
@@ -32,9 +33,7 @@
 									target="_blank"
 									rel="noopener"
 								>
-									<IconLink
-										class="white--text"
-									/>
+									<IconLink class="white--text" />
 								</v-btn>
 								<v-btn
 									flat
@@ -43,9 +42,7 @@
 									:loading="isDownloadingExtension"
 									@click="install(item.url)"
 								>
-									<IconDownload
-										class="white--text"
-									/>
+									<IconDownload class="white--text" />
 								</v-btn>
 							</v-toolbar-items>
 						</v-toolbar>
@@ -92,15 +89,15 @@ export default {
 		async install(url) {
 			this.isDownloadingExtension = true;
 			const json = await extension.download(url);
-			if (!json) {
-				this.$snackbar('Error downloading extension', 'error', {
+			if (!json.success) {
+				this.$snackbar(json.message, 'error', {
 					background: 'red',
 				});
-				console.error(install.message);
+				console.error(json.message);
 			}
 
-			const install = await extension.install(json);
-			if(!install.success) {
+			const install = await extension.install(json.message);
+			if (!install.success) {
 				this.$snackbar(install.message, 'error', {
 					background: 'red',
 				});

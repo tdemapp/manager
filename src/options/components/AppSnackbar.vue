@@ -3,7 +3,6 @@
 		top
 		right
 		multi-line
-		class="snackbar"
 		:color="color.background"
 		v-model="active"
 		@click="active = false"
@@ -51,11 +50,13 @@ export default {
 			required: true,
 		},
 	},
-	data: () => ({
-		active: false,
-	}),
+	data () {
+		return {
+			active: false,
+		}
+	},
 	mounted() {
-		this.$nextTick(() => (this.active = true));
+		this.$nextTick(() => this.active = true);
 	},
 	watch: {
 		active(isActive, wasActive) {

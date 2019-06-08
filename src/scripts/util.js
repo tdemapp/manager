@@ -20,7 +20,11 @@ export const getExtensionVersion = () => {
 export const devLog = (data) => {
 	storage.get((storage) => {
 		if (storage.debugMode) {
-			console.log('%cDEBUG', 'background: #424242; color: #fff; padding: 5px; margin: 5px; border-radius: 2px', data);
+			console.log(
+				'%cDEBUG',
+				'background: #424242; color: #fff; padding: 5px; margin: 5px; border-radius: 2px',
+				data
+			);
 		}
 	});
 };
@@ -71,9 +75,16 @@ export const extension = {
 		return new Promise(async (resolve, reject) => {
 			const isValid = await this.schema.validate(obj);
 
-			if (!isValid) reject(isValid);
+			if (!isValid)
+				reject({
+					success: false,
+					message: isValid,
+				});
 
-			resolve(obj);
+			resolve({
+				success: true,
+				message: obj,
+			});
 		});
 	},
 	toggle(extensionName) {
@@ -119,17 +130,26 @@ export const extension = {
 			const json = await response.json();
 			const isValid = await extension.validate(json);
 
-			if (!isValid) reject(isValid);
+			if (!isValid.success)
+				reject({
+					success: false,
+					message: isValid,
+				});
 
-			resolve(json);
+			resolve({
+				success: true,
+				message: json,
+			});
 		});
 	},
-	install (obj) {
+	install(obj) {
 		return new Promise(async (resolve, reject) => {
 			await storage.get(async (currentStorage) => {
-				const filteredExtensions = currentStorage.extensions.filter((el => el.name === obj.name));
+				const filteredExtensions = currentStorage.extensions.filter(
+					(el) => el.name === obj.name
+				);
 
-				if(filteredExtensions.length > 0) {
+				if (filteredExtensions.length > 0) {
 					resolve({
 						success: false,
 						message: 'Extension Already Exists',
@@ -138,15 +158,16 @@ export const extension = {
 					let newStorage = currentStorage;
 					newStorage.extensions.push(obj);
 					await storage.set(newStorage, (err) => {
-						if(err) reject({
-							success: false,
-							message: err
-						});
+						if (err)
+							reject({
+								success: false,
+								message: err,
+							});
 					});
 
 					resolve({
 						success: true,
-						message: 'Extension Installed'
+						message: 'Extension Installed',
 					});
 				}
 			});
@@ -162,11 +183,14 @@ export const extension = {
 			for (let i = 0; i < json.message.length; i++) {
 				let result = [];
 				result.push({
-					name: json.message[i].name.split('.').slice(0, -1).join('.'),
-					url: json.message[i].download_url
-				})
-				
-				resolve(result)
+					name: json.message[i].name
+						.split('.')
+						.slice(0, -1)
+						.join('.'),
+					url: json.message[i].download_url,
+				});
+
+				resolve(result);
 			}
 		});
 	},

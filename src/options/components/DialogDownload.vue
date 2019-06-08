@@ -66,15 +66,15 @@ export default {
 			if (this.inputText.match(isUrl)) {
 				this.isDownloadingExtension = true;
 				const json = await extension.download(url);
-				if (!json) {
-					this.$snackbar('Error downloading extension', 'error', {
+				if (!json.success) {
+					this.$snackbar(json.message, 'error', {
 						background: 'red',
 					});
-					console.error(install.message);
+					console.error(json.message);
 				}
 
-				const install = await extension.install(json);
-				if(!install.success) {
+				const install = await extension.install(json.message);
+				if (!install.success) {
 					this.$snackbar(install.message, 'error', {
 						background: 'red',
 					});
