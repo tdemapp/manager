@@ -1,4 +1,3 @@
-import tde from 'tde';
 import * as yup from 'yup';
 
 // Get extension name
@@ -65,6 +64,110 @@ export const getLocale = (msg) => {
 
 // Extension handling
 export const extension = {
+	add(obj) {
+		return new Promise((resolve, reject) => {
+			log.info('Installing: ', obj);
+
+			storage.get(async (currentStorage) => {
+				const filteredExtensions = currentStorage.extensions.filter(
+					(el) => el.name === obj.name
+				);
+
+				if (filteredExtensions.length > 0) {
+					resolve({
+						success: false,
+						message: 'Extension Already Installed',
+					});
+				} else {
+					let newStorage = currentStorage;
+					newStorage.extensions.push(obj);
+					await storage.set(newStorage, (err) => {
+						if (err)
+							reject({
+								success: false,
+								message: err,
+							});
+					});
+
+					resolve({
+						success: true,
+						message: 'Extension Installed',
+					});
+				}
+			});
+		});
+	},
+	download(url) {
+		return new Promise(async (resolve, reject) => {
+			log.info('Downloading: ' + url);
+
+			const response = await fetch(url);
+			const json = await response.json();
+			const isValid = await extension.validate(json);
+
+			if (!isValid.success) reject({
+				success: false,
+				message: isValid,
+			});
+
+			resolve({
+				success: true,
+				message: json,
+			});
+		});
+	},
+	getRegistry() {
+		return new Promise(async (resolve, reject) => {
+			const response = await fetch('https://registry.tdem.app');
+			if (!response.ok && response.status >= 200) reject({
+				success: false,
+				message: 'Failed to fetch from registry',
+			});
+
+			const json = await response.json();
+			if (!json.success) reject({
+				success: false,
+				message: json.message,
+			});
+
+			for (let i = 0; i < json.message.length; i++) {
+				let result = [];
+				result.push({
+					name: json.message[i].name
+						.split('.')
+						.slice(0, -1)
+						.join('.'),
+					url: json.message[i].download_url,
+				});
+
+				resolve({
+					success: true,
+					message: result,
+				});
+			}
+		});
+	},
+	remove(extensionName) {
+		return new Promise(async (resolve, reject) => {
+			log.info('Removing: ' + extensionName);
+
+			const result = storage.get(async (currentData) => {
+				let newData = currentData;
+
+				newData.extensions.splice(
+					newData.extensions.map((e) => e.name).indexOf(extensionName),
+					1
+				);
+
+				storage.set(newData);
+			});
+
+			resolve({
+				success: true,
+				message: result,
+			});
+		});
+	},
 	schema: yup.object().shape({
 		name: yup.string().required(),
 		author: yup.string().required(),
@@ -94,129 +197,34 @@ export const extension = {
 		create: 'function () { console.log("myExtension created!"); }',
 		destroy: 'function () { console.log("myExtension destroyed!"); }',
 	},
+	toggle(extensionName) {
+		try {
+			storage.get((currentStorage) => {
+				let newStorage = currentStorage;
+				newStorage.extensions.filter((ext) => {
+					if (ext.name === extensionName) {
+						ext.enabled = !ext.enabled;
+					}
+				});
+				storage.set(newStorage);
+			});
+		} catch (err) {
+			throw new Error('Error toggling extension ', err);
+		}
+	},
 	validate(obj) {
 		return new Promise(async (resolve, reject) => {
 			const isValid = await this.schema.validate(obj);
 
-			if (!isValid)
-				reject({
-					success: false,
-					message: isValid,
-				});
+			if (!isValid) reject({
+				success: false,
+				message: isValid,
+			});
 
 			resolve({
 				success: true,
 				message: obj,
 			});
-		});
-	},
-	toggle(extensionName) {
-		storage.get((currentStorage) => {
-			let newStorage = currentStorage;
-			newStorage.extensions.filter((ext) => {
-				if (ext.name === extensionName) {
-					ext.enabled = !ext.enabled;
-				}
-			});
-			storage.set(newStorage);
-		});
-	},
-	remove(extensionName) {
-		log.info('Removing: ' + extensionName);
-		try {
-			storage.get((currentStorage) => {
-				let newSettings = currentStorage;
-				newSettings.extensions.splice(
-					newSettings.extensions.map((e) => e.name).indexOf(extensionName),
-					1
-				);
-				storage.set(newSettings);
-			});
-		} catch (err) {
-			throw new Error('Error removing extension ', err);
-		}
-	},
-	reload(extensionName) {
-		log.info('Reloading: ' + extensionName);
-		try {
-			const temp = tde.getExtension(extensionName);
-			tde.remove(extensionName);
-			tde.add(temp, true, true);
-		} catch (err) {
-			throw new Error('Error reloading extension ', err);
-		}
-	},
-	download(url) {
-		log.info('Downloading: ' + url);
-		return new Promise(async (resolve, reject) => {
-			const response = await fetch(url);
-			const json = await response.json();
-			const isValid = await extension.validate(json);
-
-			if (!isValid.success)
-				reject({
-					success: false,
-					message: isValid,
-				});
-
-			resolve({
-				success: true,
-				message: json,
-			});
-		});
-	},
-	install(obj) {
-		log.info('Installing: ', obj);
-		return new Promise(async (resolve, reject) => {
-			await storage.get(async (currentStorage) => {
-				const filteredExtensions = currentStorage.extensions.filter(
-					(el) => el.name === obj.name
-				);
-
-				if (filteredExtensions.length > 0) {
-					resolve({
-						success: false,
-						message: 'Extension Already Installed',
-					});
-				} else {
-					let newStorage = currentStorage;
-					newStorage.extensions.push(obj);
-					await storage.set(newStorage, (err) => {
-						if (err)
-							reject({
-								success: false,
-								message: err,
-							});
-					});
-
-					resolve({
-						success: true,
-						message: 'Extension Installed',
-					});
-				}
-			});
-		});
-	},
-	getRegistry() {
-		log.info('Fetching from registry');
-		return new Promise(async (resolve, reject) => {
-			const response = await fetch('https://registry.tdem.app');
-			const json = await response.json();
-
-			if (!json.success) reject(json.message);
-
-			for (let i = 0; i < json.message.length; i++) {
-				let result = [];
-				result.push({
-					name: json.message[i].name
-						.split('.')
-						.slice(0, -1)
-						.join('.'),
-					url: json.message[i].download_url,
-				});
-
-				resolve(result);
-			}
 		});
 	},
 };

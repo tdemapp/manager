@@ -82,7 +82,15 @@ export default {
 		};
 	},
 	async created() {
-		this.extensions = await extension.getRegistry();
+		const store = await extension.getRegistry();
+		if(!store.success) {
+			this.$snackbar(store.message, 'error', {
+				background: 'red',
+			});
+			log.error(store.message);
+		} else {
+			this.extensions = store.message;
+		}
 	},
 	methods: {
 		getLocale: (text) => getLocale(text),
@@ -96,7 +104,7 @@ export default {
 				log.error(json.message);
 			}
 
-			const install = await extension.install(json.message);
+			const install = await extension.add(json.message);
 			if (!install.success) {
 				this.$snackbar(install.message, 'error', {
 					background: 'red',

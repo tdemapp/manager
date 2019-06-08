@@ -73,7 +73,7 @@ export default {
 					log.error(json.message);
 				}
 
-				const install = await extension.install(json.message);
+				const install = await extension.add(json.message);
 				if (!install.success) {
 					this.$snackbar(install.message, 'error', {
 						background: 'red',
