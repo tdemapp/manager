@@ -133,7 +133,7 @@ export const extension = {
 				storage.set(newSettings);
 			});
 		} catch (err) {
-			log.error('Error removing extension ', err);
+			throw new Error('Error removing extension ', err);
 		}
 	},
 	reload(extensionName) {
@@ -143,7 +143,7 @@ export const extension = {
 			tde.remove(extensionName);
 			tde.add(temp, true, true);
 		} catch (err) {
-			log.error('Error reloading extension ', err);
+			throw new Error('Error reloading extension ', err);
 		}
 	},
 	download(url) {
