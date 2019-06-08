@@ -59,16 +59,6 @@
 				flat
 				icon
 				large
-				@click="reloadExtension(extension.name)"
-				:color="extension.enabled ? 'grey--darken-4' : 'grey'"
-			>
-				<IconRefresh />
-			</v-btn>
-
-			<v-btn
-				flat
-				icon
-				large
 				@click="removeExtension(extension.name)"
 				:color="extension.enabled ? 'red' : 'grey'"
 			>
@@ -83,7 +73,6 @@
 import { extension, getLocale, storage } from '../../scripts/util';
 import IconBox from '../icons/box.svg';
 import IconLink from '../icons/link.svg';
-import IconRefresh from '../icons/refresh.svg';
 import IconTrash from '../icons/trash.svg';
 
 export default {
@@ -101,7 +90,6 @@ export default {
 	components: {
 		IconBox,
 		IconLink,
-		IconRefresh,
 		IconTrash,
 	},
 	methods: {
