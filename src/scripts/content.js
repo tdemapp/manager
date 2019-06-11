@@ -14,9 +14,7 @@ const dashboardButton = `
 	</li>
 `;
 
-/*
- * Initialize TDEM
- */
+// Initialize TDEM
 function init() {
 	log.info('🛠️ TDEM Initializing...');
 
@@ -28,6 +26,7 @@ function init() {
 	}
 }
 
+// Inject manager shortcut into TweetDeck
 const injectButtons = () => {
 	try {
 		// Inject dashboard button
@@ -46,7 +45,7 @@ const injectButtons = () => {
 	}
 };
 
-// Inject TDE API
+// Inject Interface API
 const injectAPI = () => {
 	try {
 		log.info('🏗 Loading extensions...');

@@ -148,10 +148,10 @@ export const extension = {
 		});
 	},
 	remove(extensionName) {
-		return new Promise(async (resolve, reject) => {
+		return new Promise((resolve) => {
 			log.info('Removing: ' + extensionName);
 
-			const result = storage.get(async (currentData) => {
+			const result = storage.get((currentData) => {
 				let newData = currentData;
 
 				newData.extensions.splice(
@@ -198,19 +198,26 @@ export const extension = {
 		destroy: 'function () { console.log("myExtension destroyed!"); }',
 	},
 	toggle(extensionName) {
-		try {
-			storage.get((currentStorage) => {
-				let newStorage = currentStorage;
-				newStorage.extensions.filter((ext) => {
+		return new Promise((resolve) => {
+			log.info('Toggling: ' + extensionName);
+
+			const result = storage.get((currentData) => {
+				let newData = currentData;
+
+				newData.extensions.filter((ext) => {
 					if (ext.name === extensionName) {
 						ext.enabled = !ext.enabled;
 					}
 				});
-				storage.set(newStorage);
+
+				storage.set(newData);
 			});
-		} catch (err) {
-			throw new Error('Error toggling extension ', err);
-		}
+
+			resolve({
+				success: true,
+				message: result,
+			});
+		});
 	},
 	validate(obj) {
 		return new Promise(async (resolve, reject) => {

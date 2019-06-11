@@ -65,22 +65,27 @@ export default {
 
 			if (this.inputText.match(isUrl)) {
 				this.isDownloadingExtension = true;
-				const json = await extension.download(url);
-				if (!json.success) {
-					this.$snackbar(json.message, 'error', {
+
+				let json;
+				try {
+					json = await extension.download(url);
+				} catch (err) {
+					this.$snackbar(err, 'error', {
 						background: 'red',
 					});
-					log.error(json.message);
+					log.error(err);
 				}
 
-				const install = await extension.add(json.message);
-				if (!install.success) {
-					this.$snackbar(install.message, 'error', {
+				let install;
+				try {
+					install = await extension.add(json.message);
+				} catch (err) {
+					this.$snackbar(err, 'error', {
 						background: 'red',
 					});
 					this.isDownloadingExtension = false;
-					log.error(install.message);
-				} else {
+					log.error(err);
+				} finally {
 					this.$snackbar(install.message, 'success');
 					this.inputText = '';
 					this.isDownloadingExtension = false;

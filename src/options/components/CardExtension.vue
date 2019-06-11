@@ -101,16 +101,26 @@ export default {
 				return this.extension.enabled ? 'primary py-3' : 'white py-3';
 			}
 		},
-		async reloadExtension(extensionName) {
-			await extension.reload(extensionName);
-			this.$snackbar(`Reloaded: ${extensionName}`, 'success');
-		},
 		async removeExtension(extensionName) {
-			await extension.remove(extensionName);
-			this.$snackbar(`Removed: ${extensionName}`, 'success');
+			try {
+				await extension.remove(extensionName);
+				this.$snackbar(`Removed: ${extensionName}`, 'success');
+			} catch (err) {
+				this.$snackbar(err, 'error', {
+					background: 'red',
+				});
+				log.error(err);
+			}
 		},
 		async toggleExtension(extensionName) {
-			extension.toggle(extensionName);
+			try {
+				await extension.toggle(extensionName);
+			} catch (err) {
+				this.$snackbar(err, 'error', {
+					background: 'red',
+				});
+				log.error(err);
+			}
 		},
 	},
 };
