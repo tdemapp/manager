@@ -10,9 +10,9 @@
     "lint": "prettier --config .prettierrc.json --write \"src/**/*.{js,css,vue}\""
   },
   "dependencies": {
+    "@tdemapp/interface": "^1.1.1",
     "domify": "^1.4.0",
     "downloadjs": "^1.4.7",
-    "tde": "tdemapp/interface",
     "v-animate-css": "^0.0.3",
     "vue": "^2.6.10",
     "vuetify": "^1.5.14",
