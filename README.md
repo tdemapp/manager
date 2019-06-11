@@ -24,26 +24,12 @@ $ npm install
 
 Running development server
 ```shell
-# Chrome
-$ npm run dev chrome
-
-# Firefox
-$ npm run dev firefox
-
-# Opera
-$ npm run dev opera
+$ npm run dev <browser>
 ```
 
 Building for production
 ```shell
-# Chrome
-$ npm run build chrome
-
-# Firefox
-$ npm run build firefox
-
-# Opera
-$ npm run build opera
+$ npm run build <browser>
 ```
 
 ## 📄 License:
