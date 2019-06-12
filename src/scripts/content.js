@@ -1,5 +1,5 @@
 import domify from 'domify';
-import tde from '@tdemapp/interface';
+import tde from 'tde';
 
 import { getExtensionUrl, log, storage } from './util';
 
