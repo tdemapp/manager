@@ -127,17 +127,7 @@ export const extension = {
 	},
 	getRegistry() {
 		return new Promise(async (resolve, reject) => {
-			const response = await fetch('https://registry.tdem.app');
-			if (!response.ok && response.status >= 200) reject({
-				success: false,
-				message: 'Failed to fetch from registry',
-			});
-
-			const json = await response.json();
-			if (!json.success) reject({
-				success: false,
-				message: json.message,
-			});
+			const json = await this.download('https://registry.tdem.app');
 
 			for (let i = 0; i < json.message.length; i++) {
 				let result = [];
