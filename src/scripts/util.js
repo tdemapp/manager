@@ -74,7 +74,7 @@ export const extension = {
 				);
 
 				if (filteredExtensions.length > 0) {
-					resolve({
+					reject({
 						success: false,
 						message: 'Extension Already Installed',
 					});

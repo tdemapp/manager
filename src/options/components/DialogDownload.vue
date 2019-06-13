@@ -80,13 +80,15 @@ export default {
 				try {
 					install = await extension.add(json.message);
 				} catch (err) {
-					this.$snackbar(err, 'error', {
+					this.$snackbar(err.message, 'error', {
 						background: 'red',
 					});
 					this.isDownloadingExtension = false;
 					log.error(err);
 				} finally {
-					this.$snackbar(install.message, 'success');
+					this.$snackbar(install.message, 'success', {
+						background: 'green',
+					});
 					this.inputText = '';
 					this.isDownloadingExtension = false;
 				}
