@@ -74,7 +74,7 @@ export const extension = {
 				reject({
 					success: false,
 					message: err,
-				})
+				});
 			}
 
 			storage.get(async (currentStorage) => {
@@ -111,7 +111,6 @@ export const extension = {
 			log.info(`Downloading: ${url}`);
 
 			let json;
-
 			try {
 				const response = await fetch(url);
 				json = await response.json();
@@ -119,7 +118,7 @@ export const extension = {
 				reject({
 					success: false,
 					message: err,
-				})
+				});
 			}
 
 			resolve(json);
@@ -222,10 +221,11 @@ export const extension = {
 		return new Promise(async (resolve, reject) => {
 			const isValid = await this.schema.validate(obj);
 
-			if (!isValid) reject({
-				success: false,
-				message: isValid,
-			});
+			if (!isValid)
+				reject({
+					success: false,
+					message: isValid,
+				});
 
 			resolve({
 				success: true,

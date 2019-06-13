@@ -83,7 +83,7 @@ export default {
 	},
 	async created() {
 		const store = await extension.getRegistry();
-		if(!store.success) {
+		if (!store.success) {
 			this.$snackbar(store.message, 'error', {
 				background: 'red',
 			});

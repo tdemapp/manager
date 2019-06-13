@@ -105,7 +105,7 @@ export default {
 			try {
 				await extension.remove(extensionName);
 				this.$snackbar(`Removed: ${extensionName}`, 'success', {
-					background: 'green'
+					background: 'green',
 				});
 			} catch (err) {
 				this.$snackbar(err, 'error', {

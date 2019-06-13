@@ -1,9 +1,5 @@
 <template>
-	<Dialog
-		:name="getLocale('dashboard_dialog_download_title')"
-		:width="540"
-		:storage="storage"
-	>
+	<Dialog :name="getLocale('dashboard_dialog_download_title')" :width="540" :storage="storage">
 		<IconDownload slot="icon" />
 
 		<template slot="content">
