@@ -2,7 +2,6 @@
 	<Dialog
 		:name="getLocale('dashboard_dialog_download_title')"
 		:width="540"
-		:scrollable="true"
 		:storage="storage"
 	>
 		<IconDownload slot="icon" />

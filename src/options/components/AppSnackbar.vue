@@ -3,8 +3,9 @@
 		top
 		right
 		multi-line
-		:color="color.background"
 		v-model="active"
+		class="snackbar"
+		:color="color.background"
 		@click="active = false"
 	>
 		<IconDownload v-if="icon === 'download'" :class="`mr-4 ${color.icon}--text`" />
