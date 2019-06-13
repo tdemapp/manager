@@ -40,7 +40,7 @@
 									large
 									icon
 									:loading="isDownloadingExtension"
-									@click="install(item.url)"
+									@click="install(item.name)"
 								>
 									<IconDownload class="white--text" />
 								</v-btn>
@@ -94,12 +94,12 @@ export default {
 	},
 	methods: {
 		getLocale: (text) => getLocale(text),
-		async install(url) {
+		async install(extensionName) {
 			this.isDownloadingExtension = true;
 
 			let json;
 			try {
-				json = await extension.download(url);
+				json = await extension.download(`https://registry.tdem.app/${extensionName}`);
 			} catch (err) {
 				this.$snackbar(err, 'error', {
 					background: 'red',

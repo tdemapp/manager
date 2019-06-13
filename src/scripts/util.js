@@ -65,8 +65,17 @@ export const getLocale = (msg) => {
 // Extension handling
 export const extension = {
 	add(obj) {
-		return new Promise((resolve, reject) => {
+		return new Promise(async (resolve, reject) => {
 			log.info('Installing: ', obj);
+
+			try {
+				await this.validate(obj);
+			} catch (err) {
+				reject({
+					success: false,
+					message: err,
+				})
+			}
 
 			storage.get(async (currentStorage) => {
 				const filteredExtensions = currentStorage.extensions.filter(
@@ -99,21 +108,21 @@ export const extension = {
 	},
 	download(url) {
 		return new Promise(async (resolve, reject) => {
-			log.info('Downloading: ' + url);
+			log.info(`Downloading: ${url}`);
 
-			const response = await fetch(url);
-			const json = await response.json();
-			const isValid = await extension.validate(json);
+			let json;
 
-			if (!isValid.success) reject({
-				success: false,
-				message: isValid,
-			});
+			try {
+				const response = await fetch(url);
+				json = await response.json();
+			} catch (err) {
+				reject({
+					success: false,
+					message: err,
+				})
+			}
 
-			resolve({
-				success: true,
-				message: json,
-			});
+			resolve(json);
 		});
 	},
 	getRegistry() {

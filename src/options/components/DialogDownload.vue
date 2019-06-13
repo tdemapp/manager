@@ -77,7 +77,7 @@ export default {
 
 				let install;
 				try {
-					install = await extension.add(json.message);
+					install = await extension.add(json);
 				} catch (err) {
 					this.$snackbar(err.message, 'error', {
 						background: 'red',
