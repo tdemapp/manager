@@ -104,13 +104,9 @@ export default {
 		async removeExtension(extensionName) {
 			try {
 				await extension.remove(extensionName);
-				this.$snackbar(`Removed: ${extensionName}`, 'success', {
-					background: 'green',
-				});
+				this.$snackbar.success(`Removed: ${extensionName}`);
 			} catch (err) {
-				this.$snackbar(err, 'error', {
-					background: 'red',
-				});
+				this.$snackbar.error(err);
 				log.error(err);
 			}
 		},
@@ -118,9 +114,7 @@ export default {
 			try {
 				await extension.toggle(extensionName);
 			} catch (err) {
-				this.$snackbar(err, 'error', {
-					background: 'red',
-				});
+				this.$snackbar.error(err);
 				log.error(err);
 			}
 		},

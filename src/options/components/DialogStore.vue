@@ -82,14 +82,13 @@ export default {
 		};
 	},
 	async created() {
-		const store = await extension.getRegistry();
-		if (!store.success) {
-			this.$snackbar(store.message, 'error', {
-				background: 'red',
-			});
-			log.error(store.message);
-		} else {
+		let store;
+		try {
+			store = await extension.getRegistry();
 			this.extensions = store.message;
+		} catch (err) {
+			this.$snackbar.error(store.message);
+			log.error(store.message);
 		}
 	},
 	methods: {
@@ -101,26 +100,20 @@ export default {
 			try {
 				json = await extension.download(`https://registry.tdem.app/${extensionName}`);
 			} catch (err) {
-				this.$snackbar(err, 'error', {
-					background: 'red',
-				});
+				this.$snackbar.error(err);
 				log.error(err);
 			}
 
 			let install;
 			try {
 				install = await extension.add(json.message);
+
+				this.$snackbar.success(install.message);
+				this.isDownloadingExtension = false;
 			} catch (err) {
-				this.$snackbar(err.message, 'error', {
-					background: 'red',
-				});
+				this.$snackbar.error(err.message);
 				this.isDownloadingExtension = false;
 				log.error(err);
-			} finally {
-				this.$snackbar(install.message, 'success', {
-					background: 'green',
-				});
-				this.isDownloadingExtension = false;
 			}
 		},
 	},

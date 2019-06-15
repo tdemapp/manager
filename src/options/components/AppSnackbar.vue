@@ -3,17 +3,17 @@
 		top
 		right
 		multi-line
+		:color="color"
+		@click="close"
 		v-model="active"
 		class="snackbar"
-		:color="color.background"
-		@click="active = false"
 	>
-		<IconDownload v-if="icon === 'download'" :class="`mr-4 ${color.icon}--text`" />
-		<IconError v-else-if="icon === 'error'" :class="`mr-4 ${color.icon}--text`" />
-		<IconSuccess v-else-if="icon === 'success'" :class="`mr-4 ${color.icon}--text`" />
-		<IconInfo v-else :class="`mr-4 ${color.icon}--text`" />
+		<IconInfo v-if="icon === 'info'" :class="`mr-4 white--text`" />
+		<IconDownload v-else-if="icon === 'download'" :class="`mr-4 white--text`" />
+		<IconError v-else-if="icon === 'error'" :class="`mr-4 white--text`" />
+		<IconSuccess v-else-if="icon === 'success'" :class="`mr-4 white--text`" />
 
-		<span :class="`text-uppercase spacedLetters ${color.text}--text`" v-text="text" />
+		<span :class="`text-uppercase spacedLetters white--text`" v-text="text" />
 	</v-snackbar>
 </template>
 
@@ -32,23 +32,15 @@ export default {
 	},
 	props: {
 		color: {
-			type: Object,
-			default: () => {
-				return {
-					background: 'primary',
-					icon: 'white',
-					text: 'white',
-				};
-			},
+			type: String,
+			default: 'info'
 		},
 		icon: {
 			type: String,
-			required: true,
 			default: 'info',
 		},
 		text: {
 			type: String,
-			required: true,
 		},
 	},
 	data() {
@@ -64,5 +56,18 @@ export default {
 			this.$emit('statusChange', isActive, wasActive);
 		},
 	},
+	methods: {
+		show() {
+			this.active = true
+		},
+		close() {
+			this.active = false
+		},
+		dismiss() {
+			if (this.dismissable) {
+				this.close()
+			}
+		},
+	}
 };
 </script>
