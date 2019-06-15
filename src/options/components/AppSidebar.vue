@@ -5,9 +5,9 @@
 		floating
 		permanent
 		width="256"
+		class="black"
 		v-model="sidebar"
 		:mini-variant="storage.isSidebarMini"
-		:class="storage.isDarkTheme ? 'secondary' : 'primary'"
 	>
 		<v-list class="pt-0" three-line>
 			<!-- Sidebar toggle -->

@@ -1,9 +1,9 @@
 <template>
 	<v-card
 		:class="`ma-2 defaultShadow ${storage.doAnimations ? 'extensionCardHover' : null}`"
-		:color="storage.isDarkTheme ? 'accent' : 'white'"
+		:color="storage.isDarkTheme ? 'secondary' : 'white'"
 	>
-		<v-toolbar flat :class="getToolbarColor()">
+		<v-toolbar flat :class="`${extension.enabled ? 'black' : 'secondary'} py-3`">
 			<v-layout align-center justify-start row fill-height>
 				<IconBox
 					width="48px"
@@ -60,7 +60,7 @@
 				icon
 				large
 				@click="removeExtension(extension.name)"
-				:color="extension.enabled ? 'red' : 'grey'"
+				:color="extension.enabled ? 'error' : 'grey'"
 			>
 				<IconTrash />
 			</v-btn>
@@ -94,13 +94,6 @@ export default {
 	},
 	methods: {
 		getLocale: (text) => getLocale(text),
-		getToolbarColor() {
-			if (this.storage.isDarkTheme) {
-				return this.extension.enabled ? 'secondary py-3' : 'accent py-3';
-			} else {
-				return this.extension.enabled ? 'primary py-3' : 'white py-3';
-			}
-		},
 		async removeExtension(extensionName) {
 			try {
 				await extension.remove(extensionName);

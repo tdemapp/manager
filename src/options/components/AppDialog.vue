@@ -11,15 +11,17 @@
 
 		<!-- Dialog Content -->
 		<v-dialog v-model="dialog" :max-width="width" :scrollable="scrollable">
-			<v-card :color="storage.isDarkTheme ? 'accent' : 'white'">
-				<v-toolbar flat dark :color="storage.isDarkTheme ? 'secondary' : 'accent'">
+			<v-card :color="storage.isDarkTheme ? 'secondary' : 'white'">
+				<v-toolbar flat dark :color="storage.isDarkTheme ? 'black' : 'secondary'">
 					<slot name="icon" />
 
 					<v-card-title
 						class="dialogTitle spacedLetters text-uppercase font-weight-thin ml-2"
 						v-text="name"
 					/>
+
 					<v-spacer />
+					
 					<v-toolbar-items class="hidden-sm-and-down">
 						<v-btn flat class="squareCorners" @click="dialog = false">
 							<IconClose />

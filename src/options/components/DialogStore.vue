@@ -14,7 +14,7 @@
 						<v-toolbar
 							flat
 							dark
-							:color="storage.isDarkTheme ? 'secondary' : 'primary'"
+							:color="storage.isDarkTheme ? 'black' : 'secondary'"
 							class="ma-2 pa-2 extensionCardHover defaultShadow"
 						>
 							<IconBox width="32px" height="32px" class="white--text" />
