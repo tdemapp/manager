@@ -45,7 +45,7 @@ export const log = {
 	error(...text) {
 		storage.get((data) => {
 			if (data.debugMode) {
-				console.error('%cERROR', logFormatting('#f44336'), ...text);
+				console.log('%cERROR', logFormatting('#f44336'), ...text);
 			}
 		});
 	},
