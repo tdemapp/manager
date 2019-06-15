@@ -85,7 +85,7 @@ export const extension = {
 				if (filteredExtensions.length > 0) {
 					reject({
 						success: false,
-						message: 'Extension Already Installed',
+						message: `${obj.name} Already Installed`,
 					});
 				} else {
 					let newStorage = currentStorage;
@@ -100,7 +100,7 @@ export const extension = {
 
 					resolve({
 						success: true,
-						message: 'Extension Installed',
+						message: `Installed ${obj.name}`,
 					});
 				}
 			});

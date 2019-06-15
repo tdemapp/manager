@@ -73,7 +73,7 @@ export default {
 				try {
 					install = await extension.add(json);
 
-					this.$snackbar.success(install);
+					this.$snackbar.success(install.message);
 					this.inputText = '';
 					this.isDownloadingExtension = false;
 				} catch (err) {
