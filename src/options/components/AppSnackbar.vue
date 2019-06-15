@@ -8,24 +8,21 @@
 		v-model="active"
 		class="snackbar"
 	>
-		<IconInfo v-if="icon === 'info'" :class="`mr-4 white--text`" />
-		<IconDownload v-else-if="icon === 'download'" :class="`mr-4 white--text`" />
-		<IconError v-else-if="icon === 'error'" :class="`mr-4 white--text`" />
-		<IconSuccess v-else-if="icon === 'success'" :class="`mr-4 white--text`" />
+		<IconInfo v-if="color === 'info'" :class="`mr-4 white--text`" />
+		<IconError v-else-if="color === 'error'" :class="`mr-4 white--text`" />
+		<IconSuccess v-else-if="color === 'success'" :class="`mr-4 white--text`" />
 
 		<span :class="`text-uppercase spacedLetters white--text`" v-text="text" />
 	</v-snackbar>
 </template>
 
 <script>
-import IconDownload from '../icons/download.svg';
 import IconError from '../icons/error.svg';
 import IconInfo from '../icons/info.svg';
 import IconSuccess from '../icons/success.svg';
 
 export default {
 	components: {
-		IconDownload,
 		IconError,
 		IconInfo,
 		IconSuccess,
@@ -34,10 +31,6 @@ export default {
 		color: {
 			type: String,
 			default: 'info'
-		},
-		icon: {
-			type: String,
-			default: 'info',
 		},
 		text: {
 			type: String,

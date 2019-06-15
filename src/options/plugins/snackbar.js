@@ -45,7 +45,6 @@ export default (Vue, globalOptions = {}) => {
 			'success',
 			'info',
 			'error',
-			'warning'
 		];
 		
 		let methods = {};
