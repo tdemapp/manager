@@ -73,3 +73,8 @@ body,
 .snackbar:hover {
 	cursor: pointer;
 }
+
+/* Hide scrollbars */
+::-webkit-scrollbar {
+	display: none;
+}
