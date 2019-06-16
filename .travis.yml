@@ -11,7 +11,7 @@ install:
   - yarn
 
 before_script:
-  - yarn test
+  - yarn lint
 
 script:
   - yarn build chrome
