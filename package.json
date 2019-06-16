@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "webextension-toolbox --src src/ dev",
     "build": "webextension-toolbox --src src/ build",
-    "lint": "prettier --config .prettierrc.json --write \"src/**/*.{js,css,vue}\""
+    "lint": "eslint --fix --ext .js,.vue src"
   },
   "dependencies": {
     "domify": "^1.4.0",
@@ -21,8 +21,9 @@
   "devDependencies": {
     "@babel/plugin-proposal-optional-chaining": "^7.2.0",
     "css-loader": "^2.1.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.2.2",
     "mini-css-extract-plugin": "^0.5.0",
-    "prettier": "^1.15.3",
     "style-loader": "^0.23.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",

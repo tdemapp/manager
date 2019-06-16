@@ -6,9 +6,8 @@
 
   [![License](https://img.shields.io/badge/license-mit-blue.svg?longCache=true&style=for-the-badge)](https://github.com/tdemapp/manager/blob/webpack/LICENSE) 
   [![Travis](https://img.shields.io/travis/tdemapp/manager/webpack.svg?style=for-the-badge)](https://travis-ci.org/tdemapp/manager) 
-  [![Prettier](https://img.shields.io/badge/code--style-%20prettier-c596c7.svg?longCache=true&style=for-the-badge)](https://prettier.io/) 
   [![gitmoji](https://img.shields.io/badge/gitmoji-%20%F0%9F%98%9C%20%F0%9F%98%8D-FFDD67.svg?longCache=true&style=for-the-badge)](https://gitmoji.carloscuesta.me/) 
-  [![Personal Twitter](https://img.shields.io/badge/-@nurodev-03A9F4.svg?logo=twitter&logoColor=white&longCache=true&style=for-the-badge)](https://twitter.com/nurodev)
+  [![Twitter](https://img.shields.io/badge/-@nurodev-03A9F4.svg?logo=twitter&logoColor=white&longCache=true&style=for-the-badge)](https://twitter.com/nurodev)
 </div>
 
 <img alt='Screenshot' src='https://github.com/tdemapp/assets/blob/master/screenshot.png?raw=true' />

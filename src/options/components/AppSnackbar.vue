@@ -1,19 +1,31 @@
 <template>
-	<v-snackbar
-		top
-		right
-		multi-line
-		:color="color"
-		@click="close"
-		v-model="active"
-		class="snackbar"
-	>
-		<IconInfo v-if="color === 'info'" :class="`mr-4 white--text`" />
-		<IconError v-else-if="color === 'error'" :class="`mr-4 white--text`" />
-		<IconSuccess v-else-if="color === 'success'" :class="`mr-4 white--text`" />
+  <v-snackbar
+    v-model="active"
+    top
+    right
+    multi-line
+    :color="color"
+    class="snackbar"
+    @click="close"
+  >
+    <IconInfo
+      v-if="color === 'info'"
+      :class="`mr-4 white--text`"
+    />
+    <IconError
+      v-else-if="color === 'error'"
+      :class="`mr-4 white--text`"
+    />
+    <IconSuccess
+      v-else-if="color === 'success'"
+      :class="`mr-4 white--text`"
+    />
 
-		<span :class="`text-uppercase spacedLetters white--text`" v-text="text" />
-	</v-snackbar>
+    <span
+      :class="`text-uppercase spacedLetters white--text`"
+      v-text="text"
+    />
+  </v-snackbar>
 </template>
 
 <script>
@@ -34,6 +46,7 @@ export default {
 		},
 		text: {
 			type: String,
+			default: 'Text Not Found',
 		},
 	},
 	data() {
@@ -41,13 +54,13 @@ export default {
 			active: false,
 		};
 	},
-	mounted() {
-		this.$nextTick(() => (this.active = true));
-	},
 	watch: {
 		active(isActive, wasActive) {
 			this.$emit('statusChange', isActive, wasActive);
 		},
+	},
+	mounted() {
+		this.$nextTick(() => (this.active = true));
 	},
 	methods: {
 		show() {

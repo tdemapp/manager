@@ -1,34 +1,41 @@
 <template>
-	<Dialog :name="getLocale('dashboard_dialog_download_title')" :width="540" :storage="storage">
-		<IconDownload slot="icon" />
+  <Dialog
+    :name="getLocale('dashboard_dialog_download_title')"
+    :width="540"
+    :storage="storage"
+  >
+    <IconDownload slot="icon" />
 
-		<template slot="content">
-			<v-layout row wrap>
-				<!-- Download Settings -->
-				<v-flex xs12>
-					<v-text-field
-						:color="storage.isDarkTheme ? 'white' : 'primary'"
-						v-model="inputText"
-						label="URL"
-					/>
+    <template slot="content">
+      <v-layout
+        row
+        wrap
+      >
+        <!-- Download Settings -->
+        <v-flex xs12>
+          <v-text-field
+            v-model="inputText"
+            :color="storage.isDarkTheme ? 'white' : 'primary'"
+            label="URL"
+          />
 
-					<v-btn
-						flat
-						large
-						block
-						:loading="isDownloadingExtension"
-						@click="install(inputText)"
-					>
-						<IconDownload class="mr-3" />
-						<span
-							class="spacedLetters"
-							v-text="getLocale('dashboard_dialog_download_title')"
-						/>
-					</v-btn>
-				</v-flex>
-			</v-layout>
-		</template>
-	</Dialog>
+          <v-btn
+            flat
+            large
+            block
+            :loading="isDownloadingExtension"
+            @click="install(inputText)"
+          >
+            <IconDownload class="mr-3" />
+            <span
+              class="spacedLetters"
+              v-text="getLocale('dashboard_dialog_download_title')"
+            />
+          </v-btn>
+        </v-flex>
+      </v-layout>
+    </template>
+  </Dialog>
 </template>
 
 <script>
@@ -37,15 +44,15 @@ import Dialog from './AppDialog.vue';
 import IconDownload from '../icons/download.svg';
 
 export default {
+	components: {
+		Dialog,
+		IconDownload,
+	},
 	props: {
 		storage: {
 			type: Object,
 			required: true,
 		},
-	},
-	components: {
-		Dialog,
-		IconDownload,
 	},
 	data() {
 		return {

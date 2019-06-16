@@ -1,40 +1,58 @@
 <template>
-	<section>
-		<!-- Sidebar Button -->
-		<v-list-tile ripple @click="dialog = true">
-			<v-list-tile-action> <slot name="icon" /> </v-list-tile-action>
+  <section>
+    <!-- Sidebar Button -->
+    <v-list-tile
+      ripple
+      @click="dialog = true"
+    >
+      <v-list-tile-action> <slot name="icon" /> </v-list-tile-action>
 
-			<v-list-tile-content>
-				<v-list-tile-title class="spacedLetters text-uppercase" v-text="name" />
-			</v-list-tile-content>
-		</v-list-tile>
+      <v-list-tile-content>
+        <v-list-tile-title
+          class="spacedLetters text-uppercase"
+          v-text="name"
+        />
+      </v-list-tile-content>
+    </v-list-tile>
 
-		<!-- Dialog Content -->
-		<v-dialog v-model="dialog" :max-width="width" :scrollable="scrollable">
-			<v-card :color="storage.isDarkTheme ? 'secondary' : 'white'">
-				<v-toolbar flat dark :color="storage.isDarkTheme ? 'black' : 'secondary'">
-					<slot name="icon" />
+    <!-- Dialog Content -->
+    <v-dialog
+      v-model="dialog"
+      :max-width="width"
+      :scrollable="scrollable"
+    >
+      <v-card :color="storage.isDarkTheme ? 'secondary' : 'white'">
+        <v-toolbar
+          flat
+          dark
+          :color="storage.isDarkTheme ? 'black' : 'secondary'"
+        >
+          <slot name="icon" />
 
-					<v-card-title
-						class="dialogTitle spacedLetters text-uppercase font-weight-thin ml-2"
-						v-text="name"
-					/>
+          <v-card-title
+            class="dialogTitle spacedLetters text-uppercase font-weight-thin ml-2"
+            v-text="name"
+          />
 
-					<v-spacer />
+          <v-spacer />
 
-					<v-toolbar-items class="hidden-sm-and-down">
-						<v-btn flat class="squareCorners" @click="dialog = false">
-							<IconClose />
-						</v-btn>
-					</v-toolbar-items>
-				</v-toolbar>
+          <v-toolbar-items class="hidden-sm-and-down">
+            <v-btn
+              flat
+              class="squareCorners"
+              @click="dialog = false"
+            >
+              <IconClose />
+            </v-btn>
+          </v-toolbar-items>
+        </v-toolbar>
 
-				<v-card-text :style="height ? `height: ${height};` : null">
-					<slot name="content" />
-				</v-card-text>
-			</v-card>
-		</v-dialog>
-	</section>
+        <v-card-text :style="height ? `height: ${height};` : null">
+          <slot name="content" />
+        </v-card-text>
+      </v-card>
+    </v-dialog>
+  </section>
 </template>
 
 <script>
@@ -56,7 +74,8 @@ export default {
 			required: false,
 		},
 		height: {
-			type: String,
+      type: String,
+      default: '30vh',
 			required: false,
 		},
 		scrollable: {
