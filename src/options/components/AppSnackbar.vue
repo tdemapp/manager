@@ -30,7 +30,7 @@ export default {
 	props: {
 		color: {
 			type: String,
-			default: 'info'
+			default: 'info',
 		},
 		text: {
 			type: String,
@@ -51,16 +51,16 @@ export default {
 	},
 	methods: {
 		show() {
-			this.active = true
+			this.active = true;
 		},
 		close() {
-			this.active = false
+			this.active = false;
 		},
 		dismiss() {
 			if (this.dismissable) {
-				this.close()
+				this.close();
 			}
 		},
-	}
+	},
 };
 </script>

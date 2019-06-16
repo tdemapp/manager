@@ -41,12 +41,8 @@ export default (Vue, globalOptions = {}) => {
 	};
 
 	const shorts = (options) => {
-		const colors = [
-			'success',
-			'info',
-			'error',
-		];
-		
+		const colors = ['success', 'info', 'error'];
+
 		let methods = {};
 
 		colors.forEach((color) => {
@@ -67,4 +63,4 @@ export default (Vue, globalOptions = {}) => {
 		globalOptions,
 		...shorts(globalOptions),
 	});
-}
+};

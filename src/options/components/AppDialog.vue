@@ -21,7 +21,7 @@
 					/>
 
 					<v-spacer />
-					
+
 					<v-toolbar-items class="hidden-sm-and-down">
 						<v-btn flat class="squareCorners" @click="dialog = false">
 							<IconClose />
