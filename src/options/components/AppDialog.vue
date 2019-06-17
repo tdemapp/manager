@@ -75,7 +75,7 @@ export default {
 		},
 		height: {
       type: String,
-      default: '30vh',
+      default: 'auto',
 			required: false,
 		},
 		scrollable: {
