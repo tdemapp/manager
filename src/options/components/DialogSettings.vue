@@ -1,6 +1,6 @@
 <template>
   <Dialog
-    :name="getLocale('dashboard_dialog_settings_title')"
+    :name="$i18n('dashboard_dialog_settings_title')"
     :width="740"
     :storage="storage"
   >
@@ -19,7 +19,7 @@
             v-model="storage.doAnimations"
             class="body-2 spacedLetters text-uppercase"
             :color="storage.isDarkTheme ? 'white' : 'secondary'"
-            :label="getLocale('dashboard_dialog_settings_animations')"
+            :label="$i18n('dashboard_dialog_settings_animations')"
             @click="toggleSetting('doAnimations')"
           />
         </v-flex>
@@ -28,7 +28,7 @@
             v-model="storage.isDarkTheme"
             class="body-2 spacedLetters text-uppercase"
             :color="storage.isDarkTheme ? 'white' : 'secondary'"
-            :label="getLocale('dashboard_dialog_settings_dark_theme')"
+            :label="$i18n('dashboard_dialog_settings_dark_theme')"
             @click="toggleSetting('isDarkTheme')"
           />
         </v-flex>
@@ -37,7 +37,7 @@
             v-model="storage.debugMode"
             class="body-2 spacedLetters text-uppercase"
             :color="storage.isDarkTheme ? 'white' : 'secondary'"
-            :label="getLocale('dashboard_dialog_settings_debug_mode')"
+            :label="$i18n('dashboard_dialog_settings_debug_mode')"
             @click="toggleSetting('debugMode')"
           />
         </v-flex>
@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import { getExtensionVersion, getLocale, storage } from '../../scripts/util';
+import { getExtensionVersion, storage } from '../../scripts/util';
 
 import Dialog from './AppDialog.vue';
 import IconSettings from '../icons/settings.svg';
@@ -64,7 +64,6 @@ export default {
 		},
 	},
 	methods: {
-		getLocale: (text) => getLocale(text),
 		toggleSetting: (name) => storage.toggleSetting(name),
 	},
 };

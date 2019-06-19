@@ -1,6 +1,6 @@
 <template>
   <Dialog
-    :name="getLocale('dashboard_dialog_download_title')"
+    :name="$i18n('dashboard_dialog_download_title')"
     :width="540"
     :storage="storage"
   >
@@ -29,7 +29,7 @@
             <IconDownload class="mr-3" />
             <span
               class="spacedLetters"
-              v-text="getLocale('dashboard_dialog_download_title')"
+              v-text="$i18n('dashboard_dialog_download_title')"
             />
           </v-btn>
         </v-flex>
@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import { extension, getLocale, log, storage } from '../../scripts/util';
+import { extension, log, storage } from '../../scripts/util';
 import Dialog from './AppDialog.vue';
 import IconDownload from '../icons/download.svg';
 
@@ -61,7 +61,6 @@ export default {
 		};
 	},
 	methods: {
-		getLocale: (text) => getLocale(text),
 		async install(url) {
 			const isUrl = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi;
 

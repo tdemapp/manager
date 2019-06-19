@@ -15,6 +15,7 @@
     "tde": "tdemapp/interface",
     "v-animate-css": "^0.0.3",
     "vue": "^2.6.10",
+    "vue-plugin-webextension-i18n": "^0.1.2",
     "vuetify": "^1.5.14",
     "yup": "^0.27.0"
   },

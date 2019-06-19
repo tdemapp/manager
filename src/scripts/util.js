@@ -51,17 +51,6 @@ export const log = {
 	},
 };
 
-// Get localization
-export const getLocale = (msg) => {
-	const string = browser.i18n.getMessage(msg);
-
-	if (string === '') {
-		throw new Error(`No Message found for "${msg}" in locales`);
-	}
-
-	return string;
-};
-
 // Extension handling
 export const extension = {
 	add(obj) {

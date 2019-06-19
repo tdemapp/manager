@@ -1,6 +1,6 @@
 <template>
   <Dialog
-    :name="getLocale('dashboard_dialog_info_title')"
+    :name="$i18n('dashboard_dialog_info_title')"
     :width="440"
     :storage="storage"
   >
@@ -76,7 +76,7 @@
           <IconDownload class="mr-3" />
           <span
             class="spacedLetters"
-            v-text="getLocale('dashboard_dialog_info_download_settings')"
+            v-text="$i18n('dashboard_dialog_info_download_settings')"
           />
         </v-btn>
       </v-flex>
@@ -99,7 +99,7 @@
 <script>
 import * as download from 'downloadjs';
 
-import { getExtensionVersion, getLocale, storage } from '../../scripts/util';
+import { getExtensionVersion, storage } from '../../scripts/util';
 
 import Dialog from './AppDialog.vue';
 
@@ -137,7 +137,6 @@ export default {
 		this.settingsJSON = JSON.stringify(this.storage, null, 2);
 	},
 	methods: {
-		getLocale: (text) => getLocale(text),
 		downloadSettings: () =>
 			storage.get((data) => {
 				const settings = data;

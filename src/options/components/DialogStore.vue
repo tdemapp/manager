@@ -1,6 +1,6 @@
 <template>
   <Dialog
-    :name="getLocale('dashboard_dialog_store_title')"
+    :name="$i18n('dashboard_dialog_store_title')"
     :width="1240"
     :scrollable="true"
     :storage="storage"
@@ -74,7 +74,7 @@
 </template>
 
 <script>
-import { extension, getLocale, log, storage } from '../../scripts/util';
+import { extension, log, storage } from '../../scripts/util';
 import Dialog from './AppDialog.vue';
 import IconBox from '../icons/box.svg';
 import IconDownload from '../icons/download.svg';
@@ -112,7 +112,6 @@ export default {
 		}
 	},
 	methods: {
-		getLocale: (text) => getLocale(text),
 		async install(extensionName) {
 			this.isDownloadingExtension = true;
 

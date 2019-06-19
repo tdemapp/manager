@@ -25,11 +25,11 @@ import Vuetify, {
 	VToolbar,
 	VToolbarItems,
 } from 'vuetify/lib';
-import { Ripple } from 'vuetify/lib/directives';
-import VAnimateCss from 'v-animate-css';
-import Snackbar from './plugins/snackbar';
+import VAnimateCSS from 'v-animate-css';
+import i18n from 'vue-plugin-webextension-i18n'
 
 import Options from '../options/options.vue';
+import Snackbar from './plugins/snackbar';
 
 import 'vuetify/src/stylus/app.styl';
 import './options.css';
@@ -71,11 +71,9 @@ function initVue() {
 			VToolbar,
 			VToolbarItems,
 		},
-		directives: {
-			Ripple,
-		},
 	});
-	Vue.use(VAnimateCss);
+	Vue.use(VAnimateCSS);
+	Vue.use(i18n)
 	Vue.use(Snackbar);
 
 	Vue.config.productionTip = false;

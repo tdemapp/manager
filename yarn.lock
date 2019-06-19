@@ -4886,6 +4886,11 @@ vue-loader@^15.4.2:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
+vue-plugin-webextension-i18n@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/vue-plugin-webextension-i18n/-/vue-plugin-webextension-i18n-0.1.2.tgz#ee48ad24ac7fc950b46c057321ea16baf5aef8ec"
+  integrity sha512-vfvthaTZ8fDY9sLbIzcpKRiiKfCIJg1uVi3Cns2GwM1vihVdWUjbJCzxRDE+m9+kUQrGTwHc25T9Bv1QCPWsEg==
+
 vue-style-loader@^4.1.0:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/vue-style-loader/-/vue-style-loader-4.1.2.tgz#dedf349806f25ceb4e64f3ad7c0a44fba735fcf8"

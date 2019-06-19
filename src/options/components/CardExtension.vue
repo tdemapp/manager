@@ -84,7 +84,7 @@
 </template>
 
 <script>
-import { extension, getLocale, log, storage } from '../../scripts/util';
+import { extension, log, storage } from '../../scripts/util';
 import IconBox from '../icons/box.svg';
 import IconLink from '../icons/link.svg';
 import IconTrash from '../icons/trash.svg';
@@ -107,7 +107,6 @@ export default {
 		},
 	},
 	methods: {
-		getLocale: (text) => getLocale(text),
 		async removeExtension(extensionName) {
 			try {
 				await extension.remove(extensionName);

@@ -23,7 +23,7 @@
         <v-list-tile-content>
           <v-list-tile-title
             class="spacedLetters text-uppercase"
-            v-text="getLocale('dashboard_menu')"
+            v-text="$i18n('dashboard_menu')"
           />
         </v-list-tile-content>
       </v-list-tile>
@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import { getLocale, storage } from '../../scripts/util';
+import { storage } from '../../scripts/util';
 
 import Download from './DialogDownload.vue';
 import Info from './DialogInfo.vue';
@@ -67,7 +67,6 @@ export default {
 		};
 	},
 	methods: {
-		getLocale: (text) => getLocale(text),
 		toggleSetting: (name) => storage.toggleSetting(name),
 	},
 };
