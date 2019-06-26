@@ -42,7 +42,7 @@ function initVue() {
 		theme: {
 			secondary: '#161616',
 			info: '#0076FF',
-			success: '#2CBE4E',
+			success: '#0076FF',
 			error: '#FF0000',
 		},
 		components: {
