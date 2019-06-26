@@ -99,7 +99,7 @@
 <script>
 import * as download from 'downloadjs';
 
-import { getExtensionVersion, storage } from '../../scripts/util';
+import { extension, storage } from '../../scripts/util';
 
 import Dialog from './AppDialog.vue';
 
@@ -129,7 +129,7 @@ export default {
 	},
 	data() {
 		return {
-			extensionVersion: getExtensionVersion(),
+			extensionVersion: extension.getExtensionVersion(),
 			settingsJSON: null,
 		};
 	},

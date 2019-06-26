@@ -1,57 +1,5 @@
 import * as yup from 'yup';
 
-// Get extension name
-export const getExtensionUrl = (...args) => {
-	return browser.extension.getURL(...args);
-};
-
-// Get extension name
-export const getExtensionName = () => {
-	return browser.runtime.getManifest().name;
-};
-
-// Get extension version
-export const getExtensionVersion = () => {
-	return browser.runtime.getManifest().version;
-};
-
-// Text formatting for simple logging system
-const logFormatting = (color) => `
-	background: ${color};
-	color: #fff;
-	padding: 5px;
-	margin: 5px;
-	border-radius: 2px;
-	font-size: 12px;
-	font-weight: bold;
-`;
-
-// Simple logging function
-export const log = {
-	info(...text) {
-		storage.get((data) => {
-			if (data.debugMode) {
-				console.log('%cINFO', logFormatting('#03A9F4'), ...text);
-			}
-		});
-	},
-	warning(...text) {
-		storage.get((data) => {
-			if (data.debugMode) {
-				console.log('%cWARNING', logFormatting('#FFC107'), ...text);
-			}
-		});
-	},
-	error(...text) {
-		storage.get((data) => {
-			if (data.debugMode) {
-				console.log('%cERROR', logFormatting('#f44336'), ...text);
-			}
-		});
-	},
-};
-
-// Extension handling
 export const extension = {
 	add(obj) {
 		return new Promise(async (resolve, reject) => {
@@ -113,6 +61,9 @@ export const extension = {
 			resolve(json);
 		});
 	},
+	getExtensionUrl: (...args) => browser.extension.getURL(...args),
+	getExtensionName: () => browser.runtime.getManifest().name,
+	getExtensionVersion: () => browser.runtime.getManifest().version,
 	getRegistry() {
 		return new Promise(async (resolve, reject) => {
 			const json = await this.download('https://registry.tdem.app');
@@ -224,7 +175,41 @@ export const extension = {
 	},
 };
 
-// Storage global functionss
+// Logger formatting
+const logFormatting = (color) => `
+	background: ${color};
+	color: #fff;
+	padding: 5px;
+	margin: 5px;
+	border-radius: 2px;
+	font-size: 12px;
+	font-weight: bold;
+`;
+
+export const log = {
+	info(...text) {
+		storage.get((data) => {
+			if (data.debugMode) {
+				console.log('%cINFO', logFormatting('#03A9F4'), ...text);
+			}
+		});
+	},
+	warning(...text) {
+		storage.get((data) => {
+			if (data.debugMode) {
+				console.log('%cWARNING', logFormatting('#FFC107'), ...text);
+			}
+		});
+	},
+	error(...text) {
+		storage.get((data) => {
+			if (data.debugMode) {
+				console.log('%cERROR', logFormatting('#f44336'), ...text);
+			}
+		});
+	},
+};
+
 export const storage = {
 	template: {
 		debugMode: false,
@@ -249,11 +234,7 @@ export const storage = {
 	},
 	subscribe(cb, executeRightAway) {
 		// If storage is empty, set it to the default storage
-		this.get((currentStorage) => {
-			if (Object.keys(currentStorage).length === 0) {
-				this.set(this.template);
-			}
-		});
+		this.get((currentStorage) => Object.keys(currentStorage).length === 0 ? this.set(this.template) : null);
 
 		const fn = () => this.get(cb);
 		if (executeRightAway) fn();
