@@ -77,7 +77,7 @@ export default {
 
 				let install;
 				try {
-					install = await extension.add(json);
+					install = await extension.add(json.message ? json.message : json);
 
 					this.$snackbar.success(install.message);
 					this.inputText = '';
