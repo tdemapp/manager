@@ -5,7 +5,7 @@
   >
     <v-toolbar
       flat
-      :class="`${extension.enabled ? 'black' : 'secondary'} py-3`"
+      :class="`${extension.enabled ? 'black' : 'transparent'} py-3`"
     >
       <v-layout
         align-center
@@ -47,7 +47,7 @@
       </v-layout>
     </v-toolbar>
 
-    <v-divider :class="extension.enabled ? 'transparent ml-3 mr-3' : 'ml-3 mr-3'" />
+    <v-divider v-if="!extension.enabled" class="ml-3 mr-3" />
 
     <v-card-text
       :class="
@@ -84,7 +84,7 @@
 </template>
 
 <script>
-import { extension, log, storage } from '../../scripts/util';
+import { extension, log } from '../../scripts/util';
 import IconBox from '../icons/box.svg';
 import IconLink from '../icons/link.svg';
 import IconTrash from '../icons/trash.svg';
