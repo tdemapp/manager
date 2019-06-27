@@ -8,10 +8,7 @@ export const extension = {
 			try {
 				await this.validate(obj);
 			} catch (err) {
-				reject({
-					success: false,
-					message: err,
-				});
+				reject(err);
 			}
 
 			storage.get(async (currentStorage) => {
@@ -20,25 +17,16 @@ export const extension = {
 				);
 
 				if (filteredExtensions.length > 0) {
-					reject({
-						success: false,
-						message: `${obj.name} Already Installed`,
-					});
+					reject(`${obj.name} Already Installed`);
 				} else {
 					let newStorage = currentStorage;
 					newStorage.extensions.push(obj);
 					await storage.set(newStorage, (err) => {
 						if (err)
-							reject({
-								success: false,
-								message: err,
-							});
+							reject(err);
 					});
 
-					resolve({
-						success: true,
-						message: `Installed ${obj.name}`,
-					});
+					resolve(`Installed ${obj.name}`);
 				}
 			});
 		});
@@ -52,10 +40,7 @@ export const extension = {
 				const response = await fetch(url);
 				json = await response.json();
 			} catch (err) {
-				reject({
-					success: false,
-					message: err,
-				});
+				reject(err);
 			}
 
 			resolve(json);
@@ -78,10 +63,7 @@ export const extension = {
 					url: json.message[i].download_url,
 				});
 
-				resolve({
-					success: true,
-					message: result,
-				});
+				resolve(result);
 			}
 		});
 	},
@@ -100,10 +82,7 @@ export const extension = {
 				storage.set(newData);
 			});
 
-			resolve({
-				success: true,
-				message: result,
-			});
+			resolve(result);
 		});
 	},
 	schema: yup.object().shape({
@@ -151,26 +130,18 @@ export const extension = {
 				storage.set(newData);
 			});
 
-			resolve({
-				success: true,
-				message: result,
-			});
+			resolve(result);
 		});
 	},
 	validate(obj) {
 		return new Promise(async (resolve, reject) => {
 			const isValid = await this.schema.validate(obj);
 
-			if (!isValid)
-				reject({
-					success: false,
-					message: isValid,
-				});
+			if (!isValid) {
+				reject(isValid);
+			}
 
-			resolve({
-				success: true,
-				message: obj,
-			});
+			resolve(obj);
 		});
 	},
 };

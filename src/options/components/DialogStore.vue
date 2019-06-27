@@ -105,10 +105,10 @@ export default {
 		let store;
 		try {
 			store = await extension.getRegistry();
-			this.extensions = store.message;
+			this.extensions = store;
 		} catch (err) {
-			this.$snackbar.error(store.message);
-			log.error(store.message);
+			this.$snackbar.error(store);
+			log.error(store);
 		}
 	},
 	methods: {
@@ -125,12 +125,12 @@ export default {
 
 			let install;
 			try {
-				install = await extension.add(json.message);
+				install = await extension.add(json);
 
-				this.$snackbar.success(install.message);
+				this.$snackbar.success(install);
 				this.isDownloadingExtension = false;
 			} catch (err) {
-				this.$snackbar.error(err.message);
+				this.$snackbar.error(err);
 				this.isDownloadingExtension = false;
 				log.error(err);
 			}
