@@ -53,14 +53,14 @@ export const extension = {
 		return new Promise(async (resolve, reject) => {
 			const json = await this.download('https://registry.tdem.app');
 
-			for (let i = 0; i < json.message.length; i++) {
+			for (let i = 0; i < json.length; i++) {
 				let result = [];
 				result.push({
-					name: json.message[i].name
+					name: json[i].name
 						.split('.')
 						.slice(0, -1)
 						.join('.'),
-					url: json.message[i].download_url,
+					url: json[i].download_url,
 				});
 
 				resolve(result);
