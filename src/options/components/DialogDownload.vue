@@ -15,7 +15,7 @@
         <v-flex xs12>
           <v-text-field
             v-model="inputText"
-            :color="storage.isDarkTheme ? 'white' : 'primary'"
+            :color="storage.isDarkTheme ? 'white' : 'black'"
             label="URL"
           />
 
