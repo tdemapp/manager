@@ -23,6 +23,7 @@
             flat
             large
             block
+						:disabled='inputText.length <= 0'
             :loading="isDownloadingExtension"
             @click="install(inputText)"
           >
