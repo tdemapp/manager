@@ -13,6 +13,13 @@
     "128": "icons/icon-128.png",
     "512": "icons/icon-512.png"
   },
+  "background": {
+    "scripts": ["scripts/background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_icon": "icons/icon-128.png"
+   },
   "content_scripts": [
     {
       "matches": ["*://tweetdeck.twitter.com/*"],

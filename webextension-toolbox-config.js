@@ -12,6 +12,7 @@ module.exports = {
 		];
 
 		config.entry = {
+			'scripts/background': './scripts/background.js',
 			'scripts/content': './scripts/content.js',
 			'options/options': './options/options.js',
 		};

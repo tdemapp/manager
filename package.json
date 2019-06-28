@@ -10,7 +10,6 @@
     "lint": "eslint --fix --ext .js,.vue src"
   },
   "dependencies": {
-    "domify": "^1.4.0",
     "downloadjs": "^1.4.7",
     "tde": "tdemapp/interface",
     "v-animate-css": "^0.0.3",
