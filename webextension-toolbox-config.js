@@ -1,7 +1,19 @@
-const webpack = require('webpack');
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const glob = require('glob-all');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require('path');
+const PurgecssPlugin = require('purgecss-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin');
+const webpack = require('webpack');
+
+const purgeCss = {
+	whitelist: ['theme--light', 'theme--dark'],
+	paths: glob.sync([
+		path.join(__dirname, './src/**/*.html'),
+		path.join(__dirname, './**/*.vue'),
+		path.join(__dirname, './src/**/*.js'),
+	])
+};
 
 module.exports = {
 	webpack: (config) => {
@@ -56,6 +68,7 @@ module.exports = {
 			new VueLoaderPlugin(),
 			new MiniCssExtractPlugin(),
 			new VuetifyLoaderPlugin(),
+			new PurgecssPlugin(purgeCss),
 		];
 
 		return config;

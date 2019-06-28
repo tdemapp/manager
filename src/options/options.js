@@ -71,6 +71,7 @@ function initVue() {
 			VToolbar,
 			VToolbarItems,
 		},
+		minifyTheme: (css) => process.env.NODE_ENV === 'production' ? css.replace(/[\s|\r\n|\r|\n]/g, '') : css,
 	});
 	Vue.use(VAnimateCSS);
 	Vue.use(i18n)
