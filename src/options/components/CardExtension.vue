@@ -47,7 +47,9 @@
       </v-layout>
     </v-toolbar>
 
-    <v-divider v-if="!extension.enabled" class="ml-3 mr-3" />
+    <v-divider
+      :class="`ml-3 mr-3 ${extension.enabled ? 'transparent' : null}`"
+    />
 
     <v-card-text
       :class="
