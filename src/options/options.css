@@ -19,28 +19,6 @@ body,
 .v-toolbar__content {
 	padding-right: 0 !important;
 }
-.v-input__prepend-outer {
-	margin-right: 20px !important;
-}
-.v-text-field.v-text-field--solo:not(.v-text-field--solo-flat) .v-input__slot {
-	border-radius: 6px !important;
-	transition: all 0.3s;
-	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12) !important;
-}
-.v-text-field.v-text-field--solo:not(.v-text-field--solo-flat) .v-input__slot:hover {
-	box-shadow: 0 8px 15px rgba(33, 33, 33, 0.1) !important;
-}
-.v-btn--floating {
-	border-radius: 100% !important;
-}
-.v-toolbar__extension {
-	padding: 0 !important;
-}
-@media only screen and (min-width: 600px) {
-	.v-snack__content .v-btn:first-of-type {
-		margin-left: 16px !important;
-	}
-}
 
 /* 
 * Dashboard styles

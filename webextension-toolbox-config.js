@@ -7,7 +7,7 @@ const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin');
 const webpack = require('webpack');
 
 const purgeCss = {
-	whitelist: ['theme--light', 'theme--dark'],
+	whitelist: ['theme--light', 'theme--dark', 'v-toolbar__content'],
 	paths: glob.sync([
 		path.join(__dirname, './src/**/*.html'),
 		path.join(__dirname, './**/*.vue'),
