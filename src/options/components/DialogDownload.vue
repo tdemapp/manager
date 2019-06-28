@@ -71,22 +71,24 @@ export default {
 				try {
 					json = await extension.download(url);
 				} catch (err) {
-					this.$snackbar.error(err.message);
+					this.$snackbar.error(err);
 					log.error(err);
 				}
 
 				let install;
 				try {
-					install = await extension.add(json.message ? json.message : json);
+					install = await extension.add(json);
 
+					this.isDownloadingExtension = false;
 					this.$snackbar.success(install);
 					this.inputText = '';
-					this.isDownloadingExtension = false;
 				} catch (err) {
-					this.$snackbar.error(err);
 					this.isDownloadingExtension = false;
+					this.$snackbar.error(err);
 					log.error(err);
 				}
+			} else {
+				this.$snackbar.error('Invalid URL supplied');
 			}
 		},
 	},
