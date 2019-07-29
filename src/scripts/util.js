@@ -35,15 +35,12 @@ export const extension = {
 		return new Promise(async (resolve, reject) => {
 			log.info(`Downloading: ${url}`);
 
-			let json;
 			try {
 				const response = await fetch(url);
-				json = await response.json();
+				resolve(await response.json());
 			} catch (err) {
 				reject(err);
 			}
-
-			resolve(json);
 		});
 	},
 	getExtensionUrl: (...args) => browser.extension.getURL(...args),
@@ -51,7 +48,7 @@ export const extension = {
 	getExtensionVersion: () => browser.runtime.getManifest().version,
 	getRegistry() {
 		return new Promise(async (resolve, reject) => {
-			const json = await this.download('https://registry.tdem.app');
+			const json = await this.download('https://api.github.com/repos/tdemapp/registry/contents/extensions');
 
 			for (let i = 0; i < json.length; i++) {
 				let result = [];

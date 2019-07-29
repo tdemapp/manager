@@ -60,7 +60,7 @@
                   large
                   icon
                   :loading="isDownloadingExtension"
-                  @click="install(item.name)"
+                  @click="install(item.url)"
                 >
                   <IconDownload class="white--text" />
                 </v-btn>
@@ -112,12 +112,12 @@ export default {
 		}
 	},
 	methods: {
-		async install(extensionName) {
+		async install(url) {
 			this.isDownloadingExtension = true;
 
 			let json;
 			try {
-				json = await extension.download(`https://registry.tdem.app/${extensionName}`);
+				json = await extension.download(url);
 			} catch (err) {
 				this.$snackbar.error(err);
 				log.error(err);

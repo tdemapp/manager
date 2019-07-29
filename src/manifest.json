@@ -34,8 +34,7 @@
     "*://tweetdeck.twitter.com/*",
     "*://github.com/*",
     "*://api.github.com/*",
-    "*://tdem.app/*",
-    "*://registry.tdem.app/*"
+    "*://tdem.app/*"
   ],
   "options_ui": {
     "page": "options/options.html",
