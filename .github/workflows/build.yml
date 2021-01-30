@@ -12,16 +12,20 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node_version: [12.x, 14.x]
+        node_version: [14.x, 15.x]
         platform: [chrome, firefox, opera]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
       
-      - name: Setup Node.js environment
+      - name: Setup Node.js
         uses: actions/setup-node@v2.1.4
         with:
           node-version: ${{ matrix.node_version }}
+          
+      - name: Get package.json
+        id: package
+        uses: codex-team/action-nodejs-package-info@v1
 
       - name: Install
         run: yarn install
@@ -35,5 +39,5 @@ jobs:
       - name: Upload
         uses: actions/upload-artifact@v2
         with:
-          name: manager-${{ matrix.platform }}
+          name: manager-${{ steps.package.outputs.version }}-${{ matrix.node_version }}-${{ matrix.platform }}
           path: dist/${{ matrix.platform }}
