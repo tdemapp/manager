@@ -1,0 +1,39 @@
+name: 🔨 Build
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node_version: [12.x, 14.x]
+        platform: [chrome, firefox, opera]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.1.4
+        with:
+          node-version: ${{ matrix.node_version }}
+
+      - name: Install
+        run: yarn install
+        
+      - name: Lint
+        run: yarn lint
+      
+      - name: Build
+        run: yarn build ${{ matrix.platform }}
+        
+      - name: Upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: manager-${{ matrix.platform }}
+          path: dist/${{ matrix.platform }}
