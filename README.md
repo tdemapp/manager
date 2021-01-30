@@ -4,9 +4,8 @@
     <img alt='TweetDeck Extension Manager' src='https://raw.githubusercontent.com/tdemapp/assets/master/branding/Promotional-Marquee.png' />
   </a>
 
-  [![License](https://img.shields.io/badge/license-mit-blue.svg?longCache=true&style=for-the-badge)](https://github.com/tdemapp/manager/blob/webpack/LICENSE) 
-  [![Travis](https://img.shields.io/travis/tdemapp/manager/webpack.svg?style=for-the-badge)](https://travis-ci.org/tdemapp/manager) 
-  [![gitmoji](https://img.shields.io/badge/gitmoji-%20%F0%9F%98%9C%20%F0%9F%98%8D-FFDD67.svg?longCache=true&style=for-the-badge)](https://gitmoji.carloscuesta.me/) 
+  [![License](https://img.shields.io/badge/-mit-blue.svg?longCache=true&style=for-the-badge)](https://github.com/tdemapp/manager/blob/webpack/LICENSE) 
+  [![Build](https://img.shields.io/github/workflow/status/tdemapp/manager/%F0%9F%94%A8%20Build?label=%20&logo=github&logoColor=white&style=for-the-badge)](https://github.com/tdemapp/manager/actions?query=workflow%3Abuild) 
   [![Twitter](https://img.shields.io/badge/-@nurodev-03A9F4.svg?logo=twitter&logoColor=white&longCache=true&style=for-the-badge)](https://twitter.com/nurodev)
 </div>
 
