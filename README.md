@@ -6,7 +6,7 @@
 
   [![License](https://img.shields.io/badge/-mit-blue.svg?longCache=true&style=for-the-badge)](https://github.com/tdemapp/manager/blob/webpack/LICENSE) 
   [![Build](https://img.shields.io/github/workflow/status/tdemapp/manager/%F0%9F%94%A8%20Build?label=%20&logo=github&logoColor=white&style=for-the-badge)](https://github.com/tdemapp/manager/actions?query=workflow%3Abuild) 
-    [![Vercel](https://img.shields.io/badge/-vercel-black.svg?logo=vercel&longCache=true&style=for-the-badge)](https://vercel.com/home?utm_source=tdem&utm_campaign=oss) 
+  [![Vercel](https://img.shields.io/badge/-Powered%20by%20vercel-black.svg?logo=vercel&longCache=true&style=for-the-badge)](https://vercel.com/home?utm_source=tdem&utm_campaign=oss) 
   [![Twitter](https://img.shields.io/badge/-@nurodev-03A9F4.svg?logo=twitter&logoColor=white&longCache=true&style=for-the-badge)](https://twitter.com/nurodev)
 </div>
 
